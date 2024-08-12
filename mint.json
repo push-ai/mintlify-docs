@@ -2,8 +2,8 @@
   "$schema": "https://mintlify.com/schema.json",
   "name": "Push.ai Documentation",
   "logo": {
-    "dark": "/logo/dark.svg",
-    "light": "/logo/light.svg"
+    "dark": "/logo/dark.png",
+    "light": "/logo/light.png"
   },
   "favicon": "/favicon.svg",
   "colors": {
@@ -22,8 +22,8 @@
     }
   ],
   "topbarCtaButton": {
-    "name": "Dashboard",
-    "url": "https://dashboard.mintlify.com"
+    "name": "Get Started",
+    "url": "https://app.push.ai"
   },
   "tabs": [
     {
@@ -38,23 +38,29 @@
       "url": "https://mintlify.com/docs"
     },
     {
-      "name": "Community",
-      "icon": "slack",
-      "url": "https://mintlify.com/community"
+      "name": "Book a Demo",
+      "icon": "calendar",
+      "url": "https://calendly.com/d/g3s-mwy-jpb/push-ai-intro"
     },
     {
-      "name": "Blog",
-      "icon": "newspaper",
-      "url": "https://mintlify.com/blog"
+      "name": "Website",
+      "icon": "globe",
+      "url": "https://push.ai"
     }
   ],
   "navigation": [
     {
       "group": "Get Started",
-      "pages": ["introduction", "quickstart", "development"]
+      "pages": [
+        "introduction",
+        {
+          "group": "Quickstart",
+          "pages": ["getting-started/admin", "getting-started/business"]
+        }
+      ]
     },
     {
-      "group": "Essentials",
+      "group": "Documentation",
       "pages": [
         "essentials/markdown",
         "essentials/code",
@@ -62,6 +68,15 @@
         "essentials/settings",
         "essentials/navigation",
         "essentials/reusable-snippets"
+      ]
+    },
+    {
+      "group": "Legal",
+      "pages": [
+        "legal/data-processing-agreement",
+        "legal/data-retention-policy",
+        "legal/privacy-policy",
+        "legal/terms-of-service"
       ]
     },
     {
@@ -78,8 +93,11 @@
     }
   ],
   "footerSocials": {
-    "x": "https://x.com/mintlify",
-    "github": "https://github.com/mintlify",
     "linkedin": "https://www.linkedin.com/company/mintsearch"
+  },
+  "analytics": {
+    "ga4": {
+      "measurementId": "G-2NHQ60ZXN8"
+    }
   }
 }
