@@ -1,59 +1,42 @@
 ---
-sidebar_position: 1
+title: BigQuery
+description: "Connect with BigQuery and define your metrics and dimensions in Push.ai."
 ---
 
-# BigQuery
-
-Follow our setup guide to connect your BigQuery data warehouse to Push.ai.
-
-### Prerequisites
+## Prerequisites
 
 To connect BigQuery to Push.ai, you need the following:
 
-- The ability to create service accounts in Google Cloud Console.
+- The ability to create service accounts in Google Cloud console.
 
-### Step 1 -  Create a service account in the cloud console
+## Setup Guide
 
-- [Link to create service account.](https://console.cloud.google.com/iam-admin/serviceaccounts/create?pli=1)
+### Step 1 - Create a service account in the Google Cloud console
 
-<img
-  src={require('/static/img/bigquery-create-service-account.png').default}
-  alt="Create service account"
-  py="6"
-/>
+If you're not already familiar with Google Cloud IAM you can follow this [link to create service account.](https://console.cloud.google.com/iam-admin/serviceaccounts/create?pli=1)
 
 ### Step 2 - Grant permissions
 
-- Select and grant the ``BigQuery Data Viewer`` and ``BigQuery User`` roles
+Select and grant the `BigQuery Data Viewer` and `BigQuery User` roles
 
-<img
-  src={require('/static/img/bigquery-grant-viewer-user-permission.png').default}
-  alt="Add Bigquery Admin permissions"
-  py="6"
-/>
+### Step 3 - Create a key and download the file
 
-### Step 3 - Create a key and download the file 
-
-<img
-  src={require('/static/img/bigquery-manage-keys.png').default}
-  alt="Manage keys"
-  py="6"
-/>
+Download the JSON key file and save it to your computer.
 
 ### Step 4 - Whitelist IP Addresses (if necessary)
 
 Push.ai connects to your warehouse from the following IP addresses. Be sure to allow traffic from these IPs in your firewall, and include them in any database grants.
 
-
-| Region/Deployment | IP Addresses  |
-|-------------------|---------------|
-| All               | ```44.226.145.213```, ```54.187.200.255```, ```34.213.214.55```, ```35.164.95.156```, ```44.230.95.183```, ```44.229.200.200```|
+| Region/Deployment | IP Addresses                                                                                            |
+| ----------------- | ------------------------------------------------------------------------------------------------------- |
+| All               | `44.226.145.213`, `54.187.200.255`, `34.213.214.55`, `35.164.95.156`, `44.230.95.183`, `44.229.200.200` |
 
 ### Step 5 - Configure the connection in Push.ai
 
-- Copy the ```project_id``` from URL
-- Upload the JSON key file
+1. Copy the `project_id` from URL
+2. Upload the JSON key file
+3. Test and create the datasource connection.
 
+## Enhanced Security Controls
 
-### Enhanced Security Controls
-To implement dataset level permissioning, please see [GCP's most up-to-date documentation](https://cloud.google.com/bigquery/docs/control-access-to-resources-iam#grant_access_to_a_dataset).  
+To implement dataset level permissioning, please see [GCP's most up-to-date documentation](https://cloud.google.com/bigquery/docs/control-access-to-resources-iam#grant_access_to_a_dataset).

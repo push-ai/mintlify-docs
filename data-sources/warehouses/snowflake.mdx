@@ -1,15 +1,15 @@
 ---
-sidebar_position: 2
+title: Snowflake
+description: "Connect with Snowflake and define your metrics and dimensions in Push.ai."
 ---
-# Snowflake 
 
-Follow our setup guide to connect your Snowflake data warehouse to Push.ai.
-
-### Prerequisites
+## Prerequisites
 
 To connect Snowflake to Push.ai, you need the following:
 
 - A Snowflake account with the appropriate permissions to create a user.
+
+## Setup Guide
 
 ### Step 1 - Create the warehouse connection
 
@@ -79,11 +79,9 @@ Push.ai connects to your warehouse from the following IP addresses. Be sure to a
 
 ### Step 3 - Configure the connection in Push.ai
 
-1. Enter your Snowflake ```Account Identifier```. You can find this identifier at the beginning of your Snowflake URL, for example, (https://ACCOUNT_IDENTIFIER.snowflakecomputing.com).
+1. Enter your Snowflake ```Account Identifier```. You can find this identifier at the beginning of your Snowflake URL, for example, ```https://ACCOUNT_IDENTIFIER.snowflakecomputing.com```.
 
-import Admonition from '@theme/Admonition';
-
-<Admonition type="info" title="Account Identifier">
+<Info>
 
 Account identifier format may differ based on Snowflake account age.
 
@@ -91,10 +89,10 @@ For example, older Snowflake accounts often have identifiers that look like ```<
 
 For more details, visit [Snowflake's account identifier docs](https://docs.snowflake.com/en/user-guide/admin-account-identifier.html).
 
-</Admonition>
+</Info>
 
 2. For ```Role```, ```Database```, ```Warehouse```, ```Username```, and ``Password`` enter the values used when running the script.
 
-3. Click **Connect Snowflake**.
+3. Test and create the datasource connection.
 
 

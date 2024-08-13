@@ -74,19 +74,28 @@
               "pages": [
                 "data-sources/warehouses/snowflake",
                 "data-sources/warehouses/bigquery",
-                "data-sources/warehouses/databricks"
+                "data-sources/warehouses/redshift",
+                "data-sources/warehouses/postgres"
               ]
             }
           ]
         },
         {
           "group": "Business Objects",
-          "icon": "chart-line",
+          "icon": "building",
           "pages": [
             "business-objects/metrics",
             "business-objects/dimensions",
-            "business-objects/dimension-values",
-            "business-objects/entities"
+            "business-objects/dimension-values"
+          ]
+        },
+        {
+          "group": "Business Graph™",
+          "icon": "diagram-project",
+          "pages": [
+            "business-graph/how-it-works",
+            "business-graph/business-graph",
+            "business-graph/ai-agent"
           ]
         },
         {
