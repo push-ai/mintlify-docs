@@ -98,10 +98,9 @@
             "destinations/microsoft-teams"
           ]
         },
-        "essentials/images",
-        "essentials/settings",
-        "essentials/navigation",
-        "essentials/reusable-snippets"
+        "reports/reports",
+        "subscriptions/subscriptions",
+        "users-and-roles/users-and-roles"
       ]
     },
     {
