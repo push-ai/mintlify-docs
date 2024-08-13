@@ -1,0 +1,318 @@
+---
+title: Metrics
+description: "Metrics are the basis for measuring your business. They are times-series aggregations of data that can be defined inside of Push.ai or integrated using semantic layers such as [the dbt Semantic Layer](https://getdbt.com), [Looker](https://cloud.google.com/looker/) and [Cube](https://cube.dev)."
+---
+
+## Features
+
+- Define metrics in one place and use them across a variety of use-cases without the need to maintain defintions.
+- Track historical results, see automated projections and compare them to business goals.
+- Use pre-built calculations to quickly explore how metrics change over time.
+
+## Defining Metrics
+
+Our metric builder allows teams to easily input metric definitions and dynamically generate the yml used to store them in dbt. We also include some best practice metadata so that Push.ai and other systems can better organize and deliver value using metrics. Below is the complete list of properties that are needed to make metrics.
+
+### Definition Types
+
+- **Metric Builder** - The easiest way to define a metric. Select a table and the fields used to configure a metric.
+- **Custom SQL** - A flexible solution with the ability to join tables, edit and paste in SQL from other sources.
+- **Derived Metric** - Use existing metrics to define metrics with parent-child relationships, like average order value.
+
+### Definition Configuration
+
+| Field                 | Description                                                 | Example           | Required?                    |
+| :-------------------- | :---------------------------------------------------------- | :---------------- | :--------------------------- |
+| **Table**             | The table used to calculate this metric                     | dim_customers     | yes (no for derived metrics) |
+| **Calculation Type**  | The method of calculation that is applied to the expression | count_distinct    | yes                          |
+| **Calculation Field** | The expression to aggregate/calculate over                  | user_id           | yes                          |
+| **Date Field**        | The time-based component of the metric                      | signup_date       | yes                          |
+| **Dimensions**        | A list of dimensions to group or filter the metric by       | [plan, country]   | no                           |
+| **Filters**           | A list of filters to apply before calculating the metric    | status = 'active' | no                           |
+
+### Properties
+
+Metric properties define how a metric is calculated in Push.
+
+| Field                      | Description                                                                               |
+| :------------------------- | :---------------------------------------------------------------------------------------- |
+| **Goal Direction**         | Defines whether the business goal is to increase or decrease the metric.                  |
+| **Aggregation Properties** | Configures whether this metric can be aggregated across the date dimension.               |
+| **Metric Format**          | Configures whether a metric will display as a number, percent or currency when displayed. |
+
+### Derived Metrics
+
+Derived metrics use existing metric definitions to calculate a new metric with a _parent-child_ relationship. For example, _Profit_ is a derived metric that can be calculating using the parent metrics of _Revenue_ and _Cost_ (`profit = revenue - costs`). Using derived metrics makes maintaining metric definitions easier by defining the supporting metrics in one definition and then having the derived metrics inherit any metric changes.
+
+With derived metrics, dimensions are inherited. The dimensions available for derived metrics are the ones shared by all related metrics
+
+## Calculations
+
+Calculations help us explore how metrics change over time. You are likely already familiar with them if you've used traditional Business Intellignece tools.
+
+In Push.ai, calculations are used to compare metrics across time periods. Each calculation in Push.ai is associated with two time periods, a **current period** and a **previous period**. Individual calculations will be relevant depending on the use-case (e.g., you want to track something on a daily v. monthly cadence) or the nature of the business (e.g., you run an ecommerce business and order volume has a strong day-of-week seasonality).
+
+<AccordionGroup>
+  <Accordion title="Previous Period">
+    <table>
+      <thead>
+        <tr>
+          <th>Calculation</th>
+          <th>Current Period</th>
+          <th>Previous Period</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Previous Day</td>
+          <td>Apr 23</td>
+          <td>Apr 22</td>
+        </tr>
+        <tr>
+          <td>Previous Week</td>
+          <td>Apr 17-23</td>
+          <td>Apr 10-16</td>
+        </tr>
+        <tr>
+          <td>Previous Month</td>
+          <td>Apr 1-30</td>
+          <td>Mar 1-31</td>
+        </tr>
+        <tr>
+          <td>Previous Quarter</td>
+          <td>Q1 2023</td>
+          <td>Q2 2023</td>
+        </tr>
+        <tr>
+          <td>Previous Year</td>
+          <td>2021</td>
+          <td>2022</td>
+        </tr>
+      </tbody>
+    </table>
+  </Accordion>
+
+{" "}
+
+<Accordion title="Period to Date">
+  <table>
+    <thead>
+      <tr>
+        <th>Calculation</th>
+        <th>Current Period</th>
+        <th>Previous Period</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Week to date</td>
+        <td>Apr 16: Sun - Thurs</td>
+        <td>Apr 9: Sun - Thurs</td>
+      </tr>
+      <tr>
+        <td>Month to date</td>
+        <td>Apr 1-23</td>
+        <td>Mar 1-23</td>
+      </tr>
+      <tr>
+        <td>Quarter to date</td>
+        <td>Q2 Days 1-23</td>
+        <td>Q1 Days 1-23</td>
+      </tr>
+      <tr>
+        <td>Year to date</td>
+        <td>Y 2023 Days 1-156</td>
+        <td>Y 2022 Days 1-156</td>
+      </tr>
+      <tr>
+        <td>Week on Week</td>
+        <td>Prior Full Week</td>
+        <td>Current Week to Date</td>
+      </tr>
+      <tr>
+        <td>Month on Month</td>
+        <td>Prior Full Month</td>
+        <td>Current Week to Date</td>
+      </tr>
+    </tbody>
+  </table>
+</Accordion>
+
+{" "}
+
+<Accordion title="Trailing Period">
+  <table>
+    <thead>
+      <tr>
+        <th>Calculation</th>
+        <th>Current Period</th>
+        <th>Previous Period</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Trailing 7 Day</td>
+        <td>Apr 15 - 22</td>
+        <td>Apr 7 - 14</td>
+      </tr>
+      <tr>
+        <td>Trailing 30 Day</td>
+        <td>Mar 24 - Apr 23</td>
+        <td>Feb 21 - Mar 23</td>
+      </tr>
+    </tbody>
+  </table>
+</Accordion>
+
+{" "}
+
+<Accordion title="Same Day Previous Period">
+  <table>
+    <thead>
+      <tr>
+        <th>Calculation</th>
+        <th>Current Period</th>
+        <th>Previous Period</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Same Day Previous Week</td>
+        <td>W15: Mon</td>
+        <td>W14: Mon</td>
+      </tr>
+      <tr>
+        <td>Same Day Previous Month</td>
+        <td>January 15</td>
+        <td>February 15</td>
+      </tr>
+      <tr>
+        <td>Same Day Previous Quarter</td>
+        <td>Q2 W1 Monday</td>
+        <td>Q1 W2 Monday</td>
+      </tr>
+      <tr>
+        <td>Same Day Previous Year</td>
+        <td>Y2023 W15 Monday</td>
+        <td>Y2022 W15 Monday</td>
+      </tr>
+    </tbody>
+  </table>
+</Accordion>
+
+{" "}
+
+<Accordion title="Year over Year">
+  <table>
+    <thead>
+      <tr>
+        <th>Calculation</th>
+        <th>Current Period</th>
+        <th>Previous Period</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Week to Date, Prev. Year</td>
+        <td>W2 2023: Sun - Thurs</td>
+        <td>W2 2024: Sun - Thurs</td>
+      </tr>
+      <tr>
+        <td>Month to Date, Prev. Year</td>
+        <td>Apr 1-16 2023</td>
+        <td>Apr 1-16 2024</td>
+      </tr>
+      <tr>
+        <td>Quarter to Date, Prev. Year</td>
+        <td>Q2 Days 1-23, 2023</td>
+        <td>Q2 Days 1-23, 2024</td>
+      </tr>
+      <tr>
+        <td>Prev. Week, Prev. Year</td>
+        <td>Y 2023 W2</td>
+        <td>Y 2022 W2</td>
+      </tr>
+      <tr>
+        <td>Prev. Month, Prev. Year</td>
+        <td>Apr 2023</td>
+        <td>Apr 2024</td>
+      </tr>
+      <tr>
+        <td>Prev. Quarter, Prev. Year</td>
+        <td>Q1 2023</td>
+        <td>Q1 2024</td>
+      </tr>
+    </tbody>
+  </table>
+</Accordion>
+
+{" "}
+
+<Accordion title="Progress to Goal">
+  <table>
+    <thead>
+      <tr>
+        <th>Calculation</th>
+        <th>Current Period</th>
+        <th>Previous Period</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>End of Week Progress</td>
+        <td>Apr 16-23</td>
+        <td>Goal EOW W15</td>
+      </tr>
+      <tr>
+        <td>End of Month Progress</td>
+        <td>Apr 1-23</td>
+        <td>Goal EOM Apr</td>
+      </tr>
+      <tr>
+        <td>End of Quarter Progress</td>
+        <td>Apr 1-23</td>
+        <td>Goal EOQ Q2</td>
+      </tr>
+      <tr>
+        <td>End of Year Progress</td>
+        <td>Jan 1 - Apr 23</td>
+        <td>Goal EOY 2023</td>
+      </tr>
+    </tbody>
+  </table>
+</Accordion>
+
+  <Accordion title="Pacing to Goal">
+    <table>
+      <thead>
+        <tr>
+          <th>Calculation</th>
+          <th>Current Period</th>
+          <th>Previous Period</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>End of Week Pacing</td>
+          <td>Projection EOW W15</td>
+          <td>Goal EOW W14</td>
+        </tr>
+        <tr>
+          <td>End of Month Pacing</td>
+          <td>Projection EOM Apr</td>
+          <td>Goal EOM Apr</td>
+        </tr>
+        <tr>
+          <td>End of Quarter Pacing</td>
+          <td>Projection Q2</td>
+          <td>Goal Q2</td>
+        </tr>
+        <tr>
+          <td>End of Year Pacing</td>
+          <td>Projection 2023</td>
+          <td>Goal 2023</td>
+        </tr>
+      </tbody>
+    </table>
+  </Accordion>
+</AccordionGroup>

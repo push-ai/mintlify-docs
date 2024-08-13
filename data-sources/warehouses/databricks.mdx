@@ -1,0 +1,92 @@
+---
+sidebar_position: 5
+sidebar_class_name: hidden
+---
+# Databricks 
+
+Follow our setup guide to connect your Snowflake data warehouse to Push.ai.
+
+### Prerequisites
+
+To connect Snowflake to Push.ai, you need the following:
+
+- A Snowflake account with the appropriate permissions to create a user.
+
+### Step 1 - Create the warehouse connection
+
+1. Log in to your Snowflake data warehouse.
+
+2. Copy the following script to a new worksheet and select the **All Queries** checkbox:
+
+```
+-- Edit the following variables
+set push_username='PUSH_AI_USER';
+set push_password='<a secure password>';
+set push_first_name='Push.ai';
+set push_last_name='User';
+set push_default_warehouse='<warehouse>';
+set push_database='<database>';
+set push_default_namespace='<database.schema>';
+set push_default_role='PUSH_AI_ROLE';
+set push_comment='Used for Push.ai integrations';
+
+-- Set role for grants
+USE ROLE ACCOUNTADMIN;
+
+-- Create a role for PUSH_AI
+CREATE ROLE IF NOT EXISTS identifier($push_default_role)
+COMMENT = $push_comment;
+
+-- Create PUSH_AI's user
+CREATE USER IF NOT EXISTS identifier($push_username)
+PASSWORD=$push_password
+FIRST_NAME=$push_first_name
+LAST_NAME=$push_last_name
+DEFAULT_WAREHOUSE=$push_default_warehouse
+DEFAULT_NAMESPACE=$push_default_namespace
+DEFAULT_ROLE=$push_default_role
+COMMENT=$push_comment;
+
+
+-- Grant permissions to the role
+GRANT ROLE identifier($push_default_role) TO ROLE SYSADMIN;
+GRANT USAGE ON WAREHOUSE identifier($push_default_warehouse) TO ROLE identifier($push_default_role);
+GRANT ROLE identifier($push_default_role) TO USER identifier($push_username);
+
+GRANT USAGE ON DATABASE identifier($push_database) TO ROLE identifier($push_default_role);
+GRANT USAGE ON ALL SCHEMAS IN DATABASE identifier($push_database) TO ROLE identifier($push_default_role);
+GRANT SELECT ON ALL TABLES IN DATABASE identifier($push_database) TO ROLE identifier($push_default_role);
+GRANT SELECT ON FUTURE TABLES IN DATABASE identifier($push_database) TO ROLE identifier($push_default_role);
+GRANT SELECT ON ALL VIEWS IN DATABASE identifier($push_database) TO ROLE identifier($push_default_role);
+GRANT SELECT ON FUTURE VIEWS IN DATABASE identifier($push_database) TO ROLE identifier($push_default_role);
+
+-- Grant write access for Push.ai specific schema
+GRANT CREATE SCHEMA ON DATABASE identifier($push_database) TO ROLE identifier($push_default_role);
+```
+
+3. Replace the password, warehouse and database variables with appropriate values.
+
+4. Run the script.
+
+### Step 2 - Whitelist IP Addresses (if necessary)
+
+Push.ai connects to your warehouse from the following IP addresses. Be sure to allow traffic from these IPs in your firewall, and include them in any database grants.
+
+
+| Region/Deployment | IP Addresses  |
+|-------------------|---------------|
+| All               | ```44.226.145.213```, ```54.187.200.255```, ```34.213.214.55```, ```35.164.95.156```, ```44.230.95.183```, ```44.229.200.200```|
+
+
+### Step 3 - Configure the connection in Push.ai
+
+1. For Account, enter your Snowflake account. Usually, this is in the format ```<identifier>.<region>.<cloud provider>```, e.g. abc123.us-east-2.aws). See the [the Snowflake docs](https://docs.snowflake.com/en/user-guide/admin-account-identifier.html) for more information.
+
+2. For Role, Database, Warehouse, Username, and Password enter the values used when running the script.
+
+3. (Optional) Configure the schema name to write to. By default, data will be written to ```PUSH_AI```.
+
+4. Click **Connect Snowflake**.
+
+
+

@@ -25,12 +25,7 @@
     "name": "Get Started",
     "url": "https://app.push.ai"
   },
-  "tabs": [
-    {
-      "name": "API Reference",
-      "url": "api-reference"
-    }
-  ],
+  "tabs": [],
   "anchors": [
     {
       "name": "Documentation",
@@ -62,8 +57,47 @@
     {
       "group": "Documentation",
       "pages": [
-        "essentials/markdown",
-        "essentials/code",
+        {
+          "group": "Data Sources",
+          "icon": "database",
+          "pages": [
+            {
+              "group": "Semantic Layers",
+              "pages": [
+                "data-sources/semantic-layers/dbt",
+                "data-sources/semantic-layers/cube-cloud",
+                "data-sources/semantic-layers/looker"
+              ]
+            },
+            {
+              "group": "Data Warehouses",
+              "pages": [
+                "data-sources/warehouses/snowflake",
+                "data-sources/warehouses/bigquery",
+                "data-sources/warehouses/databricks"
+              ]
+            }
+          ]
+        },
+        {
+          "group": "Business Objects",
+          "icon": "chart-line",
+          "pages": [
+            "business-objects/metrics",
+            "business-objects/dimensions",
+            "business-objects/dimension-values",
+            "business-objects/entities"
+          ]
+        },
+        {
+          "group": "Destinations",
+          "icon": "comments",
+          "pages": [
+            "destinations/slack",
+            "destinations/email",
+            "destinations/microsoft-teams"
+          ]
+        },
         "essentials/images",
         "essentials/settings",
         "essentials/navigation",
@@ -77,18 +111,6 @@
         "legal/data-retention-policy",
         "legal/privacy-policy",
         "legal/terms-of-service"
-      ]
-    },
-    {
-      "group": "API Documentation",
-      "pages": ["api-reference/introduction"]
-    },
-    {
-      "group": "Endpoint Examples",
-      "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/delete"
       ]
     }
   ],

@@ -1,0 +1,43 @@
+---
+sidebar_position: 3
+---
+# Redshift 
+
+Follow our setup guide to connect your Redshift data warehouse to Push.ai.
+
+### Prerequisites
+
+To connect Redshift to Push.ai, you need the following:
+
+- A Redshift account with the appropriate permissions to create a user.
+
+### Step 1 - Create the warehouse connection
+
+1. Log in to your Redshift data warehouse at http://console.aws.amazon.com/redshiftv2/home 
+
+2. Create a user with read permissions to the schema and tables that you want to connect from. 
+
+3. If data will be written back to the warehouse from Push.ai, add a schema and permissions to allow the Push.ai user to write to a specific schema.
+
+### Step 2 - Whitelist IP Addresses (if necessary)
+
+Push.ai connects to your warehouse from the following IP addresses. Be sure to allow traffic from these IPs in your firewall, and include them in any database grants.
+
+
+| Region/Deployment | IP Addresses                                                                                                                    |
+|-------------------|---------------------------------------------------------------------------------------------------------------------------------|
+| All               | ```44.226.145.213```, ```54.187.200.255```, ```34.213.214.55```, ```35.164.95.156```, ```44.230.95.183```, ```44.229.200.200``` |
+
+
+### Step 3 - Configure the connection in Push.ai
+
+1. Add the Host, Port, Database, Username, Password
+
+2. (Optional) Configure the schema name to write to. By default, data will be written to ```PUSH_AI```.
+
+3. Click **Test Redshift** to confirm the connection settings.
+
+4. Click **Connect Redshift** to complete the connection.
+
+
+

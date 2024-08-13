@@ -1,0 +1,51 @@
+---
+title: dbt Semantic Layer
+description: "Leverage your existing metrics and dimensions in Push.ai by connencting with the dbt Semantic Layer."
+---
+
+<Note>
+  Learn about Push.ai
+  <iframe
+    width="560"
+    height="315"
+    src="https://www.youtube.com/embed/HdBrMcnXPFE"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+  ></iframe>
+</Note>
+
+### Prerequisites
+
+- To connect to the dbt Semantic Layer, you must first set up and have access to the feature in dbt Cloud.
+
+<Info>
+  Don't have the dbt Semantic Layer yet? Learn how to get started using [dbt's
+  documentation](https://docs.getdbt.com/docs/use-dbt-semantic-layer/setup-sl).
+</Info>
+
+## Setup Guide
+
+### **Step 1** - Generate a service token
+
+Generate a service token for use in Push.ai.
+
+### Step 2 - Configure Connection in Push.ai
+
+| Parameter      | Description                                                                                                                                                                                                  | Example                                                                                 |
+| :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------- |
+| Access URL     | The [access URL](https://docs.getdbt.com/docs/cloud/about-cloud/regions-ip-addresses) for your account's dbt Cloud region. You must always add the `semantic-layer` prefix before the access URL.            | For dbt Cloud deployment hosted in North America, use `semantic-layer.cloud.getdbt.com` |
+| Environment Id | The unique identifier for the dbt production environment, you can retrieve this from the dbt Cloud URL when you navigate to _Environments_ under _Deploy_.                                                   | If your URL ends with `.../environments/222222`, your `environmentId` is `222222`       |
+| Service Token  | dbt Cloud [service token](https://docs.getdbt.com/docs/dbt-cloud-apis/service-tokens) with “Semantic Layer Only” and "Metadata Only" permissions. Create a new service token on the _Account Settings_ page. | `token=SERVICE_TOKEN`                                                                   |
+
+## Usage Notes
+
+<Warning title="Changing Metric and Dimension Names">
+  Changing a metric or dimension `name` in MetricFlow will be recognized as a
+  new resource in Push.ai, and the existing resource will be automatically
+  deleted.
+</Warning>
+
+- To propograte any changes in your MetricFlow configuration, you can update the connection in Push.ai's settings under Integrations.
+- After connecting with the dbt Semantic Layer, all suported metrics will become available in Push.ai. Our system may not support all metric types. Please [reach out](mailto:support@push.ai) if you encounter any issues and we can help you get setup.

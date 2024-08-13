@@ -1,0 +1,50 @@
+---
+title: Cube Cloud
+description: "Leverage you cubes, measures and dimensions in Push.ai by connecting with Cube Cloud."
+---
+
+<Note>
+  Learn about Push.ai
+  <iframe
+    width="560"
+    height="315"
+    src="https://www.youtube.com/embed/HdBrMcnXPFE"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+  ></iframe>
+</Note>
+
+## Prerequisites
+
+- To connect Push.ai with Cube, you'll need a project set up in Cube Cloud.
+
+<Info>
+  Don't have Cube Cloud yet? Learn how to get started using [their
+  documentation](https://cube.dev/docs/product/getting-started/cloud).
+</Info>
+
+## Setup Guide
+
+### Step 1 - Copy the REST API Endpoint
+
+Copy the REST API endpoint which can be found on the Overview page
+
+### Step 2 - Copy the API Secret
+
+Copy the API secret an be found on the Settings / Configuration page under “Cube environment variables” and is named `CUBEJS_API_SECRET`.
+
+### Step 3 - Configure the connection in Push.ai
+
+| Parameter  | Description                                                                                                                          |
+| :--------- | :----------------------------------------------------------------------------------------------------------------------------------- |
+| API URL    | the REST API endpoint which can be found on the Overview page                                                                        |
+| API Secret | the API secret an be found on the Settings / Configuration page under “Cube environment variables” and is named `CUBEJS_API_SECRET`. |
+
+## Usage Notes
+
+After connecting with Cube, measures and dimensions need to be converted into metrics. This can be done in two ways:
+
+1. Measures and dimensions will automatically be available in the Report builder and can be converted to metrics in the Data section of the Report builder. Any metrics configured here will be created and available throughout the application.
+2. Metrics can be imported through the Metric import flow on the metrics page.

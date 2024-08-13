@@ -1,0 +1,21 @@
+---
+title: Looker
+description: "Import metrics directly from your LookML models."
+---
+
+# LookML
+
+Push.ai allows teams to import metric definitions directly from their existing sources. To setup the Looker integration, an administrator of the Looker account will need to collect:
+
+- Looker Instance URL
+- Client ID
+- Client Secret
+
+The client ID and client secret can be generated using the Looker API3 Key generation in the users page in Looker. To generate the credentials, navigate to Admin -> Users -> API3 Keys and select Edit Keys. The following screenshots show the locations of each step:
+
+### Usage Notes
+
+After connecting with Looker, measures and dimensions need to be converted into metrics. This can be done in two ways:
+
+1. Measures and dimensions will automatically be available in the Report builder and can be converted to metrics in the Data section of the Report builder. Any metrics configured here will be created and available throughout the application.
+2. Metrics can be imported through the Metric import flow on the metrics page.
