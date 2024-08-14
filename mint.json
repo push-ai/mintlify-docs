@@ -129,5 +129,15 @@
     "ga4": {
       "measurementId": "G-2NHQ60ZXN8"
     }
-  }
+  },
+  "redirects": [
+    {
+      "source": "/semantic-layer-integrations/cube",
+      "destination": "/data-sources/semantic-layers/cube-cloud"
+    },
+    {
+      "source": "/semantic-layer-integrations/dbt-semantic-layer",
+      "destination": "/data-sources/semantic-layers/dbt"
+    }
+  ]
 }
