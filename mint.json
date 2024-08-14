@@ -28,14 +28,14 @@
   "tabs": [],
   "anchors": [
     {
-      "name": "Documentation",
-      "icon": "book-open-cover",
-      "url": "https://mintlify.com/docs"
-    },
-    {
       "name": "Book a Demo",
       "icon": "calendar",
       "url": "https://calendly.com/d/g3s-mwy-jpb/push-ai-intro"
+    },
+    {
+      "name": "Open App",
+      "icon": "browser",
+      "url": "https://app.push.ai"
     },
     {
       "name": "Website",

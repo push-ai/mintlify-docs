@@ -1,36 +1,30 @@
 ---
 title: "Slack"
-description: "Display inline code and code blocks"
+description: "Receive Subscriptions and Reports where you already work in Slack."
 ---
 
-## Basic
+## Setup
 
-### Inline Code
+<Note>You may need to contact your Slack administrator for approval.</Note>
 
-To denote a `word` or `phrase` as code, enclose it in backticks (`).
+1. Navigate to [**Settings**](https://app.push.ai/settings) > [**Integrations**](https://app.push.ai/settings).
+2. Click **"Connect"** under the Slack integration
+   and complete the flow.
 
-```
-To denote a `word` or `phrase` as code, enclose it in backticks (`).
-```
+## User Guide
 
-### Code Block
+### Selecting Channels
 
-Use [fenced code blocks](https://www.markdownguide.org/extended-syntax/#fenced-code-blocks) by enclosing code in three backticks and follow the leading ticks with the programming language of your snippet to get syntax highlighting. Optionally, you can also write the name of your code after the programming language.
+Reports, insights and other resources can be delivered via shared channels, private channels and direct messages. To send to a private channel, you must first invite the Push.ai Slack application by typing `@push.ai`.
 
-```java HelloWorld.java
-class HelloWorld {
-    public static void main(String[] args) {
-        System.out.println("Hello, World!");
-    }
-}
-```
+### Custom Emojis
 
-````md
-```java HelloWorld.java
-class HelloWorld {
-    public static void main(String[] args) {
-        System.out.println("Hello, World!");
-    }
-}
-```
-````
+We recommend adding our custom emoji pack to your Slack workspace to leverage our complete design for Slack:
+
+1. Download Push.ai's custom emoji pack [here](/push-ai_emoji_pack.zip)
+2. Upload the emoji's to your Slack workspace.
+
+<Warning>
+  Be mindful of emoji names when uploading emojis. Emoji names should match the
+  naming convention in the files.
+</Warning>
