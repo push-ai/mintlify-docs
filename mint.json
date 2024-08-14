@@ -98,6 +98,8 @@
             "business-graph/ai-agent"
           ]
         },
+        "reports/reports",
+        "subscriptions/subscriptions",
         {
           "group": "Destinations",
           "icon": "comments",
@@ -107,8 +109,6 @@
             "destinations/microsoft-teams"
           ]
         },
-        "reports/reports",
-        "subscriptions/subscriptions",
         "users-and-roles/users-and-roles"
       ]
     },
