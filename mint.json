@@ -77,7 +77,8 @@
                 "data-sources/warehouses/redshift",
                 "data-sources/warehouses/postgres"
               ]
-            }
+            },
+            "data-sources/caching"
           ]
         },
         {

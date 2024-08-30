@@ -1,0 +1,33 @@
+---
+title: Caching
+description: "Understand how caching and datasource queries work in Push.ai."
+---
+
+Push.ai uses a caching strategy to optimize application performance, while reducing the load on your data sources.
+
+## How it works?
+
+Push.ai queries datasources through two methods:
+
+1. **Calculations**: metric and dimension queries using one of our [calculations](/business-objects/metrics#calculations).
+2. **Time-series**: metric and dimension queries using a daily time grain.
+
+## When is caching used?
+
+Caching is used when querying both calculations and timeseries data. Push.ai implements a caching strategy for each unique metric-dimension combination. For each combination, we maintain a daily cache, meaning that we will query that specific combination from the data source at most once per day.
+
+## When are datasource queries triggered?
+
+Push.ai queries datasources using two methods:
+
+1. **In-app Exploration**: Datasource queries are triggered when you interact with a metrics and dimension in the Push.ai UI.
+2. **Scheduled Updates**: Datasource queries are triggered on a schedule defined in both Reports and Subscriptions. With Subscriptions, datasource queries are triggered for each Business Object a user is subscribed to, in addition to any related Business Objects. Related objects include any related metrics and are limited to [AI-enabled dimensions](/business-objects/dimensions#ai-enabled-dimensions) only.
+
+<Info>
+  If multiple users are subscribed to the same Business Object, the datasource
+  query will be triggered once for each user.
+</Info>
+
+## When is datasource compute not used?
+
+Datasource compute is not used in any of Push.ai's advanced analytics or AI applications. This includes time-series modeling, such as outlier detection and forecasting. In addition, Push.ai's AI systems combine the existing calculations with large language models, and do not use additional datasource compute.
