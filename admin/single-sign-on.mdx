@@ -1,0 +1,77 @@
+---
+title: "Single Sign-On (SSO)"
+description: "Configure SSO authentication for your Push.ai organization"
+---
+
+# Single Sign-On Integration
+
+Push.ai supports using Identity Providers (IdP) such as Okta to control authentication through single sign-on (SSO). We also support provisioning and deprovisioning Push.ai users along with managing their role assignments through SCIM (directory sync).
+
+## Setting up SSO
+
+Push.ai supports the SAML protocol for single sign-on authentication. To initiate setup, contact our support team at support@push.ai. We'll provide specific instructions and a test environment for setting up Push.ai with your preferred IdP.
+
+### Post-Integration Changes
+
+After completing the SSO integration:
+
+- Users will no longer be able to log in with their previous Push.ai authentication method (username & password or Google)
+- Attempting to use previous authentication methods will redirect users to the SSO login page
+- Users will need to input their email, which will use the domain to redirect to your IdP for sign-in
+- Users can log in directly from your IdP by clicking on the Push.ai application integration
+
+<Warning>
+**Email Requirements**
+
+The primary email of each user assigned to Push.ai in your IdP must match their Push.ai user's email. Otherwise, they won't be able to log in to their Push.ai account.
+
+</Warning>
+
+## SCIM Configuration
+
+### Overview
+
+SCIM (System for Cross-domain Identity Management) enables you to:
+
+- Create and delete Push.ai users directly within your IdP
+- Update user information (including email)
+- Manage Push.ai role assignments
+
+### Required Attributes
+
+In addition to standard attributes (`id`, `emails`, `first_name`, `last_name`), Push.ai requires the following custom attribute:
+
+`roles` → `<name_of_push_ai_role_1>`
+Examples: `Admin`, `Data`, or `NormalUser`
+
+<Note>
+  **Important Notes about Roles** - Role assignments must be non-empty -
+  SCIM-enabled organizations do not have default roles - All role assignments
+  must be explicitly managed through your IdP - Role names are case-insensitive
+</Note>
+
+### Initial Synchronization
+
+During initial SCIM setup:
+
+1. We match IdP users with existing Push.ai users by primary email
+2. Matched users will be linked to their IdP identity
+3. Future updates (including email changes) will sync automatically
+4. New IdP users without matching Push.ai accounts will have accounts provisioned automatically
+
+### User Management
+
+- User assignments in your IdP automatically sync to Push.ai in real-time
+- Creating, editing, and deleting users must be done through your IdP
+- Direct user management in Push.ai is restricted for SSO-enabled organizations
+
+### Role Management
+
+- Creating and editing roles must still be done within Push.ai by Admins
+- Role assignments to users must be managed in your IdP using the `roles` attribute
+- Available roles include: Admin, Data, and Normal User
+
+<Note>
+  For detailed setup instructions specific to your IdP or additional support,
+  please contact our support team at support@push.ai
+</Note>
