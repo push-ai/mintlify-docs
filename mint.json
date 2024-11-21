@@ -110,7 +110,11 @@
             "destinations/microsoft-teams"
           ]
         },
-        "users-and-roles/users-and-roles"
+        {
+          "group": "Admin",
+          "icon": "user-group-simple",
+          "pages": ["admin/users-and-roles", "admin/single-sign-on"]
+        }
       ]
     },
     {
