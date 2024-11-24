@@ -118,6 +118,10 @@
       ]
     },
     {
+      "group": "Changelog",
+      "pages": ["changelog/product-updates"]
+    },
+    {
       "group": "Legal",
       "pages": [
         "legal/data-processing-agreement",
