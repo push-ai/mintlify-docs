@@ -87,7 +87,8 @@
           "pages": [
             "business-objects/metrics",
             "business-objects/dimensions",
-            "business-objects/dimension-values"
+            "business-objects/dimension-values",
+            "business-objects/artifacts"
           ]
         },
         {
@@ -95,10 +96,19 @@
           "icon": "diagram-project",
           "pages": [
             "business-graph/how-it-works",
-            "business-graph/business-graph",
-            "business-graph/ai-agent"
+            "business-graph/business-graph"
           ]
         },
+        {
+          "group": "Knowledge",
+          "icon": "react",
+          "pages": [
+            "knowledge/how-it-works",
+            "knowledge/use-cases",
+            "knowledge/knowledge-integrations"
+          ]
+        },
+        "query-agent/query-agent",
         "reports/reports",
         "subscriptions/subscriptions",
         {
