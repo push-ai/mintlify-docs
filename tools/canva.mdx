@@ -1,0 +1,130 @@
+Canva offers a drag-and-drop design suite for creating social media graphics, presentations, and marketing materials with prebuilt templates and a vast element library
+
+<Accordion title="Access user specific brand templates list">
+This year, brand template ids will change; integrations storing them must update within 6 months. also, api use requires canva enterprise membership.
+</Accordion>
+
+<Accordion title="Create canva design with optional asset">
+Create a new canva design using a preset or custom dimensions, and add an asset with `asset id` from a user's project using relevant apis.
+</Accordion>
+
+<Accordion title="Create comment reply in design">
+This preview api allows replying to comments within a design on canva, with a limit of 100 replies per comment. users should note potential unannounced changes, and that preview apis are not eligible for public integrations.
+</Accordion>
+
+<Accordion title="Create design comment in preview api">
+This api is in preview and may change without notice; integrations using it won't pass review. it allows creating comments on a design, with a limit of 1000 comments per design.
+</Accordion>
+
+<Accordion title="Create user or sub folder">
+This api creates a folder in a canva user's projects at the top level or within another folder, returning the new folder's id and additional details upon success.
+</Accordion>
+
+<Accordion title="Delete asset by id">
+You can delete an asset by specifying its `assetid`. this operation mirrors the behavior in the canva ui. deleting an item moves it to the trash. deleting an asset doesn't remove it from designs that already use it.
+</Accordion>
+
+<Accordion title="Exchange oauth 2 0 access or refresh token">
+The oauth 2.0 endpoint issues time-limited (4-hour) access tokens of up to 4kb for user authorization via codes or refresh tokens. it requires client id/secret for authentication.
+</Accordion>
+
+<Accordion title="Fetch asset upload job status">
+Summarize asset upload outcome by repeatedly calling the endpoint until a 'success' or 'failed' status is received after using the create asset upload job api.
+</Accordion>
+
+<Accordion title="Fetch design metadata and access information">
+Gets the metadata for a design. this includes owner information, urls for editing and viewing, and thumbnail information.
+</Accordion>
+
+<Accordion title="Fetch canva connect signing public keys">
+The api for verifying canva webhooks, 'connect/keys,' is in preview, meaning unstable, not for public integrations, and provides a rotating jwk for signature verification to prevent replay attacks. cache keys for efficiency.
+</Accordion>
+
+<Accordion title="Fetch current user details">
+Returns the user id, team id, and display name of the user account associated with the provided access token.
+</Accordion>
+
+<Accordion title="Get design export job result">
+Get the outcome of a canva design export job; if done, receive download links for the design’s pages. for details, visit the create design export job api documentation.
+</Accordion>
+
+<Accordion title="Initiates canva design export job">
+Canva's new job feature exports designs in multiple formats using a design id, with provided download links. the export status can be tracked via an api. exports with 'pro' quality may fail if the design contains unpaid premium elements.
+</Accordion>
+
+<Accordion title="Initiate canva design autofill job">
+Upcoming brand template id updates require migration within 6 months. canva enterprise users can auto-fill designs using various data types, including experimental chart data. monitor jobs with specific api.
+</Accordion>
+
+<Accordion title="Retrieve design autofill job status">
+Api users with canva enterprise membership can retrieve design autofill job results, potentially requiring multiple requests until a `success` or `failed` status is received.
+</Accordion>
+
+<Accordion title="Retrieve folder details by id">
+Gets the name and other details of a folder using a folder's `folderid`.
+</Accordion>
+
+<Accordion title="Retrieve asset metadata by id">
+You can retrieve the metadata of an asset by specifying its `assetid`.
+</Accordion>
+
+<Accordion title="List folder items by type with sorting">
+Lists the items in a folder, including each item's `type`. folders can contain: - other folders. - designs, such as instagram posts, presentations, and documents ([canva docs](https://www.canva.com/create/documents/)). - image assets.
+</Accordion>
+
+<Accordion title="Remove folder and move contents to trash">
+Deletes a folder by moving the user's content to trash and reassigning other users' content to their top-level projects.
+</Accordion>
+
+<Accordion title="Canva Retrieve User Profile Data">
+Currently, this returns the display name of the user account associated with the provided access token. more user information is expected to be included in the future.
+</Accordion>
+
+<Accordion title="Retrieve brand template dataset definition">
+Canva's brand template ids will change later this year, including a 6-month integration migration. api access requires enterprise membership, providing autofill for images, text, and charts, although chart data could change during preview.
+</Accordion>
+
+<Accordion title="Revoke oauth tokens">
+Revoke a refresh token to end its lineage and user consent, requiring re-authentication. authenticate using either basic access with base64-encoded credentials or body parameters with client id and secret.
+</Accordion>
+
+<Accordion title="Retrieve canva enterprise brand template metadata">
+Upcoming update will change brand template ids; integrations must migrate within 6 months. api use requires canva enterprise membership.
+</Accordion>
+
+<Accordion title="Retrieve a specific design comment">
+This preview api is subject to unannounced changes and can't be used in public integrations. it retrieves a comment, details of which are on canva help center.
+</Accordion>
+
+<Accordion title="List canva user design metadata with filters and sorting">
+Provides a summary of canva user designs, includes search filtering, and allows showing both self-created and shared designs with sorting options.
+</Accordion>
+
+<Accordion title="Move item to specified folder">
+Transfers an item to a different folder by specifying both the destination folder's id and the item's id. if the item is in various folders, an error occurs; manual relocation via canva ui is required.
+</Accordion>
+
+<Accordion title="Retrieve design import job status">
+Gets the status and results of design import jobs created using the [create design import job api](https://www.canva.dev/docs/connect/api-reference/design-imports/create-design-import-job/).
+</Accordion>
+
+<Accordion title="Retrieve app public key set">
+Returns the json web key set (public keys) of an app. these keys are used to verify jwts sent to app backends.
+</Accordion>
+
+<Accordion title="List design pages with pagination">
+Preview api for canva: subject to unannounced changes and not for public integrations. lists metadata for design pages with optional `offset` and `limit`; not applicable to all design types.
+</Accordion>
+
+<Accordion title="Update folder details by id">
+Updates a folder's details using its `folderid`. currently, you can only update a folder's name.
+</Accordion>
+
+<Accordion title="Update asset s name and tags by id">
+You can update the name and tags of an asset by specifying its `assetid`. updating the tags replaces all existing tags of the asset.
+</Accordion>
+
+<Accordion title="Validate oauth token properties">
+Check an access token's validity and properties via introspection, requiring authentication. use basic access (base64 encoded `client id:client secret`) or body parameters for credentialing.
+</Accordion>
+

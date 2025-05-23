@@ -1,0 +1,62 @@
+Tool to help teams organize, track, and manage their work.
+
+<Accordion title="Create tag in workspace">
+Creates a new tag within a specified asana workspace. this endpoint allows you to add a custom label (tag) that can be attached to tasks for better organization and categorization. use this when you need to introduce a new way of grouping or filtering tasks across projects within a workspace. the created tag can have a name, color, description, and designated followers. it's particularly useful for implementing consistent task categorization schemes or setting up new organizational systems within your asana workspace. note that tags are workspace-specific and cannot be shared across different workspaces. this endpoint doesn't attach the tag to any tasks; it only creates the tag for future use.
+</Accordion>
+
+<Accordion title="Create task comment">
+This tool creates a comment (story) on an existing asana task. the comment is authored by the currently authenticated user and is timestamped when the server receives the request. it requires a task id and a non-empty comment text.
+</Accordion>
+
+<Accordion title="Create subtask">
+Creates a new subtask under a specified parent task in asana. this tool allows users to create subtasks with required parameters (task gid and name) and optional parameters (notes, assignee, due on, due at, completed, followers). it returns the complete subtask object containing details like gid, name, type, created at, completion status, assignee, due dates, notes, and parent task information.
+</Accordion>
+
+<Accordion title="Add task to section">
+This tool will add an existing task to a specific section in an asana project. it handles the placement of tasks within project sections, distinguishing it from creating or updating tasks, and ensures tasks are organized properly within the project structure.
+</Accordion>
+
+<Accordion title="Retrieve user task list by id">
+Retrieves a specific user task list from asana by its unique identifier (gid). this endpoint allows developers to fetch detailed information about a user's task list, including associated tasks and metadata. it's particularly useful for integrations that need to display or process a user's tasks in external applications or workflows. the endpoint returns the current state of the task list, which may include task details, assignee information, and custom field data. use this when you need to access up-to-date information about a user's tasks or when syncing task data with other systems. note that this endpoint only retrieves data and does not modify the task list.
+</Accordion>
+
+<Accordion title="Retrieve list of tasks">
+The retrievetasks endpoint allows you to fetch a list of tasks from a specified asana workspace. this get request to /tasks is essential for retrieving task information, enabling applications to sync task data, generate reports, or display task lists. the endpoint supports filtering completed tasks and implements pagination for handling large result sets efficiently. it's particularly useful for building integrations that need to keep task information up-to-date across different systems or for creating custom dashboards and reports based on asana task data. note that while this endpoint provides task retrieval functionality, it does not support creating, updating, or deleting tasks, which would require separate api calls.
+</Accordion>
+
+<Accordion title="Get user list">
+Retrieves a list of users in the asana platform. this endpoint allows you to fetch information about users, such as their names, email addresses, and other profile details. it's particularly useful for getting an overview of team members, managing user accounts, or synchronizing user data with external systems. the endpoint supports pagination to handle large sets of users efficiently. you can filter users by workspace or team, making it easier to manage users within specific organizational units. note that the response will only include users that the authenticated user has permission to see, based on their access level and workspace memberships.
+</Accordion>
+
+<Accordion title="List projects">
+Retrieves a list of projects from the user's asana account. this endpoint allows users to fetch information about all available projects, providing an overview of ongoing work and team collaborations. it's particularly useful for project managers and team leads who need to monitor multiple projects or for integrations that require syncing project data with other systems. the endpoint returns basic project details, which may include project names, ids, and status. it should be used when you need a comprehensive view of all projects in the asana workspace. note that this endpoint might not provide detailed task information within each project; for that, you would need to use a separate endpoint specific to tasks.
+</Accordion>
+
+<Accordion title="Update task by task gid">
+The updatetask endpoint allows you to modify an existing task in asana by updating its properties. this powerful tool enables you to change various aspects of a task, including its name, description, due dates, assignee, custom fields, and more. it's particularly useful when you need to adjust task details as project requirements evolve or when updating task progress. the endpoint requires the task's unique identifier (gid) and accepts a json object containing the fields to be updated. while it offers extensive customization, it's important to note that some fields are read-only or have specific constraints, and certain updates may have cascading effects on related objects like projects or subtasks.
+</Accordion>
+
+<Accordion title="Retrieves list of workspaces">
+Retrieves a list of workspaces accessible to the authenticated user in asana. this endpoint provides essential information about the workspaces, which are the top-level organizational units in asana where teams collaborate on projects and tasks. use this endpoint to get an overview of all workspaces the user has access to, including both personal and organizational workspaces. the response will likely include details such as workspace ids, names, and whether they are personal or organizational. this endpoint is particularly useful for applications that need to enumerate available workspaces or when implementing workspace selection functionality.
+</Accordion>
+
+<Accordion title="Retrieve task by gid">
+Retrieves detailed information about a specific task in asana using its unique identifier. this endpoint allows you to fetch comprehensive data about a single task, including its title, description, assignee, due date, project associations, and other relevant metadata. it's particularly useful when you need to access or display the current state and details of a specific task within your application or workflow. the endpoint should be used when you have a task's gid and require its full information. note that this endpoint only provides read access to task data and cannot be used to modify the task. for real-time task updates, consider implementing webhook notifications in addition to using this endpoint.
+</Accordion>
+
+<Accordion title="Create task in asana with specific details">
+Creates a new task in asana with the specified properties. this endpoint allows you to create a detailed task by setting various attributes such as name, description, assignee, due date, project associations, and custom fields. it's particularly useful for programmatically creating tasks based on external triggers or as part of automated workflows. the endpoint supports creating standalone tasks, tasks within projects, and subtasks. when creating a task, you can set its initial state, including completion status and dependencies. note that some fields are create-only, meaning they can be set during creation but must be modified through separate endpoints afterward. the response will include the full details of the created task, including system-generated fields like creation timestamp and task gid.
+</Accordion>
+
+<Accordion title="Retrieve tasks for project">
+Retrieves a list of tasks associated with a specific project in asana. this endpoint allows you to fetch all tasks that belong to a given project, providing a comprehensive view of the project's workload. use this when you need to get an overview of all tasks within a project, such as for progress tracking, workload assessment, or reporting purposes. the endpoint returns basic task information; however, it may not include full details of each task, so individual task queries might be necessary for in-depth information. keep in mind that for large projects, the response may be paginated, requiring multiple requests to retrieve all tasks.
+</Accordion>
+
+<Accordion title="Create new project resource">
+Creates a new project in asana with the specified attributes. this endpoint allows you to set up a project with various details such as name, description, due date, team association, and custom fields. it's used when you need to programmatically create a new project within your asana workspace or team. the endpoint returns the full details of the created project, including its unique identifier (gid) which can be used for further operations or references.
+</Accordion>
+
+<Accordion title="Retrieve project by gid">
+Retrieves detailed information about a specific asana project using its unique identifier. this endpoint allows users to fetch comprehensive data about a project, including its name, description, status, due dates, team members, and associated tasks. it's particularly useful when you need up-to-date information about a project's current state or when integrating asana project data into external systems. the endpoint returns a single project object, providing a snapshot of the project at the time of the request. note that this endpoint does not return the full list of tasks within the project; for that, you would need to use a separate endpoint specifically for retrieving project tasks.
+</Accordion>
+

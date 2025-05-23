@@ -1,0 +1,166 @@
+Calendly is an appointment scheduling tool that automates meeting invitations, availability checks, and reminders, helping individuals and teams avoid email back-and-forth
+
+<Accordion title="Cancel event">
+Cancels specified event.
+</Accordion>
+
+<Accordion title="Get organization membership">
+Returns information about a user's organization membership
+</Accordion>
+
+<Accordion title="Get current user">
+Returns basic information about your user account.
+</Accordion>
+
+<Accordion title="List event type hosts">
+Fetch list of event type hosts
+</Accordion>
+
+<Accordion title="Get routing form">
+Get a specified routing form.
+</Accordion>
+
+<Accordion title="List event type available times">
+Returns a list of available times for an event type within a specified date range. date range can be no greater than 1 week (7 days). **note:** * this endpoint does not support traditional keyset pagination.
+</Accordion>
+
+<Accordion title="Get user">
+Returns information about a specified user.
+</Accordion>
+
+<Accordion title="List group relationships">
+Returns a list of group relationships - a given owner can have one membership record, but multiple admin records
+</Accordion>
+
+<Accordion title="List organization memberships">
+The endpoint lists organization memberships for users and all users in an organization, and retrieves the organization uri, using `user` and `organization` options.
+</Accordion>
+
+<Accordion title="List groups">
+Returns a list of groups.
+</Accordion>
+
+<Accordion title="Get user availability schedule">
+This will return the availability schedule of the given uuid.
+</Accordion>
+
+<Accordion title="List organization invitations">
+Returns a list of organization invitations that were sent to the organization's members.
+</Accordion>
+
+<Accordion title="Get event">
+Returns information about a specified event.
+</Accordion>
+
+<Accordion title="Remove user from organization">
+Removes a user from an organization. notes: * to remove users, the caller must have admin rights for the organization * an organization owner can’t be removed
+</Accordion>
+
+<Accordion title="Invite user to organization">
+Invites a user to an organization.
+</Accordion>
+
+<Accordion title="Get webhook subscription">
+Get a specified webhook subscription.
+</Accordion>
+
+<Accordion title="Revoke user s organization invitation">
+Use this to revoke an organization invitation to an organization. once revoked, the invitation link that was sent to the invitee is no longer valid.
+</Accordion>
+
+<Accordion title="List activity log entries">
+&lt;!-- theme: info --&gt; &gt; this endpoint requires an &lt;strong&gt;enterprise&lt;/strong&gt; subscription. returns a list of activity log entries
+</Accordion>
+
+<Accordion title="List events">
+The api returns event lists, filtered by 'organization', 'user', or 'group'. admin privileges are needed for organization/group filters. admins can also view events of a specific user or group within their org. users can view their personal events.
+</Accordion>
+
+<Accordion title="Create invitee no show">
+Marks an invitee as a no show.
+</Accordion>
+
+<Accordion title="List outgoing communications">
+&lt;!-- theme: info --&gt; &gt; this endpoint requires an &lt;strong&gt;enterprise&lt;/strong&gt; subscription. returns a list of outgoing sms communications.
+</Accordion>
+
+<Accordion title="List event invitees">
+Returns a list of invitees for an event.
+</Accordion>
+
+<Accordion title="Create one off event type">
+Creates one-off event type
+</Accordion>
+
+<Accordion title="Get event invitee">
+Returns information about a specified invitee (person invited to an event).
+</Accordion>
+
+<Accordion title="Get event type">
+Returns information about a specified event type.
+</Accordion>
+
+<Accordion title="List user busy times">
+Fetches a week-max list of user events, both internal and external (if conflict check set), in ascending order without keyset pagination support.
+</Accordion>
+
+<Accordion title="Create share">
+Calendly's "customize once and share" feature lets you tailor one-on-one events for each invitee without creating a new event type. unspecified parameters default to the original event settings.
+</Accordion>
+
+<Accordion title="List routing forms">
+Get a list of routing forms for a specified organization.
+</Accordion>
+
+<Accordion title="Get group">
+Returns information about a specified group.
+</Accordion>
+
+<Accordion title="List user availability schedules">
+Returns the availability schedules of the given user.
+</Accordion>
+
+<Accordion title="Get group relationship">
+Returns a group relationship by uuid
+</Accordion>
+
+<Accordion title="Create single use scheduling link">
+Creates a single-use scheduling link.
+</Accordion>
+
+<Accordion title="Get invitee no show">
+Returns information about a specified invitee no show.
+</Accordion>
+
+<Accordion title="Get organization invitation">
+Returns an organization invitation that was sent to the organization's members.
+</Accordion>
+
+<Accordion title="Delete invitee no show">
+Undoes marking an invitee as a no show.
+</Accordion>
+
+<Accordion title="Delete invitee data">
+Use this endpoint with an enterprise subscription to request the removal of invitee data from past organization events. deletion may take up to a week.
+</Accordion>
+
+<Accordion title="Create webhook subscription">
+Webhook subscriptions can be created for organizations, users, or groups. organizational ones cover all events; user/group ones are entity-specific. some events support several scopes, so create subscriptions accordingly.
+</Accordion>
+
+<Accordion title="List user s event types">
+This endpoint retrieves all event types linked to a particular user within an organization, requiring either `organization` or `user` as mandatory query parameters.
+</Accordion>
+
+<Accordion title="Delete scheduled event data">
+Enterprise subscription holders can use this endpoint to request deletion of scheduled events data within a past 24-month range; process may take up to 7 days.
+</Accordion>
+
+<Accordion title="Delete webhook subscription">
+Delete a webhook subscription.
+</Accordion>
+
+<Accordion title="List webhook subscriptions">
+Get a list of webhook subscriptions for a specified organization or user.
+</Accordion>
+

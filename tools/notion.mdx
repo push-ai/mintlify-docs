@@ -1,0 +1,94 @@
+Notion centralizes notes, docs, wikis, and tasks in a unified workspace, letting teams build custom workflows for collaboration and knowledge management
+
+<Accordion title="Fetch All Unresolved Comments">
+Retrieves a list of un-resolved comment objects from a page or block.
+</Accordion>
+
+<Accordion title="Query Database">
+Get list of rows from a notion database filtered and sorted. each row in notion database is represented as a page. each column in the database is represented as a property. to use sorting, filtering find all the properties in the database by using the fetch database action. the response may contain fewer than page size of results and supports pagination.
+</Accordion>
+
+<Accordion title="Fetch Database">
+Retrieves a database object — information that describes the structure and columns of a database — for a provided database id. the response adheres to any limits to an integration’s capabilities. to fetch database rows rather than columns, use the query a database endpoint.
+</Accordion>
+
+<Accordion title="Fetch Notion Blocks">
+Retrieves a block object using the id specified. if the block returned contains the key has children: true, use the retrieve block children endpoint to get the list of children. to retrieve page content for a specific page, use retrieve block children and set the page id as the block id.
+</Accordion>
+
+<Accordion title="Fetch Notion Block Children">
+Returns a paginated array of child block objects contained in the block using the id specified. page content is represented by block childrens. use this function to get complete content of page. returns only the first level of children for the specified block. the response may contain fewer than page size of results. this endpoint requires an integration to have read content capabilities.
+</Accordion>
+
+<Accordion title="Fetch Database Row">
+Each row in database is a page in notion so page id & row id is a uuid of that page. id of the notion page to fetch. to fetch content of a page, "fetch block children" action can be used.
+</Accordion>
+
+<Accordion title="Get About Me">
+Gets 1. the user id associated with the notion integration. 2. the information about notion account like name of organisation. to get more details about user, you can use the user id to get user details
+</Accordion>
+
+<Accordion title="Search_List Notion Page">
+Search a page in notion. keep the value of parameter query "" to get list of all pages and their ids. this api can be used to search for all available pages currently to get their page ids. it can also be used to find the relevant page id with a specific title or content. if you want to create a page and need all possible parent page ids, then use this api to fetch it. if the response is empty, do a search with empty query to get list of all pages that have been given access to.
+</Accordion>
+
+<Accordion title="Add Content Notion Page">
+Adds a single content block to a notion page. multiple calls needed for multiple blocks. note: only supports adding to notion pages. blocks that can contain children: - page (any block type) - toggle (any nested content) - to-do (nested to-dos/blocks) - bulleted list (nested lists/blocks) - numbered list (nested lists/blocks) - callout (child blocks) - quote (nested blocks)
+</Accordion>
+
+<Accordion title="Get About User">
+Get information about the user account using the user id
+</Accordion>
+
+<Accordion title="Get Page Property">
+Action to retrieve a specific property value from a notion page.
+</Accordion>
+
+<Accordion title="Archive Notion Page">
+Archive or unarchive a page in notion.
+</Accordion>
+
+<Accordion title="Append Block Children">
+This tool allows appending new child blocks to an existing block in notion. it specifically handles appending blocks to an existing parent block rather than creating new page content. the endpoint uses a patch request to `/v1/blocks/\{block id\}/children` and facilitates adding new content to existing blocks, extending lists or toggle blocks, inserting new blocks between existing content, and building nested block structures.
+</Accordion>
+
+<Accordion title="Create Notion Page">
+Create a page in notion under page with id parent id. * if a specific parent id is given, directly create the page under that parent. * if no parent id is given, search for all the pages in notion workspace and find the one which is appropriate and select it as parent page. the parent id required is a unique uuid representing the parent page id which can be found notion search notion page tool. this is a new agent format for adding content to a notion page. example of a new format is \{ "parent id": "59833787-2cf9-4fdf-8782-e53db20768a5", "title": "my new report", "icon": "😻", "cover": "https://google.com/image.png", \} don't use the old format, it is not compatible with agents
+</Accordion>
+
+<Accordion title="Delete Blocks">
+Sets a block object, including page blocks, to archived: true using the id specified. this can be used to delete a block, page, or database. note: in the notion ui application, this moves the block to the "trash" where it can still be accessed and restored. to restore the block with the api, use the update a block or update page respectively.
+</Accordion>
+
+<Accordion title="Update Row Database">
+Each row in the database is a new page in notion. so updating a row in the database is the same as updating a property of a page in notion. this action updates a specific value in a row in the notion database. for different column/property types --&gt; value should be -title,rich text - text ex. "hello world" -number - number ex. 23.4 -select - select ex. "india" -multi select - multi select comma separated values ex. "india,usa" -date - format ex. "2021-05-11t11:00:00.000-04:00", -people - comma separated ids of people ex. "123,456" -url - a url. -files - comma separated urls -checkbox - "true" or "false"
+</Accordion>
+
+<Accordion title="Update Database Schema">
+Update a database schema in notion. using this you can change the columns/properties of a database.
+</Accordion>
+
+<Accordion title="List Users">
+List all users returns a paginated list of users for the workspace. the response may contain fewer than page size of results. guests are not included in the response.
+</Accordion>
+
+<Accordion title="Insert Row Database">
+Each row in the database is a new page in notion. inserting a row in the database creates a page in notion, and includes extra properties as a structured list of key-value pairs for all columns in the database. this action locates the correct database id in the notion workspace and inserts a new page. for each property type, the expected format is: - title, rich text: "text" (e.g., "hello world") (important: max 2000 characters, longer text will be truncated) - number: number (e.g., 23.4) - select: select (e.g., "india") - multi select: array of strings (e.g., "india,usa") - date: iso 8601 format (e.g., "2021-05-11t11:00:00.000-04:00") - people: array of user ids (e.g., "123,456") - url: a url - files: array of urls - checkbox: true or false
+</Accordion>
+
+<Accordion title="Update block">
+Updates an existing block within a notion page. this action supports modifying various block types such as paragraphs, headings, list items, toggles, and to-do items using the patch /v1/blocks/\{block id\} endpoint.
+</Accordion>
+
+<Accordion title="Duplicate Page">
+Duplicates a notion page with all its content and properties. this action creates an exact copy of an existing notion page, including all its content, properties, and nested blocks. the duplicate can be created in the same or a different parent location.
+</Accordion>
+
+<Accordion title="Create Comment">
+Create a comment on a page in notion. there are two locations where a new comment can be added (via the public api). to add a new comment to a 1. page, a parent object with a page id must be provided in the body params. 2. existing discussion thread, a discussion id string must be provided in the body params. (inline comments to start a new discussion thread cannot be created via the public api.) either the parent.page id or discussion id parameter must be provided — not both.
+</Accordion>
+
+<Accordion title="Create Notion Database">
+Creates a database as a subpage in the specified parent page, with the specified properties schema/columns. currently, the parent of a new database must be a notion page. you cannot update the schema of an existing database using this action. use update schema database action to update the schema or add/remove columns. only use this to create a new database. the title will be automatically converted to notion's rich text format internally.
+</Accordion>
+

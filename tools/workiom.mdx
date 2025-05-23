@@ -1,0 +1,15 @@
+Workiom provides APIs for automating workflows, integrating with
+    various tools, and building custom applications.
+
+<Accordion title="Create record">
+Creates a new record in a specified workiom list. this tool creates a record with basic field types like text, numbers, dates, and static list items. the record data should be provided as a json object where each key is a field id and the value matches the expected data type for that field.
+</Accordion>
+
+<Accordion title="Get all lists">
+Get all lists from a workiom workspace. this action fetches all available lists in a workiom workspace. it's a fundamental tool that serves as a prerequisite for most other operations (like creating records, which require a list id). the action supports pagination and can optionally include field definitions for each list.
+</Accordion>
+
+<Accordion title="Get records">
+Retrieves records from a specified list in workiom. this tool fetches records from a specified list with optional filtering, sorting, and pagination capabilities. the response includes the records along with summary information and total count.
+</Accordion>
+

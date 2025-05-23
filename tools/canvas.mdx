@@ -1,0 +1,321 @@
+The Canvas API provides programmatic access to various learning
+    management features of the Canvas platform, including courses, users,
+    enrollments, grades, and more. It supports OAuth2 for secure
+    authentication and authorization.
+
+<Accordion title="Create Account Notification">
+Creates a new global notification for an account in canvas.
+</Accordion>
+
+<Accordion title="Get Enrollment by ID">
+Get an enrollment object by enrollment id
+</Accordion>
+
+<Accordion title="List Available Reports">
+Lists available reports in canvas.
+</Accordion>
+
+<Accordion title="List Assignment Submissions">
+Lists assignment submissions in canvas.
+</Accordion>
+
+<Accordion title="Create Page for a Course">
+Creates a page for a course in canvas.
+</Accordion>
+
+<Accordion title="List Pages for a Course">
+Lists pages for a course in canvas.
+</Accordion>
+
+<Accordion title="List Courses for a User">
+Lists courses for a user in canvas. returns a paginated list of active courses for this user. to view the course list for a user other than yourself, you must be either an observer of that user or an administrator.
+</Accordion>
+
+<Accordion title="Create Appointment Group">
+Creates an appointment group in canvas.
+</Accordion>
+
+<Accordion title="Get User Course Progress">
+Returns progress information for a specific user in a course. the user can query their own progress using 'self' as the user id. to query another user's progress, the requester must be a teacher, administrator, or linked observer.
+</Accordion>
+
+<Accordion title="Export Content">
+Exports content in a course in canvas.
+</Accordion>
+
+<Accordion title="List Sent Content Shares">
+Lists sent content shares in canvas.
+</Accordion>
+
+<Accordion title="Retrieve Enrollment Term">
+Retrieves an enrollment term in canvas. note: the specified account must be a root account, not a sub-account. for more details see: https://canvas.instructure.com/doc/api/enrollment terms.html
+</Accordion>
+
+<Accordion title="List Users in Account">
+Lists users in an account in canvas.
+</Accordion>
+
+<Accordion title="Start a Report">
+Starts a report in canvas.
+</Accordion>
+
+<Accordion title="Get Assignment">
+Gets an assignment in canvas.
+</Accordion>
+
+<Accordion title="Get All Assignments">
+Gets all assignments in a course in canvas.
+</Accordion>
+
+<Accordion title="List Quizzes in Course">
+Lists quizzes in a canvas course.
+</Accordion>
+
+<Accordion title="Update File Name">
+Updates the name of a file in canvas.
+</Accordion>
+
+<Accordion title="Translate File Reference">
+Translates a file reference for a course in canvas.
+</Accordion>
+
+<Accordion title="List Submissions">
+Lists submissions for a specific assignment, grader, and date in canvas.
+</Accordion>
+
+<Accordion title="Update Course Settings">
+Updates course settings in canvas.
+</Accordion>
+
+<Accordion title="Get User Participation Analytics">
+Returns page view hits grouped by hour and participation details for a student in a course. page views are returned as a hash with iso8601 dates as keys, bucketed by hour. participations are returned as an array of hashes, sorted oldest to newest.
+</Accordion>
+
+<Accordion title="List Calendar Events for a User">
+Lists calendar events for a user in canvas.
+</Accordion>
+
+<Accordion title="Get Course Activity">
+Gets activity analytics for a course in canvas.
+</Accordion>
+
+<Accordion title="Update Quiz Submission Scores">
+Updates student question scores and comments for a quiz submission.
+</Accordion>
+
+<Accordion title="Update Appointment Group">
+Updates an appointment group in canvas.
+</Accordion>
+
+<Accordion title="Create Assignment">
+Creates an assignment in canvas.
+</Accordion>
+
+<Accordion title="Create Assignment Override">
+Creates an assignment override in canvas.
+</Accordion>
+
+<Accordion title="Update Page for a Course">
+Updates a page for a course in canvas.
+</Accordion>
+
+<Accordion title="List Communication Channels">
+Lists communication channels for a user in canvas.
+</Accordion>
+
+<Accordion title="Upload Submission File">
+Uploads a file to a submission in canvas.
+</Accordion>
+
+<Accordion title="Update User Settings">
+Updates a user's settings in canvas.
+</Accordion>
+
+<Accordion title="Get User Profile">
+Gets a user's profile in canvas.
+</Accordion>
+
+<Accordion title="Upload Course File">
+Uploads a file to a canvas course.
+</Accordion>
+
+<Accordion title="Get Gradebook History Days">
+Returns a list of day objects containing dates and graders who worked on those dates. each day object contains a date and an array of graders who worked on that date.
+</Accordion>
+
+<Accordion title="Update Course">
+Update an existing course
+</Accordion>
+
+<Accordion title="List Communication Messages">
+Lists communication messages for a user in canvas.
+</Accordion>
+
+<Accordion title="Get Current User">
+Gets details of the current user in canvas.
+</Accordion>
+
+<Accordion title="Create Quiz">
+Creates a quiz in canvas.
+</Accordion>
+
+<Accordion title="Get Page for a Course">
+Gets a page for a course in canvas.
+</Accordion>
+
+<Accordion title="Create Calendar Event">
+Create and return a new calendar event
+</Accordion>
+
+<Accordion title="List Submissions from Multiple Assignments">
+Lists submissions for multiple assignments in canvas.
+</Accordion>
+
+<Accordion title="Get Completed Statistics">
+Gets completed statistics for an account in canvas.
+</Accordion>
+
+<Accordion title="Grade or Comment on Submission">
+Grades or comments on a submission in canvas.
+</Accordion>
+
+<Accordion title="Create Communication Channel">
+Creates a communication channel for a user in canvas.
+</Accordion>
+
+<Accordion title="List Content Exports">
+Lists content exports in a course in canvas.
+</Accordion>
+
+<Accordion title="Create Quiz Question">
+Creates a quiz question in canvas.
+</Accordion>
+
+<Accordion title="Create Content Share">
+Creates a content share in canvas. this action allows sharing content directly between two or more users. requires proper authentication and valid user ids.
+</Accordion>
+
+<Accordion title="List Uncollated Submission Versions">
+Lists uncollated submission versions for a specific course in canvas.
+</Accordion>
+
+<Accordion title="Delete Appointment Group">
+Deletes an appointment group in canvas.
+</Accordion>
+
+<Accordion title="Get Quiz Submissions">
+Gets all quiz submissions for a quiz in canvas.
+</Accordion>
+
+<Accordion title="List Accounts for Course Admins">
+Lists accounts for course admins in canvas.
+</Accordion>
+
+<Accordion title="List All Folders">
+Lists all folders in a canvas course, user, or group context.
+</Accordion>
+
+<Accordion title="Delete Assignment">
+Deletes an assignment in canvas.
+</Accordion>
+
+<Accordion title="Get Report Status">
+Gets the status of a report in canvas.
+</Accordion>
+
+<Accordion title="List Appointment Groups">
+Gets appointment groups in canvas.
+</Accordion>
+
+<Accordion title="Get Current Statistics">
+Gets current statistics for an account in canvas.
+</Accordion>
+
+<Accordion title="List Course Users">
+Returns the paginated list of users in a course, optionally including their enrollments.
+</Accordion>
+
+<Accordion title="Delete Quiz">
+Deletes a quiz in canvas.
+</Accordion>
+
+<Accordion title="List Folders">
+Lists all folders within the specified folder in canvas.
+</Accordion>
+
+<Accordion title="Create Conversation">
+Creates a conversation in canvas.
+</Accordion>
+
+<Accordion title="Get Single Submission">
+Gets a single submission in canvas.
+</Accordion>
+
+<Accordion title="Get a single Course">
+Gets a single course in canvas.
+</Accordion>
+
+<Accordion title="Delete Folder">
+Deletes a folder in canvas.
+</Accordion>
+
+<Accordion title="Get Current Grades">
+Gets current grades for an account in canvas.
+</Accordion>
+
+<Accordion title="Get User Assignment Analytics">
+Returns assignment analytics data for a specific student in a course. the data includes assignment details, grade statistics, and the student's submission information.
+</Accordion>
+
+<Accordion title="List Files">
+Lists files for a course in canvas.
+</Accordion>
+
+<Accordion title="Get Term Grades">
+Gets department level current data for term grades in canvas.
+</Accordion>
+
+<Accordion title="Get Completed Grades">
+Gets grade distribution data for completed courses in an account in canvas. this action returns a dictionary containing the distribution of grades for students in completed courses. each data point represents one student's final grade in one course. the response contains grade scores (0-100) as keys and the number of students achieving that grade as values. grades are binned to the nearest integer score. required permissions: - account level analytics access - view all grades permission
+</Accordion>
+
+<Accordion title="Get Term Statistics">
+Gets term statistics for an account in canvas.
+</Accordion>
+
+<Accordion title="List Courses">
+Lists all courses in canvas.
+</Accordion>
+
+<Accordion title="List Discussion Topics">
+Returns the paginated list of discussion topics for a course.
+</Accordion>
+
+<Accordion title="Create Enrollment">
+Creates an enrollment in canvas for a user in a course.
+</Accordion>
+
+<Accordion title="Create Module">
+Creates a module in canvas.
+</Accordion>
+
+<Accordion title="Edit Quiz">
+Edits a quiz in canvas.
+</Accordion>
+
+<Accordion title="Create Folder">
+Creates a folder in canvas within the specified context (course, user, group, folder, or account).
+</Accordion>
+
+<Accordion title="Edit Assignment">
+Edits an assignment in canvas.
+</Accordion>
+
+<Accordion title="Create Discussion Topic">
+Creates a new discussion topic for a course in canvas.
+</Accordion>
+
+<Accordion title="Create Course">
+Creates a new course in canvas.
+</Accordion>
+

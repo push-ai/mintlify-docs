@@ -1,0 +1,62 @@
+Bitbucket is a Git-based code hosting and collaboration platform supporting private and public repositories, enabling teams to manage and review code through pull requests and integrations
+
+<Accordion title="Delete repository">
+This tool allows for the permanent deletion of a bitbucket repository. it requires admin access to the repository and the repository:delete scope. it uses the delete endpoint at https://api.bitbucket.org/2.0/repositories/\{workspace\}/\{repo slug\}. important notes include the irreversible nature of this action and the fact that the deletion does not affect any forks of the repository.
+</Accordion>
+
+<Accordion title="Delete issue">
+This tool deletes a specified issue from a bitbucket repository. it requires write access to the repository.
+</Accordion>
+
+<Accordion title="Update issue">
+Action to update an existing issue in a bitbucket repository. this tool allows updating an existing issue in a bitbucket repository. it uses the put /2.0/repositories/\{workspace\}/\{repo slug\}/issues/\{issue id\} endpoint.
+</Accordion>
+
+<Accordion title="Create branch">
+This tool creates a new branch in a specified bitbucket repository. it uses the bitbucket api to create a branch from a specified commit hash.
+</Accordion>
+
+<Accordion title="List workspace members">
+This tool lists all members of a specified bitbucket workspace using the get /2.0/workspaces/\{workspace\}/members api endpoint. it requires the workspace id and supports pagination. the tool is independent and is useful for checking workspace membership, auditing access, and integration with user management systems.
+</Accordion>
+
+<Accordion title="Get current user">
+This tool retrieves the profile information of the currently authenticated user in bitbucket. it can function independently with only authentication required and provides essential user details such as the user's uuid, display name, avatar url, and account creation timestamp.
+</Accordion>
+
+<Accordion title="Get file from repository">
+This tool retrieves the contents of a specific file from a bitbucket repository. it uses the bitbucket api endpoint: get https://api.bitbucket.org/2.0/repositories/\{workspace\}/\{repo slug\}/src/\{commit\}/\{path\}
+</Accordion>
+
+<Accordion title="Get snippet">
+This tool retrieves a single snippet from bitbucket. the snippet can be retrieved in multiple formats including application/json, multipart/related, or multipart/form-data.
+</Accordion>
+
+<Accordion title="List pull requests">
+Action to list pull requests in a bitbucket repository.
+</Accordion>
+
+<Accordion title="Create issue">
+This tool creates a new issue in a bitbucket repository. the authenticated user will be set as the issue's reporter.
+</Accordion>
+
+<Accordion title="Create issue comment">
+Action to create a new comment on an existing bitbucket issue. this tool creates a new comment on an existing issue in a bitbucket repository. the comment can include formatted text and will be associated with the authenticated user.
+</Accordion>
+
+<Accordion title="Create pull request">
+This tool creates a new pull request in a bitbucket repository. it uses the provided parameters (workspace, repo slug, title, source branch, destination branch, description, reviewers, close source branch) to create the pull request via the bitbucket api. it complements bitbucket list pull requests by providing the ability to create new pull requests, essential for code collaboration and review.
+</Accordion>
+
+<Accordion title="Create repository">
+This tool creates a new repository in the specified workspace. it is essential for repository management and serves as an important step in many git workflows.
+</Accordion>
+
+<Accordion title="List workspaces">
+This tool will list all workspaces that the authenticated user has access to. it is a fundamental operation needed before performing any workspace-specific operations, functioning solely with authentication. additionally, it provides essential information for further bitbucket operations.
+</Accordion>
+
+<Accordion title="List repositories in workspace">
+This tool retrieves a paginated list of all repositories owned by the specified workspace. it is based on the bitbucket api (get /2.0/repositories/\{workspace\}) and is designed to be a fundamental operation for listing repositories. the tool requires only the workspace identifier and optionally accepts query parameters such as role, q, and sort to filter and sort the results.
+</Accordion>
+

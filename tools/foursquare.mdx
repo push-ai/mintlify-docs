@@ -1,0 +1,22 @@
+Search for places and place recommendations from the Foursquare Places database
+
+<Accordion title="Retrieve nearby places v3">
+The getnearbyplaces endpoint retrieves a list of places near a specified location, primarily supporting check-in use cases and local discovery. it returns points of interest (pois) including lower quality results not found in the standard place search, enhancing location-based experiences with additional data like photos, reviews, and tips. this endpoint is ideal for applications seeking to provide users with a comprehensive view of their surroundings, including less prominent or newer locations. while it offers a broader range of results, it may sacrifice some precision compared to more focused search endpoints. use this when you want to offer users a diverse array of nearby options, particularly for social check-in features or exploratory local recommendations.
+</Accordion>
+
+<Accordion title="Retrieve place photos by id">
+Retrieves photos associated with a specific place in foursquare's database. this endpoint allows you to access user-generated images for a particular point of interest (poi) using its unique foursquare id (fsq id). it's useful for enhancing your application with visual content related to locations, such as restaurants, landmarks, or businesses. the endpoint returns photo data that can be used to construct image urls for display. keep in mind that the number and quality of photos may vary depending on the popularity and user engagement of the place. this tool should be used when you need to display or analyze visual information about a specific location in your application.
+</Accordion>
+
+<Accordion title="Retrieve places by id">
+Retrieves detailed information about a specific place using its unique foursquare id (fsq id). this endpoint provides comprehensive data about a venue, including its name, address, category, ratings, tips, photos, and other relevant information. it's particularly useful when you need in-depth details about a known location, such as for displaying venue profiles or gathering specific place attributes. the endpoint should be used when you have a valid fsq id and require the most up-to-date and complete information about that place. note that this endpoint focuses on individual place details and does not provide search functionality or lists of multiple venues.
+</Accordion>
+
+<Accordion title="Retrieve place tips using fsq id">
+Retrieves user-generated tips for a specific place in the foursquare database. this endpoint allows you to fetch valuable insights and experiences shared by foursquare users about a particular venue. it's useful for enhancing location-based applications with real user feedback, helping users make informed decisions about places they might visit. the endpoint returns a list of tips, which may include information such as the tip text, the user who created it, and potentially a timestamp or rating.
+</Accordion>
+
+<Accordion title="Search places api request">
+The getplacessearch endpoint allows you to search for places in the foursquare database based on various criteria such as location, keywords, and categories. this tool is ideal for discovering nearby points of interest or finding specific venues. it returns a list of places matching the specified parameters, providing essential information about each location. use this endpoint for location-based features or gathering venue information in a specific area.
+</Accordion>
+

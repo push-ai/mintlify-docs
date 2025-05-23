@@ -1,0 +1,18 @@
+Humanloop helps developers build and refine AI applications, offering user feedback loops, model training, and data annotation to iterate on language model performance
+
+<Accordion title="List Experiments">
+This tool retrieves an array of experiments associated with a specific project in humanloop. it requires a project id (starting with 'pr ') and returns details including experiment id, name, description, creation timestamp, status, configuration details, and metrics/results. it is useful for monitoring experiments, analyzing results, tracking model configurations, and comparing experimental setups.
+</Accordion>
+
+<Accordion title="Delete Project">
+This tool allows you to delete a specific project from your humanloop organization. the deletion is permanent and cannot be undone. all associated data, including sessions, datapoints, and evaluations linked to the project, will be permanently removed.
+</Accordion>
+
+<Accordion title="List Sessions">
+This tool retrieves a paginated list of sessions for a specific project in humanloop. it requires a project id (and optionally, page and size for pagination) and returns session details such as id, reference id, project information, datapoints count, first inputs, last output, created at, and updated at. this enables users to monitor and analyze historical project interactions.
+</Accordion>
+
+<Accordion title="Create Project">
+This tool creates a new project in humanloop. it is an independent action that generates a project by accepting a project's name (required), an optional description, and an optional organization id. upon execution, it returns details of the created project, including the project's id, name, description, created at timestamp, and organization id.
+</Accordion>
+

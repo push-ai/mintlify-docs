@@ -1,0 +1,1434 @@
+PostHog is an open-source product analytics platform tracking user interactions and behaviors to help teams refine features, improve funnels, and reduce churn
+
+<Accordion title="Assign feature flag role based access">
+Set up role-based access for a feature flag using `project id` and `feature flag id`. submit access info in json or form format, with `feature flag:write` rights. success returns new details with a 201 code.
+</Accordion>
+
+<Accordion title="Add project specific member roles">
+Add members with specific roles to a project by providing their user uuid and level (member or admin). requires project id in the url. supports json, form-data, and form-urlencoded input. returns the newly created membership data upon success.
+</Accordion>
+
+<Accordion title="Check project s demo data generation status">
+Projects for the current organization.
+</Accordion>
+
+<Accordion title="Cohort duplication to static">
+This endpoint duplicates a specified cohort as a static one within a project. path parameters include `project id` (string) and cohort `id` (integer). successful requests return cohort details.
+</Accordion>
+
+<Accordion title="Bookmark project activity notification">
+Create a bookmark for an activity notification in a project's activity log. requires a `project id` and json payload with activity details. supports verification status, impersonation flags, and system activity distinction.
+</Accordion>
+
+<Accordion title="Bulk create organization invites">
+Post /api/organizations/\{organization id\}/invites/bulk/: bulk-create organization invites with customizable levels, sender details, and validation checks. supports email automation and private project access settings.
+</Accordion>
+
+<Accordion title="Create dashboard from template in project">
+Create a new dashboard for a specified project from a template. accepts project id in the path and a json payload with various dashboard object parameters. returns a dashboard instance on success.
+</Accordion>
+
+<Accordion title="Create domain with saml for organization">
+Create a domain for a specific organization by post to `/api/organizations/\{id\}/domains` with json/form data. requires domain, saml setup, and write permissions. returns new domain data with status 201.
+</Accordion>
+
+<Accordion title="Create experiment exposure cohort">
+Create a new exposure cohort for an experiment in a project by sending a post request with experiment details and feature flag data. requires experiment id and project id in the path.
+</Accordion>
+
+<Accordion title="Create a notebook in a project">
+The api for interacting with notebooks. this feature is in early access and the api can have breaking changes without announcement.
+</Accordion>
+
+<Accordion title="Create feature flags for project">
+Manage feature flags by creating, reading, updating, and deleting them using posthog's javascript library or api endpoint. details in the provided documentation.
+</Accordion>
+
+<Accordion title="Create feature flag dashboard">
+Manage feature flags by creating, reading, updating, and deleting them. utilize javascript library or endpoint for user-specific flag status. refer to documentation for details.
+</Accordion>
+
+<Accordion title="Create organization invite with role and email">
+Send invites with roles (member, admin, owner) via email to join an organization by id. use json, form data, or multipart with a personal api key for security. successful invites return a 201 status.
+</Accordion>
+
+<Accordion title="Cancel insights for a project">
+The "/api/projects/\{project id\}/insights/cancel/" endpoint allows users to cancel insights for a project by providing a project id and insight details in json or csv, and confirms cancellation in the response.
+</Accordion>
+
+<Accordion title="Create org proxy record with domain and status">
+Create a proxy record for an org by sending org id in url and json/form/multipart data with domain, target cname, and status. requires personalapikeyauth and org write access; returns record details.
+</Accordion>
+
+<Accordion title="Create frontend app pipeline config">
+Create a config for pipeline frontend apps within a specified project. requires project id and payload with object properties such as plugin, enabled status, order, etc. returns newly created config details.
+</Accordion>
+
+<Accordion title="Create plugin job configuration">
+Create a job-related configuration for a specific plugin by providing plugin and project ids. accepts json, form data, and returns config details on success. use carefully; requires mandatory fields.
+</Accordion>
+
+<Accordion title="Create project dashboard">
+The post endpoint creates a dashboard within a project using a `project id`, accepting details in json/form formats. it uses 'personalapikeyauth' for security and returns http 201 with dashboard details on success.
+</Accordion>
+
+<Accordion title="Check pipeline destination updates">
+Get the newest updates and plugin info for a pipeline destination by organization and destination id via get request to /api/.../\{id\}/check for updates.
+</Accordion>
+
+<Accordion title="Create person funnel correlation">
+This endpoint is for reading and deleting persons. use the capture api, `$set`/`$unset` properties, or sdks to create or update them.
+</Accordion>
+
+<Accordion title="Create project pipeline app configs">
+Create pipeline app configurations for a specified project via post, requiring a project id and json, form, or multipart payload. supports configs, plugins, and app details. returns 201 on success. auth required.
+</Accordion>
+
+<Accordion title="Create organization role with feature flag levels">
+Create a new role for the specified organization by supplying role details. requires organization id (uuid) and role data in json. returns the created role on success with a 201 status code. security: personalapikeyauth.
+</Accordion>
+
+<Accordion title="Create person path with format option">
+This api endpoint is for reading and deleting users. use the capture api, `$set`/`$unset` properties, or sdks for creating/updating users.
+</Accordion>
+
+<Accordion title="Create project pipeline frontend app job">
+Create a job for a pipeline frontend app config in a project. requires `project id` and config `id`, accepting json/form-data. returns the created job's details.
+</Accordion>
+
+<Accordion title="Create project actions with optional csv json format">
+This post endpoint creates actions for a project, accepts various data types, requires project id and action data, optionally outputs in csv/json, and needs personalapikeyauth, returning a 201 with action details.
+</Accordion>
+
+<Accordion title="Create project pipeline transformation config">
+Create a pipeline transformation config within a specific project by posting json, form, or multipart data. include plugin id, order, and enabled status. ensure project id is in the path. authentication required.
+</Accordion>
+
+<Accordion title="Create funnel analysis for project persons">
+This endpoint handles reading and deleting persons. for creation or updates, use the capture api, `$set` or `$unset` properties, or sdks.
+</Accordion>
+
+<Accordion title="Create pipeline destination config">
+Create pipeline destination configurations for a specific project by submitting plugin and order details, among other configuration info, with required project id. authentication needed. responds with 201 on success.
+</Accordion>
+
+<Accordion title="Create project insights with customizable parameters">
+The post endpoint enables creating insights for projects using a project id and supports json/csv. it offers detailed parameters for customizing insights and returns structured data with personalapikeyauth for security.
+</Accordion>
+
+<Accordion title="Check pipeline import app updates">
+Retrieve the latest update information for a specific pipeline import app by its id within an organization. this endpoint returns details such as plugin type, name, description, and version data. requires 'id' and 'organization id' as path parameters.
+</Accordion>
+
+<Accordion title="Create project subscription with delivery options">
+Create a subscription for a given project by providing required details such as delivery method, frequency, and starting date. requires a project id and supports various content types. returns the newly created subscription. security: personalapikeyauth.
+</Accordion>
+
+<Accordion title="Create project cohorts">
+Create cohorts for a specified project by posting json-form data to "/api/projects/\{project id\}/cohorts/". provide project id in url and the necessary payload, adhering to json schema constraints. authentication required. returns 201 upon success.
+</Accordion>
+
+<Accordion title="Create project plugin configuration">
+Create a new plugin configuration for a specified project by post to /api/projects/\{project id\}/plugin configs/. requires project id and json payload with plugin details; must authenticate with personalapikeyauth.
+</Accordion>
+
+<Accordion title="Create project timing insights">
+Create timing insights for a project by post to /api/projects/\{project id\}/insights/timing, supporting csv or json. it returns a 200 status with content in the chosen format.
+</Accordion>
+
+<Accordion title="Check pipeline plugin update status">
+Get update status for a specific pipeline transformation plugin by its unique id within an organization. this endpoint requires the 'organization id' and 'plugin' ids and returns details like plugin type, name, and update information.
+</Accordion>
+
+<Accordion title="Create query in project by id">
+The `/api/projects/\{project id\}/query/` post endpoint allows users to submit queries for a specific project by providing the project id in the url and the query details in json or form data. authentication is required and it returns query results.
+</Accordion>
+
+<Accordion title="Create project insights with format option">
+Create project insights with optional csv/json format parameter. requires `project id` in the path and a json body with project insight details. supports personal api key authentication. successful requests return a 201 status code with insight data.
+</Accordion>
+
+<Accordion title="Create project surveys with questions and targets">
+Create surveys in a project by providing a project id and details like type, questions, and targets in json, form-data, or urlencoded format. use personalapikeyauth for security. get a survey object on success.
+</Accordion>
+
+<Accordion title="Create pipeline destination config job">
+Create a job for a pipeline destination config with a specific id within the specified project. requires project id & config id in the path, and a json payload with plugin and order info.
+</Accordion>
+
+<Accordion title="Custom project funnel analytics with advanced options">
+The `/api/projects/\{project id\}/insights/funnel/` endpoint generates customizable funnel insights for a project in either csv or json, offering filtering, exclusion, and ordering features with cachable results. specify output with the `format` query.
+</Accordion>
+
+<Accordion title="Create new organization with configurable access">
+Post /api/organizations/ - create a new organization with details like name, membership level, and features access. requires organization:write permission. returns organization info on success.
+</Accordion>
+
+<Accordion title="Create session recording in playlist">
+The post endpoint generates a project's session recording, needing 'project id', 'short id', and 'session recording id' in the url, and accepts various content formats for recording details.
+</Accordion>
+
+<Accordion title="Create session recording playlists">
+Create playlists of session recordings for a specified project. requires 'project id' path parameter and personal api key with write access. supports json, form-encoded, or multipart data. returns 201 on success with playlist details.
+</Accordion>
+
+<Accordion title="Crud operations for project annotations">
+Create, read, update and delete annotations. [see docs](https://posthog.com/docs/user-guides/annotations) for more information on annotations.
+</Accordion>
+
+<Accordion title="Create retrieve retention insights for project">
+Create and retrieve retention insights for a project using its id, allowing csv/json outputs. requires an api key with `insight:read` permissions and supports query node json strings and old dashboard ids.
+</Accordion>
+
+<Accordion title="Create static cohort for feature flag">
+Manage feature flags for apps with create, read, update, and delete operations using posthog's javascript library or dedicated endpoint. more info in the docs.
+</Accordion>
+
+<Accordion title="Create session recording summary">
+Summarize a session recording by providing the project id and the recording's uuid. get details like duration, activities, and user info.
+</Accordion>
+
+<Accordion title="Create new project experiment">
+Create a new experiment in a specific project using json, form, or multipart data. requires project id and experiment details, secured with personalapikeyauth. generates a 201 response with experiment info.
+</Accordion>
+
+<Accordion title="Create pipeline import apps config job">
+A job imports app settings into a project pipeline using project id and plugin config id, accepting json/form/multipart, and specifies plugin details, enabling status, and order for pipeline import apps configs.
+</Accordion>
+
+<Accordion title="Add dashboard collaborators with access level">
+Add collaborators to a specific project dashboard. requires 'project id' and 'dashboard id'. supports json, form-urlencoded, and multipart data. returns added collaborator details. auth: 'personalapikeyauth'.
+</Accordion>
+
+<Accordion title="Add member to organization role">
+Add a member to an organization role by submitting their details and uuid in json/form, using organization and role ids. requires personalapikeyauth. success gives a 201 status.
+</Accordion>
+
+<Accordion title="Posthog List Organization Plugins With Pagination">
+Retrieve the list of plugins for a specified organization. supports pagination through 'limit' and 'offset' query parameters. requires a valid organization uuid and personalapikeyauth for access. returns plugin details including types and status.
+</Accordion>
+
+<Accordion title="Delete survey by id">
+Delete a survey by providing its uuid and the associated project id. requires 'survey:write' permission. returns no content with a 204 status on success.
+</Accordion>
+
+<Accordion title="Posthog Fetch Pipeline Destination Details">
+Use a get request to '/api/projects/\{project id\}/pipeline destination configs/\{id\}/activity/' to get details, status, config, and metrics for a pipeline destination by id, returning json.
+</Accordion>
+
+<Accordion title="Delete organization project">
+Projects for the current organization.
+</Accordion>
+
+<Accordion title="Fetch frontend app config status">
+Retrieve activity details for a specific pipeline frontend app config by id within a project. requires both `project id` and config `id` in the path. returns json with app config details like plugin info, enablement, order, and error status.
+</Accordion>
+
+<Accordion title="List dashboard sharing configs">
+Retrieve a list of dashboard sharing configurations for a specified project and dashboard. requires dashboard id, project id, and sharing read permission via personalapikeyauth. returns json array of sharing settings.
+</Accordion>
+
+<Accordion title="List batch export runs with pagination and ordering">
+List runs for a batch export by `batch export id` within a project. supports pagination & ordering of the results. requires `batch export:read` permission. returns status, errors, counts, and timestamps for each run.
+</Accordion>
+
+<Accordion title="Fetch batch export details via uuid">
+Retrieve logs for a specific batch export within a project by its uuid. endpoint requires project id and export id (uuid). supports json responses detailing export properties, run statuses, and error info.
+</Accordion>
+
+<Accordion title="List organization s batch exports with pagination">
+Retrieve paginated batch exports for an organization, with filters and optional limits. includes team, interval, and status details. access requires personalapikeyauth with batch export:read rights.
+</Accordion>
+
+<Accordion title="Delete person and optionally associated events">
+This endpoint is used to read and delete user data. use the capture api, `$set`/`$unset` commands, or sdks for creating/updating persons.
+</Accordion>
+
+<Accordion title="Fetch export unsubscribe settings">
+Retrieve pipeline transformation export unsubscribe configurations for a specified organization by its uuid. returns details including id, plugin type, and configuration schema in json format.
+</Accordion>
+
+<Accordion title="List organization roles with pagination">
+Fetch a paginated list of roles in an organization using its uuid. supports query parameters for limits and offsets. access needs personalapikeyauth. returns details like id, name, and creator info.
+</Accordion>
+
+<Accordion title="List and manage project feature flags">
+Manage feature flags with creation, reading, updating, and deletion capabilities. utilize javascript library or an endpoint for application integration. more details in the docs.
+</Accordion>
+
+<Accordion title="Fetch project survey activity log">
+Retrieve the activity log of surveys within a specific project by using the project id. this endpoint requires a personalapikeyauth with 'activity log:read' permission and returns survey details including types, flags, questions, and metadata.
+</Accordion>
+
+<Accordion title="Delete organization by uuid">
+Delete an organization by its uuid. requires a 'personalapikeyauth' with 'organization:write' permission. on success, returns a 204 status code with no response body.
+</Accordion>
+
+<Accordion title="List organization members with pagination">
+Retrieve members list from an organization with 'limit' and 'offset' options using personalapikeyauth and organization id. access requires organization member:read permission. returns members' details and statuses.
+</Accordion>
+
+<Accordion title="Fetch session recording playlist details">
+Retrieve session recording playlist details for a specific project by project id and playlist short id. requires personalapikeyauth with read access. returns playlist metadata including creation and modification info.
+</Accordion>
+
+<Accordion title="Posthog List Role Memberships Paginated">
+Retrieve a paginated list of role memberships for a specific role within an organization, including membership details. optional query parameters ‘limit’ and ‘offset’ control pagination; ‘organization id’ and ‘role id’ are path parameters.
+</Accordion>
+
+<Accordion title="List organization s paginated proxy records">
+Retrieve a paginated list of an organization's proxy records by id, with 'limit' and 'offset' options. 'organization id' and 'personalapikeyauth' are necessary. includes status, domain, and counts.
+</Accordion>
+
+<Accordion title="List organization s pipeline frontend apps">
+Retrieve a paginated list of pipeline apps for an organization using 'plugin:read' personalapikeyauth. requires organization id (uuid) and supports limit and offset parameters. includes app types and statuses.
+</Accordion>
+
+<Accordion title="Fetch organization details by uuid">
+Retrieve organization details by uuid. endpoint requires 'organization:read' access. response includes name, slug, timestamps, membership, plugins access level, and team structure.
+</Accordion>
+
+<Accordion title="Fetch organization pipeline app repositories">
+Retrieve details of pipeline import app repositories for a specific organization by its uuid. returns json with properties like plugin type, name, and url. supports 'local', 'custom', 'repository', 'source', 'inline' types.
+</Accordion>
+
+<Accordion title="Flag annotation as deleted">
+Hard delete of this model is not allowed. use a patch api call to set "deleted" to true
+</Accordion>
+
+<Accordion title="Generate project funnel correlation insight">
+The /api/projects/\{project id\}/insights/funnel/correlation endpoint generates a correlation insight for funnel analysis in a project, accepting json/csv and needing 'project id' and insight details.
+</Accordion>
+
+<Accordion title="List project subscriptions with pagination">
+Retrieve a paginated list of subscriptions for a given project by its id. optional query params include 'limit' for results per page and 'offset' for results starting index. authentication is required. returns subscription details and navigation links.
+</Accordion>
+
+<Accordion title="List project configuration plugin logs">
+Retrieve logs for a specific plugin configuration within a project. supports pagination with limit and offset query parameters. requires project and plugin configuration ids. auth: personalapikeyauth with plugin:read scope.
+</Accordion>
+
+<Accordion title="List project batch exports with pagination">
+Retrieve an indexed list of batch exports for a specified project with optional pagination. view export details, statuses, and pagination links. requires project id and supports personalapikeyauth.
+</Accordion>
+
+<Accordion title="List organization s pipeline destinations">
+Retrieve a paginated list of an organization's pipeline destinations by id, with optional count and offset parameters. requires personalapikeyauth (plugin:read). returns details like id, type, and organization info.
+</Accordion>
+
+<Accordion title="List project experiments with pagination">
+Get a paginated list of experiments within a project using 'limit' and 'offset' parameters. need a valid project id and 'experiment:read' permission. returns details like features and metrics.
+</Accordion>
+
+<Accordion title="List project export items with pagination">
+Retrieve a paginated list of export items for a specific project by id with optional 'limit' and 'offset' query parameters. requires personalapikeyauth for export:read permission. supports multiple export formats.
+</Accordion>
+
+<Accordion title="Enable project early access feature">
+Enables a new early access feature for a project using project id, payload with details, and personalapikeyauth. returns a 201 status on success.
+</Accordion>
+
+<Accordion title="List pipeline destination configs with pagination">
+List pipeline destination configurations for a given project by id, with optional pagination through 'limit' and 'offset' query parameters. returns details such as plugin info and delivery rates. authentication required.
+</Accordion>
+
+<Accordion title="List session recording sharing configs">
+Retrieve a list of sharing configurations for a specific session recording in a project, including creation timestamps and access tokens. requires project and recording ids.
+</Accordion>
+
+<Accordion title="List specific type groups with pagination">
+List all groups of a specific group type. you must pass ?group type index= in the url. to get a list of valid group types, call /api/:project id/groups types/
+</Accordion>
+
+<Accordion title="List unused organization pipeline transformations">
+Retrieve a list of unused pipeline transformations for a specified organization, identified by uuid. includes details like name, plugin type, and configuration. supports json response format.
+</Accordion>
+
+<Accordion title="List project dashboards with pagination">
+Get paginated dashboards for a project by id, using 'limit' and 'offset'. must authenticate with personalapikeyauth. includes count, pagination, and dashboard details.
+</Accordion>
+
+<Accordion title="List feature flag role access details">
+This get endpoint returns role access details for a feature flag in a project, needs 'project id' & 'feature flag id', and offers optional 'limit' & 'offset' for pagination.
+</Accordion>
+
+<Accordion title="List project group types by id">
+Retrieve a list of group types within a specific project by providing the project id. this endpoint requires authentication with a personalapikey and grants read access to group data.
+</Accordion>
+
+<Accordion title="Initiate domain verification with saml config">
+Post /api/organizations/\{organization id\}/domains/\{id\}/verify/: initiates verification for a domain within an organization using its uuid, updating its verification status and related saml configuration attributes. supports json and form data formats.
+</Accordion>
+
+<Accordion title="List users with staff filter and pagination">
+Api endpoint fetches a user list with staff filter, pagination (limit, offset), and requires a personal api key. data includes uuids, emails, and organizational details.
+</Accordion>
+
+<Accordion title="Manage project feature flags for local evaluation">
+Utilize feature flags to manage application features with creation, reading, updating, and deletion. consult posthog's docs or use their js library or endpoint for user-specific flag checks.
+</Accordion>
+
+<Accordion title="List pipeline frontend app configs">
+Retrieve paginated configurations for pipeline frontend apps associated with a specified project. query parameters 'limit' and 'offset' control pagination. requires a project id and personalapikeyauth for access. supports json responses.
+</Accordion>
+
+<Accordion title="Manage project feature flags">
+Learn to manage feature flags: create, read, update, delete, and check their status using the javascript library or an endpoint. consult the linked docs for details.
+</Accordion>
+
+<Accordion title="List project dashboard collaborators">
+Get dashboard collaborators list in a project using project string id and dashboard integer id. requires personalapikeyauth and `dashboard:read` permission. returns details like access level and timestamps.
+</Accordion>
+
+<Accordion title="Delete session recording by uuid">
+Delete a session recording by providing the session's uuid and the associated project id. requires `session recording:write` permission. returns no content on successful deletion.
+</Accordion>
+
+<Accordion title="List project membership details">
+Retrieve a list of project membership details for a specified project by id. members and their roles, such as member or admin, are included along with their join and update timestamps.
+</Accordion>
+
+<Accordion title="Manage feature flag enrichment for usage dashboard">
+Learn to manage feature flags (creation, access, modification, removal) using posthog's docs, with options to use a javascript library or a dedicated endpoint for user-specific flag status.
+</Accordion>
+
+<Accordion title="Mark dashboard template as deleted">
+Hard delete of this model is not allowed. use a patch api call to set "deleted" to true
+</Accordion>
+
+<Accordion title="List project dashboard templates">
+"retrieve a paginated list of dashboard templates for a specified project. use 'limit' and 'offset' query parameters to control result pagination. requires project's id in the path and supports personalapikeyauth for security."
+</Accordion>
+
+<Accordion title="Manage user feature flags">
+Manage feature flags in your app with create, read, update, and delete options. use posthog's javascript library or endpoint to verify user access. see documentation for details.
+</Accordion>
+
+<Accordion title="List notebooks with filters and pagination">
+The api for interacting with notebooks. this feature is in early access and the api can have breaking changes without announcement.
+</Accordion>
+
+<Accordion title="Modify org info via uuid">
+Put /api/organizations/\{id\}/: update organization details by providing a uuid as 'id'. supports json, form-urlencoded, multipart/form-data. requires 'organization:write' permission. returns updated organization data.
+</Accordion>
+
+<Accordion title="List project pipeline configurations">
+Fetch paginated pipeline configuration list for a project by its id, utilizing optional `limit` and `offset`. endpoint returns json data.
+</Accordion>
+
+<Accordion title="Partially update project property definition">
+Patch /api/projects/\{project id\}/property definitions/\{id\}/: partially update a specific property definition by uuid in a project. requires property definition:write auth. no response body.
+</Accordion>
+
+<Accordion title="Initiate pipeline transformation job">
+Create a pipeline transformation job for a specified plugin config in a project by posting to `/api/projects/\{project id\}/pipeline transformation configs/\{id\}/job/`. requires project id and plugin config id.
+</Accordion>
+
+<Accordion title="Move dashboard tile">
+Endpoint to move a tile within a dashboard by `id`. requires `project id`, accepts json/form-data (e.g., `name`, `pinned`), and returns updated dashboard info.
+</Accordion>
+
+<Accordion title="List projects in organization with pagination">
+Projects for the current organization.
+</Accordion>
+
+<Accordion title="List of project s session recording playlists">
+Retrieve a list of session recording playlists for a specific project. filter by creator, paginate with limit and offset, and identify playlists with project id and optional short id. requires 'session recording playlist:read' permission.
+</Accordion>
+
+<Accordion title="Partially update project plugin config">
+Update plugin configuration partially for a specified project using patch on '/api/projects/\{project id\}/plugin configs/\{id\}'. requires plugin write authority. accepts json, form data, and multipart. returns updated plugin config details.
+</Accordion>
+
+<Accordion title="List project early access features">
+Retrieve a paginated list of a project's early access features by id with 'limit' and 'offset' parameters. an api key is needed. includes feature info like creation date, stage, and documentation link.
+</Accordion>
+
+<Accordion title="Mark insight as viewed with configurable format">
+The post endpoint marks an insight as viewed for a specified project, requires `project id` and `id`, supports `csv` or `json` formats, and returns fast-loading serialized data.
+</Accordion>
+
+<Accordion title="Partial experiment update in project">
+Endpoint enables partial updates to an experiment in a project using patch, needing `project id`, `experiment id`, and various payload types. returns updated details. authentication is mandatory.
+</Accordion>
+
+<Accordion title="List and filter project events">
+This endpoint for listing/filtering events is deprecated and maintained only for compatibility. users are discouraged from using it and should use the query endpoint for ad-hoc lists/aggregations or cdp/batch exports for bulk exports.
+</Accordion>
+
+<Accordion title="Posthog List Project Pipeline Import Configs">
+List pipeline import app configurations for a specified project, with pagination options 'limit' and 'offset'. requires a project id and supports personalapikeyauth for security. responds with json objects including configuration details.
+</Accordion>
+
+<Accordion title="Partial pipeline frontend app config update">
+Patch method to partially update config of a pipeline frontend app for a project by id. requires write permission on plugin. accepts json, form-data; returns updated config details.
+</Accordion>
+
+<Accordion title="Fetch pipeline transformation details">
+Retrieve details of pipeline transformations from a specified organization's repository. requires `organization id` (uuid). returns json with properties like id, plugin type, and name. supports filtering by types like local, custom, repository, etc.
+</Accordion>
+
+<Accordion title="Partial update of a project s feature flag">
+Learn to manage feature flags (create, read, update, delete) using posthog's docs, with options for javascript library use or dedicated endpoints for user flag status.
+</Accordion>
+
+<Accordion title="Partial update of a project insight">
+The patch endpoint supports partial insight updates in a project, allows format specification (csv/json), and requires `personalapikeyauth` and `insight:write` scope for access.
+</Accordion>
+
+<Accordion title="List project actions with pagination and filters">
+Get paginated project actions with filters by format. query params: limit, offset. needs personalapikeyauth for read. includes id, name, description, metadata.
+</Accordion>
+
+<Accordion title="Prevent hard delete notebook by flagging">
+Hard delete of this model is not allowed. use a patch api call to set "deleted" to true
+</Accordion>
+
+<Accordion title="List organization invites with pagination">
+Retrieve a paginated list of invites for a specific organization, identified by `organization id`, with optional `limit` and `offset` query params for result customization. requires `organization member:read` permission.
+</Accordion>
+
+<Accordion title="List organization domains with pagination">
+Fetch a list of an organization's domains with pagination using `limit` and `offset`. access requires `organization id` and a personalapikeyauth. optional parameters available. provides domain info, verification, and saml setup.
+</Accordion>
+
+<Accordion title="List and manage project annotations">
+Create, read, update and delete annotations. [see docs](https://posthog.com/docs/user-guides/annotations) for more information on annotations.
+</Accordion>
+
+<Accordion title="List project plugin configurations">
+Retrieve a paginated list of plugin configurations for a specific project by project id. supports optional 'limit' & 'offset' query params for result batching. requires 'personalapikeyauth' for 'plugin:read' access.
+</Accordion>
+
+<Accordion title="Persist session recording data by uuid">
+Post `/api/projects/\{project id\}/session recordings/\{id\}/persist`: endpoint for persisting session recording data identified by uuid. requires `project id` and accepts json containing various read-only session metrics. responds with session data.
+</Accordion>
+
+<Accordion title="Person partial update via project id">
+This endpoint allows reading and deleting individuals. for creation or updates, use the capture api, `$set`/`$unset` properties, or sdks.
+</Accordion>
+
+<Accordion title="List organization s pipeline import apps">
+Retrieve a paginated list of pipeline import applications for a specified organization by id. supports optional 'limit' and 'offset' query parameters for result pagination. requires an organization uuid and a personal api key for authentication.
+</Accordion>
+
+<Accordion title="Post project trends in various formats with optional filters">
+The `/api/projects/\{project id\}/insights/trend/` endpoint provides project trends in csv/json, requires `project id` and optional parameters, and needs 'personalapikeyauth'. it outputs event data and cache status.
+</Accordion>
+
+<Accordion title="Rearrange pipeline transformation configs">
+Endpoint `/api/projects/\{project id\}/pipeline transformation configs/rearrange/` allows for partial updates to the arrangement of pipeline configurations for a given project. accepts patch requests with necessary parameters and the project id in the path.
+</Accordion>
+
+<Accordion title="Person property deletion endpoint">
+This endpoint is for reading and deleting user data. use the capture api, `$set`/`$unset`, or sdks for creating/updating users.
+</Accordion>
+
+<Accordion title="Rearrange frontend app pipeline configs">
+Patch /api/projects/\{project id\}/pipeline frontend apps configs/rearrange/: rearrange the config of frontend apps in a project's pipeline. requires project id in the path and a json object in the request body. responds with updated config details.
+</Accordion>
+
+<Accordion title="Partial update of project notebook">
+The api for interacting with notebooks. this feature is in early access and the api can have breaking changes without announcement.
+</Accordion>
+
+<Accordion title="Remove explicit project member by uuid">
+Delete a specific user (by uuid) from the explicit members of a given project. requires 'project id' and member's 'parent membership  user  uuid'. returns 204 on success with no response body.
+</Accordion>
+
+<Accordion title="List project session recordings">
+Retrieve a paginated list of session recordings for a specific project, including viewing times and user interactions. specify `project id`, and use optional `limit` and `offset` query parameters to control result set size and starting point.
+</Accordion>
+
+<Accordion title="Remove domain by uuid from organization">
+Delete a specific domain by its uuid within an organization, given valid organization and domain ids. requires 'organization:write' permission; no response body on success (204).
+</Accordion>
+
+<Accordion title="Remove early access feature from project">
+Delete an early access feature by id from a specified project. requires a uuid for the feature and the project's id. authentication via personalapikeyauth is necessary. no response body upon success.
+</Accordion>
+
+<Accordion title="Remove member from organization by uuid">
+Delete /api/organizations/\{org id\}/members/\{user uuid\}: removes a specific member from an organization using uuids for both entities. requires 'organization member:write' permission; returns 204 with no content on success.
+</Accordion>
+
+<Accordion title="Fetch project experiment secondary data">
+Fetch secondary experiment data in a project by its unique id, using project and experiment ids as path parameters. authenticated by personalapikeyauth, it returns a json with experiment info, features, and metrics.
+</Accordion>
+
+<Accordion title="Reconfigure plugin order and status in project">
+Patch endpoint to reconfigure the order of plugins within a project by project id. supports json, form, and multipart bodies to update plugin order and status.
+</Accordion>
+
+<Accordion title="List organization s pipeline transformations">
+Retrieve paginated pipeline transformation lists for an organization using `limit` and `offset`, requiring a uuid and personalapikeyauth. supports filtering and detailed views.
+</Accordion>
+
+<Accordion title="Mark session recording playlist deleted">
+Hard delete of this model is not allowed. use a patch api call to set "deleted" to true
+</Accordion>
+
+<Accordion title="Remove feature flag role access by id">
+Delete /api/projects/\{project id\}/feature flags/\{feature flag id\}/role access/\{id\}: remove role access from a feature flag in a project by id, requiring authorization. expect no response body upon success (204).
+</Accordion>
+
+<Accordion title="Partial update project annotation">
+Create, read, update and delete annotations. [see docs](https://posthog.com/docs/user-guides/annotations) for more information on annotations.
+</Accordion>
+
+<Accordion title="Mark project action as deleted">
+Hard delete of this model is not allowed. use a patch api call to set "deleted" to true
+</Accordion>
+
+<Accordion title="Partial update of a project s dashboard">
+Endpoint patch /api/projects/\{project id\}/dashboards/\{id\}: allows partial update of a project's dashboard with specified id. accepts json, form data, and provides a detailed response schema based on user license. requires dashboard write access.
+</Accordion>
+
+<Accordion title="List paginated surveys for a project">
+Get paginated surveys for a project with its id, using 'limit' and 'offset'. needs personalapikeyauth ('survey:read'). json output includes survey info, links, and metadata.
+</Accordion>
+
+<Accordion title="Rearrange project pipeline destination configs">
+"patch /api/projects/\{project id\}/pipeline destination configs/rearrange/": adjust order and settings of pipeline destinations for a project by project id. requires json body with plugin, enabled state, etc. returns updated configuration.
+</Accordion>
+
+<Accordion title="Rearrange project import app configurations">
+Rearrange app import settings in a project using patch /api/projects/\{project id\}/... by updating plug-in order and status. requires `project id` and a json with configurations.
+</Accordion>
+
+<Accordion title="List or delete persons with optional filters">
+This endpoint is for reading/deleting persons. for creating/updating, use the capture api, set/unset properties, or sdks.
+</Accordion>
+
+<Accordion title="Mark subscription as deleted by id">
+Hard delete of this model is not allowed. use a patch api call to set "deleted" to true
+</Accordion>
+
+<Accordion title="Remove pipeline transformation config by id">
+Delete a specific pipeline transformation configuration by id within a project. requires the project id and configuration id. secured by personalapikeyauth with plugin:write access. no response body upon success (204).
+</Accordion>
+
+<Accordion title="Remove organization pipeline transformation">
+Delete a specific pipeline transformation plugin for an organization by id. requires a uuid for the organization and an integer for the plugin. auth: personalapikey with write access. no response body on success (204).
+</Accordion>
+
+<Accordion title="Retrieve app metrics error details">
+Retrieves detailed error information for a specific app metric by id within a project. requires project id and metric's integer id as path parameters. no response body for a successful query.
+</Accordion>
+
+<Accordion title="Remove organization proxy record">
+Delete a proxy record by id for a specific organization. requires an authenticated user with 'organization:write' permission. on success, it responds with a 204 status and no content.
+</Accordion>
+
+<Accordion title="Remove property definition by uuid">
+Delete a property definition by providing its uuid and the associated project id. requires 'property definition:write' permission. on success, no response body is returned (204).
+</Accordion>
+
+<Accordion title="Remove pipeline import app config">
+Delete a specific pipeline import app configuration using its id within a project. requires project id and config id, and auth via personalapikeyauth with plugin write access. no response body on success (204).
+</Accordion>
+
+<Accordion title="Retrieve cohort person details">
+Retrieve details of persons within a cohort by its unique id in the specified project. the endpoint supports json and csv formats and requires authorization. project and cohort ids must be provided.
+</Accordion>
+
+<Accordion title="Retrieve dashboard template schema">
+Retrieve the json schema for dashboard templates of a specific project. pass the project id in the path and receive details such as template name, description, filters, and more. supports get requests.
+</Accordion>
+
+<Accordion title="Retrieve feature flags evaluation reasons">
+Manage feature flags—create, read, update, delete—using the posthog javascript library or endpoint for user-specific flag status. (more in docs).
+</Accordion>
+
+<Accordion title="Remove pipeline frontend app by id">
+Delete a specific pipeline frontend app by its id within an organization. requires the organization id (uuid) and the app's integer id. auth: personalapikeyauth with plugin:write scope. no response body on success (204).
+</Accordion>
+
+<Accordion title="Remove organization role by id">
+Delete a role with a specific uuid in an organization. requires 'organization:write' permission. no response body on success (204). path parameters include 'id' and 'organization id'.
+</Accordion>
+
+<Accordion title="Retrieve feature flag activity details">
+Manage feature flags (creation, reading, updating, and deleting) using posthog's guides or via javascript library/endpoint for user-specific flag status. [details](https://posthog.com/docs/user-guides/feature-flags)
+</Accordion>
+
+<Accordion title="Remove org pipeline import app by id">
+Delete a specific pipeline import app plugin associated with an organization by id. requires a personal api key with write permissions for plugins. responds with no content on success (204).
+</Accordion>
+
+<Accordion title="Remove organization batch export by uuid">
+Delete a specific batch export by its uuid in an organization. requires personalapikeyauth with batch export:write permission. returns 204 on success with no response body.
+</Accordion>
+
+<Accordion title="Retrieve async query status by id">
+(experimental)
+</Accordion>
+
+<Accordion title="Remove organization pipeline destination">
+Delete a specific pipeline destination in an organization by id. requires an integer 'id' of the destination, and the organization's 'uuid'. auth: personalapikey with plugin:write. no return body on success (204).
+</Accordion>
+
+<Accordion title="Remove organization plugin by id">
+Delete a specific plugin (by its integer id) from the organization (identified by uuid) with no response body on success. requires plugin:write authorization via personalapikeyauth.
+</Accordion>
+
+<Accordion title="Retrieve or delete person retention data">
+This endpoint is for reading and deleting person data; use the capture api, `$set`/`$unset` properties, or sdks for creation and updates.
+</Accordion>
+
+<Accordion title="Retrieve dashboard template details by uuid">
+Fetch specific dashboard template details by uuid in a project with 'dashboard template:read' rights using a personalapikeyauth. returns name, description, filters, and creation info.
+</Accordion>
+
+<Accordion title="Retrieve organization pipeline unsubscribe configs">
+Retrieve unsubscribe config details for an organization's pipeline frontend apps. requires an organization id (uuid). returns json with config data including plugin types and more.
+</Accordion>
+
+<Accordion title="Retrieve historical app metrics export">
+Retrieve historical export data for app metrics by supplying the `project id` and `plugin config id`. requires `plugin:read` permission. no response body provided upon a successful request.
+</Accordion>
+
+<Accordion title="Retrieve organization s pipeline repository details">
+Retrieve details for repository pipeline destinations within a specific organization by its uuid. returns objects like id, name, and urls with support for various plugin types (local, custom, etc.).
+</Accordion>
+
+<Accordion title="Retrieve organization plugin activity">
+Retrieve activity details for plugins in a specified organization by id. supports various plugin types, including local, custom, and repository. response includes plugin's id, name, type, and relevant metrics. requires a valid uuid for 'organization id'.
+</Accordion>
+
+<Accordion title="Remove rolemembership by uuid">
+Delete /api/organizations/\{org id\}/roles/\{role id\}/role memberships/\{id\}: removes a role membership from an organization using a specific uuid. requires write access. returns 204 on success.
+</Accordion>
+
+<Accordion title="Retrieve important project activity log">
+Retrieve a log of important changes for a specified project. requires a `project id` and returns details about the change, including user info, read status, and timestamps. use `/api/projects/\{project id\}` to obtain project ids.
+</Accordion>
+
+<Accordion title="Retrieve paginated organization list">
+Retrieve a paginated list of organizations with optional 'limit' and 'offset' query parameters. the response includes organization details like id, name, and membership level, with secure access controlled via personalapikeyauth.
+</Accordion>
+
+<Accordion title="Retrieve organization pipeline frontend app details">
+Retrieve pipeline frontend app details for an organization using its 'organization id' (uuid). response includes id, plugin type, name, url in json format, covering various plugin types.
+</Accordion>
+
+<Accordion title="Retrieve last viewed insights for user">
+Returns basic details about the last 5 insights viewed by this user. most recently viewed first.
+</Accordion>
+
+<Accordion title="Retrieve feature flags activity log">
+Learn to manage feature flags by creating, reading, updating, and deleting them. use posthog's javascript library or endpoint for application integration. details in the [docs](https://posthog.com/docs/user-guides/feature-flags).
+</Accordion>
+
+<Accordion title="Retrieve event definitions by project id">
+Retrieve definitions for events within a specified project by providing the unique project id. requires personalapikeyauth privileges for event definition:read. no response body provided upon a successful call.
+</Accordion>
+
+<Accordion title="Remove session recording from playlist">
+Delete a session recording from a playlist using its id within a specified project. requires project id, short id, and session recording id in the path. returns no content on success (204).
+</Accordion>
+
+<Accordion title="Remove project dashboard collaborator">
+Remove a collaborator from a project dashboard. provide the project id, dashboard id, and user's uuid. requires 'dashboard:write' permissions. expect no response body on success (204). project id guidance at '/api/projects/'.
+</Accordion>
+
+<Accordion title="Retrieve insight sharing configurations">
+Retrieve sharing configurations for a specific insight within a project, requiring project and insight ids. validates access via personalapikeyauth. returns data such as creation time and access tokens.
+</Accordion>
+
+<Accordion title="Remove pipeline destination config">
+Delete a pipeline destination configuration by specifying a unique integer id within a project. requires 'plugin:write' permission via personalapikeyauth. no response body on success (204). project id is mandatory.
+</Accordion>
+
+<Accordion title="Retrieve organization s unused pipeline apps">
+Retrieve unused pipeline import apps for a specified organization. endpoint requires an organization id (uuid) and returns details like plugin type, name, description, and more in json format.
+</Accordion>
+
+<Accordion title="Retrieve persons funnel correlation data">
+This endpoint is for reading and deleting persons. use the capture api, `$set` and `$unset` properties, or sdks for creating or updating persons.
+</Accordion>
+
+<Accordion title="Remove pipeline frontend app config">
+Delete a pipeline frontend app configuration for a specific project. requires 'project id' and config 'id' in the path and 'plugin:write' permissions. responds with 204 on success without a body.
+</Accordion>
+
+<Accordion title="Retrieve batch export details">
+Retrieve details of a specific batch export by its uuid in a project. requires project id and batch export id. supports personalapikeyauth and responds with export details including destination, interval, and status.
+</Accordion>
+
+<Accordion title="Retrieve org pipeline transformation activity">
+Retrieve pipeline transformation activity details for a specific organization using its uuid. returns data such as plugin type, name, description, and related metrics. requires 'organization id' in url path.
+</Accordion>
+
+<Accordion title="Retrieve pipeline destination details">
+Fetch a pipeline destination's details by id and organization uuid, using a personalapikeyauth with read access to plugins. returns json with plugin info.
+</Accordion>
+
+<Accordion title="Retrieve or delete project persons funnel data">
+This api endpoint is for reading and deleting user data. use the capture api, `$set` and `$unset` properties, or sdks for creating/updating users.
+</Accordion>
+
+<Accordion title="Retrieve person details by id">
+This endpoint is used to read and delete persons. for creating or updating, use the capture api, `$set` and `$unset` properties, or sdks.
+</Accordion>
+
+<Accordion title="Retrieve person details by project">
+This endpoint allows reading and deleting persons; for creation or updates, use the capture api, the `$set` and `$unset` properties, or sdks.
+</Accordion>
+
+<Accordion title="Retrieve pipeline destination activity">
+Retrieve activity details for pipeline destinations within an organization. required: uuid-formatted `organization id`. outputs application/json with attributes: id, latest tag, etc. supports `get` requests.
+</Accordion>
+
+<Accordion title="Remove specific project query">
+(experimental)
+</Accordion>
+
+<Accordion title="Remove project event definition">
+Delete an event definition by providing its uuid and the associated project id. requires `event definition:write` permission. successful deletion returns no content (204 status).
+</Accordion>
+
+<Accordion title="Retrieve batch export logs by uuid">
+Retrieve logs for a specific batch export given by uuid within an organization. essential for tracking export status, errors, and configurations. supports json responses detailing export properties and history.
+</Accordion>
+
+<Accordion title="Retrieve pipeline destination plugin details">
+Retrieve details of a specific pipeline destination plugin within an organization by its unique id. the response includes various properties like name, description, url, and plugin type for the given organization uuid.
+</Accordion>
+
+<Accordion title="Remove specific project batch export">
+Delete a specific batch export by providing the uuid and project id. requires a personal api key with 'batch export:write' permissions. responds with no body upon successful deletion (http 204).
+</Accordion>
+
+<Accordion title="Retrieve person lifecycle details">
+This endpoint is for reading and deleting persons. use the capture api, property methods, or sdks for creating or updating persons.
+</Accordion>
+
+<Accordion title="Remove project experiment by id">
+Delete a specific experiment by its unique integer id within a project. requires a project id and personal api key with experiment write permission. no response body upon success.
+</Accordion>
+
+<Accordion title="Retrieve pipeline frontend app details">
+Retrieves details of a specified pipeline frontend app within an organization. requires plugin read access and organization id (uuid), and app id (integer) as path parameters. returns json with app information.
+</Accordion>
+
+<Accordion title="Retrieve matching events for session recording">
+Retrieves event ids matching a filter with one session id and at least one event/action criterion. intended for internal use and may have sudden changes.
+</Accordion>
+
+<Accordion title="Retrieve pipeline frontend app activity">
+Retrieve activity details for pipeline front-end apps within a specified organization by organization id. returns json object with app properties such as id, type, name, and configuration. uuid path parameter required.
+</Accordion>
+
+<Accordion title="Retrieve notebook activity for project">
+The api for interacting with notebooks. this feature is in early access and the api can have breaking changes without announcement.
+</Accordion>
+
+<Accordion title="Retrieve organization plugin details">
+Retrieve a specific plugin's details for an organization. requires the plugin's integer id and the organization's uuid. only returns plugin info if authenticated with 'plugin:read' permission. responds with plugin data in json format.
+</Accordion>
+
+<Accordion title="Retrieve pipeline frontend app source details">
+Retrieve details for a specific pipeline frontend app's source by its id within an organization. requires an integer id of the app and uuid of the organization. returns json object with app properties.
+</Accordion>
+
+<Accordion title="Retrieve pipeline frontend plugin config">
+Retrieve the frontend configuration for a specific plugin in a project's pipeline. requires project and config ids and returns details like plugin info, status, and creation timestamps.
+</Accordion>
+
+<Accordion title="Retrieve notebook activity log">
+The api for interacting with notebooks. this feature is in early access and the api can have breaking changes without announcement.
+</Accordion>
+
+<Accordion title="Retrieve event definition by uuid">
+Retrieve an event definition by its uuid within a specified project. requires a project id and an event definition id, with access secured by personalapikeyauth. (get /api/projects/\{project id\}/event definitions/\{id\})
+</Accordion>
+
+<Accordion title="Retrieve pipeline destination frontend config">
+Retrieve configuration details for a specific pipeline destination in a project by getting the frontend data of the config with a given id. this endpoint requires the 'project id' and 'id' of the config.
+</Accordion>
+
+<Accordion title="Retrieve organization plugin repository details">
+Retrieve plugin repository details for a specific organization by its uuid, including plugin type, name, url, and more. accessible via get request to '/api/organizations/\{organization id\}/plugins/repository/'.
+</Accordion>
+
+<Accordion title="Retrieve pipeline import app source details">
+Retrieves source details of a pipeline import app by its id within a specified organization. expects `organization id` (uuid) and `id` (integer) as path parameters. returns app properties including type, name, and related info.
+</Accordion>
+
+<Accordion title="Retrieve batch export run logs">
+Retrieve logs for a specific batch export run within a project. requires `project id`, `batch export id`, and `id` (all uuids). the endpoint returns run status, error info, record count, and timestamps.
+</Accordion>
+
+<Accordion title="Retrieve pipeline import app details">
+Access specific pipeline import app details in an organization using its id and a valid organization uuid. requires 'personalapikeyauth' with 'plugin:read' access. outputs app properties in json format.
+</Accordion>
+
+<Accordion title="Retrieve pipeline import apps activity">
+Retrieve activity details of pipeline import apps for a given organization. requires 'organization id' (uuid). returns app id, type, name, url, and other metadata. supports 'local', 'custom', 'repository', 'source', and 'inline' plugin types.
+</Accordion>
+
+<Accordion title="Retrieve notebook details">
+The api for interacting with notebooks. this feature is in early access and the api can have breaking changes without announcement.
+</Accordion>
+
+<Accordion title="Retrieve experiments requiring flag implementation">
+Retrieve details for experiments that require feature flag implementation in a specific project. requires a valid 'project id' and user must have 'experiment:read' permission. returns information like experiment names, dates, flags, and creation data.
+</Accordion>
+
+<Accordion title="Retrieve and delete project person trends">
+This endpoint is for reading and deleting persons. use the capture api, `$set`/`$unset` properties, or sdks for creating/updating persons.
+</Accordion>
+
+<Accordion title="Retrieve pipeline plugin details by id">
+Retrieve pipeline transformation plugin details by id for a specified organization. requires authentication and provides information like plugin type, name, and configuration for authorized users. supports json response.
+</Accordion>
+
+<Accordion title="Retrieve pipeline transformation config">
+Retrieve the configuration for a specific pipeline transformation plugin in a project by its id using a get request. requires project id and plugin config id in the path and 'plugin:read' permission.
+</Accordion>
+
+<Accordion title="Retrieve pipeline transformation frontend config">
+Retrieve the frontend configuration details for a specific pipeline transformation by id within a given project. this endpoint requires the project id and transformation config id in the path.
+</Accordion>
+
+<Accordion title="Retrieve organization plugin unsubscribe configs">
+Retrieve plugin export unsubscribe configurations for a specified organization by organization id. supports local, custom, repository, source, and inline plugin types, providing details like name, description, url, and icon.
+</Accordion>
+
+<Accordion title="Remove project plugin configuration">
+Delete /api/projects/\{project id\}/plugin configs/\{id\}/: removes a specific plugin configuration by id from a given project. requires 'plugin:write' permissions and project id. returns 204 with no body on success.
+</Accordion>
+
+<Accordion title="Retrieve plugin source details">
+Retrieve plugin source details by organization and plugin id. requires integer 'id' for the plugin and 'organization id' as uuid. responds with plugin attributes including type, name, and url.
+</Accordion>
+
+<Accordion title="Retrieve plugin config details">
+Retrieve the configuration details of a specific plugin by its id for a given project. this endpoint requires a project id and plugin config id, with read permission, and returns an object containing config settings and status.
+</Accordion>
+
+<Accordion title="Retrieve app metrics by ids">
+Retrieve app-specific metrics for a given project by providing the project id and app metric id. requires a personal api key with plugin:read access. no response body provided upon success (200).
+</Accordion>
+
+<Accordion title="Retrieve plugin config frontend">
+Retrieve the frontend configuration of an app's pipeline import by id within a specified project. requires `project id` and `id` of the plugin config. returns json object with config details.
+</Accordion>
+
+<Accordion title="Retrieve plugin frontend config">
+Retrieve the frontend configuration of a specific plugin for a given project. requires the project id and plugin config id. provides details including plugin state, order, and related info.
+</Accordion>
+
+<Accordion title="Retrieve experiment details by ids">
+Access detailed experiment info within a project using unique `experiment id` & `project id`, with 'experiment:read' rights. response includes dates, feature flag key, metrics, creator details.
+</Accordion>
+
+<Accordion title="Retrieve pipeline destination config details">
+Retrieve details of a specific pipeline destination config for a project by its id. requires project id and destination config id. supports personalapikeyauth for read access. responds with config details including plugin info, status, and timestamps.
+</Accordion>
+
+<Accordion title="Retrieve plugin source details for pipeline transformation">
+Retrieve the source details of a pipeline transformation for a specific plugin by id within an organization. access plugin metadata, like its type, url, and config, relevant to organizing and managing pipeline operations.
+</Accordion>
+
+<Accordion title="Retrieve plugin config activity details">
+Retrieve activity details for a specific plugin configuration within a project. requires `project id` and unique `id` of the plugin config. responds with plugin info, status, and activity metrics.
+</Accordion>
+
+<Accordion title="Retrieve organization project details">
+Projects for the current organization.
+</Accordion>
+
+<Accordion title="Retrieve plugin config activity">
+Retrieve activity details for a specific plugin config within a project's pipeline import apps. requires 'project id' and plugin config 'id' within the api path.
+</Accordion>
+
+<Accordion title="Retrieve person values by project">
+This endpoint is for reading and deleting persons. for creation or updates, use the [capture api](https://posthog.com/docs/api/capture), `$set`/`$unset`, or sdks.
+</Accordion>
+
+<Accordion title="Retrieve feature flag role access details">
+Retrieve details for a specific role's access to a feature flag within a project. requires 'feature flag id', 'id' for role access, and 'project id'. returns a json object with access details.
+</Accordion>
+
+<Accordion title="Retrieve hedgehog configuration by uuid">
+Retrieve user's hedgehog configuration details by their uuid. this endpoint requires the user's uuid as a path parameter and returns various user-related settings such as email, team info, timezone, and more in json format. supports get requests.
+</Accordion>
+
+<Accordion title="Retrieve group property definitions by project id">
+Retrieve property definitions for a group within a project by providing the project id. this endpoint returns details like group type index, key, and creation time in json format.
+</Accordion>
+
+<Accordion title="Retrieve organization role details">
+Retrieve the details of a specific role within an organization using its uuid. requires the organization's uuid and role's uuid in the path and is protected by personalapikeyauth with 'organization:read' scope. returns role data in json.
+</Accordion>
+
+<Accordion title="Retrieve plugin update info">
+This endpoint retrieves update information for a specific plugin within an organization's pipeline frontend app by its integer id and the organization's uuid. it returns details such as plugin type, name, and latest version.
+</Accordion>
+
+<Accordion title="Retrieve filtered project property definitions">
+Get property definitions for a project using project id, with filters for event names, property types, exclusions, and numerical or feature flags. also, view properties relevant to specific events.
+</Accordion>
+
+<Accordion title="Retrieve feature flag details">
+This guide details how to manage (create, read, update, delete) feature flags in applications using posthog's javascript library or endpoint. for more info, visit the provided documentation.
+</Accordion>
+
+<Accordion title="Retrieve person s activity and delete options">
+This endpoint is for reading and deleting persons; for creating/updating, use the capture api, `$set`/`$unset` properties, or sdks.
+</Accordion>
+
+<Accordion title="Retrieve cohort activity details">
+Retrieve activity details for a specific cohort within a project. requires a project id and cohort id, returning status, filters, query, and creator data. auth: personalapikeyauth with 'activity log:read' scope.
+</Accordion>
+
+<Accordion title="Retrieve person properties timeline">
+This endpoint allows reading and deleting individuals. use the capture api, `$set` and `$unset` properties, or sdks for creating or updating persons.
+</Accordion>
+
+<Accordion title="Retrieve group property values by index and key">
+Retrieve property values by 'group type index' and 'key' within a 'project id'. parameters must be provided. output is a json with property details and creation timestamp.
+</Accordion>
+
+<Accordion title="Retrieve export unsubscribe configs">
+Retrieve the configuration for unsubscribing from exports in the pipeline import apps for a specific organization. requires an organization uuid in the path. returns various properties including ids, plugin types, and metadata as a json object.
+</Accordion>
+
+<Accordion title="Retrieve funnel insights in project">
+Gain insights from funnel analysis of a specific project by providing its id and having 'insight:read' permission. supports json/csv formats and offers detailed info like creation, modification, and dashboards quickly.
+</Accordion>
+
+<Accordion title="Retrieve pipeline transformation activity">
+Retrieve the activity details of a specific pipeline transformation configuration in a project using its unique integer id. requires project id. returns json including config, plugin info, and activity data.
+</Accordion>
+
+<Accordion title="Retrieve project cohorts with pagination">
+Retrieve a paginated list of cohorts for a specific project using `project id`. supports `limit` and `offset` query params to customize the response. requires `personalapikeyauth` with `cohort:read` permissions.
+</Accordion>
+
+<Accordion title="Retrieve project insights with pagination">
+The get `/api/projects/\{project id\}/insights/` endpoint retrieves a paginated list of insights for a specified project. filter by creator, response format (csv/json), and use limit/offset for result batching. requires `insight:read` permission.
+</Accordion>
+
+<Accordion title="Retrieve plugin update status">
+Retrieve the latest update status for a specific plugin, identified by its integer id, within an organization specified by uuid. check compatibility and change logs.
+</Accordion>
+
+<Accordion title="Retrieve proxy record details">
+Retrieve a specific proxy record's details by id within an organization. requires path parameters 'organization id' and 'id'. returns json data including domain, status, and timestamps. auth: personalapikeyauth with 'organization:read'.
+</Accordion>
+
+<Accordion title="Retrieve project action details by id">
+Get details on a project action by id. supports json/csv format via query. needs 'project id' and 'id' path parameters. secured by personalapikeyauth.
+</Accordion>
+
+<Accordion title="Retrieve session property definitions">
+Retrieve property definitions for a specific project by providing the project's id. access this get endpoint at `/api/projects/\{project id\}/sessions/property definitions/`. project id is mandatory. no response body is returned upon a successful call.
+</Accordion>
+
+<Accordion title="Posthog Retrieve Retention Insights">
+Retrieve retention insights for a specified project. options to output in csv or json format. requires a project id and supports query customization. authenticated access with 'insight:read' permission necessary.
+</Accordion>
+
+<Accordion title="Retrieve project activity insights">
+Retrieve activity insights for a specific project by project id, supporting csv or json formats. requires an api key with activity log:read permission. limited to essential data to enhance response time for large datasets.
+</Accordion>
+
+<Accordion title="Retrieve project insights details">
+Retrieve detailed insights for a specific project using its id. queries can be made in csv or json format. requires 'insight:read' permission. results include various metadata like creation, last refresh, and associated dashboard info.
+</Accordion>
+
+<Accordion title="Retrieve project activity details">
+Projects for the current organization.
+</Accordion>
+
+<Accordion title="Retrieve project cohort details">
+Retrieve detailed information about a specific cohort within a project using its id. requires project id and cohort id; returns cohort details including name, creator info, and status. auth: personalapikeyauth with cohort:read permission.
+</Accordion>
+
+<Accordion title="Retrieve project activity log with pagination">
+Access a project's activity log using pagination and cursor-based navigation. requires project id and personalapikeyauth. outputs activity list with user data and timestamps.
+</Accordion>
+
+<Accordion title="Retrieve project cohorts activity log">
+Retrieve activity log for a specific project's cohorts. requires a project id and personalapikeyauth with activity log:read permission. response includes cohort details and creator info.
+</Accordion>
+
+<Accordion title="Retrieve project early access feature details">
+Retrieve details of a specific early access feature in a project by id. requires project id and feature uuid. must have 'early access feature:read' permission. returns feature details including status, flag info, and timestamps.
+</Accordion>
+
+<Accordion title="Retrieve related project groups">
+Retrieve related groups for a specific project and user. requires 'project id' (path), 'group type index', and user 'id' (query). returns group details with type, key, and creation date.
+</Accordion>
+
+<Accordion title="Retrieve project insight activity data">
+Retrieve insights activity for a specific project and insight id, offering data in json or csv format. requires project id and insight id in the path, with optional data format query. secure access via personalapikeyauth.
+</Accordion>
+
+<Accordion title="Retrieve project pipeline plugin config">
+Retrieve configuration details of a specific plugin for a given project pipeline by id. requires a valid project id and plugin config id. supports personalapikeyauth for 'plugin:read' access. responds with json containing configuration data.
+</Accordion>
+
+<Accordion title="Retrieve survey responses count by project id">
+Retrieve the count of survey responses for a specific project by its id. it requires the project id parameter and returns details like the survey type, linked flags, and creator info.
+</Accordion>
+
+<Accordion title="Retrieve unsubscribed pipeline configs">
+Retrieve config details for unsubscribed pipeline destinations in an organization. requires 'organization id' (uuid). returns plugin info, name, description, and more in json format.
+</Accordion>
+
+<Accordion title="Retrieve project annotation details">
+Create, read, update and delete annotations. [see docs](https://posthog.com/docs/user-guides/annotations) for more information on annotations.
+</Accordion>
+
+<Accordion title="Retrieve project draft sql query">
+Retrieve the draft sql query for a specific project using its project id. ensure to obtain the project id by calling /api/projects/. note: this endpoint does not return a response body.
+</Accordion>
+
+<Accordion title="Retrieve unused organization pipeline frontend apps">
+Retrieve unused pipeline frontend apps for a specific organization by its uuid. returns details like app ids, types, names, descriptions, and other metadata in json format. requires organization id in path.
+</Accordion>
+
+<Accordion title="Update organization member details">
+Update member details in an organization by id and user uuid. requires org member write permission. accepts json, form, or multipart. responses reflect member info, including roles and security settings.
+</Accordion>
+
+<Accordion title="Update event definition by uuid">
+Update an event definition by sending a put request to '/api/projects/\{project id\}/event definitions/\{id\}/' using the uuid and project id, provided you have 'event definition:write' authorization.
+</Accordion>
+
+<Accordion title="Soft delete feature flag by setting status">
+Hard delete of this model is not allowed. use a patch api call to set "deleted" to true
+</Accordion>
+
+<Accordion title="Update organization domain properties">
+Updates selected properties of a domain in an organization via patch request, supports various data formats but saml fields are immutable. authentication needed.
+</Accordion>
+
+<Accordion title="Soft delete a specific cohort by id">
+Hard delete of this model is not allowed. use a patch api call to set "deleted" to true
+</Accordion>
+
+<Accordion title="Retrieve project session values">
+Retrieve session values for a specified project. pass the project id in the url path to obtain the information. only the project's id is required as a parameter. no response body for the 200 ok status code.
+</Accordion>
+
+<Accordion title="Retrieve unused organization plugins">
+Retrieve a list of unused plugins for a specified organization by its uuid. the response includes plugin details such as type, name, and configuration. access restricted to the specified organization's context.
+</Accordion>
+
+<Accordion title="Retrieve specific domain details">
+Retrieve details of a specific domain within an organization using its uuid. authorized users can check domain verification status and saml configuration. requires the `personalapikeyauth` with `organization:read` scope.
+</Accordion>
+
+<Accordion title="Update organization s proxy record domain">
+Update a proxy record's domain details for a specified organization and proxy record id using put. requires organization and record ids, supports json, form, and multipart data. responses include status and timestamps. auth required.
+</Accordion>
+
+<Accordion title="Posthog Retrieve Unused Pipeline Destinations">
+Retrieve unused pipeline destinations for a specified organization by id. this get endpoint returns a json object with details like destination id, plugin type, and url, among other attributes. (uuid for organization id is required.)
+</Accordion>
+
+<Accordion title="Update organization member by uuids">
+Patch '/api/organizations/\{id\}/members/\{uuid\}': updates org member with user and org uuids. supports json/form/multipart. returns member data. secured by personalapikeyauth.
+</Accordion>
+
+<Accordion title="Retrieve project event details by id">
+Retrieve details for a specific event by id within a project. supports csv or json format. requires project id in path and adheres to personalapikeyauth for security.
+</Accordion>
+
+<Accordion title="Update partial role details in organization">
+Patch /api/organizations/\{organization id\}/roles/\{id\}/: update partial details of a role by id within an organization, including name and feature flag access level. requires uuids for both organization and role. supports json, form, and multipart data.
+</Accordion>
+
+<Accordion title="Retrieve project subscription details">
+Retrieve a specific subscription for a project, identified by 'project id' and 'id'. requires valid api key with read access. supports get method, returns subscription details including frequency, type, and creator info.
+</Accordion>
+
+<Accordion title="Retrieve user details for initiating 2fa setup">
+The endpoint `get /api/users/\{uuid\}/start 2fa setup/` fetches details for initiating 2fa setup for a user, providing information like email status, password presence, and more. fields are mostly read-only.
+</Accordion>
+
+<Accordion title="Retrieve project insight details">
+Retrieve details for a specific project insight by id, with options to format as json/csv, request refresh, and specify dashboard context. supports personalapikeyauth with insight read access. responses include metadata, results, and caching info.
+</Accordion>
+
+<Accordion title="Update experiment details">
+Update an experiment by sending a put request with `project id` and `id`, including new details as json/form data. changes to name, description, dates, etc., allowed. `experiment:write` permission needed.
+</Accordion>
+
+<Accordion title="Soft delete project dashboard">
+Hard delete of this model is not allowed. use a patch api call to set "deleted" to true
+</Accordion>
+
+<Accordion title="Update partial project cohort details">
+Update partial cohort details for a specific project. requires a cohort id and project id, supports json, form data, and accepts patch changes like name or description. returns updated cohort data. auth required.
+</Accordion>
+
+<Accordion title="Update person property endpoint">
+This endpoint allows for reading and deleting individuals. use the capture api, `$set` and `$unset` properties, or sdks for creating or updating persons.
+</Accordion>
+
+<Accordion title="Retrieve specific exported asset content">
+Retrieve the content of a specific exported asset by id within a project. requires 'export:read' permission. supports fetching details like creation time, format (png, pdf, csv, excel), etc.
+</Accordion>
+
+<Accordion title="Update pipeline destination config">
+Update the configuration for a pipeline destination in a project. accepts a json, form-urlencoded, or multipart data payload to modify plugin settings by providing project and config ids. requires plugin:write authority. responds with updated data.
+</Accordion>
+
+<Accordion title="Update partial subscription details">
+Patch /api/projects/\{project id\}/subscriptions/\{id\}/: update partial details of a specific project subscription by id. modify target, frequency, and more. requires subscription:write permission.
+</Accordion>
+
+<Accordion title="Update person properties">
+Request data's "properties" will be updated on a person using "$set" event, affecting only listed properties without deletion or other changes. for property removal, use 'delete property' endpoint.
+</Accordion>
+
+<Accordion title="Update partial survey details">
+Update partial survey details by patch to /api/projects/\{project id\}/surveys/\{id\}/ with uuid. edit attributes like name, type, questions, targeting, and flags. needs personalapikeyauth for write access.
+</Accordion>
+
+<Accordion title="Retrieve user profile and team details">
+Fetch user info like profile, team, org, and notifications via uuid using personalapikeyauth ('user:read'). returns json with name, email, teams, and status.
+</Accordion>
+
+<Accordion title="Retrieve project member details by uuid">
+Retrieve detailed information about a specific user's membership level and status within a project by their uuid. access project members' data, roles, and timestamps. (get /api/projects/\{project id\}/explicit members/\{uuid\})
+</Accordion>
+
+<Accordion title="Retrieve project trend insights">
+Retrieve trend insights for a specific project, supporting csv or json formats. mandatory project id required. provides details on insight cache status, creator, and associated dashboards. auth: personalapikeyauth.
+</Accordion>
+
+<Accordion title="Update pipeline frontend app config">
+Update configuration for a specific pipeline frontend app by providing its id and the project id. configure details like activation, order, and optional parameters via json or form data. authentication required.
+</Accordion>
+
+<Accordion title="Update plugin config for project">
+Update a plugin config's partial details in a project by its id using patch. requires project id, config id. accepts json/form data. authenticated with personalapikeyauth. returns updated config.
+</Accordion>
+
+<Accordion title="Split person entities in project">
+This endpoint allows reading and deleting persons; for creation or updates, use the capture api, `$set`/`$unset` properties, or sdks.
+</Accordion>
+
+<Accordion title="Update pipeline plugin config">
+Update a project-specific pipeline plugin configuration by supplying the project id and config id. this put request expects details like plugin state, order, and more in json, form data, or url-encoded format. authentication is required.
+</Accordion>
+
+<Accordion title="Update pipeline transformation config">
+Update a pipeline transformation configuration for a specific project and config id. requires project id and config id in the path and json payload. supports plugin activation and order changes.
+</Accordion>
+
+<Accordion title="Update feature flag configuration">
+Manage feature flags for your app with creation, reading, updating, and deletion options. utilize posthog's js library or endpoint for flag status. more info in docs.
+</Accordion>
+
+<Accordion title="Update project early access feature">
+Update a specific early access feature of a project by providing the `project id` and feature `id` (uuid). requires a json body with feature details and responds with the updated status. authentication via personalapikeyauth is mandatory.
+</Accordion>
+
+<Accordion title="Update project action by id">
+Put endpoint '/api/projects/\{project id\}/actions/\{id\}/' updates actions in a project by id, accepts json/form data, supports 'format' query, and needs 'action:write' authentication.
+</Accordion>
+
+<Accordion title="Retrieve project event values">
+Retrieve event values for a specific project by id. supports querying in csv or json format. requires a project id and personal api key with query:read permission. responds with event details such as id, distinct id, properties, etc.
+</Accordion>
+
+<Accordion title="Retrieve project person activity">
+This endpoint allows reading and deleting individuals. for creating or updating, use the capture api, `$set`/`$unset` properties, or sdks.
+</Accordion>
+
+<Accordion title="Update project event definition">
+Update an existing event definition for a specified project using its uuid. requires a project id and event definition write permissions. responds without a body on success.
+</Accordion>
+
+<Accordion title="Retrieve session recording details">
+Retrieve detailed information about a specific session recording by providing the session's uuid and associated project id. the response includes metrics such as duration, activity, timestamps, and user data. authentication is required.
+</Accordion>
+
+<Accordion title="Revoke organization invite">
+Delete an organization invite by its uuid. requires a valid personalapikeyauth with organization member write permission. no response body returned on success (http 204).
+</Accordion>
+
+<Accordion title="Update project cohort details">
+Update cohort details of a specific project by id. requires project and cohort id in the path and a json, form-encoded, or multipart form body. permissions: cohort:write. returns updated cohort data.
+</Accordion>
+
+<Accordion title="Update project action with partial data">
+Update an action within a project with a specified id. supports partial updates. accepts json, form-data, and query parameters including 'project id' and 'id'. formats response in csv or json. requires 'action:write' permission.
+</Accordion>
+
+<Accordion title="Update project dashboard details">
+Endpoint to update an existing dashboard within a project. provide `project id` and `dashboard id` in path, send json or form data with dashboard details. requires `dashboard:write` permission; responds with updated dashboard data.
+</Accordion>
+
+<Accordion title="Trigger project export with format option">
+The `/api/projects/\{project id\}/exports/` endpoint triggers a project export, requiring `project id` and `export format`. it accepts json, form-encoded, and multipart data, responding with a 201 code and export information.
+</Accordion>
+
+<Accordion title="Retrieve specific historical plugin export">
+Retrieve historical export data for a specific plugin configuration within a project. requires project, plugin config, and export item ids. auth via personalapikeyauth. no body in 200 response.
+</Accordion>
+
+<Accordion title="Update project group type metadata">
+Patch /api/projects/\{project id\}/groups types/update metadata: update group type metadata for a specific project using its project id. can modify name singular and name plural fields up to 400 characters each.
+</Accordion>
+
+<Accordion title="Update organization details by uuid">
+Update specific details of an organization using its uuid. allows patch requests with json, form data, or multipart. requires `organization:write` permission. returns updated organization info.
+</Accordion>
+
+<Accordion title="Update project notebook details">
+The api for interacting with notebooks. this feature is in early access and the api can have breaking changes without announcement.
+</Accordion>
+
+<Accordion title="Update project member role by uuid">
+Update a project member's role using their uuid in a specific project. accepts partial data to modify membership details such as role level, provided the member's uuid and project id.
+</Accordion>
+
+<Accordion title="Set insight deletion flag">
+Hard delete of this model is not allowed. use a patch api call to set "deleted" to true
+</Accordion>
+
+<Accordion title="Retrieve project experiment results">
+Retrieve experiment results within a project by project and experiment id. requires project id and experiment id in the path. returns experiment details in json, with authentication via personalapikeyauth.
+</Accordion>
+
+<Accordion title="Update project member s role by uuid">
+Update explicit project membership using uuids. this put endpoint modifies a project member's role, where '1' stands for member and '8' for administrator. requires `project id` and `parent membership  user  uuid`.
+</Accordion>
+
+<Accordion title="Retrieve session recording error clusters">
+Retrieve error clusters from session recordings for a specified project. this endpoint provides details on user interactions, console logs, and activity times in json format, requiring the project id in the path.
+</Accordion>
+
+<Accordion title="Retrieve properties and events association">
+Allows a caller to provide a list of event names and a single property name returns a map of the event names to a boolean representing whether that property has ever been seen with that event name
+</Accordion>
+
+<Accordion title="Retrieve property definition details">
+Retrieve details of a specific property definition by uuid within a project. requires project id and property definition id. security: personalapikeyauth with read access. no response body provided.
+</Accordion>
+
+<Accordion title="Update project insight details">
+Endpoint "/api/projects/\{project id\}/insights/\{id\}/" allows for updating an insight's details for a given project and insight id, supporting json and csv formats, with fields like name, query, and various timestamps. requires insight write permission.
+</Accordion>
+
+<Accordion title="Update project pipeline transformation config">
+Update a specific pipeline transformation configuration for a project by providing a `project id` and configuration `id`. this patch request can modify properties like `plugin`, `enabled`, and `order`. authentication via a personal api key is required.
+</Accordion>
+
+<Accordion title="Retrieve session recording playlist details">
+Retrieve session recording playlists for a specified project and playlist short id. returns details like name, creator info, and recordings. access by making a get request to `/api/projects/\{project id\}/session recording playlists/\{short id\}/recordings/`.
+</Accordion>
+
+<Accordion title="Update project plugin configuration">
+Update project plugin config using its integer id and project string id; accepts json, url-encoded, or form-data. requires authentication; returns the updated config.
+</Accordion>
+
+<Accordion title="Update project pipeline destination config">
+Update a project's pipeline destination config by id via patch api request. supports json/form requests, with fields like plugin & order. requires personalapikeyauth.
+</Accordion>
+
+<Accordion title="Posthog Retrieve Specific Pipeline Frontend App Config">
+Retrieve the configuration details of a specific pipeline frontend app by providing its unique id and the associated project id. permissions: 'plugin:read'. response includes plugin config info like enabled state and creation timestamp.
+</Accordion>
+
+<Accordion title="Update annotation details">
+Create, read, update and delete annotations. [see docs](https://posthog.com/docs/user-guides/annotations) for more information on annotations.
+</Accordion>
+
+<Accordion title="Retrieve project person stickiness">
+This endpoint allows for reading and deleting persons. for creations or updates, use the capture api, set/unset properties, or sdks.
+</Accordion>
+
+<Accordion title="Retrieve session recording properties by project id">
+Retrieve properties of session recordings for a given project by id, including activity metrics, timestamps, and participant details. requires project id in the path. returns json data with recording details.
+</Accordion>
+
+<Accordion title="Retrieve project export details">
+Retrieve detailed info on a specific export of a project using its unique id. requires project id and supports various export formats like png, pdf, csv, and xlsx. auth: personalapikeyauth with export:read scope.
+</Accordion>
+
+<Accordion title="Retrieve project funnel correlation insights">
+Retrieve insights about funnel correlations for a specific project by id, offering results in json or csv. supports querying and output formatting, with a focus on fast loading of large datasets.
+</Accordion>
+
+<Accordion title="Update early access project feature">
+This patch endpoint updates a specific early access project feature. it requires `project id` and `id` (uuid) as path parameters. the body can include feature details like `name`, `description`, and `stage`. security: `personalapikeyauth`.
+</Accordion>
+
+<Accordion title="Retrieve similar session recordings">
+Retrieve similar session recordings for a given session by uuid within a project. details include session activity data, user info, and timestamps. requires `project id` and session `id`.
+</Accordion>
+
+<Accordion title="Retrieve specific project dashboard details">
+Retrieve details of a specific dashboard within a project. requires a dashboard id & project id, and returns information such as dashboard properties, owner, and access levels. auth: personalapikeyauth[dashboard:read].
+</Accordion>
+
+<Accordion title="Retrieve project person cohorts">
+This endpoint allows reading and deletion of persons; for creation or updates, use the capture api, `$set`/`$unset` properties, or sdks.
+</Accordion>
+
+<Accordion title="Update organization domain info and saml config">
+Update a domain's info for a specific organization by id, including verification status and saml configuration. requires uuid path params and supports json, form-data content types.
+</Accordion>
+
+<Accordion title="Retrieve survey details with uuid and project id">
+Retrieve survey details using survey uuid and associated project id. supports secure access with 'personalapikeyauth'. returns survey name, type, linking, targeting flags, creator info, and questions with branching logic descriptions.
+</Accordion>
+
+<Accordion title="Retrieve project group details by key and type">
+Retrieves specified group details within a project by group key and type index. requires 'group key', 'group type index', and 'project id'. responds with group details, including creation timestamp.
+</Accordion>
+
+<Accordion title="Retrieve specific batch export run details">
+Retrieve details for a specific batch export run within a project by id. requires a uuid for batch export id and run id. provides run status, record count, timestamps, latest error, and intervals. security: personalapikeyauth.
+</Accordion>
+
+<Accordion title="Retrieve survey activity logs">
+Retrieve activity logs for specific survey in a project, identified by uuids. requires valid api key with 'activity log:read' permissions. supports json response detailing survey's properties, types, and creator info.
+</Accordion>
+
+<Accordion title="Retrieve session recording snapshots">
+Snapshots for a session can be loaded from s3 (if old) or redis (if recent). clients call the api without a source to get supported sources, then per source for snapshots. api v1 is deprecated; clickhouse support removed.
+</Accordion>
+
+<Accordion title="Retrieve specific batch export details">
+Retrieve details of a specific batch export for an organization by its uuid. requires a personalapikeyauth with 'batch export:read' permission. responses include export details like name, model, destination, interval, and more.
+</Accordion>
+
+<Accordion title="Update project property definition">
+Update a property definition in a project by its uuid. requires a project id and definition id, both as path parameters. security: personalapikeyauth with write access. no body in the response.
+</Accordion>
+
+<Accordion title="Update role details in organization">
+Update an organization role by submitting its uuid and organization id in uuid format. role details must be in json or form-data. only users with 'organization:write' can do this. returns updated role data.
+</Accordion>
+
+<Accordion title="Update project subscription details">
+Update a subscription for a specific project. provide project id and subscription id in the path and use mime types like application/json with fields like frequency, target type, etc. requires `subscription:write` permission.
+</Accordion>
+
+<Accordion title="Update specific proxy record fields">
+Patch `/api/organizations/\{organization id\}/proxy records/\{id\}/`: update specific fields of a proxy record by id within an organization. supports json, form data, and multipart. requires `organization:write` permission. returns updated proxy record.
+</Accordion>
+
+<Accordion title="Update project session recording playlist">
+Update an existing session recording playlist for a project with the specified project id and playlist short id. requires json or form data input to modify the playlist's properties like name, description, and status.
+</Accordion>
+
+<Accordion title="Update project survey details">
+The `/api/projects/\{project id\}/surveys/\{id\}/` put endpoint updates survey details in a project using survey uuid and project id, accepts json/form/multipart data, needs `survey:write` permission, and returns the updated survey.
+</Accordion>
+
+<Accordion title="Update session recording playlist partially">
+Update session recording playlists using patch on the endpoint with `project id` and `short id`. accepts json and forms data for detail amendments. partial updates allowed. `personalapikeyauth` needed.
+</Accordion>
+

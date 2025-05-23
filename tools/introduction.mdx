@@ -1,0 +1,23 @@
+## Providers
+
+Providers are third party applications that support various tools. Users and organizations access tools by authenticating with these providers, typically through OAuth or API keys.
+
+User authentication allows individuals to connect their personal accounts, enabling access to user-specific resources and actions. Organization-level authentication, on the other hand, grants access to shared resources and enables broader context gathering across the entire organization. 
+
+## Using Tools
+
+After a provider is integrated, the Query Agent will have access to a list of "tools." Tools serve a variety of purposes:
+
+- Used within Push.ai managed tools (e.g., search API's are often abstracted into our "Search Knowledge" tool)
+- Gather context when answering queries
+- Perform actions, both entirely agent-driven and human-in-the-loop
+
+## Security and Access controls
+
+- Providers often have both user-level and organization level authentication methods and tools
+- User-level tools are often tied to action-driven tools like creating and updating provider specific resources (e.g., send a Slack message)
+- Organization-level tools support context gathering across the entire organization (e.g., list all Github issues)
+
+## Custom Tools and API Integrations
+
+Custom tools can be built around API integrations not listed.

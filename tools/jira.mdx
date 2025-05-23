@@ -1,0 +1,2166 @@
+Jira API tool
+
+<Accordion title="Add attachment">
+Attach files to a jira issue using multipart/form-data and 'x-atlassian-token: no-check' header. include 'file' parameter; examples in various languages. requires 'browse projects' and 'create attachments' permissions, anonymous allowed. &lt;&lt;DEPRECATED use JIRA_ADD_ATTACHMENT_TO_ISSUE&gt;&gt;
+</Accordion>
+
+<Accordion title="Add actors to project role">
+Add actors to a project role; replace using the provided link. anonymous access allowed. requires 'administer projects' or 'administer jira' permissions.
+</Accordion>
+
+<Accordion title="Add default actors to project role">
+Add either groups or users, not both, as default actors to a jira role. existing projects' roles remain unchanged. admin rights required.
+</Accordion>
+
+<Accordion title="Add field to default screen">
+Adds a field to the default tab of the default screen. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Add attachment to issue">
+This tool allows users to add attachments to a jira issue. it enables users to attach files such as screenshots, documents, or other files to a specific issue.
+</Accordion>
+
+<Accordion title="Add comment">
+This tool adds a new comment to a specified jira issue. the comment can include formatted text using the atlassian document format (adf). it uses the api endpoint post /rest/api/3/issue/\{issueidorkey\}/comment to create a comment.
+</Accordion>
+
+<Accordion title="Add screen tab field">
+Adds a field to a screen tab. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Add user to group">
+Adds a user to a group. **[permissions](https://dac-static.atlassian.com) required:** site administration (that is, member of the *site-admin* [group](https://confluence.atlassian.com/x/24xjl)).
+</Accordion>
+
+<Accordion title="Add issue security levels">
+Adds levels and levels' members to the issue security scheme. you can add up to 100 levels per request. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Add watcher">
+To add a user to an issue's watcher list, use the account id or default to the caller. ensure "allow users to watch issues" is on, and appropriate permissions, including "manage watcher list" for adding others, are granted.
+</Accordion>
+
+<Accordion title="Assign field configuration scheme to project">
+Assigns a field config scheme to a project or defaults if null. only for classic projects. requires 'administer jira' global permission.
+</Accordion>
+
+<Accordion title="Add filter as favorite">
+Users can mark filters as favorites in jira if they own it, are in a group it's shared with, or if it's shared with a project or the public they have access to. permissions needed.
+</Accordion>
+
+<Accordion title="Assign issue types to field configurations">
+This operation assigns issue types to field configs in a scheme, limited to company-managed projects, and requires *administer jira* global permission.
+</Accordion>
+
+<Accordion title="Add issue types to context">
+Issue types can be added to a jira custom field context, limiting its application to those types only. if types are already present, the add fails. admin permissions needed.
+</Accordion>
+
+<Accordion title="Append mappings to issue type screen scheme">
+Appends issue type to screen scheme mappings to an issue type screen scheme. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Assign issue">
+Assigns an issue to a user. use this operation when the calling user does not have the edit issues permission but has the assign issue permission for the project that the issue is in. if account id is set to: - "-1", the issue is assigned to the default assignee for the project. - null, the issue is set to unassigned. permissions required: - browse projects and assign issues project permission for the project that the issue is in. - if issue-level security is configured, issue-level security permission to view the issue.
+</Accordion>
+
+<Accordion title="Associate security scheme to project">
+Assigns an issue security scheme to a project, optionally remapping issue security levels. the task is asynchronous; track status via the 'location' link. admin rights required.
+</Accordion>
+
+<Accordion title="Add issue security level members">
+Adds members to the issue security level. you can add up to 100 members per request. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Analyse jira expression">
+This operation analyzes and confirms the validity of jira expressions and can optionally type-check them. it's experimental, with no permissions needed. learn more in the documentation.
+</Accordion>
+
+<Accordion title="Add gadget to dashboard">
+Adds a gadget to a dashboard. **[permissions](https://dac-static.atlassian.com) required:** none.
+</Accordion>
+
+<Accordion title="Bulk delete statuses">
+Deletes statuses by id; requires 'administer projects' and 'administer jira' project permissions.
+</Accordion>
+
+<Accordion title="Assign workflow scheme to project">
+Workflow schemes are designated to classic projects without issues by users with the 'administer jira' global permission.
+</Accordion>
+
+<Accordion title="Add watcher to issue">
+This tool adds a user as a watcher to a specified jira issue. watchers will receive notifications about updates to the issue. this operation requires the "allow users to watch issues" option to be on. this option is set in general configuration for jira. permissions required: - browse projects permission for the project containing the issue - if issue-level security is configured, issue-level security permission to view the issue - to add users other than themselves to the watchlist, manage watcher list project permission
+</Accordion>
+
+<Accordion title="Bulk delete issue property">
+The tool asynchronously removes a property from filtered issues transactionally. results are clickable links. without filters, all issues are affected. edit and browse permissions, plus issue security compliance, are needed.
+</Accordion>
+
+<Accordion title="Bulk get statuses">
+Fetches a list of statuses for given status ids. requires 'administer projects' and 'administer jira' permissions.
+</Accordion>
+
+<Accordion title="Add issue types to issue type scheme">
+This operation appends new issue types to a scheme in jira. if any issue types already exist within the scheme, the process fails. administer jira global permission is required.
+</Accordion>
+
+<Accordion title="Bulk get workflow schemes">
+Get a list of workflow schemes with scheme/project ids. requires 'administer jira' for all schemes, 'administer projects' for project-specific ones.
+</Accordion>
+
+<Accordion title="Bulk set issue properties by issue">
+Updates issue entity properties for up to 100 issues asynchronously; limited to 10 properties per issue with valid json in the request body. the operation is non-transactional, and permissions like 'browse projects' and 'edit issues' are required.
+</Accordion>
+
+<Accordion title="Bulk update custom field value">
+Updates the value of a custom field added by connect apps on one or more issues. the values of up to 200 custom fields can be updated. **[permissions](https://dac-static.atlassian.com) required:** only connect apps can make this request
+</Accordion>
+
+<Accordion title="Bulk set issues properties by list">
+Updates up to 10k issues with ≤10 properties per issue in json format. single property capped at 32,768 chars. allows anonymous use, transactional and async. needs 'browse projects,' 'edit issues,' and issue security view permissions.
+</Accordion>
+
+<Accordion title="Assign issue type scheme to project">
+The text outlines the process to assign an issue type scheme to a classic jira project, noting that it fails if there are issues with types not in the new scheme. admin rights are required.
+</Accordion>
+
+<Accordion title="Bulk update statuses">
+Updates statuses by id, requiring "administer projects" and "administer jira" permissions. more info at provided atlassian links.
+</Accordion>
+
+<Accordion title="Change filter owner">
+Changes the owner of the filter. **[permissions](https://dac-static.atlassian.com) required:** permission to access jira. however, the user must own the filter or have the *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Bulk set issue property">
+Jira allows setting property values on multiple issues with constants or expressions, filtering by various criteria. updates to properties are transactional, asynchronous, and require proper permissions.
+</Accordion>
+
+<Accordion title="Bulk get users">
+Returns a [paginated](https://dac-static.atlassian.com) list of the users specified by one or more account ids. **[permissions](https://dac-static.atlassian.com) required:** permission to access jira.
+</Accordion>
+
+<Accordion title="Bulk edit dashboards">
+Bulk edit dashboards. maximum number of dashboards to be edited at the same time is 100. **[permissions](https://dac-static.atlassian.com) required:** none the dashboards to be updated must be owned by the user, or the user must be an administrator.
+</Accordion>
+
+<Accordion title="Cancel task">
+Cancels a task. **[permissions](https://dac-static.atlassian.com) required:** either of: * *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg). * creator of the task.
+</Accordion>
+
+<Accordion title="Add notifications to notification scheme">
+Add up to 1000 notifications to a scheme, note that `emailaddress` type is deprecated in cloud. administer jira global permission is required. see changelog and permissions docs for details.
+</Accordion>
+
+<Accordion title="Bulk update workflows">
+Permissions needed to update workflows: "administer jira" for all/global workflows, and "administer projects" for project-specific workflows.
+</Accordion>
+
+<Accordion title="Change order of issue types">
+Reorders issue types in a scheme; requires all types in scheme & either 'after' or 'position' specified—excluding 'after' type from the list. admin jira rights needed.
+</Accordion>
+
+<Accordion title="Bulk create issue">
+Creates multiple issues or sub-tasks in bulk. this action allows for the creation of up to 50 issues in a single request. each issue can be a standard issue or a subtask, depending on the issue type specified.
+</Accordion>
+
+<Accordion title="Check issues against jql">
+The text describes a process to check if jql queries will return any issues. no specific permissions are needed, but the user must have 'browse projects' permission and, if applicable, issue-level security permission to view the issues.
+</Accordion>
+
+<Accordion title="Convert user identifiers to account ids in jql queries">
+This tool transforms jql queries with usernames or user keys to ones using account ids for gdpr compliance. important for systems storing jqls. access to jira is necessary. see the migration guide for gdpr changes.
+</Accordion>
+
+<Accordion title="Copy dashboard">
+Copies a dashboard. any values provided in the `dashboard` parameter replace those in the copied dashboard. **[permissions](https://dac-static.atlassian.com) required:** none the dashboard to be copied must be owned by or shared with the user.
+</Accordion>
+
+<Accordion title="Bulk get groups">
+Returns a [paginated](https://dac-static.atlassian.com) list of groups. **[permissions](https://dac-static.atlassian.com) required:** *browse users and groups* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Bulk create statuses">
+Summary: the text outlines that to create statuses applicable across global or project levels, one must have "administer projects" and "administer jira" permissions.
+</Accordion>
+
+<Accordion title="Bulk get workflows">
+Get a list of workflows and statuses using names, ids, or by project/issue type. requires 'administer jira' for all or 'administer projects'/'view workflow' for project-level access.
+</Accordion>
+
+<Accordion title="Assign issue type screen scheme to project">
+The text explains that only users with "administer jira" permissions can assign issue type screen schemes to classic projects.
+</Accordion>
+
+<Accordion title="Archive project">
+Archive a project to prevent deletion. restore it via the jira ui to delete it afterward. administer jira global permission is necessary.
+</Accordion>
+
+<Accordion title="Add share permission">
+Adding a global share permission to a filter will replace existing permissions. requires "share dashboards and filters" global permission and filter ownership. note different objects for updates than in update filter link documentation.
+</Accordion>
+
+<Accordion title="Archive issue s by issue id key">
+Admins can archive 1000 issues per request, with archive status and errors reported. subtasks archived via parents. limited to certain project types. jira or site admin rights, premium or enterprise license, and signed-in users required.
+</Accordion>
+
+<Accordion title="Classic update workflow scheme">
+Updates a company-managed project workflow scheme and its components. if active, updates/creates a draft scheme if `updatedraftifneeded` is true. admin jira permissions needed.
+</Accordion>
+
+<Accordion title="Archive issue s by jql">
+Admins can archive 100k jira issues per request with jql; includes status url, task management apis, and project type limits. requires jira admin rights, premium/enterprise license, and non-anonymous access; only one active request allowed per instance.
+</Accordion>
+
+<Accordion title="Add vote">
+User can vote on an issue in jira if the voting option is enabled in general configuration. necessary permissions include browsing projects and viewing the issue if issue-level security is set. see provided links for details.
+</Accordion>
+
+<Accordion title="Assign permission scheme">
+Assigned a permission scheme to a project. for details, visit the provided links. requires "administer jira" global permission.
+</Accordion>
+
+<Accordion title="Bulk create workflows">
+To create workflows and their statuses in jira, users need 'administer jira' permission for global workflows and 'administer projects' for project-specific ones.
+</Accordion>
+
+<Accordion title="Assign custom field context to projects">
+The text describes an operation that assigns custom field contexts to projects, which fails if a project is already assigned a context. administer jira global permission is needed.
+</Accordion>
+
+<Accordion title="Add worklog">
+Adds a worklog to a jira issue. requires time tracking enabled and "browse projects" & "work on issues" permissions. allows anonymous access but may need issue-level security permission.
+</Accordion>
+
+<Accordion title="Create custom field context">
+A custom field context is created; if no projectids, it's global (for all projects); if no issuetypeids, it affects all issue types. admin jira rights required.
+</Accordion>
+
+<Accordion title="Create draft workflow scheme">
+Draft a workflow scheme by cloning an active one; an active scheme allows only one draft. admin rights in jira are needed.
+</Accordion>
+
+<Accordion title="Create dashboard">
+Creates a dashboard. **[permissions](https://dac-static.atlassian.com) required:** none.
+</Accordion>
+
+<Accordion title="Create custom field">
+Creates a custom field. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Create field configuration">
+New field configuration with optional fields is created, mirroring default settings, for company-managed projects. administer jira global permission is needed.
+</Accordion>
+
+<Accordion title="Create issue security scheme">
+The text describes a system that allows creation of a security scheme with up to 100 levels and members per level, requiring "administer jira" global permissions.
+</Accordion>
+
+<Accordion title="Create notification scheme">
+Creates a notification scheme with notifications. you can create up to 1000 notifications per request. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Create field configuration scheme">
+Creates field configuration schemes for company-managed projects. requires 'administer jira' global permission.
+</Accordion>
+
+<Accordion title="Create custom field options context">
+Allows creation of up to 1000 select and cascading field options per request for a jira custom field (max 10,000 options). use the issue custom field options for connect apps. admin rights needed.
+</Accordion>
+
+<Accordion title="Create issue type scheme">
+Creates an issue type scheme. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Create or update remote issue link">
+This operation creates/updates a remote issue link for an issue, using a `globalid`. it requires "browse projects" & "link issues" permissions and, if applicable, issue-level security permission. accessible anonymously if issue linking is enabled.
+</Accordion>
+
+<Accordion title="Create project role">
+A new project role without default actors can be created and later assigned actors. note: existing projects won't get new actors automatically. admin rights required.
+</Accordion>
+
+<Accordion title="Create new issue in project">
+Creates a new issue in jira with specified fields, updates, and properties. this endpoint allows for comprehensive issue creation, supporting standard jira fields as well as custom fields and issue properties. it can be used to initiate new tasks, bugs, stories, or any other issue type defined in your jira project. the endpoint is particularly useful for automating issue creation from external systems or for bulk issue creation. it provides flexibility in setting initial issue state, including the ability to specify transitions, add history metadata, and set custom properties. however, it's important to note that the fields available and required may vary depending on the specific jira configuration and issue type being created. proper permissions are necessary to create issues in the specified project. &lt;&lt;DEPRECATED use JIRA_CREATE_ISSUE_TICKET&gt;&gt;
+</Accordion>
+
+<Accordion title="Create project category">
+Creates a project category. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Create permission grant">
+Creates a permission grant in a permission scheme. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Create screen scheme">
+Creates a screen scheme. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Create related work">
+The api allows anonymous creation of related work with a generic link type for a given version. a unique relatedworkid is auto-generated. permissions required are 'resolve issues' and 'edit issues.'
+</Accordion>
+
+<Accordion title="Create ui modification">
+Forge apps can make ui changes with or without explicit permissions, supporting 3000 modifications, each with 1000 contexts. however, there's a cap of 100 modifications for each context.
+</Accordion>
+
+<Accordion title="Create user">
+This legacy api creates a jira user; if the user exists with jira access, it returns a 201 status; without access, a 400 status. admin jira permissions are required. it will be deprecated for a better option.
+</Accordion>
+
+<Accordion title="Create workflow transition property">
+Property added to workflow transition alters behavior. details at atlassian docs. requires 'administer jira' global permission. more info: transition & workflow properties links.
+</Accordion>
+
+<Accordion title="Create issue ticket">
+Creates a new issue in jira. this action allows users to create various types of issues (bugs, tasks, stories, etc.) in a specified jira project. it requires parameters such as project key, summary, and issue type, and supports optional parameters like description, assignee, priority, labels, components, and custom fields.
+</Accordion>
+
+<Accordion title="Create workflow">
+The text explains how to create jira workflow rules, covering conditions, validators, and post functions for transitions, with a bulk create option and a guide [linked]. admin rights are needed.
+</Accordion>
+
+<Accordion title="Create version">
+This tool creates a new version in a jira project. it uses the post /rest/api/3/version endpoint and accepts parameters like name, description, projectid, released, archived, releasedate, and startdate to track project releases and milestones.
+</Accordion>
+
+<Accordion title="Create component">
+Create a component to organize issues in a project. anonymous access allowed, but requires project admin or global jira admin permissions.
+</Accordion>
+
+<Accordion title="Create resolution">
+Creates an issue resolution. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Delete actors from project role">
+This procedure removes actors from a project role and can be done without logging in. requires either "administer projects" project or "administer jira" global permissions. use the provided link for default actor removal.
+</Accordion>
+
+<Accordion title="Delete app property forge">
+Deletes a forge app's property. **[permissions](https://dac-static.atlassian.com) required:** only forge apps can make this request.
+</Accordion>
+
+<Accordion title="Create issue type">
+Creates an issue type and adds it to the default issue type scheme. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Create issue field option">
+This operation adds options to select list issue fields specifically for connect apps, not for native jira fields or other methods. each field and option can have up to 10,000 options or scopes. administer jira global permission is required.
+</Accordion>
+
+<Accordion title="Create screen tab">
+Creates a tab for a screen. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Create filter">
+Creates a filter. the filter is shared according to the [default share scope](https://dac-static.atlassian.com). the filter is not selected as a favorite. **[permissions](https://dac-static.atlassian.com) required:** permission to access jira.
+</Accordion>
+
+<Accordion title="Delete attachment">
+Removes an issue attachment. anonymous access allowed. requires project permissions: "delete own attachments" for user-created attachments or "delete all attachments" for any attachment.
+</Accordion>
+
+<Accordion title="Delete app property">
+An authorized connect app with a matching `addonkey` can delete its property. also, forge apps can delete properties if they share the `app.connect.key`.
+</Accordion>
+
+<Accordion title="Delete and replace version">
+Deletes a project version and allows substitution with another from the same project. access requires 'administer jira' or 'administer projects' permissions and can be done anonymously.
+</Accordion>
+
+<Accordion title="Create group">
+Creates a group. **[permissions](https://dac-static.atlassian.com) required:** site administration (that is, member of the *site-admin* [group](https://confluence.atlassian.com/x/24xjl)).
+</Accordion>
+
+<Accordion title="Delete avatar">
+Deletes an avatar from a project or issue type. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Delete comment">
+This tool will delete a comment from a jira issue using the delete /rest/api/3/issue/\{issueidorkey\}/comment/\{id\} endpoint. it requires the following parameters: issueidorkey (string) for the id or key of the issue, and id (string) for the id of the comment. the operation requires specific permissions including: browse projects, issue-level security permissions if applicable, and delete permissions (either delete all comments or delete own comments).
+</Accordion>
+
+<Accordion title="Create permission scheme">
+New permission scheme creation is available, with or without specifying permissions. requires "administer jira" global permission.
+</Accordion>
+
+<Accordion title="Delete comment property">
+To delete a comment property, users need "edit all comments" to delete any property or "edit own comments" to delete their own. additionally, if a comment is restricted, the user must belong to that specific role or group.
+</Accordion>
+
+<Accordion title="Create screen">
+Creates a screen with a default field tab. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Create workflow scheme">
+Creates a workflow scheme. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Create sprint">
+This tool creates a future sprint in jira. the sprint name and origin board id are required parameters. the tool allows for creating a new sprint with optional parameters like start date, end date, and goal.
+</Accordion>
+
+<Accordion title="Create issue link">
+Creates a link between two jira issues with an optional comment. the link type must be a valid link type name in your jira instance. requires appropriate permissions to view and link the specified issues.
+</Accordion>
+
+<Accordion title="Create issue link type">
+Create an issue link type in jira to define why issues are linked, including names/descriptions for relationship directions. requires issue linking enabled and 'administer jira' permissions.
+</Accordion>
+
+<Accordion title="Create issue type screen scheme">
+Creates an issue type screen scheme. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Delete component">
+Anonymous users can delete a component if they have either "administer projects" permission for the related project or "administer jira" global permission. see provided links for details.
+</Accordion>
+
+<Accordion title="Create project">
+Creates a new project in jira. this action allows you to create a project with specified configurations including project type, template, permissions, and other settings. the project type and template must be compatible - see the project template key field description for valid combinations. requires jira admin permissions.
+</Accordion>
+
+<Accordion title="Create priority">
+Creates an issue priority. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Delete custom field">
+Deletes a custom field permanently, asynchronous operation, track status via 'location' link. requires 'administer jira' global permission. more info on deletion at atlassian documentation.
+</Accordion>
+
+<Accordion title="Delete draft workflow scheme">
+Deletes a draft workflow scheme. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Delete issue type">
+Deletes an issue type, substituting all instances with an alternative issue type. requires 'administer jira' permission. alternative types can be found at the provided resources.
+</Accordion>
+
+<Accordion title="Delete custom field options context">
+This operation allows deletion of a custom field option in jira, but cascading options must be removed first. it applies to jira-created fields, not connect app fields. requires jira admin permissions.
+</Accordion>
+
+<Accordion title="Delete custom field context">
+The provided text indicates that to delete a custom field context in jira, one needs to have the 'administer jira' global permission.
+</Accordion>
+
+<Accordion title="Delete project">
+To delete a project in jira, it must not be archived. first, restore it using the jira ui, if necessary. administer jira global permission is required.
+</Accordion>
+
+<Accordion title="Delete filter">
+To delete a filter in jira, you need access permission. only the filter creator or a user with 'administer jira' global permission can perform the deletion.
+</Accordion>
+
+<Accordion title="Delete default workflow">
+Resets default workflow to jira's system workflow; active schemes need `updatedraftifneeded`=true for edits, creating/updating a draft that can be published. requires *administer jira* permission.
+</Accordion>
+
+<Accordion title="Delete dashboard item property">
+Removes a dashboard property and doesn't require login. user must own the dashboard or have *administer jira* global permission to qualify.
+</Accordion>
+
+<Accordion title="Delete dashboard">
+Deletes a dashboard. **[permissions](https://dac-static.atlassian.com) required:** none the dashboard to be deleted must be owned by the user.
+</Accordion>
+
+<Accordion title="Delete issue">
+Deletes a jira issue. an issue cannot be deleted if it has subtasks unless deletesubtasks is true. permissions required: - browse projects and delete issues project permission for the project containing the issue - if issue-level security is configured, issue-level security permission to view the issue
+</Accordion>
+
+<Accordion title="Delete issue types for workflow in draft workflow scheme">
+Deletes the workflow-issue type mapping for a workflow in a workflow scheme's draft. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Delete inactive workflow">
+A workflow can only be deleted if it's not active, a system workflow, or linked to any (draft) workflow scheme. administer jira global permissions required.
+</Accordion>
+
+<Accordion title="Delete screen tab">
+Deletes a screen tab. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Delete screen scheme">
+Screen schemes in classic projects can be deleted unless linked to an issue type screen scheme. admin jira global permission is needed.
+</Accordion>
+
+<Accordion title="Delete project asynchronously">
+Project deletion is asynchronous and transactional; if it fails, the project remains. track progress via 'location' link and 'get task'. requires 'administer jira' global permission.
+</Accordion>
+
+<Accordion title="Delete issue types for workflow in workflow scheme">
+Removes a workflow-issue type mapping from a workflow scheme in jira. active schemes must use `updatedraftifneeded` for edits, creating or updating a draft that can be published. admin rights required.
+</Accordion>
+
+<Accordion title="Delete draft default workflow">
+Resets a draft workflow scheme's default to jira's system workflow; requires 'administer jira' global permission.
+</Accordion>
+
+<Accordion title="Delete ui modification">
+Deletes a ui modification. all the contexts that belong to the ui modification are deleted too. ui modification can only be deleted by forge apps. **[permissions](https://dac-static.atlassian.com) required:** none.
+</Accordion>
+
+<Accordion title="Delete user">
+Removes a user from jira's user base if successful. does not affect their atlassian account. site admin permissions required.
+</Accordion>
+
+<Accordion title="Delete project property">
+This operation removes a property from a project in jira and can be done anonymously, but requires either 'administer jira' global or 'administer projects' project permissions.
+</Accordion>
+
+<Accordion title="Delete issue type property">
+The text provides instructions to remove the "issue type property" in jira, noting that "administer jira" global permission is necessary for this operation.
+</Accordion>
+
+<Accordion title="Delete default actors from project role">
+Removes default actors from a project role in jira, with the restriction of deleting either a group or user per request, not both. pre-existing project roles remain unaffected. admin jira rights are required.
+</Accordion>
+
+<Accordion title="Evaluate jira expression">
+Test jira expressions to fetch data or plan usage with the jira expressions documentation. context variables such as user, issue, and project can be used. anonymous access is allowed; permissions influence outcomes.
+</Accordion>
+
+<Accordion title="Delete workflow scheme">
+You can delete a workflow scheme in jira only if it's not currently active. admin rights are required for this action.
+</Accordion>
+
+<Accordion title="Delete project avatar">
+Deletes a custom avatar from a project. note that system avatars cannot be deleted. **[permissions](https://dac-static.atlassian.com) required:** *administer projects* [project permission](https://confluence.atlassian.com/x/yodklg).
+</Accordion>
+
+<Accordion title="Delete field configuration">
+Delete field configurations only from company-managed projects. requires 'administer jira' global permission. see provided links for details.
+</Accordion>
+
+<Accordion title="Delete project category">
+Deletes a project category. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Delete workflow for issue type in workflow scheme">
+Removes issue type-workflow mapping from a jira workflow scheme. for active schemes, set `updatedraftifneeded` to `true` to create/update a draft. admin jira permissions required.
+</Accordion>
+
+<Accordion title="Delete share permission">
+Deletes a share permission from a filter. **[permissions](https://dac-static.atlassian.com) required:** permission to access jira and the user must own the filter.
+</Accordion>
+
+<Accordion title="Find users">
+The operation searches for and filters active users based on a string and property, displays them within a range, allows anonymous access, respects privacy, and needs 'browse users and groups' permission for results.
+</Accordion>
+
+<Accordion title="Delete issue field option">
+This operation removes options only from select lists added by connect apps in jira fields, not options created in jira or with issue custom field options. admin jira global permission is required, but no jira permissions for the app's field.
+</Accordion>
+
+<Accordion title="Find users assignable to projects">
+Returns a list of assignable users in projects, filtering by attributes. it picks from a start point and up to a max, often returning fewer users. privacy settings may hide some info. can be accessed anonymously; no permissions required.
+</Accordion>
+
+<Accordion title="Export archived issue s">
+Admins can use an api to receive an email with a csv link for archived issues; it includes system fields but not custom ones. jira/site admin rights, a premium/enterprise plan, and sign-in are needed. only one active request is allowed.
+</Accordion>
+
+<Accordion title="Find users by query">
+The operation retrieves users matching a query, often less than `maxresults`, using `and`/`or` for roles/properties. 'browse users and groups' permission required.
+</Accordion>
+
+<Accordion title="Find users and groups">
+Search tool matches users/groups with query, insensitive for users but sensitive for groups. supports detailed searches with result highlighting. anonymous use allowed, but specific permission required.
+</Accordion>
+
+<Accordion title="Get advanced settings">
+Access jira's *advanced settings* via: jira icon &gt; **jira settings** &gt; **system** &gt; **general configuration**, click **advanced settings**. requires *administer jira* permission.
+</Accordion>
+
+<Accordion title="Delete issue type scheme">
+Issue type schemes from classic projects can be deleted. projects using the scheme switch to the default. admin rights in jira are needed.
+</Accordion>
+
+<Accordion title="Fully update project role">
+Update a project role's name and description in jira; both fields are required. admin privileges needed. links provided for permissions details.
+</Accordion>
+
+<Accordion title="Find users for picker">
+The tool matches and highlights user queries, supports exclusions, and might return fewer results than the maximum due to privacy. use "get all users" for full results. anonymous searches yield exact names with restrictions.
+</Accordion>
+
+<Accordion title="Delete user property">
+This operation removes a property from a user in jira. to delete any user's property, the 'administer jira' permission is needed; to delete from one's own record, jira access suffices. it does not affect jira's user properties.
+</Accordion>
+
+<Accordion title="Get all application roles">
+The text provides instructions for jira administrators to manage application roles via a specific configuration page, noting that the "administer jira" global permission is required.
+</Accordion>
+
+<Accordion title="Get accessible project type by key">
+Returns a [project type](https://confluence.atlassian.com/x/var1nw) if it is accessible to the user. **[permissions](https://dac-static.atlassian.com) required:** permission to access jira.
+</Accordion>
+
+<Accordion title="Find users assignable to issues">
+List users eligible for jira issue assignment using `projectkeyorid` for new issues or `issuekey` for updates. during transitions, add `actiondescriptorid`. user privacy and selection range may limit results. access requires specific permissions.
+</Accordion>
+
+<Accordion title="Get account ids for users">
+Returns the account ids for the users specified in the `key` or `username` parameters. note that multiple `key` or `username` parameters can be specified. **[permissions](https://dac-static.atlassian.com) required:** permission to access jira.
+</Accordion>
+
+<Accordion title="Get all dashboards">
+Returns a list of dashboards owned by or shared with the user. the list may be filtered to include only favorite or owned dashboards. this operation can be accessed anonymously. **[permissions](https://dac-static.atlassian.com) required:** none.
+</Accordion>
+
+<Accordion title="Get all classification levels">
+Returns all classification levels. **[permissions](https://dac-static.atlassian.com) required:** none.
+</Accordion>
+
+<Accordion title="Delete workflow transition property">
+The text provides instructions for removing a property from a workflow transition, which affects its behavior. references include detailed documentation on transition and workflow properties. admin rights in jira are required.
+</Accordion>
+
+<Accordion title="Delete project role">
+Deletes an in-use project role if a replacement is provided. requires 'administer jira' global permission.
+</Accordion>
+
+<Accordion title="Get all field configurations">
+Retrieve a paginated list of field configurations for company-managed projects, filterable by item ids, defaults, or search terms. requires 'administer jira' permission.
+</Accordion>
+
+<Accordion title="Extend webhook life">
+Use this operation to extend the life of rest api webhooks beyond 30 days; it ignores webhooks with unrecognized ids. only connect and oauth 2.0 apps are permitted to use this.
+</Accordion>
+
+<Accordion title="Fetch migrated workflow rule details">
+Returns configurations for workflow transition rules migrated from server to cloud and owned by the calling connect app.
+</Accordion>
+
+<Accordion title="Delete issue link">
+This operation allows anonymous users to delete an issue link provided they have the 'browse project' permission for all linked projects, 'link issues' permission for at least one project, and view access if issue-level security is set.
+</Accordion>
+
+<Accordion title="Find users with browse permission">
+Summarize user search for those with issue browsing ability by `issuekey` or `projectkey`. limited results due to permissions; privacy settings apply. anonymous access if permitted. see docs for details.
+</Accordion>
+
+<Accordion title="Get all issue types for user">
+The operation allows anonymous access to issue types. users with *administer jira* permission can see all types; those with *browse projects* see types linked to accessible projects.
+</Accordion>
+
+<Accordion title="Delete issue type screen scheme">
+Deletes an issue type screen scheme. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Delete field configuration scheme">
+Deletes a field configuration scheme, applicable only in company-managed projects. requires 'administer jira' global permission.
+</Accordion>
+
+<Accordion title="Get all field configuration schemes">
+The text provides a link for obtaining a paginated list of field configuration schemes specific to classic projects, with a requirement of the 'administer jira' global permission for access.
+</Accordion>
+
+<Accordion title="Delete version">
+This tool allows you to delete a version in jira. a version is a milestone or release point in a project that can be used to track progress and organize issues. the delete operation can be customized to handle associated issues and fix versions. permissions required: - administer jira global permission or - administer projects project permission for the project that contains the version
+</Accordion>
+
+<Accordion title="Get all labels">
+Returns a [paginated](https://dac-static.atlassian.com) list of labels.
+</Accordion>
+
+<Accordion title="Get all issue field options">
+Fetches a paginated list of select list issue field options added by connect apps. not for jira-created options. requires administer jira permission; no jira permissions needed for the app's field.
+</Accordion>
+
+<Accordion title="Get all metadata for an expanded attachment">
+Summarizes metadata retrieval for attachments, specifically zip files. includes id and name access, with project browsing rights and issue security permissions if needed. anonymous access allowed.
+</Accordion>
+
+<Accordion title="Delete locale">
+Use the user management rest api's update a user profile instead of deprecated method to revert user's locale to default. requires jira access permission.
+</Accordion>
+
+<Accordion title="Find components for projects">
+Get a paginated list of all project components, including global ones, anonymously. requires "browse projects" permission for the project.
+</Accordion>
+
+<Accordion title="Get all permissions">
+Returns all permissions, including: * global permissions. * project permissions. * global permissions added by plugins. this operation can be accessed anonymously. **[permissions](https://dac-static.atlassian.com) required:** none.
+</Accordion>
+
+<Accordion title="Delete workflow transition rule configurations">
+This operation allows connect apps to delete their own post functions, conditions, and validators from workflows. permissions are exclusive to connect apps.
+</Accordion>
+
+<Accordion title="Get all issue type schemes">
+Retrieves a paginated list of issue type schemes for classic projects. requires "administer jira" global permission.
+</Accordion>
+
+<Accordion title="Get all projects">
+Deprecated method returns all projects a user can see. use the paginated "get projects" with search support instead. anonymous access available. requires 'browse' or 'administer' project permissions.
+</Accordion>
+
+<Accordion title="Get all project avatars">
+This api returns both system and custom project avatars without login. users need 'browse projects' permission for access.
+</Accordion>
+
+<Accordion title="Delete related work">
+This operation allows anonymous users to delete related work for a specific version, provided they have 'resolve issues' and 'edit issues' permissions for the project containing the version.
+</Accordion>
+
+<Accordion title="Get all project roles">
+Jira cloud project roles let users customize member associations per project, affecting permissions and workflows. "actors" are users/groups in roles, adjustable by admins either as defaults or per project.
+</Accordion>
+
+<Accordion title="Find users with permissions">
+Generates a user list based on criteria, access levels, and scope while respecting privacy. fully inclusive without searches. accessible without login but needs jira or admin rights.
+</Accordion>
+
+<Accordion title="Get all project categories">
+Returns all project categories. **[permissions](https://dac-static.atlassian.com) required:** permission to access jira.
+</Accordion>
+
+<Accordion title="Get all project types">
+Returns all [project types](https://confluence.atlassian.com/x/var1nw), whether or not the instance has a valid license for each type. this operation can be accessed anonymously. **[permissions](https://dac-static.atlassian.com) required:** none.
+</Accordion>
+
+<Accordion title="Get all screen tabs">
+Lists tabs on a screen, requiring "administer jira" global permission or "administer projects" within a project, linked via screen and issue type screen schemes.
+</Accordion>
+
+<Accordion title="Find groups">
+This service retrieves and highlights groups based on a search, suggesting matches while filtering unwanted ones. it sorts the results, shows totals, and allows anonymous queries with limited features.
+</Accordion>
+
+<Accordion title="Delete issue link type">
+This operation removes an issue link type in jira, but it requires the site to have issue linking enabled and the user to have 'administer jira' global permissions.
+</Accordion>
+
+<Accordion title="Delete notification scheme">
+Deletes a notification scheme. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Get all screen tab fields">
+Summary: this function retrieves all fields for a jira screen tab, requiring "administer jira" global permission or "administer projects" permission if a project key is provided and the screen is linked via screen and issue type screen schemes.
+</Accordion>
+
+<Accordion title="Delete vote">
+The process removes a user's vote from an issue in jira, which needs 'allow users to vote on issues' enabled in general config. permissions needed: 'browse projects' for the project and issue-level security if applicable. see jira docs for details.
+</Accordion>
+
+<Accordion title="Get all statuses for project">
+This api returns valid statuses for project issues, based on issue type. accessible anonymously but requires "browse projects" permission for the relevant project.
+</Accordion>
+
+<Accordion title="Get all permission schemes">
+Jira's permission schemes pair holders with specific permissions based on holder type and id, covering project and issue management, with the option for custom permissions.
+</Accordion>
+
+<Accordion title="Find user keys by query">
+The operation searches and returns a paginated list of users based on a query, with filters and limits defined by `startat` and `maxresults`. it requires appropriate permissions and can handle complex queries with logical operators.
+</Accordion>
+
+<Accordion title="Delete issue property">
+This operation allows anonymous users to delete an issue's property, provided they have 'browse projects' and 'edit issues' permissions for the project, and issue-level security permissions if applicable.
+</Accordion>
+
+<Accordion title="Delete remote issue link by id">
+This operation deletes a remote issue link and requires active issue linking. anonymous access is allowed. permissions needed: browse, edit, and link issues within the project, and issue-level security if set.
+</Accordion>
+
+<Accordion title="Delete permission scheme">
+Deletes a permission scheme. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Delete webhooks by id">
+Deletes only the calling app's webhooks by id, ignoring others. requires connect and oauth 2.0 app permissions.
+</Accordion>
+
+<Accordion title="Delete remote issue link by global id">
+Remove a remote issue link using its global id with escaped url characters. issue linking must be active. anonymous access allowed. requires 'browse projects' and 'link issues' permissions, plus issue-level security if applicable.
+</Accordion>
+
+<Accordion title="Delete worklog property">
+Removes a worklog property, available without login. requires 'browse projects' permission, issue-level security permission if set, and appropriate group or role if worklog visibility is restricted.
+</Accordion>
+
+<Accordion title="Delete workflow for issue type in draft workflow scheme">
+Deletes the issue type-workflow mapping for an issue type in a workflow scheme's draft. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Delete permission scheme grant">
+Removes a permission grant from a scheme; requires *administer jira* global permission. details: [about permission schemes and grants](../api-group-permission-schemes/#about-permission-schemes-and-grants).
+</Accordion>
+
+<Accordion title="Delete worklog">
+Deletes a worklog from an issue. the user must have permission to delete the worklog by being the worklog author, having the delete all worklogs permission, or the administer project permission.
+</Accordion>
+
+<Accordion title="Delete issue security scheme">
+Deletes an issue security scheme. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Get all statuses">
+Returns a list of all statuses available in jira. this action retrieves information about all issue statuses, including their ids, names, descriptions, and categories. this is particularly useful for workflow management and understanding the possible states an issue can be in.
+</Accordion>
+
+<Accordion title="Delete resolution">
+Asynchronously deletes an issue resolution. track the task status through the 'location' link response and use 'get task' for updates. administer jira global permission is required.
+</Accordion>
+
+<Accordion title="Delete watcher">
+To delete an issue watcher in jira, "allow users to watch issues" must be enabled. requires "browse projects" permission, issue-level security view access, and "manage watcher list" to remove others. see links for configuration and permissions.
+</Accordion>
+
+<Accordion title="Delete screen">
+Deletes a screen. a screen cannot be deleted if it is used in a screen scheme, workflow, or workflow draft. only screens used in classic projects can be deleted.
+</Accordion>
+
+<Accordion title="Delete priority">
+The text announces the deprecation of an issue priority deletion api, referring to the changelog for details. the deletion process is asynchronous, requiring admin permissions for jira, with status updates accessible via provided links.
+</Accordion>
+
+<Accordion title="Delete preference">
+The text describes how to reset a user preference to default settings in jira, noting that 'jira.user.locale' and 'jira.user.timezone' are deprecated, and recommending the user management rest api with proper permissions.
+</Accordion>
+
+<Accordion title="Edit issue">
+Issue edits update properties but not transitions via `update` and `fields`, accessible by key/id. to remove parent, use `update.parent.set.none`. admins may override screen security; anonymous edits allowed with correct permissions.
+</Accordion>
+
+<Accordion title="Get all users default">
+Provides a list of all atlassian account users with privacy filters applied based on preferences, which might hide emails. requires "browse users and groups" permission. more info on profile visibility is available.
+</Accordion>
+
+<Accordion title="Get all status categories">
+Returns a list of all status categories. **[permissions](https://dac-static.atlassian.com) required:** permission to access jira.
+</Accordion>
+
+<Accordion title="Get all time tracking providers">
+Jira has a default time tracking provider, with more available via atlassian marketplace apps. admin rights are needed for access and configuration. for details, visit the time tracking provider module.
+</Accordion>
+
+<Accordion title="Get approximate license count">
+This api returns an estimate of jira user accounts, caching data for 7 days. admin rights are required for access.
+</Accordion>
+
+<Accordion title="Get create metadata issue types for a project">
+This operation provides issue type metadata for a project to help with issue creation requests and can be used without login. *create issues* permission in the project is required.
+</Accordion>
+
+<Accordion title="Get all users">
+Get all users in jira action class. this action retrieves a list of all jira users including active, inactive, and deleted users that have not been removed from the database. it supports pagination parameters such as startat and maxresults, and requires 'browse users and groups' permission. returns: a list of user objects containing user details like account id, display name, email, etc.
+</Accordion>
+
+<Accordion title="Get comments">
+This operation anonymously retrieves all comments from an issue. users need "browse projects" permission, issue-level security permission, and must belong to the right group or role if comments have visibility restrictions.
+</Accordion>
+
+<Accordion title="Get approximate application license count">
+Retrieves an estimated count of user accounts for a jira license, data cached for 7 days. administer jira global permission required.
+</Accordion>
+
+<Accordion title="Get attachment thumbnail">
+Generates a thumbnail for an attachment, accessible without login. requires 'browse projects' permission and, if applicable, issue-level security permission. details: [get attachment content](https://dac-static.atlassian.com).
+</Accordion>
+
+<Accordion title="Get all workflows">
+Deprecated method returns either a single workflow or all jira workflows; use "get workflows paginated" instead. requires "administer jira" global permission. if `workflowname` is given, a single object is returned, otherwise an array.
+</Accordion>
+
+<Accordion title="Get dashboard item property keys">
+This operation lists dashboard item keys and allows anonymous access. users must be owners or have shared access. administrators are deemed system dashboard owners, accessible to all if anonymous access in jira is allowed.
+</Accordion>
+
+<Accordion title="Get data policy for the workspace eap">
+Returns data policy for the workspace.
+</Accordion>
+
+<Accordion title="Get app properties">
+Summary: connect app with matching `addonkey` can retrieve all its properties. forge apps also have access to these properties if linked to the same `app.connect.key`. permissions required.
+</Accordion>
+
+<Accordion title="Get columns">
+Retrieves filter's column configuration used in list view when columns set to filter, available anonymously. only returns details for filters owned, shared with user's group, or projects where user has permissions.
+</Accordion>
+
+<Accordion title="Get data policy for projects eap">
+Returns data policies for the projects specified in the request.
+</Accordion>
+
+<Accordion title="Get create issue metadata">
+Detailed project and issue type data for user requests in jira creation screens, now deprecated. information filters by query and accessible without login. requires project "create issues" permission. see deprecation notice for alternatives.
+</Accordion>
+
+<Accordion title="Get dashboard item property">
+The api allows users to customize app dashboard gadgets and provides item ids but lacks resource for item management. it supports anonymous access for owners or permitted users.
+</Accordion>
+
+<Accordion title="Get dynamic webhooks for app">
+Provides a paginated list of webhooks for the calling app, accessible only by connect and oauth 2.0 apps.
+</Accordion>
+
+<Accordion title="Get current user">
+This tool retrieves detailed information about the currently authenticated user in jira. it is essential for verifying authentication, getting user-specific information, checking user permissions, retrieving preferences, and identifying the user for further api operations.
+</Accordion>
+
+<Accordion title="Get comment">
+This tool retrieves a specific comment from a jira issue. it requires the 'issueidorkey' and 'id' parameters (with an optional 'expand' parameter) to fetch detailed information about a comment, including its content, author details, creation and update dates, and more. this action is essential for viewing and managing specific issue discussions in jira.
+</Accordion>
+
+<Accordion title="Get avatar image by id">
+Get a project or issue type avatar image by id. accessible without login for system avatars; requires "browse projects" permission for custom avatars related to specific projects or issue types.
+</Accordion>
+
+<Accordion title="Get edit issue metadata">
+This endpoint shows user-accessible issue fields, factoring in availability, visibility, project context, and permissions. editability requires certain flags and permissions, with exceptions for fields like attachments. anonymous use is permitted.
+</Accordion>
+
+<Accordion title="Get all workflow schemes">
+The service provides a paged list of all jira workflow schemes, excluding drafts. it requires the 'administer jira' global permission.
+</Accordion>
+
+<Accordion title="Get fields in trash paginated">
+Retrieves a paginated list of trashed custom fields matching a string in name/description. requires 'administer jira' permission.
+</Accordion>
+
+<Accordion title="Get comments by ids">
+Fetches a paginated list of comments by id, accessible anonymously if the user has relevant project permissions, issue-level security access, and visibility group or role rights.
+</Accordion>
+
+<Accordion title="Get events">
+Returns all issue events. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Get field reference data get">
+The document offers guidance on jql search data, covering fields, functions, and reserved words for crafting jql queries and recommends using post to filter fields per project. access to the operation is unrestricted.
+</Accordion>
+
+<Accordion title="Get field auto complete suggestions">
+Get jql autocomplete suggestions for a field by specifying `fieldname`, with optional `fieldvalue`, `predicatename`, and `predicatevalue`. anonymous access is available. no permissions required.
+</Accordion>
+
+<Accordion title="Get fields paginated">
+Get a paginated list of classic jira project fields, including all fields, specific ones by `id`, or those with a string in their name or description using `query`. only "custom" type fields are searchable. requires jira admin permissions.
+</Accordion>
+
+<Accordion title="Get field configuration items">
+The text provides a link to a function that retrieves a paginated list of fields from classic company-managed project configurations, which requires jira admin global permissions.
+</Accordion>
+
+<Accordion title="Get app property">
+Returns an app's property key and value. access is limited to the connect app with a matching `addonkey` and forge apps with the same `app.connect.key`. permissions are required.
+</Accordion>
+
+<Accordion title="Get alternative issue types">
+Provides a list of alternative issue types sharing the same workflow, field configuration, and screen schemes. accessible without login. no permissions required.
+</Accordion>
+
+<Accordion title="Get field configuration issue type items">
+Generates a paginated list of field config issues for classic projects. requires 'administer jira' global permission.
+</Accordion>
+
+<Accordion title="Get audit records">
+Returns filtered audit records based on matches in specified fields, date range, and requires 'administer jira' global permission. filters include summary, category, event source, and various objectitem attributes.
+</Accordion>
+
+<Accordion title="Get field reference data post">
+The text offers a guide for jql searches with field/function info, reserved words, custom field filters by project, and efficient use of collapsed fields, all without needing permissions.
+</Accordion>
+
+<Accordion title="Get default actors for project role">
+Returns the [default actors](https://dac-static.atlassian.com) for the project role. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Get avatar image by owner">
+This operation retrieves avatar images for projects or issue types, available anonymously. no permissions needed for system avatars. custom avatars require 'browse projects' permission for the related project or issue type.
+</Accordion>
+
+<Accordion title="Get custom field configurations">
+Retrieve a paginated list of configurations for a forge app's custom field type, filterable by id, fieldcontextid, issueid, or project/issue type. requires jira admin global permission.
+</Accordion>
+
+<Accordion title="Get field configuration schemes for projects">
+Provides a sorted, paginated list of field configuration schemes for classic projects, including associated project ids, with the first item being the default. requires jira admin permissions.
+</Accordion>
+
+<Accordion title="Get ids of deleted worklogs">
+Resource lists up to 1000 deleted worklog ids and timestamps after a specified date, with pagination using `until` and `nextpage`. excludes entries deleted in the last minute. jira access permission needed.
+</Accordion>
+
+<Accordion title="Get comment property">
+Retrieves a comment's value anonymously, needing 'browse projects' permission, issue-level security permission if set, and visibility group/role restrictions compliance if applied.
+</Accordion>
+
+<Accordion title="Get gadgets">
+The operation retrieves dashboard gadgets based on specified criteria: by list of ids, module key, list of uris, or all gadgets if no parameters are given. it can be accessed without any permissions.
+</Accordion>
+
+<Accordion title="Get group">
+Deprecated: to get group members, use `group/member` instead. requires "browse users and groups" or "administer jira" permissions.
+</Accordion>
+
+<Accordion title="Get ids of updated worklogs">
+Lists ids and timestamps of worklogs updated after a specific time, limited to 1000 per page and ordered by date. pagination available with `until` and `nextpage`. excludes last minute updates. viewing requires jira access and specific permissions.
+</Accordion>
+
+<Accordion title="Get filter">
+This operation anonymously returns a filter if it's owned by the user, shared within their group or project, or is public. no permissions required.
+</Accordion>
+
+<Accordion title="Get available gadgets">
+Gets a list of all available gadgets that can be added to all dashboards. **[permissions](https://dac-static.atlassian.com) required:** none.
+</Accordion>
+
+<Accordion title="Get default share scope">
+Returns the default sharing settings for new filters and dashboards for a user. **[permissions](https://dac-static.atlassian.com) required:** permission to access jira.
+</Accordion>
+
+<Accordion title="Get assigned permission scheme">
+Retrieves the project's permission scheme. requires 'administer jira' global permission or 'administer projects' project permission.
+</Accordion>
+
+<Accordion title="Get custom field contexts">
+Retrieve paginated custom field contexts from jira: get all, filter by ids, issue types, or project scope (global or limited). admin rights required.
+</Accordion>
+
+<Accordion title="Get avatar image by type">
+Returns the default project or issue type avatar image. this operation can be accessed anonymously. **[permissions](https://dac-static.atlassian.com) required:** none.
+</Accordion>
+
+<Accordion title="Get issue field option">
+This operation retrieves select list options from an issue field, but only for those added by connect apps. it won't work with options made directly in jira. administer jira permission is needed, but not jira permissions for the app's field.
+</Accordion>
+
+<Accordion title="Get issue link types">
+Fetches all issue link types if issue linking is active. accessible without login but requires 'browse projects' permission for any site project.
+</Accordion>
+
+<Accordion title="Get issue link">
+Creates an issue link accessible anonymously, requiring 'browse project' permission for all linked issues and viewing permissions if issue-level security is set.
+</Accordion>
+
+<Accordion title="Get default workflow">
+In jira, the default workflow applies to unassigned issue types within a scheme. requires *administer jira* global permission.
+</Accordion>
+
+<Accordion title="Get issue navigator default columns">
+Returns the default issue navigator columns. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Get custom field contexts default values">
+Retrieve default settings for custom fields in jira, sorted by 'contextid'. different fields like date or user picker have varying defaults. no defaults returned if none set. supports forge fields; 'administer jira' rights needed.
+</Accordion>
+
+<Accordion title="Get available screen fields">
+Returns the fields that can be added to a tab on a screen. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Get issue link type">
+Retrieves an issue link type from a site with issue linking enabled. anonymous access allowed. requires 'browse projects' permission for a project on the site.
+</Accordion>
+
+<Accordion title="Get issue">
+This tool retrieves the details of a specific jira issue using the get /rest/api/3/issue/\{issueidorkey\} endpoint. it returns all relevant issue information, such as its summary, description, status, assignee, reporter, comments, attachments, and any custom fields configured in your jira instance.
+</Accordion>
+
+<Accordion title="Get issue picker suggestions">
+Provides auto-complete suggestions for issues via two lists: `history search` with user's past issues containing a query string, and `current search` with issues matching a jql expression and the query. accessible anonymously, no permissions needed.
+</Accordion>
+
+<Accordion title="Get comment property keys">
+Retrieves all comment property keys; accessible anonymously with 'browse projects' permission, issue-level security permission if set, and visibility restrictions adherence if applicable.
+</Accordion>
+
+<Accordion title="Get attachment content">
+Retrieves attachment contents with optional byte range. use 'get attachment thumbnail' for images. accessible anonymously, but requires 'browse projects' permission and issue-level security access if set. see http range header for byte ranges.
+</Accordion>
+
+<Accordion title="Get issue property">
+Returns the value of a property for an issue. this action makes a get request to the /rest/api/3/issue/\{issueidorkey\}/properties/\{propertykey\} endpoint and returns details including the key and value for the issue property. the operation can be accessed anonymously. permissions required: - browse projects project permission for the project containing the issue. - if issue-level security is configured, issue-level security permission to view the issue.
+</Accordion>
+
+<Accordion title="Get bulk permissions">
+The operation displays user access to projects/issues, defaults to the user, ignores invalid input, and caps at 1000. post-06/15/2024, anonymous users allowed, others require admin, and connected apps gain more rights.
+</Accordion>
+
+<Accordion title="Get issue resolutions">
+Returns a list of all issue resolution values. this tool retrieves all configured resolution types in the jira instance, providing details such as resolution ids, names, descriptions, and urls. it is useful for: - getting a list of available resolution types - finding the default resolution - obtaining resolution ids for other api calls - validating resolution names and ids before updating issues - understanding what options are available when closing issues
+</Accordion>
+
+<Accordion title="Get issue property keys">
+This operation provides urls and keys for an issue's properties, available anonymously, but requires the user to have *browse projects* permission and, if applicable, *issue-level security* permission to view the details.
+</Accordion>
+
+<Accordion title="Get issue security level">
+Summarizes issue security level details. ids can be found using the "get issue security scheme". accessible anonymously with no permissions needed.
+</Accordion>
+
+<Accordion title="Get draft default workflow">
+The default workflow for a jira workflow scheme draft assigns unmapped issue types to a specific workflow labeled *all unassigned issue types*. administering jira global permission is needed to access it.
+</Accordion>
+
+<Accordion title="Get custom field contexts for projects and issue types">
+Returns a paginated list of project-issue type mappings with applicable custom field context ids. if no specific context is assigned, a default one is used. duplicates aren't allowed in the request. administer jira global permission is required.
+</Accordion>
+
+<Accordion title="Get available workflow capabilities">
+Access workflow features with workflow/project id, including scope, types, rules, and sources. admin rights required. api gives details for validators/conditions and post functions.
+</Accordion>
+
+<Accordion title="Get component">
+Returns a component. this operation can be accessed anonymously. **[permissions](https://dac-static.atlassian.com) required:** *browse projects* [project permission](https://confluence.atlassian.com/x/yodklg) for project containing the component.
+</Accordion>
+
+<Accordion title="Get attachment metadata">
+Retrieves an attachment's metadata without returning the file. accessible anonymously; requires 'browse projects' permission and, if applicable, issue-level security permission.
+</Accordion>
+
+<Accordion title="Get issue security level members by issue security scheme">
+The text describes that only members with issue security levels from classic projects are returned. administering jira global permission is required for access.
+</Accordion>
+
+<Accordion title="Get issue security schemes">
+Returns all [issue security schemes](https://confluence.atlassian.com/x/j4lklg). **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Get issue security scheme">
+The text describes that a user can retrieve an issue security scheme and its levels if they have "administer jira" global permission or "administer projects" permission for a project using the scheme.
+</Accordion>
+
+<Accordion title="Get issue security levels">
+The service provides a paginated list of issue security levels for classic projects, with inclusive filtering by security scheme or level ids. jira administration permission is required.
+</Accordion>
+
+<Accordion title="Get issue type">
+Operation returns an issue type and can be used without login. requires "browse projects" permission in the relevant project or "administer jira" global permission.
+</Accordion>
+
+<Accordion title="Get issue security level members">
+Provides a paginated list of issue security level members for classic projects. filtering by security scheme and level ids is possible. requires 'administer jira' global permission.
+</Accordion>
+
+<Accordion title="Get component issues count">
+The operation counts component-assigned issues and allows anonymous access. it will update oauth 2.0 scopes on june 15, 2024, requiring `read:jira-work` or granular permissions. no permissions needed currently.
+</Accordion>
+
+<Accordion title="Get custom field option">
+Retrieval of jira custom field options from select lists requires *administer jira* or *browse projects* permissions and is not for connect app fields. anonymous access allowed.
+</Accordion>
+
+<Accordion title="Get bulk screen tabs">
+Returns the list of tabs for a bulk of screens. **[permissions](https://dac-static.atlassian.com) required:** * *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Get issue types for workflows in draft workflow scheme">
+Returns the workflow-issue type mappings for a workflow scheme's draft. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Get issue types for custom field context">
+Provides a paginated list of custom field context to issue type mappings, ordered by context and issue type ids. available for all or specific contexts. requires jira admin global permission.
+</Accordion>
+
+<Accordion title="Get draft workflow scheme">
+Draft workflow schemes allow edits to active workflow schemes. when updated, a draft is made and modified; changes are then applied to the active scheme. only one draft per active scheme is allowed. admin rights required. more info on links provided.
+</Accordion>
+
+<Accordion title="Get contents metadata for an expanded attachment">
+This operation extracts metadata from files within a zip attachment anonymously, ideal for backend use. it requires 'browse projects' permission and respects issue-level security. for comprehensive attachment metadata, use 'get all metadata'.
+</Accordion>
+
+<Accordion title="Get changelogs">
+Access a paginated, date-ordered list of issue changelogs anonymously. requires 'browse projects' permission and, if set, issue-level security clearance.
+</Accordion>
+
+<Accordion title="Get issue types for project">
+This operation retrieves project issue types and can be used without login. required permissions: either "browse projects" in the project or "administer jira" globally.
+</Accordion>
+
+<Accordion title="Get avatars">
+This operation retrieves both system and custom avatars for projects or issue types, accessible even anonymously. custom avatars require the "browse projects" permission for the relevant project or issue type. system avatars require no permissions.
+</Accordion>
+
+<Accordion title="Get favorite filters">
+Returns user's visible favorite filters, including those owned, shared with their groups, their private/public projects, or the public. anonymous access allowed. filters not returned if access changes. (255 characters)
+</Accordion>
+
+<Accordion title="Get fields">
+The system shows essential and globally-configured jira fields, plus additional ones if the user has permission. anonymous users can access without permissions.
+</Accordion>
+
+<Accordion title="Get contexts for a field">
+Deprecated api to get a paginated list of field contexts is replaced by "get custom field contexts." admin rights required.
+</Accordion>
+
+<Accordion title="Get custom field options context">
+Returns a paginated list of custom field options, both normal and cascading, in display order for jira contexts. for connect app select list options, use specified issue custom field options operations. admin jira permissions required.
+</Accordion>
+
+<Accordion title="Get changelogs by ids">
+Retrieve issue changelogs by their ids; accessible without login. requires 'browse projects' permission and, if applicable, issue-level security clearance.
+</Accordion>
+
+<Accordion title="Get create field metadata for a project and issue type id">
+Retrieves field metadata for a project and issuetype to use in issue creation on atlassian. accessible anonymously with 'create issues' project permission needed.
+</Accordion>
+
+<Accordion title="Get global settings">
+Retrieves jira's global settings to check enabled features like subtasks, time tracking; includes time tracking config if active. access permission required.
+</Accordion>
+
+<Accordion title="Get dashboard">
+Anonymous users can access a dashboard. no permissions needed. to get a specific dashboard, it must be shared or owned by the user. 'administer jira' holders are deemed system dashboard owners, which is shared with all users.
+</Accordion>
+
+<Accordion title="Get failed webhooks">
+Lists recently failed webhook delivery attempts to connect apps within 72 hours, using cursor pagination. returns oldest failure first; use `failedafter` or provided url for next page.
+</Accordion>
+
+<Accordion title="Get application role">
+Returns an application role. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Get application property">
+Get a single application property by specifying a `key` or an array of all editable properties. administer jira rights required. see links for property descriptions and permissions.
+</Accordion>
+
+<Accordion title="Get announcement banner configuration">
+Returns the current announcement banner configuration. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Get permission scheme grant">
+Returns a permission grant. **[permissions](https://dac-static.atlassian.com) required:** permission to access jira.
+</Accordion>
+
+<Accordion title="Get issue type property keys">
+Get all issue type property keys; anonymous access allowed. requires 'administer jira' for any issue type; 'browse projects' for permitted projects.
+</Accordion>
+
+<Accordion title="Get issue type property">
+Access key and value of jira issue type property anonymously. requires 'administer jira' for any issue type, 'browse projects' for associated projects' permissions.
+</Accordion>
+
+<Accordion title="Get my permissions">
+Permissions vary by context (global, project, issue, comment) in a system; project rights can change with issue data. global permissions are constant, and some operations don't require login or permissions.
+</Accordion>
+
+<Accordion title="Get licensed project types">
+Returns all [project types](https://confluence.atlassian.com/x/var1nw) with a valid license.
+</Accordion>
+
+<Accordion title="Get projects using notification schemes paginated">
+Generates a list of company-managed projects with their notification plans through pagination, filtering by id, or displaying all by default. limited to projects with default schemes, jira access needed.
+</Accordion>
+
+<Accordion title="Get issue watchers">
+Gets the list of watchers for an issue. a watcher is a user who receives notifications when the issue is updated. this endpoint requires the 'browse projects' project permission for the project containing the issue. this operation requires the "allow users to watch issues" option to be on. this option is set in general configuration for jira.
+</Accordion>
+
+<Accordion title="Get notification scheme">
+This text describes a notification scheme in jira that outlines events and their notification recipients. access requires jira permissions and project administration rights.
+</Accordion>
+
+<Accordion title="Get issue type screen schemes for projects">
+Retrieves a paginated list of issue type screen schemes with their associated classic projects. requires jira admin global permission.
+</Accordion>
+
+<Accordion title="Get permission scheme">
+Returns a permission scheme. **[permissions](https://dac-static.atlassian.com) required:** permission to access jira.
+</Accordion>
+
+<Accordion title="Get license">
+Returns licensing information about the jira instance. **[permissions](https://dac-static.atlassian.com) required:** none.
+</Accordion>
+
+<Accordion title="Get locale">
+This resource returns a user's locale in jira: if unset or anonymous, the detected browser locale via 'accept-language' header is used, falling back to jira's default if no match is found. anonymous access is allowed; no permissions needed.
+</Accordion>
+
+<Accordion title="Get project notification scheme">
+The text outlines that to access the project's notification scheme, one needs either the 'administer jira' global permission or the 'administer projects' project permission.
+</Accordion>
+
+<Accordion title="Get issue types for workflows in workflow scheme">
+Returns the workflow-issue type mappings for a workflow scheme. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Get notification schemes paginated">
+Generates a paginated list of notification schemes, sorted by name, including those with no recipients. requires jira access and admin rights to a related project for scheme visibility.
+</Accordion>
+
+<Accordion title="Get issue worklogs">
+Gets all work logs for an issue. the response includes details of all work logs for the issue that the user has permission to view. this action is essential for tracking time spent on issues and provides a comprehensive view of work logged against a specific issue, making it useful for project management, time tracking, and reporting purposes. permissions required: - browse projects project permission for the project that the issue is in. - if issue-level security is configured, issue-level security permission to view the issue. - if the worklog has visibility restrictions, belongs to the group or has the role visibility is restricted to.
+</Accordion>
+
+<Accordion title="Get issue type scheme">
+This tool retrieves detailed information about a specific issue type scheme in jira. an issue type scheme defines the mapping between issue types and projects. the action will return information about the scheme including its name, description, and the issue types associated with it.
+</Accordion>
+
+<Accordion title="Get project category by id">
+Returns a project category. **[permissions](https://dac-static.atlassian.com) required:** permission to access jira.
+</Accordion>
+
+<Accordion title="Get permission scheme grants">
+Returns all permission grants for a permission scheme. **[permissions](https://dac-static.atlassian.com) required:** permission to access jira.
+</Accordion>
+
+<Accordion title="Get project property">
+Retrieves the value of a jira project property, available even without authentication. requires 'browse projects' permission for the associated project.
+</Accordion>
+
+<Accordion title="Get screen schemes">
+Fetches a paginated list of screen schemes for classic projects, requiring the administer jira global permission.
+</Accordion>
+
+<Accordion title="Get required status mappings for workflow scheme update">
+The text outlines how to get status mappings for updating workflow schemes in jira, specifying that permissions such as 'administer jira' and 'administer projects' are required for updates.
+</Accordion>
+
+<Accordion title="Get project roles for project">
+Jira cloud provides a list of project roles with names and urls, accessible even anonymously. roles are shared across projects. admin rights needed. see details and permission links online.
+</Accordion>
+
+<Accordion title="Get screens for a field">
+Returns a [paginated](https://dac-static.atlassian.com) list of the screens a field is used in. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Get permitted projects">
+Returns all the projects where the user is granted a list of project permissions. this operation can be accessed anonymously. **[permissions](https://dac-static.atlassian.com) required:** none.
+</Accordion>
+
+<Accordion title="Get project role for project">
+Retrieves project role details and associated actors, ordered by name. use 'get user' with 'groups' parameter to confirm user-role membership. anonymous access allowed. requires 'administer projects' or 'administer jira' permissions.
+</Accordion>
+
+<Accordion title="Get project role by id">
+The text provides a project role description and its default actors, sorted by display name, requiring 'administer jira' global permission for access.
+</Accordion>
+
+<Accordion title="Get remote issue link by id">
+The operation fetches a remote issue link, requires active issue linking, and can be anonymous. permissions needed: 'browse projects' for the issue's project and issue-level security if configured.
+</Accordion>
+
+<Accordion title="Get issue type screen scheme items">
+Retrieves a paginated list of issue type screen scheme items for classic projects. requires *administer jira* global permission.
+</Accordion>
+
+<Accordion title="Get project role details">
+Fetches all common project roles and their details. can be accessed without login. requires 'administer jira' or 'administer projects' permissions.
+</Accordion>
+
+<Accordion title="Get issue type screen scheme projects">
+Returns a paginated list of company-managed projects linked to an issue type screen scheme. requires 'administer jira' global permission.
+</Accordion>
+
+<Accordion title="Get project property keys">
+This api endpoint retrieves all property keys for a project and is accessible without login. users need 'browse projects' permission for access.
+</Accordion>
+
+<Accordion title="Get related work">
+Anonymously access work items linked to a specific version id; 'browse projects' permission needed for the associated project.
+</Accordion>
+
+<Accordion title="Get project components">
+The api returns all components in a project, offering a paginated list for projects with compass components. it's accessible anonymously but requires 'browse projects' permission. for full pagination, refer to a specific resource.
+</Accordion>
+
+<Accordion title="Get selected time tracking provider">
+The current time tracking provider is returned; if disabled, an empty response is given. administer jira global permission is required.
+</Accordion>
+
+<Accordion title="Get resolution">
+Returns an issue resolution value. **[permissions](https://dac-static.atlassian.com) required:** permission to access jira.
+</Accordion>
+
+<Accordion title="Get project components paginated">
+The api returns a paginated list of project components, including compass components linked to issues. anonymous access is supported if users have the 'browse projects' permission.
+</Accordion>
+
+<Accordion title="Get selectable issue field options">
+Provides a paginated list of select list issue field options from connect apps, not usable with jira-native options. requires jira access permissions.
+</Accordion>
+
+<Accordion title="Get user default columns">
+Returns the default issue table columns for a user. if no `accountid` is provided, the caller's details are returned. admin rights are needed to retrieve any user's details; jira access is required for one's own details.
+</Accordion>
+
+<Accordion title="Get resolutions">
+Returns a list of all issue resolution values. **[permissions](https://dac-static.atlassian.com) required:** permission to access jira.
+</Accordion>
+
+<Accordion title="Get modules">
+Returns all modules registered dynamically by the calling app. **[permissions](https://dac-static.atlassian.com) required:** only connect apps can make this request.
+</Accordion>
+
+<Accordion title="Get project type by key">
+Returns a [project type](https://confluence.atlassian.com/x/var1nw). this operation can be accessed anonymously. **[permissions](https://dac-static.atlassian.com) required:** none.
+</Accordion>
+
+<Accordion title="Get share permission">
+Summarizes filter share permissions: filters can be shared with user-owned groups, projects, logged-in users, or public. they can be accessed without login but only show if relevant to the user based on ownership or group/project membership.
+</Accordion>
+
+<Accordion title="Get share permissions">
+The function fetches various filter share permissions, including those for groups, projects, and public access, while enabling anonymous queries for user-specific and public filters.
+</Accordion>
+
+<Accordion title="Get user">
+User data is returned with respect to privacy settings, possibly concealing the email. more info on profile visibility and required "browse users and groups" global permission is available online.
+</Accordion>
+
+<Accordion title="Get status category">
+Returns a status category. status categories provided a mechanism for categorizing [statuses](https://dac-static.atlassian.com). **[permissions](https://dac-static.atlassian.com) required:** permission to access jira.
+</Accordion>
+
+<Accordion title="Get issue type schemes for projects">
+The text provides a link to access paginated lists of issue type schemes and their associated classic projects in jira. admin jira global permission is required for access.
+</Accordion>
+
+<Accordion title="Get project s sender email">
+Returns the [project's sender email address](https://confluence.atlassian.com/x/dolklg). **[permissions](https://dac-static.atlassian.com) required:** *browse projects* [project permission](https://confluence.atlassian.com/x/yodklg) for the project.
+</Accordion>
+
+<Accordion title="Get status">
+The operation retrieves a status linked to an active workflow, prioritizing the first status found if multiple have the same name. status can be fetched by id for specificity. no permissions needed; anonymous access allowed.
+</Accordion>
+
+<Accordion title="Get project features">
+Returns the list of features for a project.
+</Accordion>
+
+<Accordion title="Get transitions">
+This tool returns all transitions or a specific transition for an issue based on its status. it helps in determining available status changes and understanding what workflow transitions (including required screens and conditions) are available for an issue.
+</Accordion>
+
+<Accordion title="Get screens">
+Retrieves a paginated list of screens, filterable by specific screen ids. requires 'administer jira' global permission.
+</Accordion>
+
+<Accordion title="Get issue type scheme items">
+Get a paginated list of issue type scheme items for classic projects. requires the 'administer jira' global permission.
+</Accordion>
+
+<Accordion title="Get ui modifications">
+Gets ui modifications. ui modifications can only be retrieved by forge apps. **[permissions](https://dac-static.atlassian.com) required:** none.
+</Accordion>
+
+<Accordion title="Get user property">
+Returns a user's property value; if no key is provided, it lists available keys. does not access jira user properties. requires *administer jira* permission for others' properties, or user access for own.
+</Accordion>
+
+<Accordion title="Get user groups">
+Returns the groups to which a user belongs. **[permissions](https://dac-static.atlassian.com) required:** *browse users and groups* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Get user email">
+Returns a user's email address. this api is only available to apps approved by atlassian, according to these [guidelines](https://community.developer.atlassian.com/t/guidelines-for-requesting-access-to-email-address/27603).
+</Accordion>
+
+<Accordion title="Get users from group">
+The service provides a paginated list of users in a group, sorted by username (which is not shown for privacy), with required permissions being "browse users and groups" or "administer jira."
+</Accordion>
+
+<Accordion title="Get version s unresolved issues count">
+This operation provides the number of total and unresolved issues in a project version, is available without login, and requires 'browse projects' permission.
+</Accordion>
+
+<Accordion title="Get visible issue field options">
+Retrieves a user-viewable, paginated list of select list issue field options from connect apps only, not those created in jira or via the issue custom field options resource. jira access is required.
+</Accordion>
+
+<Accordion title="Get my filters">
+Fetches user's owned filters; includes favorites if `includefavourites` is true. requires jira access permission. visibility depends on ownership, group membership, or project permissions. if a favorited public filter goes private, it won't be returned.
+</Accordion>
+
+<Accordion title="Get user property keys">
+This function retrieves all property keys for a user but excludes jira-specific user properties. admin global permission is required for any user's keys, while jira access is needed for one's own keys.
+</Accordion>
+
+<Accordion title="Get valid project name">
+Validates project name availability, returning the original or a modified version with a sequence number. if a valid name can't be created, a 404 error is issued. no permissions required.
+</Accordion>
+
+<Accordion title="Get version">
+This operation retrieves a project version and is publicly accessible. however, browsing the project containing the version necessitates the "browse projects" permission.
+</Accordion>
+
+<Accordion title="Get user email bulk">
+Returns a user's email address. this api is only available to apps approved by atlassian, according to these [guidelines](https://community.developer.atlassian.com/t/guidelines-for-requesting-access-to-email-address/27603).
+</Accordion>
+
+<Accordion title="Get issue type screen schemes">
+Retrieves a paginated list of issue type screen schemes for classic projects. requires 'administer jira' global permission.
+</Accordion>
+
+<Accordion title="Get valid project key">
+Validates a project key and, if the key is invalid or in use, generates a valid random string for the project key. **[permissions](https://dac-static.atlassian.com) required:** none.
+</Accordion>
+
+<Accordion title="Get project issue security levels">
+This operation lists project-specific issue security levels accessible to the user, anonymously available but requires 'browse projects' and 'set issue security' permissions for detailed access.
+</Accordion>
+
+<Accordion title="Get workflow scheme">
+Returns a workflow scheme. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Get workflow for issue type in draft workflow scheme">
+Returns the issue type-workflow mapping for an issue type in a workflow scheme's draft. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Get project versions">
+Action to get all versions in a specified jira project. this tool retrieves all versions in a specified jira project. it provides a comprehensive list of project versions with their details including version id, version name, release status, start and release dates, and description. requires 'browse projects' project permission.
+</Accordion>
+
+<Accordion title="Get workflows paginated">
+Fetches a paginated list of classic workflows, detailing specified names or all published ones; excludes next-gen workflows. requires 'administer jira' global permission.
+</Accordion>
+
+<Accordion title="Get workflow transition properties">
+The text describes how transition properties affect workflow transitions in jira, linking to related resources. admin rights are necessary to make changes.
+</Accordion>
+
+<Accordion title="Get time tracking settings">
+Retrieves time tracking configurations like format and units. requires 'administer jira' global permission. more details: [configuring time tracking] and [permissions].
+</Accordion>
+
+<Accordion title="Get system avatars by type">
+Returns a list of system avatar details by owner type, where the owner types are issue type, project, or user. this operation can be accessed anonymously. **[permissions](https://dac-static.atlassian.com) required:** none.
+</Accordion>
+
+<Accordion title="Get task">
+This operation checks the status of a long-running async task, returning a json result when completed, retaining details for 14 days. oauth scopes update on june 15, 2024. requires admin permission or task creator access.
+</Accordion>
+
+<Accordion title="Get worklogs">
+The service returns up to 1000 worklog details for specified ids. access requires jira permissions, and worklogs are shown if they're public or if the user has viewing rights through a project role or group.
+</Accordion>
+
+<Accordion title="Get project issue type hierarchy">
+A project's issue hierarchy may have optional epics at top, standard issues like story/task/bug, and optional subtasks for breakdown. browsing the project requires permissions.
+</Accordion>
+
+<Accordion title="Get project versions paginated">
+Fetches a paginated list of project versions; for a full list without pagination, use the get project versions resource. anonymous access allowed but requires browse projects permission.
+</Accordion>
+
+<Accordion title="Get recent projects">
+The feature shows up to 20 recent projects visible to the user, accessible anonymously with appropriate permissions to browse, administer the project, or administer jira.
+</Accordion>
+
+<Accordion title="Get workflow scheme project associations">
+Generates a list of workflow schemes linked to projects, detailing project associations per scheme. team-managed/non-existent projects are excluded silently. no id for projects using 'default workflow scheme'. admin rights required.
+</Accordion>
+
+<Accordion title="Get workflow for issue type in workflow scheme">
+Returns the issue type-workflow mapping for an issue type in a workflow scheme. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Get the default data classification level of a project">
+The text outlines that to return the default data classification for a project, one needs browse projects and administer projects permissions for the project, as well as administer jira global permission.
+</Accordion>
+
+<Accordion title="Get priority">
+Returns an issue priority. **[permissions](https://dac-static.atlassian.com) required:** permission to access jira.
+</Accordion>
+
+<Accordion title="Get remote issue links">
+Gets the remote issue links for a jira issue. this operation requires the link issue permission. it retrieves external remote links associated with a jira issue, with the ability to filter by issue key and global id. permissions required: - browse projects project permission for the project that the issue is in. - if issue-level security is configured, issue-level security permission to view the issue.
+</Accordion>
+
+<Accordion title="Get project mappings for custom field context">
+The function provides a pageable list of mappings between context and projects for a custom field, filterable by `contextid`. requires the *administer jira* global permission. invalid ids are discarded.
+</Accordion>
+
+<Accordion title="Get votes">
+This tool retrieves voting information for a specified issue in jira. it returns details about the number of votes an issue has received and the users who have voted on it. it is used to get vote details, including the vote count, whether the current user has voted, and details about the voters. note: this operation requires the "allow users to vote on issues" option to be enabled in jira settings. users without the "view voters and watchers" project permission won't see details in the voters field. permissions required: - browse projects project permission - if issue-level security is configured, issue-level security permission to view the issue
+</Accordion>
+
+<Accordion title="Get version s related issues count">
+The operation counts issues for a version based on `fixversion`, `affectedversion`, and a custom field. it's accessible without login but requires *browse projects* permission for the relevant project.
+</Accordion>
+
+<Accordion title="Get jira instance info">
+Returns information about the jira instance. this operation can be accessed anonymously. **[permissions](https://dac-static.atlassian.com) required:** none.
+</Accordion>
+
+<Accordion title="Get project">
+This operation provides project details and is accessible even without logging in. however, one must have the 'browse projects' permission for the specific project to use it.
+</Accordion>
+
+<Accordion title="Get is watching issue bulk">
+The feature checks if a user watches issues from a list; invalid ids return `false`. it requires "watch issues" permission, project browsing, and issue security access. details on jira config and permissions.
+</Accordion>
+
+<Accordion title="Get jira attachment settings">
+The operation returns attachment settings, detailing if enabled and the size limit, with user restrictions set by project permissions. it's accessible without login. no permissions required.
+</Accordion>
+
+<Accordion title="Get worklog">
+Returns all work logs for an issue. the endpoint provides detailed information about each work log including time spent, the author, and work timestamps. it is useful for tracking time spent on issues, generating time reports, auditing work on issues, project management, resource allocation, and billing purposes. permissions required: - browse projects project permission - if issue-level security is configured, issue-level security permission to view the issue - if the worklog has visibility restrictions, belongs to the group or has the role visibility is restricted to
+</Accordion>
+
+<Accordion title="Get priorities">
+Returns the list of all issue priorities. **[permissions](https://dac-static.atlassian.com) required:** permission to access jira.
+</Accordion>
+
+<Accordion title="Get projects using issue security schemes">
+Retrieve paginated list of projects with security schemes by filtering with scheme/project ids. if none provided, all mappings shown. for classic projects only; 'administer jira' rights needed.
+</Accordion>
+
+<Accordion title="Get project issue security scheme">
+Summary: the text provides a link to the issue security scheme for a project and states that one needs either 'administer jira' global permission or 'administer projects' project permission to access it.
+</Accordion>
+
+<Accordion title="Get workflow transition rule configurations">
+Get a filtered, paginated list of workflows with transition rules created by connect or forge apps. can be refined by rule types or keys. some workflows with no rules might appear due to server optimizations. only available to connect/forge apps.
+</Accordion>
+
+<Accordion title="Get preference">
+Retrieve user preferences using the user management rest api before 15/07/2024, as locale/timezone keys are deprecated. notification keys remain unaffected. permissions needed.
+</Accordion>
+
+<Accordion title="Get precomputations apps">
+This api returns a list of a function's precomputations, including creation, update, and last-used timestamps, and each has a jql fragment (value). access is exclusively for apps to inspect their own functions.
+</Accordion>
+
+<Accordion title="Get projects paginated">
+The operation provides a paginated list of projects a user can see, which can be accessed without login. visibility depends on having browse, administer projects permission, or administer jira global permission.
+</Accordion>
+
+<Accordion title="Jira edit issue">
+This action edits an existing issue in jira. it accepts parameters such as issueidorkey, fields, update, notifyusers, overridescreensecurity, and overrideeditableflag. the action handles field validation, permission checks, screen and workflow validations, and error handling, and returns a 204 status when the issue is updated successfully.
+</Accordion>
+
+<Accordion title="Remove watcher from issue">
+Removes a user from an issue's list of watchers. this operation requires the user to have permission to view the issue and to manage the issue's watchers. permissions required: - browse projects project permission for the project that the issue is in. - if issue-level security is configured, issue-level security permission to view the issue. - to remove users other than themselves from the watchlist, manage watcher list project permission for the project that the issue is in.
+</Accordion>
+
+<Accordion title="Move screen tab">
+Moves a screen tab. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Reorder custom field options context">
+This operation allows reordering of jira custom field options. for connect app fields, use "issue custom field options (apps)" operations. administer jira global permission is required.
+</Accordion>
+
+<Accordion title="List issue comments">
+This tool retrieves all comments for a specific jira issue. it accepts a required parameter 'issueidorkey' along with optional parameters for pagination and sorting. the response includes an array of comment objects containing details like author info, comment body, timestamps, and visibility settings.
+</Accordion>
+
+<Accordion title="Move screen tab field">
+Moves a screen tab field. if `after` and `position` are provided in the request, `position` is ignored. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Replace custom field options">
+This operation updates custom field options for select lists in jira, but not for options from connect/forge apps. admin jira permissions are required.
+</Accordion>
+
+<Accordion title="Publish draft workflow scheme">
+A draft workflow scheme with new statuses for issue types is published. issue status updates are mapped accordingly. the process is asynchronous; track status via provided links. admin jira rights needed.
+</Accordion>
+
+<Accordion title="Get worklog property">
+Fetches a worklog property value. anonymous access allowed. requires 'browse projects' permission, issue security permission if set, and worklog visibility group/role access.
+</Accordion>
+
+<Accordion title="List boards">
+This tool retrieves all boards that the authenticated user has permission to view. it supports optional parameters (startat, maxresults, type, name, projectkeyorid, includeprivate, orderby) to filter and paginate the results.
+</Accordion>
+
+<Accordion title="Remove issue types from field configuration scheme">
+This operation removes issue types from field configuration schemes in classic projects and requires 'administer jira' global permissions.
+</Accordion>
+
+<Accordion title="Search for dashboards">
+Access a filtered, paginated list of dashboards with specific attributes. anonymous users can view public dashboards; logged-in users see more, based on ownership, group, and project access.
+</Accordion>
+
+<Accordion title="Move issue to sprint">
+This tool moves one or more jira issues to a specific sprint. the sprint must be active or open to receive issues. it accepts a sprint id and an array of issue keys (up to 50 issues per operation).
+</Accordion>
+
+<Accordion title="Move custom field to trash">
+Deletes a custom field in jira to trash; admin rights needed. see guides for further details on deletion processes. [edit/delete info](https://confluence.atlassian.com/x/z44fow), [permissions](https://dac-static.atlassian.com).
+</Accordion>
+
+<Accordion title="Get worklog property keys">
+This operation, which can be accessed anonymously, returns worklog property keys but requires 'browse projects' permission for the issue's project, issue-level security permission if applicable, and visibility restriction compliance.
+</Accordion>
+
+<Accordion title="Remove issue types from context">
+Summary: admins with "administer jira" global permission can remove issue types from a custom field context, making it applicable to all issue types.
+</Accordion>
+
+<Accordion title="Jira get issue types">
+Returns all issue types visible to the user. this tool retrieves a list of all issue types visible to the user, including custom issue types, sub-task issue types, and standard issue types. it is essential for determining available issue types for creating new issues and for retrieving issue type metadata for project configuration. permissions required: - if the user has the "administer jira" global permission, all issue types are returned. - if the user has the "browse projects" project permission for one or more projects, only the issue types associated with those projects are returned.
+</Accordion>
+
+<Accordion title="Search for filters">
+Retrieve a paginated list of filters anonymously. filters can be fetched by 'id' or by matching multiple attributes. results are limited to filters owned, shared with user's group or project, or public filters. no specific permissions needed.
+</Accordion>
+
+<Accordion title="Set app property forge">
+Assigns a forge app property that can be accessed in jira expressions. app context variable for retrieval. use storage api otherwise. request body must be valid, non-empty json under 32768 chars. only forge apps have permissions.
+</Accordion>
+
+<Accordion title="Set default issue security levels">
+Sets default issue security levels for schemes. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Reset columns">
+Reset filter column settings to default for filters owned by the user, those in shared groups, private projects with browse permission, public projects, and public filters. permission to access jira required.
+</Accordion>
+
+<Accordion title="Search issue ids using jql">
+Use jql to find issue ids. for more data, use the search endpoint, which is slower. anonymous access is allowed. required permissions are 'browse projects' and, if applicable, 'issue-level security'.
+</Accordion>
+
+<Accordion title="List sprints">
+This tool retrieves all sprints from a specified board and returns them in order of start date, with the most recent sprint appearing first. it supports parameters such as board id (required), state (optional), start at (optional, default: 0), and max results (optional, default: 50) for pagination.
+</Accordion>
+
+<Accordion title="Remove issue type from issue type scheme">
+This operation deletes an issue type from a scheme but can't remove types in use, from the default scheme, or the last in a scheme. admin rights needed.
+</Accordion>
+
+<Accordion title="Set application property">
+Jira allows changing application properties, such as the clone prefix and date formats, with default values listed. advanced settings affect jira's look and functionality, and should be altered with caution by jira admins.
+</Accordion>
+
+<Accordion title="Replace issue field option">
+De-select and replace select-list options on issues via jql query. only for options added by connect apps. requires *administer jira* permission to override security. asynchronous operation with a task link provided. not for jira-native field options.
+</Accordion>
+
+<Accordion title="Set app property">
+Stores custom data for an app using a non-empty json value up to 32768 characters. only connect apps with matching `addonkey` or forge apps can access these properties.
+</Accordion>
+
+<Accordion title="Set issue navigator default columns">
+Changes issue navigator default columns by passing 'columns' parameters in html form data via curl. if omitted, defaults are cleared. admin rights required. see atlassian docs for navigable fields info.
+</Accordion>
+
+<Accordion title="Move priorities">
+Changes the order of issue priorities. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Set default priority">
+Sets default issue priority. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Send notification for issue">
+This tool sends email notifications for a specific jira issue. it allows users to create customized email notifications that will be added to the mail queue and sent to specified recipients. it includes parameters to specify the issue id or key, subject, text body, optional html body, and recipient details. this tool is useful for automating notification workflows and ensuring that relevant stakeholders are informed of important issue updates.
+</Accordion>
+
+<Accordion title="Set actors for project role">
+Assigns new actors to a project role, replacing current actors. use a different option to add without replacing. requires project admin or jira admin permissions.
+</Accordion>
+
+<Accordion title="Search for issues using jql get">
+This tool allows searching for jira issues using jql (jira query language) queries. it provides a flexible way to search and filter issues based on various criteria, including pagination and custom field selection.
+</Accordion>
+
+<Accordion title="Set default share scope">
+Sets the default sharing for new filters and dashboards for a user. **[permissions](https://dac-static.atlassian.com) required:** permission to access jira.
+</Accordion>
+
+<Accordion title="Set issue property">
+This resource allows storing custom data on an issue with a valid json blob up to 32,768 characters, even anonymously. requires 'browse projects' and 'edit issues' permissions, plus issue-level security access if set.
+</Accordion>
+
+<Accordion title="Search issue security schemes">
+Get a paginated list of issue security schemes, filterable by project id. use a specific method to find all projects associated with a scheme. only for classic projects and requires jira admin permission.
+</Accordion>
+
+<Accordion title="Set columns">
+Use put with form data to set columns for a jira filter. only 'navigable' fields allowed, fetched using 'get fields'. restricted to filters owned by the user, their groups, or projects they have permissions for.
+</Accordion>
+
+<Accordion title="Move version">
+The text describes a feature that changes the order of version sequences in a jira project, which is available anonymously but requires 'browse projects' permission for the relevant project.
+</Accordion>
+
+<Accordion title="Map issue types to scheme workflows">
+Assign issue types to workflows within a scheme, setting a default workflow for unmapped types. active schemes require `updatedraftifneeded` set to `true` to edit. admin rights needed.
+</Accordion>
+
+<Accordion title="Set locale">
+Use the user management rest api's "[update a user profile](https://developer.atlassian.com/cloud/admin/user-management/rest/#api-users-account-id-manage-profile-patch)" to set user locale in jira; ensure appropriate permissions.
+</Accordion>
+
+<Accordion title="Set issue types for workflow in workflow scheme">
+Workflow scheme draft in jira can have issue types set and a default workflow assigned. unassigned issue types default to this workflow. admin permissions are required.
+</Accordion>
+
+<Accordion title="Set default resolution">
+Sets default issue resolution. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Set issue type property">
+This api endpoint allows updating or creating a property for a jira issue type with a valid json blob up to 32768 characters. administer jira global permission is required.
+</Accordion>
+
+<Accordion title="Parse jql query">
+Parses and validates jql queries. validation is performed in context of the current user. this operation can be accessed anonymously. **[permissions](https://dac-static.atlassian.com) required:** none.
+</Accordion>
+
+<Accordion title="Set preference">
+The text covers how to set/update user/system preferences, like notifications and shortcuts, within a 255-character limit. old locale/timezone settings default to a new api that requires permissions.
+</Accordion>
+
+<Accordion title="Remove mappings from issue type screen scheme">
+Removes issue type to screen scheme mappings from an issue type screen scheme. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Search for issues using jql post">
+This tool allows searching for jira issues using jql (jira query language) queries via post request. this endpoint is particularly useful for handling complex queries that exceed url length limits, supports additional parameters like startat, maxresults, fields, expand, validatequery, and properties, and provides enhanced flexibility for batch operations and paginated responses.
+</Accordion>
+
+<Accordion title="Set comment property">
+Set custom data on a comment by sending a valid, non-empty json under 32,768 characters. requires permissions to "edit all comments" or "edit own comments," with additional role/group membership if the comment is restricted.
+</Accordion>
+
+<Accordion title="Move resolutions">
+Changes the order of issue resolutions. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Reset user default columns">
+Resets user's default issue table columns to system default; if no accountid specified, affects caller's defaults. administer jira rights needed to alter any user's columns, jira access required for self-reset.
+</Accordion>
+
+<Accordion title="Set project feature state">
+Sets the state of a project feature.
+</Accordion>
+
+<Accordion title="Search priorities">
+The service returns a paginated list of jira priorities, filterable by priority ids, project ids, and default field configurations for company-managed projects. inaccessible or invalid ids are ignored. jira access permission is required.
+</Accordion>
+
+<Accordion title="Set project property">
+Stores custom data in a project property on jira using a valid json blob (up to 32,768 chars). accessible anonymously but requires 'administer jira' or 'administer projects' permissions.
+</Accordion>
+
+<Accordion title="Set user default columns">
+Sets user's default issue table columns in jira. without an account id, it affects the caller's settings. if no columns are specified, defaults are cleared. admins can set any user's columns; others can only set their own. data is sent as html form data.
+</Accordion>
+
+<Accordion title="Remove member from issue security level">
+Removes an issue security level member from an issue security scheme. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Set user property">
+This resource allows for setting custom user data. it doesn't affect jira user properties. admin rights are needed to modify any user, while self-edit requires jira access.
+</Accordion>
+
+<Accordion title="Merge versions">
+Merges two project versions by deleting one and updating references to it. alternative solution and permissions required are detailed. accessible anonymously.
+</Accordion>
+
+<Accordion title="Set workflow for issue type in draft workflow scheme">
+Sets the workflow for an issue type in a workflow scheme's draft. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Register dynamic webhooks">
+Webhooks are set for oauth apps; they work if the app owner is the webhook registrar. only connect and oauth 2.0 apps have the necessary permissions to operate this.
+</Accordion>
+
+<Accordion title="Partial update project role">
+Operation updates either a project role's name or description, not both. only the name is changed if both are provided. administer jira global permission is required.
+</Accordion>
+
+<Accordion title="Unarchive issue s by issue keys id">
+Admins can unarchive up to 1000 issues per request from specific jira projects; details and errors are provided. no subtask direct unarchival. jira or site admin rights and premium/enterprise license needed. no anonymous access.
+</Accordion>
+
+<Accordion title="Set worklog property">
+Store custom data in a worklog by setting a property with a valid json blob, up to 32768 characters. anonymous access allowed. requires 'browse projects' and 'edit worklogs' permissions, and adherence to issue-level security if set.
+</Accordion>
+
+<Accordion title="Set workflow for issue type in workflow scheme">
+To modify an active workflow scheme's issue type in jira, set 'updatedraftifneeded' to 'true' to create/update a draft. publish the draft to apply changes. admin permissions required.
+</Accordion>
+
+<Accordion title="Update announcement banner configuration">
+Updates the announcement banner configuration. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Restore custom field from trash">
+Restores a deleted custom field in jira, requiring 'administer jira' global permission. for details on deleting custom fields, visit provided links.
+</Accordion>
+
+<Accordion title="Search resolutions">
+Returns a paginated list of resolutions from company-managed projects in jira, filterable by resolution ids and default field configurations. access requires jira permissions.
+</Accordion>
+
+<Accordion title="Set project s sender email">
+Configures the project's email sender address; an empty 'emailaddress' resets to default. requires 'administer jira' or 'administer projects' permissions.
+</Accordion>
+
+<Accordion title="Restore deleted or archived project">
+Revives archived or recycled jira projects. requires 'administer jira' for company-managed or 'administer jira'/'administer projects' for team-managed projects.
+</Accordion>
+
+<Accordion title="Set project avatar">
+Use "load project avatar" to upload project avatars, then apply this operation to choose the displayed one. administer projects permission is necessary.
+</Accordion>
+
+<Accordion title="Update custom field options context">
+Updating custom field options in jira only applies to select list options made in jira or via its api. updates ignore unchanged values and omit them in the response. requires jira admin permissions. connect app options can't be updated this way.
+</Accordion>
+
+<Accordion title="Update custom field context">
+The text provides instructions for updating a jira custom field context and specifies that the user must have the 'administer jira' global permission to do so.
+</Accordion>
+
+<Accordion title="Update custom field value">
+Apps can update the value of their own declared custom fields for issues but only if they have the necessary permissions as the operation is restricted to the app that owns the fields.
+</Accordion>
+
+<Accordion title="Retrieve the attributes of service registries">
+Retrieve the attributes of given service registries. **[permissions](https://dac-static.atlassian.com) required:** only connect apps can make this request and the servicesids belong to the tenant you are requesting
+</Accordion>
+
+<Accordion title="Sanitize jql queries">
+The system transforms jql queries to use entity ids for privacy when users don't have access, altering clauses with restricted projects, but it's not gdpr compliant without admin rights.
+</Accordion>
+
+<Accordion title="Set custom field contexts default values">
+Sets default values for custom fields in contexts like date, options, and forge types. one default per request; set to null to unset. admin rights needed.
+</Accordion>
+
+<Accordion title="Update default workflow">
+Changes the default workflow in a scheme; active ones need `updatedraftifneeded` set to `true` to edit. creates/updates a draft workflow scheme in jira for publishing. admin rights required.
+</Accordion>
+
+<Accordion title="Update custom fields">
+Updates unique combinations of custom fields on issues. restricted to only the app that declared those fields and requires app ownership for updates.
+</Accordion>
+
+<Accordion title="Update dashboard">
+Updates a dashboard, replacing all the dashboard details with those provided. **[permissions](https://dac-static.atlassian.com) required:** none the dashboard to be updated must be owned by the user.
+</Accordion>
+
+<Accordion title="Search statuses paginated">
+The api returns a paginated list of statuses based on name or project searches. requires 'administer projects' and 'administer jira' permissions.
+</Accordion>
+
+<Accordion title="Update custom field configurations">
+Update a forge app's custom field settings in jira with "administer jira" global permission; the forge app itself doesn't need jira permissions.
+</Accordion>
+
+<Accordion title="Set time tracking settings">
+Sets the time tracking settings. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Select time tracking provider">
+Selects a time tracking provider. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Update draft default workflow">
+Sets the default workflow for a workflow scheme's draft. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Set dashboard item property">
+Apps can add custom data gadgets to user dashboards, with a 32,768 character limit for json data, and controls for content and settings. dashboard ownership or admin rights are needed for access.
+</Accordion>
+
+<Accordion title="Register modules">
+Registers a list of modules. **[permissions](https://dac-static.atlassian.com) required:** only connect apps can make this request.
+</Accordion>
+
+<Accordion title="Remove screen tab field">
+Removes a field from a screen tab. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Remove custom field context from projects">
+Removing projects from a custom field context makes it apply to all projects. if a project isn't in the context or causes duplicate global contexts, the operation fails. admin rights are required.
+</Accordion>
+
+<Accordion title="Update comment">
+This tool updates an existing comment on a jira issue. it requires permissions such as 'browse projects', 'edit all comments' or 'edit own comments', and appropriate visibility permissions if restrictions apply.
+</Accordion>
+
+<Accordion title="Remove filter as favorite">
+This function allows a user to remove a filter from their favorites. if a favorited public filter becomes private and invisible, it can't be unfavored. access to jira is required.
+</Accordion>
+
+<Accordion title="Remove the default data classification level from a project">
+To remove a project's default data classification level, users need 'administer projects' project permission and 'administer jira' global permission.
+</Accordion>
+
+<Accordion title="Remove notification from notification scheme">
+Removes a notification from a notification scheme. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Remove modules">
+Remove all or a list of modules registered by the calling app. **[permissions](https://dac-static.atlassian.com) required:** only connect apps can make this request.
+</Accordion>
+
+<Accordion title="Remove group">
+Deletes a group. **[permissions](https://dac-static.atlassian.com) required:** site administration (that is, member of the *site-admin* strategic [group](https://confluence.atlassian.com/x/24xjl)).
+</Accordion>
+
+<Accordion title="Update custom field">
+Updates a custom field. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Remove issue security level">
+Removes an issue security level asynchronously. check the task status via the 'location' link, and get updates using 'get task'. admin jira global permission needed.
+</Accordion>
+
+<Accordion title="Remove gadget from dashboard">
+Removes a dashboard gadget from a dashboard. when a gadget is removed from a dashboard, other gadgets in the same column are moved up to fill the emptied position. **[permissions](https://dac-static.atlassian.com) required:** none.
+</Accordion>
+
+<Accordion title="Remove user from group">
+Removes a user from a group. **[permissions](https://dac-static.atlassian.com) required:** site administration (that is, member of the *site-admin* [group](https://confluence.atlassian.com/x/24xjl)).
+</Accordion>
+
+<Accordion title="Update draft workflow scheme">
+Updates or creates a draft workflow scheme for an existing active workflow. each active scheme can only have one draft. administer jira global permission required.
+</Accordion>
+
+<Accordion title="Transition issue">
+This operation transitions an issue, updates its fields if a screen is present, and requires certain permissions. use 'fields' in the request to specify updates. it's accessible anonymously, but project and issue-level permissions are needed.
+</Accordion>
+
+<Accordion title="Update component">
+Operation updates a component, overwrites given fields, and can unset lead with empty `leadaccountid`. anonymous access permitted. needs *administer projects* or *administer jira* permissions.
+</Accordion>
+
+<Accordion title="Update field configuration items">
+Updates, and restricts, field configurations in classic projects; sets text/wiki renderers but excludes autocomplete. admin rights required.
+</Accordion>
+
+<Accordion title="Update the default data classification level of a project">
+Updated project's default data classification level; requires 'administer projects' project permission and 'administer jira' global permission.
+</Accordion>
+
+<Accordion title="Update project">
+Updated project details via a request with optional parameters; schemes update only when included. admin jira global permission needed for schemes or project key changes; otherwise, admin projects permission suffices.
+</Accordion>
+
+<Accordion title="Validate create workflows">
+To bulk create workflows in jira, you need 'administer jira' permission for global workflows and 'administer projects' for project-specific ones.
+</Accordion>
+
+<Accordion title="Update screen tab">
+Updates the name of a screen tab. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Update issue security scheme">
+Updates the issue security scheme. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Update issue link type">
+This operation updates an issue link type in jira, requiring the site to have issue linking enabled and the user to have the 'administer jira' global permission.
+</Accordion>
+
+<Accordion title="Update gadget on dashboard">
+Changes the title, position, and color of the gadget on a dashboard. **[permissions](https://dac-static.atlassian.com) required:** none.
+</Accordion>
+
+<Accordion title="Update field configuration">
+This operation updates a field configuration's name and description for company-managed projects and requires 'administer jira' global permission.
+</Accordion>
+
+<Accordion title="Update field configuration scheme">
+This operation updates field configuration schemes for classic projects in jira and requires 'administer jira' global permission.
+</Accordion>
+
+<Accordion title="Update priority">
+Updates an issue priority. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Update issue type">
+Updates the issue type. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Update notification scheme">
+Updates a notification scheme. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Update issue field option">
+Update or create select list options for an issue field in connect apps by providing an identical option id in both path and body. admin rights needed; not for jira-built issue fields.
+</Accordion>
+
+<Accordion title="Update remote issue link by id">
+The text describes updating a remote issue link, where unset fields default to null. it requires active issue linking and can be done anonymously but needs 'browse projects' and 'link issues' permissions and potentially issue-level security permissions.
+</Accordion>
+
+<Accordion title="Validate project key">
+Validates a project key by confirming the key is a valid string and not in use. **[permissions](https://dac-static.atlassian.com) required:** none.
+</Accordion>
+
+<Accordion title="Update screen">
+Updates a screen. only screens used in classic projects can be updated. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Validate update workflows">
+To bulk update workflows, you need "administer jira" permission for global workflows and "administer projects" for project-specific ones.
+</Accordion>
+
+<Accordion title="Update permission scheme">
+Updating a permission scheme either changes its name/description or replaces all grants with a given list; an empty list removes all grants. specific endpoints handle individual grant changes. admin rights are needed.
+</Accordion>
+
+<Accordion title="Update screen scheme">
+Updates a screen scheme. only screen schemes used in classic projects can be updated. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Update precomputations apps">
+Update the precomputation value of a function created by a forge/connect app. **[permissions](https://dac-static.atlassian.com) required:** an api for apps to update their own precomputations.
+</Accordion>
+
+<Accordion title="Update issue security level">
+Updates the issue security level. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Update resolution">
+Updates an issue resolution. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Update issue type scheme">
+Updates an issue type scheme. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Update filter">
+Updates a filter. use this operation to update a filter's name, description, jql, or sharing. **[permissions](https://dac-static.atlassian.com) required:** permission to access jira, however the user must own the filter.
+</Accordion>
+
+<Accordion title="Update ui modification">
+Forge apps can update ui modifications, each with up to 1,000 contexts; a single context can be used in up to 100 such modifications. no permissions needed if no context is set; 'browse projects' permission required for context-specific modifications.
+</Accordion>
+
+<Accordion title="Update worklog">
+Update jira worklog by enabling time tracking, checking permissions (project browsing, issue security viewing, worklog editing), adhering to visibility rules. anonymous edits allowed. for setup, see the time tracking configuration guide.
+</Accordion>
+
+<Accordion title="Update version">
+This operation updates a project version and can be done anonymously. it requires either "administer jira" global permission or "administer projects" project permission for the relevant project.
+</Accordion>
+
+<Accordion title="Update project category">
+Updates a project category. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+
+<Accordion title="Update related work">
+Generic related works can be updated via rest apis; archived ones cannot. anonymous access allowed, but "resolve issues" and "edit issues" permissions needed for the project's version.
+</Accordion>
+
+<Accordion title="Update workflow scheme">
+This api updates workflow schemes in company and team projects instantly; changes in issue statuses trigger issue migrations. admin permissions are required for updates.
+</Accordion>
+
+<Accordion title="Update workflow transition property">
+Updating a workflow transition modifies an existing property or adds a new one if it's not present, altering the transition's behavior. administer jira global permission is required. more info on transition and workflow properties is available online.
+</Accordion>
+
+<Accordion title="Update workflow transition rule configurations">
+Jira now allows the creator app (connect or forge) to update workflow transition rules, such as post functions, conditions, validators, disable rules, and add tags, with default enabled status and restricted to authorized apps.
+</Accordion>
+
+<Accordion title="Update issue type screen scheme default screen scheme">
+Updates the default screen scheme in an issue type screen scheme for all issue types not individually mapped. requires administer jira global permission.
+</Accordion>
+
+<Accordion title="Update issue type screen scheme">
+Updates an issue type screen scheme. **[permissions](https://dac-static.atlassian.com) required:** *administer jira* [global permission](https://confluence.atlassian.com/x/x4dklg).
+</Accordion>
+

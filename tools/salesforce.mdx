@@ -1,0 +1,130 @@
+Salesforce is a leading CRM platform integrating sales, service, marketing, and analytics to build customer relationships and drive business growth
+
+<Accordion title="Create campaign record via post">
+Create a new campaign record by posting json data to '/sobjects/campaign'. must include 'content-type' header. possible responses include success (201) and various errors like 400, 401, 403, 404, 405, 415, 500, 503 with descriptive info.
+</Accordion>
+
+<Accordion title="Fetch account details by id with conditional queries">
+Retrieve account details by id, with optional fields and conditional headers. responds with account data or error statuses. supports if-modified/unmodified for data freshness.
+</Accordion>
+
+<Accordion title="Fetch modified or unmodified sobjects">
+Retrieve a list of modified sobjects by using "if-modified-since" header or unmodified with "if-unmodified-since". supports common response codes like 200, 304, and error codes 400, 401, 403, 404, 405, 412, 500, 503.
+</Accordion>
+
+<Accordion title="Create note record with content type header">
+Create a note record by posting json data to `/sobjects/note`. requires `content-type` header and handles various http statuses (201, 400, 401, 403, 404, 500, 405, 503, 415) signaling success or different error scenarios.
+</Accordion>
+
+<Accordion title="Delete a lead object by its id">
+Delete a lead object by id. errors handled for missing auth, access rights, nonexistent object, and server issues. returns no content on success (204). required: `id` path parameter.
+</Accordion>
+
+<Accordion title="Create lead with specified content type">
+Create a new lead via post, specifying content type in the header. accepts a json lead object. possible response status codes include 201 (created), 400, 401, 403, 404, 405, 415, 500, 503, along with corresponding error info.
+</Accordion>
+
+<Accordion title="Account creation with content type option">
+Endpoint for creating accounts via post; accepts json with 'content-type' header. status codes: 201 (created), 400, 401, 403-405, 415, 500, 503.
+</Accordion>
+
+<Accordion title="Remove account by unique identifier">
+Delete /sobjects/account/\{id\}: removes an account using a unique identifier. requires the 'id' path parameter. possible responses include 400, 401, 403, 404, 500, 405, 503 (errors) and 204 (success).
+</Accordion>
+
+<Accordion title="Create new contact with json header">
+The post /sobjects/contact endpoint creates a new contact using json; it requires a content-type header. success and error responses range from status codes 201 to 503.
+</Accordion>
+
+<Accordion title="Remove a specific contact by id">
+Delete a contact object by id. handles errors: bad request (400), unauthorized (401), forbidden (403), not found (404), internal server error (500), method not allowed (405), service unavailable (503), and unsupported media type (415).
+</Accordion>
+
+<Accordion title="Retrieve account data and error responses">
+Retrieve account data with response codes for success and various errors (not modified, bad request, unauthorized, forbidden, not found, method not allowed, server error, service unavailable). returns sobjectrootinfo on success.
+</Accordion>
+
+<Accordion title="Remove note object by id">
+Delete a note object by id. supports error handling for common http response statuses including 400, 401, 403, 404, 500, 405, 503, and 415; 204 for success. required parameter: 'id' in path.
+</Accordion>
+
+<Accordion title="Remove opportunity by id">
+Delete an opportunity object using its unique id, handling responses for success and common http errors like bad request, unauthorized access, forbidden, not found, and server errors.
+</Accordion>
+
+<Accordion title="Remove campaign object by id">
+Delete `/sobjects/campaign/\{id\}`: removes a campaign object given an `id`. responds with 204 on success or returns error codes 400, 401, 403, 404, 405, 415, 500, 503 with details if any issues arise. the `id` path parameter is required.
+</Accordion>
+
+<Accordion title="Retrieve campaign data with error handling">
+Get /sobjects/campaign: retrieves campaign data with responses for success and various errors like missing authorization, not found, and server issues.
+</Accordion>
+
+<Accordion title="Retrieve contact info with standard responses">
+Get /sobjects/contact: retrieves contact info with standard response codes, including successful fetch (200) and various errors (304, 400, 401, 403, 404, 405, 412, 500, 503). json format expected.
+</Accordion>
+
+<Accordion title="Create opportunity record">
+Create 'opportunity' records with required 'content type' header (json/xml). successfully created records return a 201 status code. errors trigger status codes 400, 401, 403, 404, 405, 415, 500, or 503 with details. ensure fields used are available based on the organization's salesforce configuration.
+</Accordion>
+
+<Accordion title="Query Report">
+Post returns report data without saving changes to an existing report or creating a new one.
+</Accordion>
+
+<Accordion title="Retrieve specific campaign object details">
+Retrieve details of a specific campaign object using its id. optional query/header params allow for field selection and date-based filtering. expect standard http response codes, such as 200 ok or 404 not found, for outcomes.
+</Accordion>
+
+<Accordion title="Retrieve lead data with various responses">
+Retrieve lead data with potential responses: 200 (success), 304 (not modified), 400 (bad request), 401 (unauthorized), 403 (forbidden), 404 (not found), 405 (method not allowed), 412 (precondition failed), 500 (server error), 503 (service unavailable).
+</Accordion>
+
+<Accordion title="Retrieve note by id with optional fields and time conditions">
+Retrieve a specific note object by id with optional field selection and conditional retrieval based on modification time. supports standard http response codes to indicate success or issues with the request.
+</Accordion>
+
+<Accordion title="Retrieve lead details by id with conditional support">
+Retrieve details of a lead by id, with optional field selection and conditional retrieval based on modification dates. supports responses for success, various client or server errors, and change detection statuses.
+</Accordion>
+
+<Accordion title="Retrieve opportunities data">
+Retrieve opportunities data. supports http 200 for success; errors return 304, 400, 401, 403, 404, 405, 412, 500, or 503 statuses with respective descriptions. response in json.
+</Accordion>
+
+<Accordion title="Update account object by id">
+Patch endpoint '/sobjects/account/\{id\}' updates an account object by its id, using 'application/json'. requires 'content-type' header and may return status codes 400, 401, 403, 404, 500, 405, 503, 204, or 415.
+</Accordion>
+
+<Accordion title="Retrieve opportunity by id with optional fields">
+Retrieve opportunity details by id using get. optional fields and modified-since query supported. responses range from 200 (ok) to 503 (service unavailable), including various client/server errors.
+</Accordion>
+
+<Accordion title="Update specific note by id">
+Patch /sobjects/note/\{id\}: update a specific note object using its id. requires 'content-type' header and json body with the note's new content. responses: 204 on success, 400-415, 500, or 503 for errors.
+</Accordion>
+
+<Accordion title="Update opportunity by id">
+This patch endpoint allows updates to an existing opportunity object by id, accepts json payloads, and supports multiple response statuses, including 400, 401, 403, 404, 500, 405, 503, 204, and 415, indicating various error conditions or success.
+</Accordion>
+
+<Accordion title="Retrieve note object information">
+Access notes with `/sobjects/note`. possible responses range from 200 (ok) to 503 (service unavailable) and return json data.
+</Accordion>
+
+<Accordion title="Retrieve specific contact by id">
+This endpoint retrieves a specific contact by id. it supports optional field selection and conditional retrieval based on modification timestamp. responses cover a range of http status codes from success to various client and server errors.
+</Accordion>
+
+<Accordion title="Update lead by id with json payload">
+Patch endpoint updates lead by id with json body per leadsobject schema, needs content-type header; responses vary from 204 to error codes 400, 401, 403, 404, 415, 500, 503 with error info.
+</Accordion>
+
+<Accordion title="Update campaign by id with json">
+Update a campaign object by id with json support. requires 'id' path parameter and 'content-type' header. potential responses: 200 ok, 400, 401, 403, 404, 405, 415, 500, 503 errors, and 204 no content.
+</Accordion>
+
+<Accordion title="Update contact by id">
+Patch /sobjects/contact/\{id\}: update specified contact using its id. requires 'content-type' header and json request body. possible responses: 204 (success), 400, 401, 403, 404, 405, 415, 500, 503 (errors).
+</Accordion>
+

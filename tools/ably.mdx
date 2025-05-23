@@ -1,0 +1,46 @@
+Ably is a real-time messaging platform helping developers build live features, including chat and data synchronization, with global scalability and robust reliability for modern applications
+
+<Accordion title="Query Batch Presence">
+This tool enables querying the presence states of multiple channels in a single api request. the api retrieves the member presence details of the specified channels in parallel.
+</Accordion>
+
+<Accordion title="Get Channel History">
+This tool retrieves the message history for a specified ably channel. it uses the get /channels/\{channelid\}/messages endpoint to return a paginated list of messages in chronological order, subject to parameters such as 'channelid', 'limit', 'direction', 'start', and 'end'. the tool is useful for auditing, recovering missed messages, analyzing channel activity, and debugging message flows. authentication is required via basic or token authentication.
+</Accordion>
+
+<Accordion title="Get Ably Service Time">
+This tool retrieves the current server time from ably's service in milliseconds since the epoch. it is particularly useful for time synchronization and generating valid tokenrequest timestamps to prevent replay attacks. the endpoint supports multiple content types, handles http errors, network issues, and is a fundamental tool for ensuring accurate timing in ably applications.
+</Accordion>
+
+<Accordion title="Query Batch Presence History">
+This tool enables querying presence history for multiple channels in a single api request. it uses the get endpoint at https://rest.ably.io/presence to retrieve the member presence history details of the specified channels in parallel.
+</Accordion>
+
+<Accordion title="Delete Channel Subscription">
+This tool allows you to unsubscribe devices or clients from push notifications for specific channels. the operation is asynchronous, so immediate requests after deletion may briefly still return the subscription.
+</Accordion>
+
+<Accordion title="Get Channel Details">
+This tool retrieves metadata and details for a specific channel in ably. it returns a channeldetails object containing information about the channel's status, occupancy, and other metadata. the endpoint provides visibility into channel activity, including metrics such as connections, presence, publishers, and subscribers, and requires appropriate permissions.
+</Accordion>
+
+<Accordion title="Get Channel Presence History">
+This tool retrieves the history of presence messages for a specified channel in ably. it allows you to query presence events on a channel within a given time period.
+</Accordion>
+
+<Accordion title="Get Application Stats">
+This tool retrieves your application's usage statistics from ably. the stats endpoint returns a paginated list of your application's usage statistics by minute, hour, day, or month. it supports optional parameters such as start, end, direction, limit, and unit to filter and format the returned data. the stats include metrics for: - message counts and data transferred - connection counts - channel usage - api request counts - push notification metrics - token request counts
+</Accordion>
+
+<Accordion title="List Push Channel Subscriptions">
+This tool retrieves a list of all push notification channel subscriptions. it allows you to view all active push notification subscriptions for channels in your ably application. allows filtering by channel, deviceid, and clientid, supports pagination with limit parameter, and returns detailed push notification subscription information including channel, deviceid, and clientid.
+</Accordion>
+
+<Accordion title="Publish Message to Channel">
+This tool will allow users to publish a message to a specified ably channel using a post request. it covers the essentials like channel name, message data, optional event name/type, and additional metadata for push notifications. it is an independent and fundamental operation within ably's real-time messaging platform.
+</Accordion>
+
+<Accordion title="Create Ably Channel">
+Creates a new channel or retrieves an existing channel in ably. this tool allows you to programmatically create and initialize channels for real-time messaging. since ably creates channels implicitly when first used, this action publishes an empty initialization message to create/activate the channel.
+</Accordion>
+

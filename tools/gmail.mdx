@@ -1,0 +1,86 @@
+Connect to Gmail to send and manage emails.
+
+<Accordion title="Modify Label to Email">
+Modify a label to an email in gmail.
+</Accordion>
+
+<Accordion title="Delete Draft">
+Delete an email draft using gmail's api.
+</Accordion>
+
+<Accordion title="Create Email Draft">
+Create a draft email using gmail's api.
+</Accordion>
+
+<Accordion title="Create Label">
+Action to create a new label in gmail.
+</Accordion>
+
+<Accordion title="Delete Message">
+Delete an email message using gmail's api. note: this action requires the integration to have the `https://mail.google.com/` scope.
+</Accordion>
+
+<Accordion title="Get Gmail Attachment">
+Get an attachment from a mail.
+</Accordion>
+
+<Accordion title="Fetch Message by Thread ID">
+Fetch messages by thread id from gmail with pagination support. to use pagination, you can set the 'pagetoken' in the request to the value of the 'nextpagetoken' in the response of the previous action. the 'nextpagetoken' is returned in the response of this action (i.e 'fetchmessagebythreadid') if there are more results to be fetched. if not provided, the first page of results is returned.
+</Accordion>
+
+<Accordion title="Fetch Message by Message ID">
+Fetch messages by message id from gmail.
+</Accordion>
+
+<Accordion title="Fetch Emails">
+Action to fetch all emails from gmail.
+</Accordion>
+
+<Accordion title="List Threads">
+Action to list threads in gmail. this action returns a list of threads and a page token to retrieve the next page of results. the next page token is returned in the response of this action (i.e 'listthreads') if there are more results to be fetched, which you can use in the 'pagetoken' field of the request to fetch the next page of results. if not available, the last page of results is returned.
+</Accordion>
+
+<Accordion title="Modify Thread Labels">
+Action to modify labels of a thread in gmail.
+</Accordion>
+
+<Accordion title="Get Contacts">
+Action to get info of contacts saved in google for an authorized account. a custom integration with `https://www.googleapis.com/auth/contacts.readonly` scope is required to use this action.
+</Accordion>
+
+<Accordion title="Remove Label">
+Action to remove a label in gmail.
+</Accordion>
+
+<Accordion title="Get People">
+Action to get contacts info of people.
+</Accordion>
+
+<Accordion title="List Drafts">
+List all email drafts using gmail's api.
+</Accordion>
+
+<Accordion title="Reply to Email Thread">
+Action to reply to an email thread in gmail.
+</Accordion>
+
+<Accordion title="Get Profile">
+Get the profile of the authenticated user.
+</Accordion>
+
+<Accordion title="Search People">
+Provides a list of contacts in the authenticated user's grouped contacts that matches the search query. the query matches on a contact's names, nicknames, emailaddresses, phonenumbers, and organizations fields that are from the contact source. a custom integration with `https://www.googleapis.com/auth/contacts.readonly` scope is required to use this action.
+</Accordion>
+
+<Accordion title="List Gmail Labels">
+List all labels in the user's gmail account.
+</Accordion>
+
+<Accordion title="Send Email">
+Send an email using gmail's api.
+</Accordion>
+
+<Accordion title="Move to Trash">
+Move an email message to trash using gmail's api.
+</Accordion>
+

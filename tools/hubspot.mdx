@@ -1,0 +1,962 @@
+HubSpot is an inbound marketing, sales, and customer service platform integrating CRM, email automation, and analytics to facilitate lead nurturing and seamless customer experiences
+
+<Accordion title="Archive contact by id">
+Archives a contact in the hubspot crm by moving it to the recycling bin. this endpoint should be used when you need to remove a contact from active use in your crm. the operation is irreversible through the api, so use it with caution. once archived, the contact will no longer appear in standard contact lists or searches. this endpoint is useful for data cleanup or when a contact is no longer relevant to your business operations.
+</Accordion>
+
+<Accordion title="Archive property by object type and name">
+This endpoint moves a specified crm property to the recycling bin in hubspot. it allows users to archive properties that are no longer needed or relevant, without permanently deleting them. the endpoint should be used when you want to remove a property from active use in your crm objects, such as contacts, companies, or deals. it's important to note that this action doesn't permanently delete the property, but rather moves it to a recyclable state. use this endpoint with caution, as archiving a property may affect existing records and integrations that rely on that property.
+</Accordion>
+
+<Accordion title="Hubspot Archive">
+Move an object identified by `\{emailid\}` to the recycling bin.
+</Accordion>
+
+<Accordion title="Archive product by productid">
+Archives a product in the hubspot crm by moving it to the recycling bin. this endpoint is used to remove a product from active use without permanently deleting it. it's ideal for managing product catalogs in e-commerce applications integrated with hubspot. the operation is irreversible through the api, but archived products can be restored manually through the hubspot interface if needed. use this endpoint when a product is no longer available or relevant, but you want to retain its historical data.
+</Accordion>
+
+<Accordion title="Archive batch of properties">
+Archives a batch of properties for a specified crm object type in hubspot. this endpoint allows for efficient bulk archiving of multiple properties simultaneously, regardless of their initial state. it's ideal for cleaning up or reorganizing large sets of custom properties in your hubspot crm. the operation is idempotent, ensuring consistent results even if properties are already archived or don't exist.
+</Accordion>
+
+<Accordion title="Archive batch of deals by id">
+Archives a batch of deals in the hubspot crm by their ids. this endpoint allows for bulk archiving of multiple deals simultaneously, which is useful for removing outdated or irrelevant deals from active view. it should be used when you need to archive numerous deals at once, improving crm organization and performance. note that archiving is a significant action that removes deals from standard views and reports, so use this endpoint cautiously and ensure you have backups or a way to unarchive if needed.
+</Accordion>
+
+<Accordion title="Add asset association">
+Associate a specified asset with a campaign. important: currently, only the following asset types can be associated and disassociated via the api: forms, static lists, external website pages
+</Accordion>
+
+<Accordion title="Archive ticket by id">
+Archives a specific ticket in the hubspot crm system by moving it to the recycling bin. this endpoint should be used when you need to remove a ticket from active status, such as when a support issue has been resolved or is no longer relevant. the operation is permanent and cannot be undone through the api, so use it cautiously. this tool is ideal for cleaning up your ticket management system or implementing automated ticket archiving processes based on certain criteria.
+</Accordion>
+
+<Accordion title="Archive line item by id">
+Archives a specific line item in hubspot's crm system by moving it to the recycling bin. this endpoint should be used when you need to remove a line item from active use without permanently deleting it. it's particularly useful for data cleanup or when you want to hide outdated or irrelevant line items while retaining the ability to restore them later if needed. note that this action doesn't permanently delete the line item, but rather moves it to a recoverable state in the recycling bin.
+</Accordion>
+
+<Accordion title="Add token to event template">
+This endpoint allows you to add a new token to an existing event template in hubspot's crm timeline. tokens are used to attach custom data to events, enabling enhanced timeline displays and list segmentation. you can also associate crm object properties using the 'objectpropertyname' field. this endpoint is useful for customizing event templates with additional data points or for building out complete crm objects. ensure that the token name is unique within the template to avoid conflicts.
+</Accordion>
+
+<Accordion title="Batch update quotes">
+This endpoint allows for batch updating of multiple quotes in the hubspot crm system. it enables efficient modification of quote data by processing multiple updates in a single api call. this endpoint is particularly useful when you need to update a large number of quotes simultaneously, such as adjusting prices, updating expiration dates, or modifying custom fields across multiple quotes. the batch update functionality can significantly reduce the number of api calls required for bulk quote modifications, potentially improving performance and reducing api usage. however, be cautious when using this endpoint, as it can make widespread changes to your crm data in a single operation.
+</Accordion>
+
+<Accordion title="Archive batch of feedback submissions by id">
+This endpoint allows you to archive multiple feedback submissions in bulk within your hubspot crm. it's designed for efficient management of large volumes of feedback data, enabling you to move older or processed submissions out of active view. the operation is performed asynchronously, meaning it will be queued for processing after the request is received. use this endpoint when you need to clean up your active feedback submissions or organize your data for long-term storage. note that archived submissions are not deleted and can be retrieved if needed, but they won't appear in standard searches or reports.
+</Accordion>
+
+<Accordion title="Create a campaign">
+Create a campaign with the given properties and return the campaign object, including the campaignguid and created properties.
+</Accordion>
+
+<Accordion title="Audit pipeline changes by id">
+Retrieves a reverse chronological list of all mutations (changes) that have occurred on a specific pipeline in hubspot's crm. this endpoint is used to audit and track modifications made to a pipeline, providing transparency and accountability in pipeline management. it's particularly useful for monitoring changes in sales processes, workflow modifications, or any other pipeline-related activities. the function returns detailed information about each change, allowing users to review the pipeline's evolution over time.
+</Accordion>
+
+<Accordion title="Archive property group">
+Archives a specific property group in hubspot's crm by moving it to the recycling bin. this operation allows users to remove obsolete or unnecessary property groups from active use without permanently deleting them. it should be used when reorganizing crm properties or during cleanup processes. once archived, the property group will no longer be available for use in crm operations, but can potentially be restored if needed. exercise caution when using this endpoint, as it immediately impacts the availability of the property group across the crm system.
+</Accordion>
+
+<Accordion title="Clone marketing email">
+This endpoint creates a duplicate of an existing marketing email in hubspot. it allows users to quickly replicate the content, design, and settings of a previously created email, saving time in the email creation process. the cloned email can be given a new name, making it easy to identify and manage multiple versions or variations of an email campaign. this tool is particularly useful when creating similar email campaigns or when testing different versions of an email while maintaining the original intact. note that while the email is cloned, it does not automatically send the new email or add it to any existing workflows or campaigns.
+</Accordion>
+
+<Accordion title="Cancel active import">
+Cancels an active import process in the hubspot crm system. this endpoint allows you to immediately stop an ongoing data import, which is useful for preventing unwanted data from being added to your crm or halting an import that was started by mistake. it should be used when you need to urgently stop a data import that is currently in progress. note that this action is irreversible, and any data that has already been imported will remain in the system. the endpoint returns an actionresponse indicating the success or failure of the cancellation request.
+</Accordion>
+
+<Accordion title="Campaign search">
+This endpoint allows users to search for and return a page of campaigns based on various query parameters. users can filter by name, sort, and paginate through the campaigns, as well as control which properties are returned in the response.
+</Accordion>
+
+<Accordion title="Create a batch of companies">
+Creates multiple company records in hubspot's crm system in a single api call. this endpoint is designed for efficiently adding a large number of companies to your hubspot account, which is particularly useful for bulk imports or when syncing data from another system. it allows for the creation of up to 100 companies per request, significantly reducing the number of api calls needed for large-scale operations. the endpoint returns detailed information about the success or failure of each company creation attempt, enabling easy tracking and error handling for batch operations.
+</Accordion>
+
+<Accordion title="Archive batch of tickets by id">
+Archives a batch of tickets in the hubspot crm by their ids. this endpoint allows for efficient bulk archiving of multiple tickets in a single api call. it should be used when you need to remove tickets from active status, making them inaccessible for further updates or interactions. this operation is particularly useful for data cleanup, removing old or resolved tickets, or managing large volumes of ticket data. the endpoint processes the provided ticket ids in bulk, improving performance for large-scale archiving operations.
+</Accordion>
+
+<Accordion title="Archive batch products by id">
+Archives multiple products in hubspot's crm system by their ids in a single batch operation. this endpoint is used to remove products from active use without permanently deleting them, making them inaccessible in standard views and searches. it's particularly useful for bulk cleanup of outdated or discontinued products in e-commerce integrations. the operation is irreversible through the api, so use it cautiously. note that this endpoint does not return the archived products; it only confirms the action with a 204 no content response upon success.
+</Accordion>
+
+<Accordion title="Configure calling extension settings">
+Configures the settings for a calling extension in hubspot's crm. this endpoint allows you to customize the appearance and behavior of your calling extension by setting the menu label, target iframe url, and dimensions. use this when you need to create or update the configuration for your calling extension to integrate it seamlessly into the hubspot interface. it's essential for tailoring the user experience of your calling extension within the hubspot crm environment.
+</Accordion>
+
+<Accordion title="Archive a batch of emails by id">
+The batcharchiveemails endpoint allows you to archive multiple emails in hubspot's crm system with a single api call. this endpoint is particularly useful for bulk email management, enabling efficient organization of email records within the crm. it should be used when you need to archive a large number of emails simultaneously, which can help in maintaining a clean and organized email database. the endpoint accepts a list of email ids and processes them in batch, which is more efficient than making individual archive requests for each email. however, be aware that this operation is irreversible, so ensure that you truly want to archive the specified emails before making the call.
+</Accordion>
+
+<Accordion title="Create ab test variation">
+Creates a new variation of an existing email for a/b testing in hubspot's email marketing tools. this endpoint allows marketers to generate alternative versions of an email to compare performance and optimize engagement. use this when you want to set up an a/b test for an email campaign, testing elements such as subject lines, content, or calls-to-action. the new variation is based on an existing email content and is assigned a unique name for easy identification. this tool is specifically for creating test variations and does not initiate the actual a/b test or send emails.
+</Accordion>
+
+<Accordion title="Create a batch of emails">
+Creates multiple email objects in hubspot's crm system in a single api call. this endpoint is ideal for bulk email creation, allowing you to efficiently add numerous emails with custom properties and crm object associations. use this when you need to create multiple emails simultaneously, such as importing a batch of email records or setting up a series of automated emails. the endpoint provides flexibility in defining email properties and associations, enabling integration with various aspects of your hubspot crm data. note that this endpoint creates email objects in the crm, but does not send the emails; it's primarily for record-keeping and crm management purposes.
+</Accordion>
+
+<Accordion title="Create and return a new property group">
+Creates a new property group for a specified crm object type in hubspot. this endpoint allows you to organize related properties into logical groups, improving the structure and management of custom properties within your crm. use this when you need to create a new category or section for properties in your hubspot crm, such as grouping all properties related to a specific business process or customer attribute. the newly created property group can then be used to organize existing or new properties for the specified object type (e.g., contacts, companies, deals). note that this endpoint creates an empty group; you'll need to use separate api calls to add properties to this group after creation.
+</Accordion>
+
+<Accordion title="Archive quote object by id">
+Archives a specific quote object in hubspot's crm by moving it to the recycling bin. this endpoint is used to remove a quote from active use while preserving its data for potential future reference. it's particularly useful for managing outdated or rejected quotes, helping to keep the active quote list clean and organized. the operation is irreversible through this api, so it should be used with caution when permanent removal of a quote from active status is desired.
+</Accordion>
+
+<Accordion title="Batch read companies by properties">
+This endpoint enables batch retrieval of multiple company records from the hubspot crm by their properties. it's designed for efficiently fetching data for multiple companies in a single api call, reducing the number of requests needed when working with large datasets. the endpoint allows filtering for archived companies and specifies which properties to retrieve for each company. it's ideal for bulk data synchronization, reporting, or any scenario where information on multiple companies is needed simultaneously. the response provides detailed company data or error information if any companies couldn't be retrieved.
+</Accordion>
+
+<Accordion title="Create batch of properties">
+This endpoint allows you to create multiple crm properties in a single api call for a specified object type in hubspot. it's particularly useful when setting up or updating your crm schema in bulk, saving time and reducing the number of api calls needed. the endpoint follows the same rules and constraints as creating individual properties, ensuring consistency in your crm structure. use this when you need to add several new fields to your crm objects efficiently, such as during initial setup or when expanding your data model. note that while this operation is atomic, it may result in partial success, so always check the response for any errors on specific properties.
+</Accordion>
+
+<Accordion title="Create batch of line items">
+Creates multiple line items in a single api call within the hubspot crm. this endpoint is designed for bulk operations, allowing efficient creation of numerous line items simultaneously. it's particularly useful for scenarios such as importing large datasets, setting up initial inventory, or updating multiple products at once. the endpoint accepts a batch of line item data and returns the created objects or error information for any failed creations.
+</Accordion>
+
+<Accordion title="Create association for object type">
+This endpoint creates a new association between object types in hubspot's crm system. it allows you to define relationships between different entities, such as linking contacts to companies or deals to products. the association is created for the primary object type specified in the path parameter and can be linked to one or more other object types. this tool is essential for structuring and organizing data within the crm, enabling more complex data relationships and improved data management. use it when you need to establish new connections between different types of data in your hubspot crm. note that this endpoint requires specific permissions and should be used carefully as it affects the overall structure of your crm data.
+</Accordion>
+
+<Accordion title="Create batch of quotes">
+This endpoint allows you to create multiple quotes simultaneously in the hubspot crm system. it's designed for efficiency when you need to add a large number of quotes at once, such as during data migration or when processing bulk quote requests. the endpoint accepts a batch of quote objects and attempts to create all of them, returning detailed results for each quote in the batch. use this when you have multiple quotes to create and want to optimize api usage by reducing the number of individual calls. note that partial success is possible, so it's important to check the response for any errors on specific quotes within the batch.
+</Accordion>
+
+<Accordion title="Archive a batch of quotes by id">
+This endpoint archives a batch of quotes in the hubspot crm by their ids. it allows for efficient bulk archiving of multiple quotes in a single api call, which is useful for removing outdated or irrelevant quotes from active use. the operation is irreversible, so use it cautiously. this endpoint should be used when you need to archive multiple quotes simultaneously, such as during a cleanup process or when closing multiple deals. it will not delete the quotes but move them to an archived state, making them inaccessible through normal quote retrieval methods.
+</Accordion>
+
+<Accordion title="Create pipeline stage">
+Creates a new stage within an existing pipeline in hubspot's crm. this endpoint allows you to add a new stage to a specific pipeline, which can be used to represent different steps in your sales, marketing, or customer service processes. the created stage will be associated with the pipeline identified by the provided pipelineid. use this when you need to expand or modify the structure of your crm pipelines by adding new stages. the endpoint returns the complete details of the newly created stage, including its unique identifier.
+</Accordion>
+
+<Accordion title="Archive company">
+Archives a company in the hubspot crm by moving it to the recycling bin. this endpoint should be used when you need to remove a company from active use without permanently deleting it. archiving a company may affect its visibility and associations within the crm. once archived, the company can be restored if needed, but it won't appear in most standard company lists or searches. use this endpoint with caution, as it can impact reporting and user access to company data.
+</Accordion>
+
+<Accordion title="Archive crm object by id">
+Archives a specific crm object in hubspot by moving it to the recycling bin. this endpoint allows you to remove an object from active use without permanently deleting it, providing a safety net for accidental deletions. it can be used for various crm object types such as contacts, companies, deals, or quotes. the operation is irreversible through the api, but the object can be restored from the recycling bin in the hubspot interface if needed.
+</Accordion>
+
+<Accordion title="Create feedback submission">
+Creates a new feedback submission in the hubspot crm system with the provided properties. this endpoint allows you to programmatically add customer feedback to your hubspot account, enabling better tracking and analysis of customer sentiments and experiences. use this when you need to submit feedback collected from various channels (e.g., surveys, support interactions, or product reviews) into hubspot. the endpoint returns a copy of the created feedback submission object, including its unique id, which can be used for future reference or updates. note that the specific properties available for feedback submissions may depend on your hubspot account configuration and custom properties.
+</Accordion>
+
+<Accordion title="Archive feedback submission">
+Archives a specific feedback submission in hubspot's crm by moving it to the recycling bin. this endpoint is used when you need to remove a feedback submission from active use without permanently deleting it. it's particularly useful for maintaining data integrity while clearing out outdated or irrelevant feedback. note that this action is reversible, as the submission can be restored from the recycling bin if needed. however, archived submissions will not appear in standard feedback reports or searches.
+</Accordion>
+
+<Accordion title="Create event template for app">
+Creates a new event template for a hubspot app, defining the structure for custom timeline events in the crm. this endpoint allows developers to set up templates for events like video views, webinar registrations, or survey completions. the created template can be used for contacts, companies, tickets, or deals, and includes formatted content and custom property definitions. use this endpoint when setting up new types of timeline events for your hubspot integration. note that you must create an event template before you can create actual events in the crm timeline.
+</Accordion>
+
+<Accordion title="Create batch of objects">
+This endpoint allows you to create multiple crm objects of a specified type in a single api call. it's designed for bulk creation of objects like contacts, companies, deals, or tickets in the hubspot crm system. the endpoint is particularly useful when you need to import a large number of records or synchronize data from another system. it supports creating various object types, determined by the 'objecttype' path parameter. the request body should contain an array of objects to be created, following the batchinputsimplepublicobjectinputforcreate schema. the response will either indicate successful creation of all objects or provide details on any errors encountered during the batch creation process. this endpoint is ideal for operations requiring the creation of multiple crm records simultaneously, improving efficiency and reducing the number of api calls needed for bulk data operations.
+</Accordion>
+
+<Accordion title="Create batch of ticket">
+This endpoint allows you to create multiple tickets in the hubspot crm simultaneously. it's designed for bulk ticket creation, which is particularly useful for importing support requests from external systems or creating multiple related tickets efficiently. the endpoint accepts a batch of ticket data and processes them in a single api call, reducing the number of individual requests needed. use this when you need to create multiple support tickets at once, such as during data migration or when integrating with other customer support platforms. note that while this endpoint can handle multiple tickets, there may be limits on the number of tickets that can be created in a single batch, so check hubspot's documentation for current limitations.
+</Accordion>
+
+<Accordion title="Create a batch of campaigns">
+This endpoint creates a batch of campaigns. the maximum number of items in a batch request is 50. the campaigns in the response are not guaranteed to be in the same order as they were provided in the request.
+</Accordion>
+
+<Accordion title="Create product object">
+Creates a new product object in the hubspot crm system with the specified properties. this endpoint is used to add new products to your e-commerce catalog within hubspot. it allows you to define various attributes of the product such as name, price, description, and any custom properties configured in your hubspot account. upon successful creation, the endpoint returns a copy of the created product object, including its unique id assigned by hubspot. this tool is particularly useful for integrating external e-commerce systems with hubspot or for programmatically managing your product catalog. note that this endpoint creates basic product entries and may not support complex product configurations or variants.&lt;&lt;DEPRECATED use create_product_object&gt;&gt;
+</Accordion>
+
+<Accordion title="Create contact object with properties">
+Creates a new contact in the hubspot crm system with the provided properties. this endpoint allows you to add a new contact to your hubspot database, populating it with the specified information. it's ideal for scenarios where you need to programmatically create contacts, such as when integrating with other systems or automating lead capture processes. the endpoint returns a copy of the created contact object, including its unique id, which can be used for further operations or reference. note that while the endpoint offers flexibility in terms of properties you can set, it's important to provide at least one property to create a meaningful contact entry.
+</Accordion>
+
+<Accordion title="Create batch of contacts">
+Creates multiple contact records in hubspot's crm system in a single api call. this endpoint is designed for efficient bulk creation of contacts, making it ideal for data imports, migrations, or synchronization between systems. it allows you to create up to 100 contacts simultaneously, significantly reducing the number of api calls required for large-scale contact creation. the endpoint returns detailed information about the success or failure of each contact creation attempt, enabling easy tracking and error handling for batch operations.&lt;&lt;DEPRECATED use create_batch_of_contacts&gt;&gt;
+</Accordion>
+
+<Accordion title="Create line item object">
+Creates a new line item object in the hubspot crm with the provided properties. this endpoint is used to add individual products or services to deals, quotes, or orders. it returns a copy of the created object, including its unique id. use this when you need to add new items to a customer's order or deal in the hubspot system.
+</Accordion>
+
+<Accordion title="Create pipeline for objecttype">
+Creates a new pipeline for a specified object type in hubspot's crm. this endpoint allows you to define custom stages and workflows for different crm objects such as deals, tickets, or custom objects. use this when you need to establish a new process flow or sales methodology within your hubspot crm. the created pipeline will be immediately available for use and will return the complete pipeline object, including its unique identifier, in the response. note that this operation requires appropriate authentication and permissions based on the object type you're working with.
+</Accordion>
+
+<Accordion title="Create timeline event based on template">
+Creates a new timeline event in hubspot's crm based on a predefined event template. this endpoint allows you to add custom, immutable events to object timelines, providing a detailed record of interactions or activities. once created, the event cannot be modified. if the event template is configured with object property updates, this call will also attempt to update or add those properties to the associated object. use this endpoint to enrich your crm data with specific, structured events tied to contacts, companies, or deals.
+</Accordion>
+
+<Accordion title="Delete schema by objecttype">
+Deletes a custom schema in hubspot's crm by its object type. this endpoint should be used when you need to remove a custom object schema from your hubspot account. it's crucial to note that all existing records of this schema must be deleted before calling this endpoint; otherwise, the operation will fail. this is a permanent action and cannot be undone, so use it with caution. the endpoint is particularly useful when restructuring your crm or removing obsolete custom object types.
+</Accordion>
+
+<Accordion title="Delete campaign">
+Delete a specified campaign from the system. this call will return a 204 no content response regardless of whether the campaignguid provided corresponds to an existing campaign or not.
+</Accordion>
+
+<Accordion title="List contacts page">
+This endpoint retrieves a paginated list of contacts from the hubspot crm. it allows for flexible querying with options to specify the number of results per page, filter properties, include historical property values, and fetch associated object ids. the endpoint is ideal for tasks such as synchronizing contact data with external systems, generating reports, or displaying contact information in a user interface. it supports pagination for handling large datasets efficiently and provides fine-grained control over the data returned for each contact.&lt;&lt;DEPRECATED use list_contacts_page&gt;&gt;
+</Accordion>
+
+<Accordion title="Create company object">
+Creates a new company object in the hubspot crm with the provided properties. this endpoint allows you to add a new company to your crm database, including custom fields and properties specific to your hubspot account configuration. upon successful creation, it returns a copy of the newly created company object, including its unique id assigned by hubspot. use this endpoint when you need to programmatically add new companies to your crm, such as when integrating with other systems or automating company record creation. note that the specific properties available for a company may vary based on your hubspot account setup and any custom properties you've defined.
+</Accordion>
+
+<Accordion title="Delete timeline event template">
+This endpoint deletes a specific timeline event template from hubspot's crm system. it permanently removes the template and all associated events from search results and the timeline ui. use this endpoint when you need to completely remove an event template and its data from your hubspot application. this operation is irreversible, so it should be used with caution. before deletion, ensure that the template and its associated events are no longer needed, as they cannot be recovered after deletion. the endpoint requires both the event template id and the app id for precise identification and execution of the deletion process.
+</Accordion>
+
+<Accordion title="Archive batch of companies by id">
+Archives a batch of companies in the hubspot crm system using their unique ids. this endpoint allows for efficient bulk archiving of multiple companies simultaneously, which is particularly useful for data cleanup, removing outdated records, or managing large datasets. it should be used when you need to archive numerous companies at once, saving time compared to individual archiving operations. the endpoint does not delete the companies but moves them to an archived state, making them less prominent in the active crm view while still retaining the data. note that this operation cannot be undone through the api, so use it cautiously and ensure you have the correct company ids before proceeding.
+</Accordion>
+
+<Accordion title="Create a new marketing email">
+Use this endpoint to create a new marketing email.
+</Accordion>
+
+<Accordion title="Archive batch of line items by id">
+This endpoint allows you to archive multiple line items in the hubspot crm system by their ids in a single batch operation. it's designed for efficient bulk management of line items, particularly useful when you need to archive a large number of items simultaneously. the endpoint should be used when you want to remove multiple line items from active use without permanently deleting them. it's important to note that this operation is not reversible through the api, so use it carefully. the endpoint doesn't return the archived items; it only confirms the successful processing of the request with a 204 no content response.
+</Accordion>
+
+<Accordion title="Delete video conferencing app settings">
+Deletes the settings for a specific video conferencing application integrated with hubspot. this endpoint should be used when you need to remove the configuration of a video conferencing app from your hubspot account, such as when discontinuing the use of a particular integration or preparing to set up a new configuration. it's important to note that this action is irreversible and will remove all associated settings for the specified application id. this endpoint does not affect any scheduled meetings or historical data, but it will prevent the app from functioning within hubspot until reconfigured.
+</Accordion>
+
+<Accordion title="Create crm object with properties">
+Creates a new crm object in hubspot with specified properties and returns a copy of the created object, including its unique id. this endpoint is versatile and can be used to create various standard crm objects (such as contacts, companies, deals) as well as custom objects. it's ideal for adding new records to your hubspot crm programmatically, allowing for seamless integration with external systems or automated workflows. the endpoint requires specifying the object type and providing the necessary properties for the object being created.
+</Accordion>
+
+<Accordion title="Delete Workflow">
+Fully delete a workflow by id. warning: deleted workflows cannot be restored via the api. if you need to restore an accidentally deleted flow, you'll need to contact support.
+</Accordion>
+
+<Accordion title="Delete a batch of campaigns">
+This endpoint deletes a batch of campaigns. the maximum number of items in a batch request is 50. the response will always be 204 no content, regardless of whether the campaigns exist or not, whether they were successfully deleted or not, or if only some of the campaigns in the batch were deleted.
+</Accordion>
+
+<Accordion title="Create ticket object">
+This endpoint creates a new ticket object in the hubspot crm system. it allows you to programmatically generate support tickets with specified properties. use this endpoint when you need to create tickets automatically, such as from user submissions on your website or from internal systems. the endpoint accepts a json payload with ticket details and returns the created ticket object, including its newly assigned id. this is particularly useful for integrating external systems with hubspot's customer service workflows. note that the specific fields available for ticket creation may depend on your hubspot account configuration.
+</Accordion>
+
+<Accordion title="Create Workflow">
+Creates a new workflow in hubspot using the v4 api. workflows automate your marketing, sales, and service processes based on specific enrollment triggers. the v4 api supports various action types including: - static branch actions - list branch actions - ab test branch actions - custom code actions - webhook actions - single connection actions requirements: - scopes: automation - standard api rate limits apply
+</Accordion>
+
+<Accordion title="Delete contact for gdpr compliance">
+Permanently deletes a contact and all associated content from hubspot's crm system to comply with gdpr regulations. this endpoint should be used when a data subject exercises their right to erasure under gdpr. it provides the option to identify a contact by email address using the 'idproperty' set to 'email'. if the email address is not found, it will be added to a blocklist to prevent future use. this operation is irreversible and should be used with caution, as it will remove all data associated with the contact.
+</Accordion>
+
+<Accordion title="Delete pipeline stage by id">
+This endpoint allows you to permanently delete a specific pipeline stage within a hubspot crm pipeline. it removes the stage identified by the provided stageid from the pipeline specified by pipelineid for the given objecttype. use this endpoint when you need to remove an obsolete or unnecessary stage from your crm workflow. be cautious when using this operation, as it permanently removes the stage and cannot be undone. ensure that no active deals or records are associated with the stage before deletion to prevent data inconsistencies.
+</Accordion>
+
+<Accordion title="Fetch contact ids">
+Fetch the list of contact ids for the specified campaign and contact type
+</Accordion>
+
+<Accordion title="Retrieve line item by id">
+Retrieves detailed information about a specific line item in hubspot's crm using its unique identifier. this endpoint allows for flexible querying of line item data, including custom properties, historical values, and associated objects. it's particularly useful for accessing up-to-date information about individual products or services within a deal, supporting various use cases such as order management, inventory tracking, or sales analysis. the endpoint offers granular control over the returned data, enabling efficient and tailored data retrieval based on specific business needs.&lt;&lt;DEPRECATED use retrieve_line_item_by_id&gt;&gt;
+</Accordion>
+
+<Accordion title="Fetch import error details">
+Retrieves detailed error information for a specific import operation in hubspot's crm. this endpoint allows users to fetch a paginated list of errors that occurred during the import process, helping to identify and troubleshoot issues with data imports. it should be used after an import operation to check for any problems that may have arisen during the import. the tool provides specific error details, enabling users to correct their data or import process for future attempts. it does not provide information about successful imports or allow for error correction directly through the api.
+</Accordion>
+
+<Accordion title="Fetch recording settings by appid">
+Retrieves the recording settings for a specific calling extension app in the hubspot crm system. this endpoint allows developers to fetch the current configuration for call recording associated with a particular app integration. it's useful for auditing, troubleshooting, or displaying the current recording settings to users. the endpoint should be used when you need to review or verify the recording configuration for a specific app, such as before making changes or when setting up a new integration. note that this endpoint only provides read access to the settings and does not allow modifications.
+</Accordion>
+
+<Accordion title="Create product batch">
+This endpoint allows you to create multiple products in the hubspot crm simultaneously using a single api call. it's designed for efficient bulk product creation, particularly useful for e-commerce applications that need to add or update large numbers of products. the endpoint accepts a batch of product data and processes them together, returning individual results for each product in the batch. use this when you need to create multiple products at once to optimize api usage and streamline your product management workflow.
+</Accordion>
+
+<Accordion title="Fetch revenue">
+Fetch revenue attribution report data for a specified campaign
+</Accordion>
+
+<Accordion title="Delete a marketing email">
+Deletes a specific marketing email from the hubspot system. this endpoint should be used when you need to permanently remove a marketing email from your hubspot account. it's particularly useful for cleaning up outdated or unnecessary email content, or when you need to comply with data management policies. be cautious when using this endpoint, as the deletion is irreversible - once an email is deleted, it cannot be recovered. this endpoint only handles the deletion process and does not provide any information about the email being deleted or return the deleted content.
+</Accordion>
+
+<Accordion title="Get active imports list">
+Retrieves a paginated list of active imports for the hubspot account. this endpoint allows users to monitor ongoing import processes, track their status, and manage bulk data operations efficiently. it's particularly useful for checking the progress of large-scale data imports, identifying any issues, and ensuring data integrity during the import process. the endpoint returns a collection of import responses, providing detailed information about each active import job.
+</Accordion>
+
+<Accordion title="Archive batch of objects by id">
+This endpoint allows you to archive multiple crm objects of a specified type in bulk. it's designed for efficiently removing a large number of objects from active use in your hubspot crm. the archived objects are not deleted but are no longer accessible through standard crm operations. this is particularly useful for maintaining a clean and relevant database by archiving old or irrelevant records. use this endpoint when you need to archive many objects at once, such as during data cleanup operations or when removing outdated records. be cautious when using this endpoint, as archiving is a significant action that affects data accessibility and may impact related records or integrations.
+</Accordion>
+
+<Accordion title="Get All Workflows">
+Get a list of workflows for a hubspot portal. returns metadata for each workflow, useful for looking up workflows by id or displaying available workflows.
+</Accordion>
+
+<Accordion title="Archive batch of contacts by id">
+This endpoint allows you to archive multiple contacts in the hubspot crm simultaneously by providing their ids. it's particularly useful for bulk operations when you need to remove several contacts from active use in your crm. the endpoint accepts a json object containing an array of contact ids and performs the archive operation on all specified contacts. upon successful execution, the contacts will be marked as archived in the hubspot system, making them inactive and no longer visible in the main contact lists. this operation is irreversible through this api, so use it cautiously. if you need to restore archived contacts, you would need to use a separate unarchive endpoint or do it manually through the hubspot interface.
+</Accordion>
+
+<Accordion title="Create batch of contacts">
+Creates multiple contact records in hubspot's crm system in a single api call. this endpoint is designed for efficient bulk creation of contacts, making it ideal for data imports, migrations, or synchronization between systems. it allows you to create up to 100 contacts simultaneously, significantly reducing the number of api calls required for large-scale contact creation. the endpoint returns detailed information about the success or failure of each contact creation attempt, enabling easy tracking and error handling for batch operations.
+</Accordion>
+
+<Accordion title="Delete pipeline by id">
+This endpoint allows you to delete a specific pipeline in the hubspot crm system. it removes the entire pipeline structure, including all its stages, from the specified object type (e.g., deals, contacts, companies). use this endpoint when you need to remove an outdated or unnecessary pipeline from your crm workflow. be cautious when using this operation, as it permanently deletes the pipeline and cannot be undone. the endpoint provides optional validation parameters to help prevent unintended data loss or disruptions to active records.
+</Accordion>
+
+<Accordion title="Gdpr delete">
+Permanently delete a contact and all associated content to follow gdpr. use optional property 'idproperty' set to 'email' to identify contact by email address. if email address is not found, the email address will be added to a blocklist and prevent it from being used in the future.
+</Accordion>
+
+<Accordion title="Create multiple timeline events batch">
+Creates multiple timeline events in batch for hubspot's crm based on an event template. this endpoint allows for efficient creation of multiple immutable events on object timelines, with the ability to update object properties if configured in the template. use this when you need to add multiple historical or real-time events to contact, company, or deal records in hubspot. it's particularly useful for bulk imports or synchronizing events from external systems. note that once created, these events cannot be modified, so ensure accuracy before submission.
+</Accordion>
+
+<Accordion title="Delete calling extension settings">
+Deletes a specific calling extension from the hubspot crm system. this operation permanently removes the calling extension service as an option for all connected hubspot accounts. use this endpoint when you want to completely deactivate and remove a calling extension from the hubspot ecosystem. it's important to note that this action is irreversible and will affect all users who have been utilizing this calling extension. exercise caution when invoking this endpoint, as it will impact the functionality available to your hubspot users.
+</Accordion>
+
+<Accordion title="Get aggregated statistic intervals">
+Get aggregated statistics in intervals for a specified time span. each interval contains aggregated statistics of the emails that were sent in that time.
+</Accordion>
+
+<Accordion title="Create product object">
+Creates a new product object in the hubspot crm system with the specified properties. this endpoint is used to add new products to your e-commerce catalog within hubspot. it allows you to define various attributes of the product such as name, price, description, and any custom properties configured in your hubspot account. upon successful creation, the endpoint returns a copy of the created product object, including its unique id assigned by hubspot. this tool is particularly useful for integrating external e-commerce systems with hubspot or for programmatically managing your product catalog. note that this endpoint creates basic product entries and may not support complex product configurations or variants.
+</Accordion>
+
+<Accordion title="Get all marketing emails for a hubspot account">
+The results can be filtered, allowing you to find a specific set of emails. see the table below for a full list of filtering options.
+</Accordion>
+
+<Accordion title="Retrieve page of crm owners">
+This endpoint retrieves a paginated list of crm owners in hubspot. it allows you to fetch owner information with optional filtering by email address and archived status. the endpoint supports pagination for efficient data retrieval, making it ideal for applications that need to display or process owner data in manageable chunks. use this when you need to access owner information across your hubspot crm, such as for user management, reporting, or integration with other systems.&lt;&lt;DEPRECATED use retrieve_page_of_crm_owners&gt;&gt;
+</Accordion>
+
+<Accordion title="Get aggregated statistics">
+Use this endpoint to get aggregated statistics of emails sent in a specified time span. it also returns the list of emails that were sent during the time span.
+</Accordion>
+
+<Accordion title="Read crm contact by id">
+Retrieves detailed information about a specific hubspot crm contact using their internal object id. this endpoint allows for customized data retrieval, enabling developers to specify which properties to return, include property history, fetch associated object ids, and filter for archived contacts. it's ideal for situations where you need to access comprehensive contact information or integrate contact data into external systems. the endpoint is particularly useful for building custom crm dashboards, generating detailed contact reports, or syncing contact data with other applications.&lt;&lt;DEPRECATED use read_crm_contact_by_id&gt;&gt;
+</Accordion>
+
+<Accordion title="Create quote object">
+Creates a new quote object in hubspot's crm system with the provided properties. this endpoint allows you to programmatically generate quotes, which can be associated with deals, contacts, or companies in your hubspot account. it's useful for automating quote creation in sales processes or integrating quote generation with external systems. the endpoint returns a copy of the created quote object, including its newly assigned id, which can be used for further operations or reference. while this endpoint creates standard quotes, be aware that complex or highly customized quote structures may require additional setup in your hubspot account.
+</Accordion>
+
+<Accordion title="Create new object schema with custom properties">
+Creates a new custom object schema in hubspot's crm, allowing you to define tailored data structures with custom properties and associations. this endpoint is essential for businesses that need to store and manage unique data types not covered by hubspot's standard objects. use this when you need to extend your crm's capabilities to handle industry-specific or company-specific data. the response includes the complete object schema, including the newly assigned object type id, all defined properties, and associations, providing immediate confirmation and details of the created schema.
+</Accordion>
+
+<Accordion title="Create batch of deals">
+This endpoint allows for the creation of multiple deals simultaneously in hubspot's crm. it's designed for efficient bulk operations, enabling users to create a large number of deals in a single api call. this is particularly useful for integrating data from external systems, migrating deal information, or setting up initial deal pipelines in bulk. the endpoint accepts a batch of deal objects and attempts to create them all, returning detailed results for each deal creation attempt. it's important to note that this is an all-or-nothing operation for each individual deal, but not for the entire batch - some deals may be created successfully while others fail.
+</Accordion>
+
+<Accordion title="Create batch of feedback submissions">
+This endpoint allows you to create multiple feedback submissions in a single api call within hubspot's crm system. it's designed for bulk creation of feedback data, which is useful for importing large datasets or synchronizing feedback information from external systems. the endpoint accepts a batch of feedback submission objects and processes them together, returning either a successful batch response or a response with potential errors for each submission. use this endpoint when you need to efficiently create multiple feedback entries simultaneously, reducing the number of individual api calls and improving performance for large-scale data operations.
+</Accordion>
+
+<Accordion title="Create property for specified object type">
+Creates a new custom property for a specified crm object type in hubspot. this endpoint allows you to extend the data model of your crm objects by adding new fields to store additional information. use this when you need to capture custom data that isn't covered by hubspot's default properties. the new property will be available for use immediately after creation, allowing you to store and retrieve custom data for the specified object type. this operation is essential for tailoring your crm to your specific business needs and workflows.
+</Accordion>
+
+<Accordion title="Create or update draft version">
+Create or update the draft version of a marketing email. if no draft exists, the system creates a draft from the current “live” email then applies the request body to that draft. the draft version only lives on the buffer—the email is not cloned.
+</Accordion>
+
+<Accordion title="Create new deal object">
+Creates a new deal object in the hubspot crm with the provided properties. this endpoint allows you to add a new potential or closed sale to your crm, tracking important information such as deal value, stage, and associated contacts or companies. use this when you need to programmatically create deals based on user actions, integrations with other systems, or bulk imports. the endpoint returns a copy of the created deal object, including its unique id assigned by hubspot. note that while you can create a basic deal with minimal information, it's often beneficial to include as much relevant data as possible for accurate reporting and sales forecasting.
+</Accordion>
+
+<Accordion title="Get import record information">
+Retrieves a complete summary of a specific import record in the hubspot crm system, including any updates made to the record. this endpoint is useful for tracking the status and details of data imports, allowing users to monitor the progress and results of their import operations. it should be used when you need to check the current state of an import, verify its completion, or troubleshoot any issues that may have occurred during the import process. the endpoint provides comprehensive information about the import record but does not allow modifications to the import itself.
+</Accordion>
+
+<Accordion title="Merge two contacts of same type">
+This endpoint allows you to merge two contact records of the same type in hubspot's crm system. it combines the information from two separate contact entries into a single, consolidated record. this is useful for eliminating duplicate contacts and maintaining a clean, accurate database. the merge operation is irreversible, so it should be used with caution. the endpoint requires specifying which contact should be considered the primary record, and the resulting merged contact will retain this primary contact's id.
+</Accordion>
+
+<Accordion title="Permanently delete contact for gdpr compliance">
+This endpoint permanently deletes a contact and all associated content to comply with gdpr regulations. it's specifically designed for data erasure requests under gdpr. the endpoint allows for contact identification by email address using an optional 'idproperty' set to 'email'. if the email is not found, it's added to a blocklist to prevent future use. this action is irreversible and should be used with caution, only when a valid gdpr erasure request is received. it ensures complete removal of contact data, helping businesses maintain gdpr compliance.
+</Accordion>
+
+<Accordion title="Hubspot Modify Calling Extension Settings">
+Updates existing calling extension settings for a specific app in hubspot's crm system. this endpoint allows developers to modify various properties of a calling extension, such as its name, url, dimensions, and feature support flags. it should be used when changes to an existing calling extension configuration are needed, for example, to update the iframe url or adjust the display size. the endpoint requires the app id and a json object with the updated settings. it returns the modified settings upon successful update.
+</Accordion>
+
+<Accordion title="Read product by id">
+Retrieves detailed information about a specific product in the hubspot crm system. this endpoint allows you to fetch a product by its unique identifier, which can be either the internal object id or a custom unique property value. it provides flexibility in specifying which properties to return, including historical values, and can fetch associated object ids. use this endpoint when you need to access comprehensive product data, including custom properties and associations with other crm objects. it's particularly useful for e-commerce applications that need to sync product information with hubspot or display detailed product data within an integrated system.&lt;&lt;DEPRECATED use read_product_by_id&gt;&gt;
+</Accordion>
+
+<Accordion title="Get pipeline stage audit">
+Retrieves a reverse chronological list of all mutations (changes) that have occurred on a specific pipeline stage in hubspot's crm. this endpoint is used to track the historical changes made to a pipeline stage, providing valuable insights into how the stage has evolved over time. it's particularly useful for auditing purposes, troubleshooting unexpected changes, and maintaining a comprehensive record of pipeline modifications. the endpoint requires specifying both the object type (e.g., deals, tickets) and the unique identifier of the stage, allowing for precise querying of audit information across different crm objects and pipeline stages.
+</Accordion>
+
+<Accordion title="Merge two companies of same type">
+This endpoint allows you to merge two company records of the same type in hubspot's crm system. it combines the data from two separate company entries into a single, consolidated record. this operation is useful for eliminating duplicate company entries, consolidating information from multiple sources, or cleaning up your crm database. the merge process is irreversible, so it should be used with caution and only when you are certain that the two companies are indeed duplicates or need to be combined. after the merge, the primary company record will contain the consolidated information, while the secondary company record will be removed from the crm.
+</Accordion>
+
+<Accordion title="Get draft version of a marketing email">
+Get the draft version of an email (if it exists). if no draft version exists, the published email is returned.
+</Accordion>
+
+<Accordion title="Merge two emails with same type">
+The mergecrmemails endpoint allows you to combine two email objects in the hubspot crm into a single record. this operation is useful for de-duplicating email records, consolidating information, and maintaining a clean crm database. when called, the endpoint will merge the specified secondary email object into the primary email object, retaining the primary object's id and updating it with any non-conflicting information from the secondary object. the secondary object will be deleted after the merge. this endpoint should be used cautiously, as the merge operation is irreversible. it's recommended to back up your data before performing merge operations, especially when dealing with large numbers of records or critical customer information.
+</Accordion>
+
+<Accordion title="Get a revision of a marketing email">
+Get a specific revision of a marketing email.
+</Accordion>
+
+<Accordion title="Permanently delete contact gdpr compliance">
+This endpoint permanently deletes a contact and all associated content from hubspot's crm system to comply with gdpr regulations. it's designed for use when a data subject exercises their right to be forgotten under gdpr. the endpoint can identify contacts by their email address if the optional 'idproperty' is set to 'email'. if the specified email address is not found, it will be added to a blocklist to prevent future use, enhancing data protection. this tool should be used with caution as the deletion is permanent and irreversible. it's crucial to verify the necessity and legality of the deletion before using this endpoint, as it will remove all traces of the contact from the crm.
+</Accordion>
+
+<Accordion title="Get campaign metrics">
+This endpoint retrieves key attribution metrics for a specified campaign, such as sessions, new contacts, and influenced contacts.
+</Accordion>
+
+<Accordion title="Get Marketing Emails">
+Gets all marketing emails from a hubspot account. results can be filtered using various parameters.
+</Accordion>
+
+<Accordion title="Merge two deals of same type">
+Merges two deals of the same type in hubspot's crm system. this endpoint allows you to combine information from two separate deal records into a single, consolidated deal. use this when you need to eliminate duplicate deals or combine related opportunities. the merge operation is permanent and can't be undone, so ensure you have the correct deal ids before proceeding. after merging, one deal will be designated as the primary record, retaining the most up-to-date information from both deals.
+</Accordion>
+
+<Accordion title="Partially update contact using contact id">
+This endpoint allows for partial updates to a contact in the hubspot crm using the contact's internal object id. it enables you to modify specific properties of a contact without affecting other properties not included in the update. the endpoint accepts a json object with the properties to be updated and their new values. it's particularly useful for updating individual fields of a contact record without having to send a complete contact object. note that read-only properties will be ignored, and you can clear property values by sending an empty string. this endpoint should be used when you need to make targeted updates to a contact's information without overwriting the entire record.
+</Accordion>
+
+<Accordion title="Get quote by id">
+Retrieves a specific quote from the hubspot crm by its unique identifier. this endpoint allows for detailed customization of the returned data, including specific properties, property history, and associated objects. it's particularly useful when you need to fetch comprehensive information about a single quote, including its current state, historical changes, and relationships with other crm objects. use this endpoint when you need to access or display detailed quote information in your application, or when you need to verify the current state of a quote before taking further actions.
+</Accordion>
+
+<Accordion title="Permanently delete contact for gdpr">
+This endpoint permanently deletes a contact and all associated content from the hubspot crm system to comply with gdpr regulations. it allows for the identification of contacts by email address and includes a feature to blocklist email addresses that are not found to prevent future use. this tool should be used when a data subject exercises their 'right to be forgotten' under gdpr. it's important to note that this action is irreversible and should be used with caution. the endpoint requires proper authentication and the 'crm.objects.contacts.write' scope for access.
+</Accordion>
+
+<Accordion title="Read a batch of campaigns">
+This endpoint reads a batch of campaigns based on the provided input data and returns the campaigns along with their associated assets. the maximum number of items in a batch request is 50. the campaigns in the response are not guaranteed to be in the same order as they were provided in the request. if duplicate campaign ids are provided in the request, duplicates will be ignored. the response will include only unique ids and will be returned without duplicates.
+</Accordion>
+
+<Accordion title="Read all properties for object type">
+Retrieves all existing properties for a specified object type in the hubspot crm. this endpoint is crucial for understanding the structure and available fields for different crm objects such as contacts, companies, deals, or custom objects. use this tool when you need to get a comprehensive list of properties, including both default and custom properties, for a particular object type. it's especially useful when setting up integrations, creating custom views, or preparing data imports. note that this endpoint does not return the actual values of these properties for specific records, only their definitions and metadata.&lt;&lt;DEPRECATED use read_all_properties_for_object_type&gt;&gt;
+</Accordion>
+
+<Accordion title="Read budget">
+Retrieve detailed information about the budget and spend items for a specified campaign, including the total budget, total spend, and remaining budget. budget and spend items may be returned in any order, but the order field specifies their sequence based on the creation date. the item with order 0 is the oldest, and items with higher order values are newer
+</Accordion>
+
+<Accordion title="Hubspot List">
+Read a page of emails. control what is returned via the `properties` query param.
+</Accordion>
+
+<Accordion title="Read batch feedback submissions by id or property">
+This endpoint allows you to retrieve multiple feedback submissions in a single request, enabling efficient data retrieval for large datasets. it supports fetching up to 100 feedback submissions by their ids or specific properties. use this endpoint when you need to bulk retrieve feedback data, such as survey responses, ratings, or comments, along with associated contact information. the endpoint is particularly useful for analyzing feedback trends or updating your crm with the latest customer insights.
+</Accordion>
+
+<Accordion title="Read batch of crm objects by id or property values">
+This endpoint enables batch reading of crm objects in hubspot by their ids or property values. it supports retrieving multiple objects of a specified type (e.g., contacts, companies, deals) in a single api call, improving efficiency for bulk data retrieval operations. the endpoint allows filtering for archived objects and requires a request body specifying the objects to be fetched. it's particularly useful for synchronizing large datasets or performing bulk operations on crm data.
+</Accordion>
+
+<Accordion title="Permanently delete contact via gdpr">
+This endpoint permanently deletes a contact and all associated content to comply with gdpr regulations. it allows for the complete removal of a contact's data from the hubspot crm, ensuring privacy and data protection compliance. the tool provides an option to identify contacts by email address and includes a blocklist feature to prevent future use of deleted email addresses. use this endpoint when a user requests the deletion of their personal data or when you need to remove contact information to maintain gdpr compliance.
+</Accordion>
+
+<Accordion title="Permanently delete deal for gdpr compliance">
+This endpoint permanently deletes a deal and all associated content from hubspot's crm for gdpr compliance purposes. it's designed to help businesses adhere to the general data protection regulation (gdpr) by allowing the complete removal of deal data upon request. the endpoint can identify deals by email address if the optional 'idproperty' is set to 'email'. if the specified email address is not found, it will be added to a blocklist to prevent future use. this operation is irreversible and should be used with caution, only when gdpr compliance requires the permanent removal of deal data.
+</Accordion>
+
+<Accordion title="Read a property group">
+Retrieves detailed information about a specific property group for a given crm object type in hubspot. this endpoint allows developers to access the structure and attributes of property groups, which are collections of related properties within the crm system. use this tool when you need to understand the organization of properties for a particular object type or when working with custom property groups. it provides essential metadata about the group but does not return the actual property values for crm objects.
+</Accordion>
+
+<Accordion title="Read a batch of crm object properties">
+Retrieves a batch of crm object properties for a specified object type in hubspot. this endpoint allows you to efficiently read multiple properties in a single api call, reducing the number of requests needed for bulk data retrieval. it's particularly useful when you need to fetch various attributes for multiple objects of the same type, such as contacts, companies, or deals. the endpoint supports partial success, returning data for successfully processed properties while providing error information for any failed requests within the batch.
+</Accordion>
+
+<Accordion title="Read all properties for object type">
+Retrieves all existing properties for a specified object type in the hubspot crm. this endpoint is crucial for understanding the structure and available fields for different crm objects such as contacts, companies, deals, or custom objects. use this tool when you need to get a comprehensive list of properties, including both default and custom properties, for a particular object type. it's especially useful when setting up integrations, creating custom views, or preparing data imports. note that this endpoint does not return the actual values of these properties for specific records, only their definitions and metadata.
+</Accordion>
+
+<Accordion title="Read batch of products by id or property">
+This endpoint allows you to read a batch of products by their ids or properties from the hubspot crm. it's particularly useful for retrieving information about multiple products simultaneously, improving efficiency when dealing with large datasets. the endpoint supports optional filtering for archived products and provides detailed responses, including potential errors for each product in the batch.
+</Accordion>
+
+<Accordion title="Read a crm property by name">
+This endpoint retrieves detailed information about a specific crm property for a given object type in hubspot. it allows users to access custom fields and data associated with various crm objects such as deals, contacts, or companies. the endpoint is particularly useful when you need to verify the configuration, datatype, or other metadata of a specific property. it should be used when detailed property information is required, but not for bulk property retrieval or creating/updating properties.&lt;&lt;DEPRECATED use read_a_crm_property_by_name&gt;&gt;
+</Accordion>
+
+<Accordion title="Read batch of line items by id or property values">
+This endpoint allows you to retrieve multiple line items from hubspot's crm in a single api call. it accepts a batch of line item identifiers or property values and returns the corresponding line item details. this is particularly useful for efficiently fetching data for multiple line items simultaneously, reducing the number of api calls needed. the endpoint can optionally filter results to include only archived items. it's important to note that partial success is possible, where some line items may be successfully retrieved while others fail. error handling is provided for failed operations within the batch.
+</Accordion>
+
+<Accordion title="Read batch of tickets by id or unique values">
+This endpoint allows you to retrieve multiple tickets from hubspot's crm system in a single api call. it's designed for efficient bulk retrieval of ticket data, which is particularly useful for synchronization tasks, reporting, or updating local databases. the endpoint accepts a list of ticket identifiers (either ids or unique property values) and returns the corresponding ticket objects with their properties. it can handle both fully successful operations and partial successes, providing detailed error information for any tickets that couldn't be retrieved. use this endpoint when you need to fetch data for multiple tickets simultaneously, reducing the number of api calls and improving performance for bulk operations.
+</Accordion>
+
+<Accordion title="Read batch of contacts by id or properties">
+This endpoint allows for batch reading of contact records in the hubspot crm by their ids or specific properties. it's designed for efficiently retrieving data for multiple contacts in a single api call, which is particularly useful when dealing with large datasets or when you need to update your local database with the latest contact information from hubspot. the endpoint supports filtering for archived contacts and allows you to specify which properties you want to retrieve for each contact, providing flexibility and optimizing data transfer. it's important to note that this endpoint may return partial results if some contacts can't be processed, so be prepared to handle both fully successful responses and responses with errors for individual contacts.
+</Accordion>
+
+<Accordion title="Merge two feedback submissions">
+This endpoint allows you to merge two existing feedback submissions in hubspot's crm system. it combines the data from two separate feedback submissions into a single record, which can be useful for consolidating duplicate entries or combining related feedback from the same customer. the merged result will contain information from both original submissions, with one submission typically taking precedence for overlapping fields. use this endpoint when you need to clean up your feedback data or combine information from multiple submissions. note that this operation is irreversible, so it's important to ensure you want to permanently combine the selected feedback submissions before making the api call. the endpoint returns the merged feedback submission object upon successful completion.
+</Accordion>
+
+<Accordion title="Read property groups for object type">
+Retrieves all existing property groups for a specified crm object type in your hubspot account. this endpoint is useful for understanding how properties are organized within your crm, which can aid in data management and reporting. it should be used when you need an overview of the property structure for a particular object type, such as contacts or companies. the endpoint returns a collection of property groups without pagination, providing a complete list in a single request. note that this endpoint only returns the groups themselves, not the individual properties within each group.&lt;&lt;DEPRECATED use read_property_groups_for_object_type&gt;&gt;
+</Accordion>
+
+<Accordion title="List all event templates for app">
+This endpoint retrieves a comprehensive list of all event templates associated with a specific app in hubspot's crm timeline. it allows developers to access detailed information about each template, including their structure, associated object types, and custom tokens. use this endpoint when you need to review, audit, or manage the event templates created for your hubspot app. it's particularly useful for understanding the current configuration of your app's timeline events or preparing for updates to existing templates. the endpoint returns a collection of template objects, providing a complete overview of how timeline events are structured for the specified app.
+</Accordion>
+
+<Accordion title="Read crm object by id">
+This endpoint retrieves detailed information about a specific crm object in hubspot by its unique identifier. it allows for flexible querying of various object types (such as contacts, companies, or deals) and provides granular control over the returned data. use this endpoint when you need to fetch comprehensive details about a single crm object, including its properties, historical changes, and associated entities. it's particularly useful for displaying detailed views of crm records, tracking changes over time, or gathering related data across different object types in a single api call. the endpoint supports customization of the response through optional parameters, enabling efficient data retrieval tailored to specific needs.
+</Accordion>
+
+<Accordion title="Read crm contact by id">
+Retrieves detailed information about a specific hubspot crm contact using their internal object id. this endpoint allows for customized data retrieval, enabling developers to specify which properties to return, include property history, fetch associated object ids, and filter for archived contacts. it's ideal for situations where you need to access comprehensive contact information or integrate contact data into external systems. the endpoint is particularly useful for building custom crm dashboards, generating detailed contact reports, or syncing contact data with other applications.
+</Accordion>
+
+<Accordion title="Permanently delete line items for gdpr">
+This endpoint permanently deletes line items and all associated content to comply with gdpr regulations. it's designed for situations where a complete erasure of customer data is required, such as when a customer exercises their "right to be forgotten". the deletion is irreversible, ensuring that all traces of the specified line items are removed from the system. additionally, it offers the option to identify contacts by email address, adding unmatched emails to a blocklist to prevent future use. use this endpoint with caution, as it permanently removes data and cannot be undone.
+</Accordion>
+
+<Accordion title="Read feedback submission by id">
+Retrieves a specific feedback submission object from hubspot's crm system using its unique identifier. this endpoint allows for customized data retrieval, including specific properties, property history, and associated object ids. it's particularly useful when you need detailed information about a single feedback submission, such as its content, sentiment, or related data. the tool provides flexibility in how the object is identified and what data is returned, making it valuable for various use cases from basic retrieval to complex data analysis.
+</Accordion>
+
+<Accordion title="List assets">
+This endpoint lists all assets of the campaign by asset type. the assettype parameter is required, and each request can only fetch assets of a single type. asset metrics can also be fetched along with the assets; they are available only if start and end dates are provided.
+</Accordion>
+
+<Accordion title="Archive contact by id">
+Archives a contact in the hubspot crm by moving it to the recycling bin. this endpoint should be used when you need to remove a contact from active use in your crm. the operation is irreversible through the api, so use it with caution. once archived, the contact will no longer appear in standard contact lists or searches. this endpoint is useful for data cleanup or when a contact is no longer relevant to your business operations.&lt;&lt;DEPRECATED use archive_contact_by_id&gt;&gt;
+</Accordion>
+
+<Accordion title="Partially update crm object by id">
+Partially updates a crm object in hubspot by its object type and id. this endpoint allows you to modify specific properties of various crm object types (such as contacts, deals, companies, or quotes) without affecting unspecified fields. it's ideal for updating only necessary information, improving efficiency in data management. the endpoint supports using either the internal object id or a unique property value for object identification, offering flexibility in how you reference your crm data.
+</Accordion>
+
+<Accordion title="Partially update deal by id">
+This endpoint allows you to perform a partial update on a specific deal in hubspot's crm system. it's useful when you need to modify only certain properties of a deal without affecting the entire object. the endpoint accepts the deal's unique identifier and a set of properties to update, making it efficient for targeted changes. it's particularly valuable for integrations that need to sync specific deal information from external systems or update deal progress without overwriting unrelated data.
+</Accordion>
+
+<Accordion title="Read property groups for object type">
+Retrieves all existing property groups for a specified crm object type in your hubspot account. this endpoint is useful for understanding how properties are organized within your crm, which can aid in data management and reporting. it should be used when you need an overview of the property structure for a particular object type, such as contacts or companies. the endpoint returns a collection of property groups without pagination, providing a complete list in a single request. note that this endpoint only returns the groups themselves, not the individual properties within each group.
+</Accordion>
+
+<Accordion title="Remove token from event template">
+This endpoint removes a specified token from an existing event template in hubspot's crm system. it's used to update event templates by removing outdated or unnecessary tokens, ensuring that new events created from the template no longer include the removed token. while this action doesn't affect existing events or crm objects, it impacts the creation of new events and the display of information in the timeline for newer crm objects. use this endpoint when you need to modify an event template's structure by removing a specific token, but be aware that it may affect related lists, reports, and timeline displays for newer data.
+</Accordion>
+
+<Accordion title="Read product by id">
+Retrieves detailed information about a specific product in the hubspot crm system. this endpoint allows you to fetch a product by its unique identifier, which can be either the internal object id or a custom unique property value. it provides flexibility in specifying which properties to return, including historical values, and can fetch associated object ids. use this endpoint when you need to access comprehensive product data, including custom properties and associations with other crm objects. it's particularly useful for e-commerce applications that need to sync product information with hubspot or display detailed product data within an integrated system.
+</Accordion>
+
+<Accordion title="Permanently delete gdpr contact and content">
+Permanently deletes a contact and all associated content from hubspot to comply with gdpr regulations. this endpoint should be used when a user requests complete removal of their data under gdpr. it offers the option to identify contacts by email address and includes a feature to blocklist email addresses for future use. this operation is irreversible and should be used with caution, as it permanently removes all data associated with the contact.
+</Accordion>
+
+<Accordion title="List association types">
+List all the valid association types available between two object types
+</Accordion>
+
+<Accordion title="Remove asset association">
+Disassociate a specified asset from a campaign. important: currently, only the following asset types can be associated and disassociated via the api: forms, static lists, external website pages
+</Accordion>
+
+<Accordion title="Remove association from schema">
+Removes an existing association from a schema in hubspot's crm. this endpoint allows you to modify the structure of your custom objects by deleting specific relationships between objects. use this when you need to update your crm's data model by removing outdated or unnecessary associations. it's particularly useful when restructuring your crm to reflect changes in your business processes or data requirements. the operation is irreversible, so use it with caution to avoid unintended data relationship loss.
+</Accordion>
+
+<Accordion title="Remove deal object by id">
+This endpoint allows you to remove a specific deal object from the hubspot crm by moving it to the recycling bin. it's used when you need to delete a deal that is no longer relevant or was created in error. the operation is permanent and should be used with caution. once a deal is moved to the recycling bin, it will no longer appear in active deal lists or reports. this endpoint is particularly useful for maintaining a clean and accurate sales pipeline in your crm.
+</Accordion>
+
+<Accordion title="Partially update pipeline by id">
+This endpoint allows you to partially update an existing pipeline in hubspot's crm system. it's used to modify specific attributes of a pipeline without replacing the entire object. you can update various aspects of the pipeline, such as its stages, display order, or active status. this operation is useful when you need to make incremental changes to a pipeline without affecting its entire structure or unspecified fields. the endpoint returns the fully updated pipeline object, reflecting all changes made.
+</Accordion>
+
+<Accordion title="Publish or Send Marketing Email">
+Publishes or sends a marketing email in hubspot. requires marketing hub enterprise account or transactional email add-on.
+</Accordion>
+
+<Accordion title="Partially update property group">
+This endpoint allows for partial updates to a specific property group within hubspot's crm. it enables you to modify existing property groups for various crm object types like contacts, companies, deals, or tickets. the endpoint is particularly useful when you need to make targeted changes to a property group without affecting its entire configuration. it accepts a json payload with the fields to be updated and returns the modified property group. this tool should be used when reorganizing or refining your crm's data structure, but care should be taken as changes may affect how data is displayed and organized in the hubspot interface.
+</Accordion>
+
+<Accordion title="Render event header or detail as html">
+This endpoint renders either the headertemplate or detailtemplate from a specified event template as html for a given event in hubspot's crm timeline. it processes the template using handlebars and markdown, incorporating event data to generate the final html output. the endpoint is useful for displaying event information in a formatted and visually appealing manner within your application or integration. it's particularly valuable when you need to present event details in a consistent, templated format across different events. note that if the template references extradata that isn't found in the event, those references will be ignored during rendering.
+</Accordion>
+
+<Accordion title="Hubspot Render Event Detail Template">
+Retrieves and renders the detailed information for a specific event using its associated event template. this endpoint takes an event template id and an event id to generate a formatted representation of the event details. it's particularly useful when you need to display comprehensive, structured information about a single event in the hubspot crm timeline. the endpoint ignores any extradata references in the template that are not present in the actual event data, ensuring a consistent output even with incomplete data. use this when you need to present event details in a user-friendly, formatted manner, especially in interfaces or reports that require a standardized event detail view.
+</Accordion>
+
+<Accordion title="Reset draft">
+Resets the draft back to a copy of the live object.
+</Accordion>
+
+<Accordion title="Replace pipeline stage properties">
+This endpoint allows you to completely replace all properties of an existing pipeline stage in hubspot's crm. it's used to update stage details such as the label, display order, or any custom properties within a specific pipeline for various crm object types (deals, tickets, contacts, or companies). the operation requires the object type, pipeline id, and stage id to target the correct stage, along with a request body containing the new stage properties. use this endpoint when you need to make comprehensive changes to a stage's configuration. it returns the updated stage object, reflecting all changes made.
+</Accordion>
+
+<Accordion title="List contacts page">
+This endpoint retrieves a paginated list of contacts from the hubspot crm. it allows for flexible querying with options to specify the number of results per page, filter properties, include historical property values, and fetch associated object ids. the endpoint is ideal for tasks such as synchronizing contact data with external systems, generating reports, or displaying contact information in a user interface. it supports pagination for handling large datasets efficiently and provides fine-grained control over the data returned for each contact.
+</Accordion>
+
+<Accordion title="Purge schema by object type">
+Purges (permanently deletes) a schema associated with a specific object type in hubspot's crm. this endpoint should be used when you need to completely remove a custom schema definition for an object type, such as when cleaning up unused or outdated schemas. it's important to note that this action is irreversible and may have significant implications on data integrity and related operations. use this endpoint with extreme caution, as it will permanently delete the schema and potentially affect any data or processes relying on it. this endpoint is deprecated, which means it may be removed in future versions of the api, and alternative methods should be considered for managing schemas.
+</Accordion>
+
+<Accordion title="List feedback submissions page">
+Retrieves a paginated list of feedback submissions from hubspot surveys. this endpoint allows you to fetch feedback data with customizable property selection, association retrieval, and filtering options. use this when you need to analyze customer feedback, track survey responses, or integrate feedback data into your applications. the endpoint supports pagination for handling large datasets and provides options to retrieve both current and historical property values.
+</Accordion>
+
+<Accordion title="Restore a revision of a marketing email to draft state">
+Restores a previous revision of a marketing email to draft state. if there is currently something in the draft for that object, it is overwritten.
+</Accordion>
+
+<Accordion title="Retrieve all pipelines for specified object type">
+Retrieves all pipelines for a specified object type in hubspot's crm system. this endpoint allows users to fetch the complete set of pipelines associated with a particular crm object, such as deals or tickets. it's essential for understanding the workflow stages and organization of different object types within a hubspot account. use this endpoint when you need a comprehensive view of how a specific object type is managed through various stages in the crm.
+</Accordion>
+
+<Accordion title="Restore a revision of a marketing email">
+Restores a previous revision of a marketing email. the current revision becomes old, and the restored revision is given a new version number.
+</Accordion>
+
+<Accordion title="Retrieve all pipelines for specified object type">
+Retrieves all pipelines for a specified object type in hubspot's crm system. this endpoint allows users to fetch the complete set of pipelines associated with a particular crm object, such as deals or tickets. it's essential for understanding the workflow stages and organization of different object types within a hubspot account. use this endpoint when you need a comprehensive view of how a specific object type is managed through various stages in the crm.&lt;&lt;DEPRECATED use retrieve_all_pipelines_for_specified_object_type&gt;&gt;
+</Accordion>
+
+<Accordion title="Hubspot Retrieve Batch Of Deals By Ids Or Property Values">
+This endpoint allows for batch retrieval of multiple deals from hubspot's crm by their ids or specific property values. it's designed for efficient querying of deal data when you need to fetch information about multiple deals simultaneously. the endpoint can return both active and archived deals, depending on the 'archived' parameter. it's particularly useful for synchronizing deal data with external systems, generating reports, or updating dashboards with current deal information. note that this endpoint requires appropriate authentication and is subject to hubspot's api rate limits.
+</Accordion>
+
+<Accordion title="Retrieve all object schemas">
+Retrieves all object schemas that have been defined for your hubspot account. this endpoint is essential for developers working with custom objects and integrating with hubspot's crm. it returns a comprehensive list of schema definitions, including both standard and custom objects, providing crucial information about the structure and properties of each object type in your account. use this endpoint when you need to understand the data model of your hubspot instance, plan integrations, or work with custom objects. it's particularly useful for applications that need to dynamically adapt to changes in your hubspot data structure. note that this endpoint does not provide the actual data of the objects, only their schema definitions.
+</Accordion>
+
+<Accordion title="Retrieve calling settings for app">
+Retrieves the calling extension settings configured for a specific app in hubspot's crm system. this endpoint allows developers to access important configuration details such as the app's name, iframe url, dimensions, readiness status, and support for custom objects. use this endpoint when you need to verify or display the current calling settings for your app within hubspot. it's particularly useful for troubleshooting, auditing configurations, or retrieving settings before making updates. the endpoint returns a comprehensive set of settings but does not allow for modifying these settings directly.
+</Accordion>
+
+<Accordion title="Retrieve deal by id">
+This endpoint retrieves detailed information about a specific deal in hubspot's crm system using its unique identifier. it allows for customizable data retrieval, including specific properties, historical values, and associated objects. use this endpoint when you need comprehensive information about a particular deal, such as its current status, property values, or related entities. the tool is particularly useful for getting up-to-date deal information for sales analysis, customer relationship management, or integration with other systems. note that while it offers extensive customization options, it only returns data for a single deal at a time.
+</Accordion>
+
+<Accordion title="Retrieve existing object schema">
+Retrieves the schema definition for an existing object in hubspot's crm. this endpoint allows developers to fetch detailed information about the structure, properties, and associations of a specific crm object type. it's particularly useful when working with custom objects or when you need to understand the data model of standard hubspot objects. use this endpoint when you need to inspect the fields, data types, and relationships of a crm object before performing operations on it. note that this endpoint only retrieves existing schemas and cannot be used to create or modify object schemas.
+</Accordion>
+
+<Accordion title="Retrieve company object by id">
+Retrieves a specific company object from hubspot's crm by its internal id or a unique property value. this endpoint allows you to fetch detailed information about a company, including selected properties, property history, and associated object ids. use this when you need to access comprehensive data about a particular company in your hubspot crm. the tool provides flexibility in specifying which properties to return and can include archived companies if needed. it's particularly useful for gathering up-to-date company information for crm synchronization, reporting, or displaying detailed company profiles in your application.
+</Accordion>
+
+<Accordion title="List page of tickets">
+This endpoint retrieves a paginated list of tickets from the hubspot crm, allowing for customized data retrieval and filtering. it's designed for querying ticket data with flexible property selection, historical data retrieval, and association mapping. the endpoint supports pagination for handling large datasets efficiently and provides options for including archived tickets. use this when you need to fetch ticket data for reporting, analysis, or synchronization with other systems. it's particularly useful for building custom dashboards, generating reports, or integrating hubspot ticket data with external customer support tools. note that the amount of data returned can be significant, especially when using the propertieswithhistory parameter, which may impact the maximum number of tickets retrievable in a single request.
+</Accordion>
+
+<Accordion title="Replace all properties of pipeline">
+Replaces all properties of an existing pipeline in hubspot's crm system with the provided values. this operation overwrites any existing pipeline stages and returns the updated pipeline in the response. it allows for complete customization of pipeline properties and stages for different crm object types such as deals, tickets, or contacts. use this endpoint when you need to perform a full update of a pipeline's structure and properties, rather than making incremental changes.
+</Accordion>
+
+<Accordion title="Partially update ticket by id">
+This endpoint allows for partial updates to a hubspot ticket identified by its unique id. it enables you to modify specific properties of a ticket object without affecting the entire record, making it ideal for targeted updates to customer support issues. the endpoint accepts a json object containing only the properties you wish to update, ignoring read-only and non-existent fields. use this when you need to make selective changes to a ticket, such as updating its status, priority, or any custom fields. note that you can clear property values by passing an empty string, and the endpoint provides flexibility in identifying tickets through either their internal id or a custom unique property.
+</Accordion>
+
+<Accordion title="Read a campaign">
+Get a campaign identified by a specific campaignguid with the given properties. along with the campaign information, it also returns information about assets. depending on the query parameters used, this can also be used to return information about the corresponding assets' metrics. metrics are available only if startdate and enddate are provided.
+</Accordion>
+
+<Accordion title="Read a crm property by name">
+This endpoint retrieves detailed information about a specific crm property for a given object type in hubspot. it allows users to access custom fields and data associated with various crm objects such as deals, contacts, or companies. the endpoint is particularly useful when you need to verify the configuration, datatype, or other metadata of a specific property. it should be used when detailed property information is required, but not for bulk property retrieval or creating/updating properties.
+</Accordion>
+
+<Accordion title="List products with paging">
+Retrieves a paginated list of products from the hubspot crm, allowing for customizable property selection and association retrieval. this endpoint is ideal for applications that need to display or process product information in batches, such as inventory management systems or e-commerce integrations. it supports filtering for archived products and can return the history of property values, making it useful for tracking changes over time. the endpoint's paging mechanism enables efficient handling of large product catalogs, ensuring optimal performance for applications dealing with extensive product data.
+</Accordion>
+
+<Accordion title="Partial update company object by id">
+This endpoint allows for partial updates to a company object in hubspot's crm. it enables you to modify specific properties of a company without affecting other properties. the endpoint is particularly useful when you need to update one or more fields of a company record without having to provide all the company data. it supports identifying the company by its internal id or any unique property, and allows clearing of property values by passing empty strings. read-only and non-existent properties in the request will be ignored, ensuring safe updates.
+</Accordion>
+
+<Accordion title="Read a batch of emails by internal id or unique property values">
+The batchreademails endpoint allows for efficient retrieval of multiple email objects and their properties from hubspot's crm in a single api call. this endpoint is particularly useful when you need to fetch data for numerous emails simultaneously, reducing the number of individual api requests and improving performance. it provides flexibility in selecting which properties to retrieve, including the option to fetch historical data for specific properties. use this endpoint when you need to bulk retrieve email data, such as for reporting, data synchronization, or populating a custom interface with email information from hubspot. note that this endpoint is designed for reading data only and cannot be used for updating or creating email objects.
+</Accordion>
+
+<Accordion title="Partial update quote by quote id">
+Performs a partial update on a specific quote object in the hubspot crm. this endpoint allows you to modify individual properties of an existing quote without affecting other properties not included in the update. it's particularly useful for making targeted changes to quote information, such as updating the status, amount, or any custom properties associated with the quote. the endpoint supports identification of quotes either by their internal hubspot id or by a unique custom property, providing flexibility in how you reference and update quote objects in your integration.
+</Accordion>
+
+<Accordion title="Merge two quotes of same type">
+Merges two quotes of the same type in hubspot's crm system. this endpoint allows you to consolidate multiple quotes into a single quote, streamlining the sales process and simplifying quote management. use this when you need to combine information from two separate quotes, such as when updating a customer's quote with new line items or terms. the operation is irreversible, so it should be used with caution. the merged quote will contain combined information from both source quotes, with the primary quote's properties taking precedence in case of conflicts.
+</Accordion>
+
+<Accordion title="List quotes page">
+Retrieves a paginated list of quotes from the hubspot crm. this endpoint allows you to fetch quote data with customizable property selection, making it ideal for applications that need to display or process quote information. use this when you need to list multiple quotes, such as in a dashboard or report. the endpoint supports pagination, property filtering, and association retrieval, enabling efficient data fetching for large datasets. it's particularly useful for integrations that need to sync quote data or for building custom quote management interfaces.
+</Accordion>
+
+<Accordion title="Merge two products of the same type">
+This endpoint allows you to merge two products of the same type in the hubspot crm system. it combines the information from two separate product entries into a single, unified product entry. this is useful for consolidating duplicate product records, combining variants of a product, or updating product information across your e-commerce catalog. the merge operation is performed by sending a post request with the necessary merge details in the request body. upon successful execution, the api returns the merged product object. it's important to note that this operation is irreversible, so care should be taken to ensure the correct products are being merged. this endpoint should only be used when you are certain that two products need to be combined and you have the necessary permissions to modify product data in your hubspot account.
+</Accordion>
+
+<Accordion title="Read batch of quotes by property values">
+Retrieves a batch of quotes from hubspot's crm based on specified property values or ids. this endpoint allows for efficient bulk retrieval of quote data, making it ideal for synchronizing large datasets or performing mass updates. it supports filtering by various quote properties and can optionally include archived quotes. the response provides detailed information about each retrieved quote, including all associated properties and values. use this endpoint when you need to fetch multiple quotes simultaneously, reducing the number of api calls required for large-scale operations.
+</Accordion>
+
+<Accordion title="Merge two tickets of same type">
+Merges two tickets of the same type in hubspot's crm system. this endpoint allows you to combine duplicate or related support issues into a single ticket, streamlining your customer support workflow. use this when you need to consolidate information from two separate tickets into one comprehensive record. the merged ticket will contain data from both original tickets, but only one will remain active in the system.
+</Accordion>
+
+<Accordion title="Get the details of a specified marketing email">
+Get the details for a marketing email.
+</Accordion>
+
+<Accordion title="Get Workflow by ID">
+Returns metadata for a specific workflow, including the starting conditions and workflow steps. workflow ids can be found by using the get all workflows endpoint. note: when using this api, only certain actions are supported. if unsupported actions are included, the action type returned will be unsupported action.
+</Accordion>
+
+<Accordion title="Read a page of deals">
+Retrieves a paginated list of deals from the hubspot crm system. this endpoint allows for customizable data retrieval by specifying which properties and associations to include in the response. it supports efficient handling of large datasets through cursor-based pagination. use this endpoint when you need to fetch deal information in bulk, such as for reporting, data synchronization, or displaying deal lists in your application. the endpoint provides flexibility in filtering archived deals and retrieving historical property values, making it suitable for various crm data management tasks.
+</Accordion>
+
+<Accordion title="Permanently delete company for gdpr compliance">
+Permanently deletes a company record and all associated content from hubspot's crm system to comply with gdpr regulations. this endpoint should be used when a company exercises their right to be forgotten under gdpr. it permanently removes all data related to the specified company, including associated contacts, deals, and other records. use with caution as this action is irreversible and will result in complete data loss for the specified company.
+</Accordion>
+
+<Accordion title="Hubspot Read Apage Of Objects By Type">
+This endpoint retrieves a paginated list of crm objects of a specified type from hubspot, with customizable property and association data. it allows for efficient querying of large datasets by supporting pagination, property filtering, and inclusion of associated object information. the endpoint is versatile, supporting various object types and enabling the retrieval of both current and historical property values. it's particularly useful for bulk data retrieval, data synchronization, and building comprehensive views of crm data including related entities.
+</Accordion>
+
+<Accordion title="Get specific event template for app">
+Retrieves detailed information about a specific event template for a given app in hubspot's crm timeline feature. this endpoint allows developers to view the current state of an event template, including its configuration and associated tokens. it's particularly useful when you need to inspect or verify the structure of an existing template before creating or updating timeline events. the endpoint returns comprehensive data about the template, including its name, header and detail templates, and any custom tokens defined for the template.
+</Accordion>
+
+<Accordion title="Get Workflow Email Campaigns">
+Retrieve emails sent by a workflow by id. returns information about email campaigns associated with the specified workflow.
+</Accordion>
+
+<Accordion title="Get revisions of a marketing email">
+Get a list of all versions of a marketing email, with each entry including the full state of that particular version. the current revision has the id -1.
+</Accordion>
+
+<Accordion title="Create company object">
+Creates a new company object in the hubspot crm with the provided properties. this endpoint allows you to add a new company to your crm database, including custom fields and properties specific to your hubspot account configuration. upon successful creation, it returns a copy of the newly created company object, including its unique id assigned by hubspot. use this endpoint when you need to programmatically add new companies to your crm, such as when integrating with other systems or automating company record creation. note that the specific properties available for a company may vary based on your hubspot account setup and any custom properties you've defined.&lt;&lt;DEPRECATED use create_company_object&gt;&gt;
+</Accordion>
+
+<Accordion title="Get the variation of a an a b marketing email">
+This endpoint lets you obtain the variation of an a/b marketing email. if the email is variation a (master) it will return variation b (variant) and vice versa.
+</Accordion>
+
+<Accordion title="Hubspot Read An Owner By Given Id Or User Id">
+Retrieves detailed information about a specific owner in the hubspot crm system. this endpoint allows you to fetch owner data using either their unique owner id or user id. it's particularly useful when you need to access an owner's profile, such as their name, email, or other associated details. the endpoint can retrieve both active and archived owners, making it versatile for various use cases including user management, audit trails, or data synchronization between systems. note that this endpoint focuses on individual owner retrieval and does not support bulk operations or modifications to owner data.&lt;&lt;DEPRECATED use retrieve_owner_by_id_or_user_id&gt;&gt;
+</Accordion>
+
+<Accordion title="Merge two line items of same type">
+Merges two line items of the same type in hubspot's crm. this endpoint allows you to combine duplicate or related line items, consolidating their information into a single record. use this when you need to clean up redundant data, combine similar items, or streamline your sales records. the merged result will contain the combined data from both original line items, with one item designated as the primary record. note that this operation is irreversible, so it should be used with caution and proper validation to ensure the correct items are being merged.
+</Accordion>
+
+<Accordion title="Merge two objects of same type">
+Merges two objects of the same type within the hubspot crm. this endpoint allows you to combine data from two separate objects into a single, unified object. use this when you need to consolidate duplicate records or combine information from multiple sources. the merge operation is permanent and cannot be undone, so ensure you have backups or are certain about the merge before proceeding. this tool is particularly useful for data cleansing and maintaining a single source of truth in your crm.
+</Accordion>
+
+<Accordion title="Initiate data import process">
+Initiates a data import process in hubspot's crm system. this endpoint allows you to upload one or more files containing data and start the import process to create or update crm objects such as contacts, companies, or deals. it converts rows in the uploaded files to objects in the crm based on the mapping specified in the import request. use this endpoint when you need to bulk import or update data in your hubspot crm. the import process is asynchronous, so this call starts the process but doesn't wait for it to complete. you'll need to use separate endpoints to check the status of the import job. be cautious when using this endpoint, as it can potentially create or modify large amounts of data in your crm.
+</Accordion>
+
+<Accordion title="Retrieve line item by id">
+Retrieves detailed information about a specific line item in hubspot's crm using its unique identifier. this endpoint allows for flexible querying of line item data, including custom properties, historical values, and associated objects. it's particularly useful for accessing up-to-date information about individual products or services within a deal, supporting various use cases such as order management, inventory tracking, or sales analysis. the endpoint offers granular control over the returned data, enabling efficient and tailored data retrieval based on specific business needs.
+</Accordion>
+
+<Accordion title="Return pipeline by id">
+Retrieves a specific pipeline object from the hubspot crm system using its unique identifier. this endpoint allows you to fetch detailed information about a single pipeline, including its stages and properties, for a particular crm object type such as deals or tickets. use this when you need to access or review the configuration of a specific pipeline within your hubspot account. the endpoint is particularly useful for understanding the structure of your sales or support processes as defined in hubspot.
+</Accordion>
+
+<Accordion title="Retrieve page of crm owners">
+This endpoint retrieves a paginated list of crm owners in hubspot. it allows you to fetch owner information with optional filtering by email address and archived status. the endpoint supports pagination for efficient data retrieval, making it ideal for applications that need to display or process owner data in manageable chunks. use this when you need to access owner information across your hubspot crm, such as for user management, reporting, or integration with other systems.
+</Accordion>
+
+<Accordion title="Update token on event template">
+Updates an existing token on a hubspot crm event template. this endpoint allows you to modify token properties such as label and options, but does not permit changes to the token's name or type. use this when you need to refine or adjust the details of a token within an event template, such as updating labels or modifying enumeration options. this operation is crucial for maintaining and evolving your custom event templates in the hubspot crm timeline without creating new tokens or altering the fundamental structure of existing ones.
+</Accordion>
+
+<Accordion title="Search quotes by criteria">
+This endpoint allows you to search for quotes in the hubspot crm based on specified criteria. it provides a flexible way to filter and retrieve quote data, enabling you to find specific quotes or groups of quotes that match your requirements. the search functionality supports complex queries with multiple filter groups and sorting options. use this endpoint when you need to locate quotes based on custom criteria, such as date ranges, amounts, or associated deals. the search results include a collection of quote objects along with pagination information for handling large result sets. note that while this endpoint is powerful, it requires a well-structured request body to function effectively, and the search is limited to the quotes scope within the crm.
+</Accordion>
+
+<Accordion title="Search tickets by criteria">
+This endpoint allows you to search for tickets in hubspot's crm system based on specific criteria. it's designed for retrieving targeted sets of ticket records that match your search parameters. the search is performed using a post request with a json body containing your search criteria, filters, and sorting preferences. this endpoint is particularly useful when you need to find tickets matching complex conditions or when you want to implement custom ticket views or reports in your application. note that while this endpoint has a rate limit exemption, it's still important to use it judiciously to avoid overwhelming the system with frequent, large-scale searches.
+</Accordion>
+
+<Accordion title="Update calling app recording settings">
+This endpoint allows you to update the recording settings for a specific calling app integrated with hubspot's crm. it enables you to modify how call recordings are handled and stored for the specified app. use this endpoint when you need to change recording configurations, such as enabling/disabling recording, setting storage options, or updating compliance settings. this operation directly affects how calls are recorded and managed within the hubspot ecosystem for the given app, so use it cautiously and ensure you understand the implications of the changes.
+</Accordion>
+
+<Accordion title="Retrieve pipeline stages">
+Retrieves all stages associated with a specific pipeline in hubspot's crm. this endpoint allows users to fetch the complete structure of a pipeline, including all its stages, for a given object type (such as deals, contacts, or companies). it's essential for understanding the progression of items through a sales or business process. use this endpoint when you need to analyze or display the full pipeline structure, or when implementing logic that depends on stage progression.
+</Accordion>
+
+<Accordion title="Retrieve Owner by ID or user ID">
+Retrieves detailed information about a specific owner in the hubspot crm system. this endpoint allows you to fetch owner data using either their unique owner id or user id. it's particularly useful when you need to access an owner's profile, such as their name, email, or other associated details. the endpoint can retrieve both active and archived owners, making it versatile for various use cases including user management, audit trails, or data synchronization between systems. note that this endpoint focuses on individual owner retrieval and does not support bulk operations or modifications to owner data.
+</Accordion>
+
+<Accordion title="Search products by criteria">
+Searches for products in the hubspot crm based on specified criteria. this endpoint allows you to find products that match certain conditions, enabling efficient product management and retrieval. use this when you need to locate specific products or groups of products within your hubspot crm. the search is performed using a flexible criteria system, allowing for complex queries. the results are paginated, making it suitable for handling large product catalogs. note that this endpoint has a rate limit exemption, allowing for more frequent use compared to other endpoints.
+</Accordion>
+
+<Accordion title="Update a batch of emails">
+The batchupdateemails endpoint allows for updating multiple email records simultaneously in the hubspot crm. this powerful feature enables efficient bulk modifications of email properties, such as updating statuses, changing pipeline stages, or modifying custom fields for multiple emails in a single api call. it's particularly useful for synchronizing data from external systems or performing mass updates based on certain criteria. the endpoint accepts an array of email objects, each identified by either their hubspot id or a custom unique property, along with the properties to be updated. while it streamlines bulk operations, users should be cautious when updating large numbers of records to avoid hitting api rate limits.
+</Accordion>
+
+<Accordion title="Retrieve timeline event by ids">
+Retrieves a specific timeline event from hubspot's crm using the event template id and event id. this endpoint allows you to access all existing information for a previously created event, providing detailed insights into customer interactions and activities recorded in the crm timeline. it's particularly useful when you need to review or analyze a specific event's details within your crm workflows or integrations. note that while this endpoint returns comprehensive event information, it may not include the entire associated crm object data.
+</Accordion>
+
+<Accordion title="Retrieve Owners">
+Retrieves detailed information about all owners in the hubspot crm system. this endpoint allows you to fetch owner data using either their unique owner id or user id. it's particularly useful when you need to access an multiple owners' profile, such as their name, email etc. and use it in filtergroups.
+</Accordion>
+
+<Accordion title="Update product">
+This endpoint allows for partial updates to a product in hubspot's crm system. it's designed to modify existing product information by overwriting specified property values while preserving unmentioned properties. the endpoint is particularly useful for e-commerce integrations, enabling seamless product data management. it supports both internal object ids and custom unique properties for product identification, offering flexibility in how products are referenced and updated.
+</Accordion>
+
+<Accordion title="Retrieve line items list">
+Retrieves a paginated list of line items from the hubspot crm. this endpoint allows you to fetch detailed information about line items, which represent individual products or services within deals or orders. it offers flexible querying options, including customizable property selection, association retrieval, and filtering for archived items. use this endpoint when you need to access or analyze line item data in bulk, such as for reporting, data synchronization, or building custom integrations with hubspot's crm. the endpoint supports pagination for handling large datasets efficiently.
+</Accordion>
+
+<Accordion title="Update batch of products">
+This endpoint allows you to update multiple product records in hubspot's crm system in a single api call. it's designed for bulk updates, improving efficiency when modifying numerous products simultaneously. use this endpoint when you need to update multiple products' information, such as prices, descriptions, or any other product properties. the endpoint processes the updates in batch, returning either a successful operation result or detailed error information for any products that couldn't be updated. keep in mind that there may be limitations on the number of products that can be updated in a single batch, so refer to hubspot's documentation for specific constraints.
+</Accordion>
+
+<Accordion title="Search crm email objects">
+The searchemails endpoint allows you to search for and retrieve emails within the hubspot crm using various filtering and sorting options. this powerful tool enables you to find specific emails based on content, properties, and metadata. use it when you need to locate emails matching certain criteria, analyze email trends, or gather data for reporting purposes. the endpoint supports pagination for handling large result sets and allows you to specify which email properties to include in the response. it's particularly useful for integrations that need to sync email data or for building custom email analytics solutions. note that this endpoint focuses on searching and retrieving email data; it does not provide functionality for sending or modifying emails.
+</Accordion>
+
+<Accordion title="Update video conference app settings">
+Updates the configuration settings for a specific video conferencing application integrated with hubspot. this endpoint allows developers to modify various settings such as webhook urls, application credentials, or custom parameters that control how the video conferencing app interacts with hubspot's crm. it's used when changes to the application's behavior or integration setup are needed, such as updating oauth tokens or changing notification preferences. the endpoint requires the application's unique identifier and accepts a json payload with the new settings. it returns the updated settings object, allowing verification of the changes made.
+</Accordion>
+
+<Accordion title="Update a batch of line items">
+Updates a batch of line items in the hubspot crm simultaneously. this endpoint allows for efficient bulk updates of multiple line items in a single api call, reducing the number of individual requests needed for large-scale changes. it's particularly useful for synchronizing data from external systems or performing mass updates to line items. the endpoint accepts a batch of line item data and attempts to update each item, returning a comprehensive response that includes the status of each update operation. while this method is powerful for bulk operations, it should be used judiciously to avoid overwhelming the api or hitting rate limits.
+</Accordion>
+
+<Accordion title="Update campaign">
+Perform a partial update of a campaign identified by the specified campaignguid. provided property values will be overwritten. read-only and non-existent properties will cause 400 error. if an empty string is passed for any property in the batch update, it will reset that property's value.
+</Accordion>
+
+<Accordion title="Retrieve video conference settings by id">
+Retrieves the configuration settings for a specific video conference application integrated with hubspot. this endpoint allows developers to access the current settings of their video conferencing extension, such as webhook urls and application-specific configurations. it's particularly useful when you need to verify or audit the current setup of your video conferencing integration. the endpoint returns an externalsettings object containing the application's configuration details. use this endpoint when you need to review or troubleshoot your video conferencing application settings within hubspot's crm system.
+</Accordion>
+
+<Accordion title="Search crm objects by criteria">
+This endpoint allows you to search for crm objects in hubspot based on specific criteria. it provides a flexible way to retrieve records across different object types such as contacts, companies, deals, and tickets. the search functionality enables you to filter and find exact matches or apply more complex search logic to locate the desired crm objects. this endpoint is particularly useful when you need to find specific records that meet certain conditions or when you want to perform advanced queries on your crm data. it should be used when you need to retrieve a collection of objects that match your search criteria, rather than fetching all objects or looking up a single object by id.
+</Accordion>
+
+<Accordion title="Update specific crm property">
+Partially updates a specific crm property in hubspot, identified by the object type and property name. this endpoint allows you to modify existing properties for various crm objects like contacts, companies, deals, or custom objects. use this when you need to change certain attributes of a property without affecting the entire property configuration. the update is performed by overwriting only the provided fields, leaving others unchanged.
+</Accordion>
+
+<Accordion title="Retrieve page of companies">
+Retrieves a paginated list of companies from the hubspot crm. this endpoint allows you to fetch company data with fine-grained control over the returned properties and associations. it's ideal for scenarios where you need to list multiple companies, such as populating a company directory or performing bulk operations. the endpoint supports cursor-based pagination for efficiently handling large datasets and allows filtering for archived companies. use this when you need to fetch multiple company records at once, rather than retrieving a single company by id.
+</Accordion>
+
+<Accordion title="Search contacts by criteria">
+Searches for contacts in the hubspot crm based on specified criteria. this endpoint allows for complex queries to filter and retrieve contact data, supporting various search parameters such as property filters, sorting options, and pagination. it's ideal for finding specific contacts or groups of contacts that match certain conditions. the endpoint returns a collection of matching contacts along with total count and paging information, enabling efficient data retrieval and navigation through large result sets. use this when you need to perform advanced searches on your contact database or when integrating contact search functionality into your applications.
+</Accordion>
+
+<Accordion title="Update existing event template">
+Updates an existing event template and its associated tokens in hubspot's crm timeline. this endpoint allows you to modify the headertemplate and detailtemplate of an existing template, with changes taking effect for existing events. it also provides the ability to update or replace all tokens in the template in a single api call, streamlining the process of managing dynamic content. use this endpoint when you need to revise the structure or content of an existing event template, rather than creating a new one. it's particularly useful for maintaining consistency across events while allowing for necessary updates to template designs or token configurations.
+</Accordion>
+
+<Accordion title="Search products by criteria">
+Searches for products in the hubspot crm based on specified criteria. this endpoint allows you to find products that match certain conditions, enabling efficient product management and retrieval. use this when you need to locate specific products or groups of products within your hubspot crm. the search is performed using a flexible criteria system, allowing for complex queries. the results are paginated, making it suitable for handling large product catalogs. note that this endpoint has a rate limit exemption, allowing for more frequent use compared to other endpoints.&lt;&lt;DEPRECATED use search_products_by_criteria&gt;&gt;
+</Accordion>
+
+<Accordion title="Set call recording settings">
+Configures call recording settings for a specific app within hubspot's crm system. this endpoint allows you to set up or modify how calls are recorded, which is crucial for compliance, quality assurance, and customer service improvement. use this when you need to enable, disable, or adjust call recording features for a particular app integration. the settings applied here will affect how calls are handled and stored within the hubspot crm for the specified app.
+</Accordion>
+
+<Accordion title="Update product">
+This endpoint allows for partial updates to a product in hubspot's crm system. it's designed to modify existing product information by overwriting specified property values while preserving unmentioned properties. the endpoint is particularly useful for e-commerce integrations, enabling seamless product data management. it supports both internal object ids and custom unique properties for product identification, offering flexibility in how products are referenced and updated.&lt;&lt;DEPRECATED use update_product&gt;&gt;
+</Accordion>
+
+<Accordion title="Update a batch of campaigns">
+This endpoint updates a batch of campaigns based on the provided input data. the maximum number of items in a batch request is 50. if an empty string ("") is passed for any property in the batch update, it will reset that property's value.
+</Accordion>
+
+<Accordion title="Update line item object partially">
+This endpoint allows you to perform a partial update on a line item object in hubspot's crm system. it's used to modify specific properties of an existing line item without affecting other properties. the endpoint is ideal for making targeted changes to line items, such as updating prices, quantities, or other attributes. it supports flexible object identification through either the internal object id or a custom unique property. the update operation will overwrite provided property values, ignore read-only and non-existent properties, and allows clearing of property values by passing an empty string. this tool is essential for maintaining accurate and up-to-date line item information in the crm, especially when dealing with changes in orders or deals.
+</Accordion>
+
+<Accordion title="Retrieve pipeline stage by id">
+Retrieves detailed information about a specific pipeline stage within a hubspot crm pipeline. this endpoint allows you to fetch the properties and metadata of a single stage by providing its unique identifier, the pipeline it belongs to, and the object type it's associated with. use this when you need to access or verify the details of a particular stage in your crm workflow, such as its label, display order, or any custom properties. this endpoint is particularly useful for applications that need to dynamically update or display pipeline stage information.
+</Accordion>
+
+<Accordion title="Batch update crm contacts">
+Update a batch of tickets.
+</Accordion>
+
+<Accordion title="Update feedback submission by id">
+Updates specific properties of a feedback submission object in hubspot's crm system. this endpoint allows for partial updates, meaning only the properties provided in the request body will be modified. it's useful for making targeted changes to feedback data without affecting the entire object. the endpoint can identify the feedback submission using either its internal id or a unique property value. use this when you need to update survey responses, modify feedback details, or adjust any custom properties associated with a feedback submission. note that read-only properties cannot be modified, and attempting to update non-existent properties will have no effect.
+</Accordion>
+
+<Accordion title="Search deals by criteria">
+Searches for deals in the hubspot crm based on specified criteria. this endpoint allows for complex filtering, sorting, and property selection of deal objects. it's ideal for finding deals that match specific conditions, such as those in a particular pipeline stage or with certain property values. the endpoint supports pagination for handling large result sets and can be used to power custom deal reports or dashboards. it should be used when you need to retrieve a subset of deals matching particular criteria rather than fetching all deals or a single deal by id.
+</Accordion>
+
+<Accordion title="Update existing object schema">
+Updates an existing object schema in hubspot's crm, allowing you to modify the structure and attributes of custom objects. this endpoint is essential for evolving your crm data model as your business needs change. use it to add, modify, or remove properties from your custom object schemas, ensuring that your crm data structure remains aligned with your organizational requirements. this operation is particularly useful when you need to accommodate new data points or refine existing ones within your custom objects.
+</Accordion>
+
+<Accordion title="Search feedback submissions">
+This endpoint allows you to search for feedback submissions in hubspot's crm using specified criteria. it's designed for retrieving and filtering feedback data efficiently, supporting complex queries to find relevant submissions. the search functionality can be used to analyze customer feedback, track specific types of submissions, or gather data for reporting purposes. the endpoint returns a collection of matching feedback submissions along with pagination information for handling large result sets. note that this endpoint has a rate limit exemption, allowing for more frequent requests compared to standard endpoints.
+</Accordion>
+
+<Accordion title="Update a marketing email">
+Change properties of a marketing email.
+</Accordion>
+
+<Accordion title="Update pipeline stage by ids">
+Updates a specific stage within a hubspot crm pipeline. this endpoint allows for partial modifications to an existing pipeline stage, preserving any unspecified properties. it's useful for adjusting stage details without overwriting the entire stage configuration. the updated stage information is returned in the response, providing immediate confirmation of the changes. use this when you need to modify stage properties such as its name, display order, or probability within a specific pipeline.
+</Accordion>
+
+<Accordion title="Retrieve ticket by id">
+This endpoint retrieves a specific ticket from the hubspot crm system based on its id or a unique property value. it allows for customized responses by specifying which properties to include, fetching property history, and retrieving associated object ids. the endpoint is useful for getting detailed information about a single ticket, including its current state, historical changes, and related crm objects. it supports both active and archived tickets and can use custom id properties for ticket lookup.
+</Accordion>
+
+<Accordion title="Search company objects">
+This endpoint allows you to search for company objects in the hubspot crm using custom criteria. it provides a powerful way to filter and retrieve company data based on specific properties or conditions. use this endpoint when you need to find companies matching certain criteria, such as industry, size, or custom properties. the search is performed using a post request with a json body containing the search parameters. the endpoint returns a paginated collection of matching company objects, making it efficient for handling large datasets.
+</Accordion>
+
+<Accordion title="Update batch feedback submissions">
+Updates multiple feedback submissions in the hubspot crm system simultaneously. this endpoint allows for efficient bulk modifications of feedback data, streamlining the process of managing customer feedback at scale. it's particularly useful for updating large sets of feedback submissions or synchronizing data from external systems. the endpoint accepts a batch of feedback submission updates and processes them in a single request, reducing api calls and improving performance for large-scale operations.
+</Accordion>
+
+<Accordion title="Update a batch of objects by id or property values">
+This endpoint allows for batch updating of multiple crm objects of a specified type in hubspot. it enables efficient bulk modifications of records such as contacts, companies, or deals. the endpoint can update objects either by their internal ids or by matching property values. use this when you need to update multiple records simultaneously, which is more efficient than making individual api calls for each object. note that the success of updates can be partial, with some objects updated successfully while others may fail.
+</Accordion>
+
+<Accordion title="Update batch of companies">
+This endpoint allows you to update multiple company records in the hubspot crm simultaneously. it's designed for bulk operations when you need to modify information for several companies at once, improving efficiency and reducing api calls. the endpoint accepts a batch of company updates in the request body and processes them together. it's particularly useful for synchronizing company data from external systems or performing mass updates based on certain criteria. the endpoint returns detailed results for each company update, including success status and any errors encountered during the process. use this endpoint when you need to update multiple companies efficiently, but be mindful of potential rate limits and the complexity of handling partial successes in large batches.
+</Accordion>
+
+<Accordion title="Search line items by criteria">
+This endpoint allows you to search for line items in hubspot's crm based on specific criteria. it's particularly useful for retrieving detailed information about individual items within larger transactions or orders. you can use this endpoint to filter, sort, and paginate through line items, enabling efficient data analysis and reporting. the search is performed using a post request with a json body containing your search criteria, allowing for complex queries. the response includes a collection of matching line items along with pagination information for handling large result sets. this endpoint is ideal for scenarios where you need to analyze sales data, track specific products or services, or integrate line item information with other systems.
+</Accordion>
+
+<Accordion title="Batch update crm tickets">
+Update a batch of tickets.
+</Accordion>
+
+<Accordion title="Batch update crm deal properties">
+Update a batch of deals.
+</Accordion>
+

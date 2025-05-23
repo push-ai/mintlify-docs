@@ -1,0 +1,1094 @@
+Cloud content management and file sharing service for businesses.
+
+<Accordion title="Create metadata instance on file">
+Applies an instance of a metadata template to a file. in most cases only values that are present in the metadata template will be accepted, except for the `global.properties` template which accepts any key-value pair.
+</Accordion>
+
+<Accordion title="Create metadata cascade policy">
+Creates a new metadata cascade policy that applies a given metadata template to a given folder and automatically cascades it down to any files within that folder. in order for the policy to be applied a metadata instance must first be applied to the folder the policy is to be applied to.
+</Accordion>
+
+<Accordion title="Commit upload session">
+Close an upload session and create a file from the uploaded chunks. the actual endpoint url is returned by the [`create upload session`](e://post-files-upload-sessions) and [`get upload session`](e://get-files-upload-sessions-id) endpoints.
+</Accordion>
+
+<Accordion title="Create slack integration mapping">
+Creates a [slack integration mapping](https://support.box.com/hc/en-us/articles/4415585987859-box-as-the-content-layer-for-slack) by mapping a slack channel to a box item. you need admin or co-admin role to use this endpoint.
+</Accordion>
+
+<Accordion title="Create comment">
+Adds a comment by the user to a specific file, or as a reply to an other comment.
+</Accordion>
+
+<Accordion title="Create metadata instance on folder">
+Applies an instance of a metadata template to a folder. in most cases only values that are present in the metadata template will be accepted, except for the `global.properties` template which accepts any key-value pair. to display the metadata template in the box web app the enterprise needs to be configured to enable **cascading folder level metadata** for the user in the admin console.
+</Accordion>
+
+<Accordion title="Create collaboration">
+Adds a collaboration for a single user or a single group to a file or folder. collaborations can be created using email address, user ids, or a group ids. if a collaboration is being created with a group, access to this endpoint is dependent on the group's ability to be invited. if collaboration is in `pending` status, the following fields are redacted: - `login` and `name` are hidden if a collaboration was created using `user id`, - `name` is hidden if a collaboration was created using `login`.
+</Accordion>
+
+<Accordion title="Ask question">
+Sends an ai request to supported llms and returns an answer specifically focused on the user's question given the provided context.
+</Accordion>
+
+<Accordion title="Add domain to list of allowed collaboration domains">
+Creates a new entry in the list of allowed domains to allow collaboration for.
+</Accordion>
+
+<Accordion title="Create retention policy">
+Creates a retention policy.
+</Accordion>
+
+<Accordion title="Create task">
+Creates a single task on a file. this task is not assigned to any user and will need to be assigned separately.
+</Accordion>
+
+<Accordion title="Create teams integration mapping">
+Creates a [teams integration mapping](https://support.box.com/hc/en-us/articles/360044681474-using-box-for-teams) by mapping a teams channel to a box item. you need admin or co-admin role to use this endpoint.
+</Accordion>
+
+<Accordion title="Create user">
+Creates a new managed user in an enterprise. this endpoint is only available to users and applications with the right admin permissions.
+</Accordion>
+
+<Accordion title="Delete ai agent">
+Deletes an ai agent using the provided parameters.
+</Accordion>
+
+<Accordion title="Create shield information barrier">
+Creates a shield information barrier to separate individuals/groups within the same firm and prevents confidential information passing between them.
+</Accordion>
+
+<Accordion title="Delete folder">
+Deletes a folder, either permanently or by moving it to the trash.
+</Accordion>
+
+<Accordion title="Create shield information barrier segment">
+Creates a shield information barrier segment.
+</Accordion>
+
+<Accordion title="Create email alias">
+Adds a new email alias to a user account..
+</Accordion>
+
+<Accordion title="Delete file">
+Deletes a file, either permanently or by moving it to the trash. the the enterprise settings determine whether the item will be permanently deleted from box or moved to the trash.
+</Accordion>
+
+<Accordion title="Create terms of service">
+Creates a terms of service for a given enterprise and type of user.
+</Accordion>
+
+<Accordion title="Delete file request">
+Deletes a file request permanently.
+</Accordion>
+
+<Accordion title="Create user exemption from collaboration domain restrictions">
+Exempts a user from the restrictions set out by the allowed list of domains for collaborations.
+</Accordion>
+
+<Accordion title="Create shield information barrier report">
+Creates a shield information barrier report for a given barrier.
+</Accordion>
+
+<Accordion title="Create folder">
+Creates a new empty folder within the specified parent folder.
+</Accordion>
+
+<Accordion title="Delete folder lock">
+Deletes a folder lock on a given folder. you must be authenticated as the owner or co-owner of the folder to use this endpoint.
+</Accordion>
+
+<Accordion title="Create user invite">
+Invites an existing external user to join an enterprise. the existing user can not be part of another enterprise and must already have a box account. once invited, the user will receive an email and are prompted to accept the invitation within the box web application. this method requires the "manage an enterprise" scope enabled for the application, which can be enabled within the developer console.
+</Accordion>
+
+<Accordion title="Delete retention policy">
+Permanently deletes a retention policy.
+</Accordion>
+
+<Accordion title="Delete shield information barrier segment member by id">
+Deletes a shield information barrier segment member based on provided id.
+</Accordion>
+
+<Accordion title="Create folder lock">
+Creates a folder lock on a folder, preventing it from being moved and/or deleted. you must be authenticated as the owner or co-owner of the folder to use this endpoint.
+</Accordion>
+
+<Accordion title="Create upload session">
+Creates an upload session for a new file.
+</Accordion>
+
+<Accordion title="Delete shield information barrier segment restriction by id">
+Delete shield information barrier segment restriction based on provided id.
+</Accordion>
+
+<Accordion title="Create terms of service status for new user">
+Sets the status for a terms of service for a user.
+</Accordion>
+
+<Accordion title="Delete shield information barrier segment">
+Deletes the shield information barrier segment based on provided id.
+</Accordion>
+
+<Accordion title="Create group">
+Creates a new group of users in an enterprise. only users with admin permissions can create new groups.
+</Accordion>
+
+<Accordion title="Copy file">
+Creates a copy of a file.
+</Accordion>
+
+<Accordion title="Delete slack integration mapping">
+Deletes a [slack integration mapping](https://support.box.com/hc/en-us/articles/4415585987859-box-as-the-content-layer-for-slack). you need admin or co-admin role to use this endpoint.
+</Accordion>
+
+<Accordion title="Create webhook">
+Creates a webhook.
+</Accordion>
+
+<Accordion title="Delete user avatar">
+Removes an existing user avatar. you cannot reverse this operation.
+</Accordion>
+
+<Accordion title="Create upload session for existing file">
+Creates an upload session for an existing file.
+</Accordion>
+
+<Accordion title="Download zip archive">
+Returns the contents of a `zip` archive in binary format. this url does not require any form of authentication and could be used in a user's browser to download the archive to a user's device. by default, this url is only valid for a few seconds from the creation of the request for this archive. once a download has started it can not be stopped and resumed, instead a new request for a zip archive would need to be created. the url of this endpoint should not be considered as fixed. instead, use the [create zip download](e://post zip downloads) api to request to create a `zip` archive, and then follow the `download url` field in the response to this endpoint.
+</Accordion>
+
+<Accordion title="Delete teams integration mapping">
+Deletes a [teams integration mapping](https://support.box.com/hc/en-us/articles/360044681474-using-box-for-teams). you need admin or co-admin role to use this endpoint.
+</Accordion>
+
+<Accordion title="Download file">
+Returns the contents of a file in binary format.
+</Accordion>
+
+<Accordion title="Delete user">
+Deletes a user. by default this will fail if the user still owns any content. move their owned content first before proceeding, or use the `force` field to delete the user and their files.
+</Accordion>
+
+<Accordion title="Find app item for shared link">
+Returns the app item represented by a shared link. the link can originate from the current enterprise or another.
+</Accordion>
+
+<Accordion title="Create jobs to terminate users session">
+Validates the roles and permissions of the user, and creates asynchronous jobs to terminate the user's sessions. returns the status for the post request.
+</Accordion>
+
+<Accordion title="Extract metadata structured">
+Sends an ai request to supported large language models (llms) and returns extracted metadata as a set of key-value pairs. for this request, you either need a metadata template or a list of fields you want to extract. input is **either** a metadata template or a list of fields to ensure the structure. to learn more about creating templates, see [creating metadata templates in the admin console](https://support.box.com/hc/en-us/articles/360044194033-customizing-metadata-templates) or use the [metadata template api](g://metadata/templates/create).
+</Accordion>
+
+<Accordion title="Find web link for shared link">
+Returns the web link represented by a shared link. a shared web link can be represented by a shared link, which can originate within the current enterprise or within another. this endpoint allows an application to retrieve information about a shared web link when only given a shared link.
+</Accordion>
+
+<Accordion title="Create jobs to terminate user group session">
+Validates the roles and permissions of the group, and creates asynchronous jobs to terminate the group's sessions. returns the status for the post request.
+</Accordion>
+
+<Accordion title="Force apply metadata cascade policy to folder">
+Force the metadata on a folder with a metadata cascade policy to be applied to all of its children. this can be used after creating a new cascade policy to enforce the metadata to be cascaded down to all existing files within that folder.
+</Accordion>
+
+<Accordion title="Create legal hold policy">
+Create a new legal hold policy.
+</Accordion>
+
+<Accordion title="Create metadata template">
+Creates a new metadata template that can be applied to files and folders.
+</Accordion>
+
+<Accordion title="Create web link">
+Creates a web link object within a folder.
+</Accordion>
+
+<Accordion title="Find metadata template by instance id">
+Finds a metadata template by searching for the id of an instance of the template.
+</Accordion>
+
+<Accordion title="Find folder for shared link">
+Return the folder represented by a shared link. a shared folder can be represented by a shared link, which can originate within the current enterprise or within another. this endpoint allows an application to retrieve information about a shared folder when only given a shared link.
+</Accordion>
+
+<Accordion title="Create zip download">
+Creates a request to download multiple files and folders as a single `zip` archive file. this api does not return the archive but instead performs all the checks to ensure that the user has access to all the items, and then returns a `download url` and a `status url` that can be used to download the archive. the limit for an archive is either the account's upload limit or 10,000 files, whichever is met first. **note**: downloading a large file can be affected by various factors such as distance, network latency, bandwidth, and congestion, as well as packet loss ratio and current server load. for these reasons we recommend that a maximum zip archive total size does not exceed 25gb.
+</Accordion>
+
+<Accordion title="Extract metadata freeform">
+Sends an ai request to supported large language models (llms) and extracts metadata in form of key-value pairs. in this request, both the prompt and the output can be freeform. metadata template setup before sending the request is not required.
+</Accordion>
+
+<Accordion title="Find file for shared link">
+Returns the file represented by a shared link. a shared file can be represented by a shared link, which can originate within the current enterprise or within another. this endpoint allows an application to retrieve information about a shared file when only given a shared link. the `shared link permission options` array field can be returned by requesting it in the `fields` query parameter.
+</Accordion>
+
+<Accordion title="Copy file request">
+Copies an existing file request that is already present on one folder, and applies it to another folder.
+</Accordion>
+
+<Accordion title="Assign legal hold policy">
+Assign a legal hold to a file, file version, folder, or user.
+</Accordion>
+
+<Accordion title="Generate text">
+Sends an ai request to supported large language models (llms) and returns generated text based on the provided prompt.
+</Accordion>
+
+<Accordion title="Copy folder">
+Creates a copy of a folder within a destination folder. the original folder will not be changed.
+</Accordion>
+
+<Accordion title="Assign retention policy">
+Assigns a retention policy to an item.
+</Accordion>
+
+<Accordion title="Assign storage policy">
+Creates a storage policy assignment for an enterprise or user.
+</Accordion>
+
+<Accordion title="Create shield information barrier segment member">
+Creates a new shield information barrier segment member.
+</Accordion>
+
+<Accordion title="Add or update user avatar">
+Adds or updates a user avatar.
+</Accordion>
+
+<Accordion title="Add classification to folder">
+Adds a classification to a folder by specifying the label of the classification to add. this api can also be called by including the enterprise id in the url explicitly, for example `/folders/:id/enterprise 12345/securityclassification-6vmvochwuwo`.
+</Accordion>
+
+<Accordion title="Add classification to file">
+Adds a classification to a file by specifying the label of the classification to add. this api can also be called by including the enterprise id in the url explicitly, for example `/files/:id//enterprise 12345/securityclassification-6vmvochwuwo`.
+</Accordion>
+
+<Accordion title="Add initial classifications">
+When an enterprise does not yet have any classifications, this api call initializes the classification template with an initial set of classifications. if an enterprise already has a classification, the template will already exist and instead an api call should be made to add additional classifications.
+</Accordion>
+
+<Accordion title="Assign task">
+Assigns a task to a user. a task can be assigned to more than one user by creating multiple assignments.
+</Accordion>
+
+<Accordion title="Authorize user">
+Authorize a user by sending them through the [box](https://box.com) website and request their permission to act on their behalf. this is the first step when authenticating a user using oauth 2.0. to request a user's authorization to use the box apis on their behalf you will need to send a user to the url with this format.
+</Accordion>
+
+<Accordion title="Cancel box sign request">
+Cancels a sign request.
+</Accordion>
+
+<Accordion title="Add shared link to file">
+Adds a shared link to a file.
+</Accordion>
+
+<Accordion title="Create ai agent">
+Creates an ai agent. at least one of the following capabilities must be provided: `ask`, `text gen`, `extract`.
+</Accordion>
+
+<Accordion title="Create box skill cards on file">
+Applies one or more box skills metadata cards to a file.
+</Accordion>
+
+<Accordion title="Add shared link to folder">
+Adds a shared link to a folder.
+</Accordion>
+
+<Accordion title="Change shield information barrier status">
+Change status of shield information barrier with the specified id.
+</Accordion>
+
+<Accordion title="Create box sign request">
+Creates a signature request. this involves preparing a document for signing and sending the signature request to signers.
+</Accordion>
+
+<Accordion title="Add shared link to web link">
+Adds a shared link to a web link.
+</Accordion>
+
+<Accordion title="Create shield information barrier segment restriction">
+Creates a shield information barrier segment restriction object.
+</Accordion>
+
+<Accordion title="Apply watermark to folder">
+Applies or update a watermark on a folder.
+</Accordion>
+
+<Accordion title="Apply watermark to file">
+Applies or update a watermark on a file.
+</Accordion>
+
+<Accordion title="Get ai agent by agent id">
+Gets an ai agent using the `agent id` parameter.
+</Accordion>
+
+<Accordion title="Add user to group">
+Creates a group membership. only users with admin-level permissions will be able to use this api.
+</Accordion>
+
+<Accordion title="Get ai agent default configuration">
+Get the ai agent default config
+</Accordion>
+
+<Accordion title="Get box sign template by id">
+Fetches details of a specific box sign template.
+</Accordion>
+
+<Accordion title="Get trashed file">
+Retrieves a file that has been moved to the trash. please note that only if the file itself has been moved to the trash can it be retrieved with this api call. if instead one of its parent folders was moved to the trash, only that folder can be inspected using the [`get /folders/:id/trash`](e://get folders id trash) api. to list all items that have been moved to the trash, please use the [`get /folders/trash/items`](e://get-folders-trash-items/) api.
+</Accordion>
+
+<Accordion title="Get shield information barrier report by id">
+Retrieves a shield information barrier report by its id.
+</Accordion>
+
+<Accordion title="Get watermark for folder">
+Retrieve the watermark for a folder.
+</Accordion>
+
+<Accordion title="Get shared link for web link">
+Gets the information for a shared link on a web link.
+</Accordion>
+
+<Accordion title="Get classification on file">
+Retrieves the classification metadata instance that has been applied to a file. this api can also be called by including the enterprise id in the url explicitly, for example `/files/:id//enterprise 12345/securityclassification-6vmvochwuwo`.
+</Accordion>
+
+<Accordion title="Get terms of service">
+Fetches a specific terms of service.
+</Accordion>
+
+<Accordion title="Get events long poll endpoint">
+The listevents endpoint provides information about the events available in the box system. this options method allows developers to discover the capabilities and requirements for interacting with the /events endpoint. it's particularly useful for understanding the types of events that can be monitored, the format of event data, and any constraints or limitations on event retrieval. this endpoint should be used when setting up event monitoring or webhook integrations to ensure proper configuration and understanding of the event system. while it doesn't directly fetch events, it offers crucial metadata for effectively working with box's event streaming and notification features.
+</Accordion>
+
+<Accordion title="Get collaboration">
+Retrieves a single collaboration.
+</Accordion>
+
+<Accordion title="Get box sign request by id">
+Gets a sign request by id.
+</Accordion>
+
+<Accordion title="Get classification on folder">
+Retrieves the classification metadata instance that has been applied to a folder. this api can also be called by including the enterprise id in the url explicitly, for example `/folders/:id/enterprise 12345/securityclassification-6vmvochwuwo`.
+</Accordion>
+
+<Accordion title="Get files under retention">
+Returns a list of files under retention for a retention policy assignment.
+</Accordion>
+
+<Accordion title="Get user invite status">
+Returns the status of a user invite.
+</Accordion>
+
+<Accordion title="Get allowed collaboration domain">
+Returns a domain that has been deemed safe to create collaborations for within the current enterprise.
+</Accordion>
+
+<Accordion title="Get watermark on file">
+Retrieve the watermark for a file.
+</Accordion>
+
+<Accordion title="Get metadata cascade policy">
+Retrieve a specific metadata cascade policy assigned to a folder.
+</Accordion>
+
+<Accordion title="Get webhook">
+Retrieves a specific webhook
+</Accordion>
+
+<Accordion title="Get collection by id">
+Retrieves a collection by its id.
+</Accordion>
+
+<Accordion title="List all file versions">
+Retrieve a list of the past versions for a file. versions are only tracked by box users with premium accounts. to fetch the id of the current version of a file, use the `get /file/:id` api.
+</Accordion>
+
+<Accordion title="Get file information">
+Retrieves the details about a file.
+</Accordion>
+
+<Accordion title="List file collaborations">
+Retrieves a list of pending and active collaborations for a file. this returns all the users that have access to the file or have been invited to the file.
+</Accordion>
+
+<Accordion title="List all global metadata templates">
+Used to retrieve all generic, global metadata templates available to all enterprises using box.
+</Accordion>
+
+<Accordion title="List collection items">
+Retrieves the files and/or folders contained within this collection.
+</Accordion>
+
+<Accordion title="Get current user">
+Retrieves information about the user who is currently authenticated. in the case of a client-side authenticated oauth 2.0 application this will be the user who authorized the app. in the case of a jwt, server-side authenticated application this will be the service account that belongs to the application by default. use the `as-user` header to change who this api call is made on behalf of.
+</Accordion>
+
+<Accordion title="List box sign templates">
+Gets box sign templates created by a user.
+</Accordion>
+
+<Accordion title="List file version legal holds">
+Get a list of file versions on legal hold for a legal hold assignment. due to ongoing re-architecture efforts this api might not return all file versions for this policy id. instead, this api will only return file versions held in the legacy architecture. two new endpoints will available to request any file versions held in the new architecture. for file versions held in the new architecture, the `get /legal hold policy assignments/:id/file versions on hold` api can be used to return all past file versions available for this policy assignment, and the `get /legal hold policy assignments/:id/files on hold` api can be used to return any current (latest) versions of a file under legal hold. the `get /legal hold policy assignments?policy id=\{id\}` api can be used to find a list of policy assignments for a given policy id. once the re-architecture is completed this api will be deprecated.
+</Accordion>
+
+<Accordion title="List file comments">
+Retrieves a list of comments for a file.
+</Accordion>
+
+<Accordion title="List box skill cards on file">
+List the box skills metadata cards that are attached to a file.
+</Accordion>
+
+<Accordion title="Get comment">
+Retrieves the message and metadata for a specific comment, as well as information on the user who created the comment.
+</Accordion>
+
+<Accordion title="List all collections">
+Retrieves all collections for a given user. currently, only the `favorites` collection is supported.
+</Accordion>
+
+<Accordion title="List all legal hold policies">
+Retrieves a list of legal hold policies that belong to an enterprise.
+</Accordion>
+
+<Accordion title="Get metadata instance on file">
+Retrieves the instance of a metadata template that has been applied to a file.
+</Accordion>
+
+<Accordion title="Get metadata instance on folder">
+Retrieves the instance of a metadata template that has been applied to a folder. this can not be used on the root folder with id `0`.
+</Accordion>
+
+<Accordion title="List folder collaborations">
+Retrieves a list of pending and active collaborations for a folder. this returns all the users that have access to the folder or have been invited to the folder.
+</Accordion>
+
+<Accordion title="Get web link">
+Retrieve information about a web link.
+</Accordion>
+
+<Accordion title="Get file request">
+Retrieves the information about a file request.
+</Accordion>
+
+<Accordion title="List folder app item associations">
+**this is a beta feature, which means that its availability might be limited.** returns all app items the folder is associated with. this includes app items associated with ancestors of the folder. assuming the context user has access to the folder, the type/ids are revealed even if the context user does not have **view** permission on the app item.
+</Accordion>
+
+<Accordion title="List folder locks">
+Retrieves folder lock details for a given folder. you must be authenticated as the owner or co-owner of the folder to use this endpoint.
+</Accordion>
+
+<Accordion title="List groups for enterprise">
+Retrieves all of the groups for a given enterprise. the user must have admin permissions to inspect enterprise's groups.
+</Accordion>
+
+<Accordion title="List file version retentions">
+Retrieves all file version retentions for the given enterprise. **note**: file retention api is now **deprecated**. to get information about files and file versions under retention, see [files under retention](e://get-retention-policy-assignments-id-files-under-retention) or [file versions under retention](e://get-retention-policy-assignments-id-file-versions-under-retention) endpoints.
+</Accordion>
+
+<Accordion title="List metadata instances on file">
+Retrieves all metadata for a given file.
+</Accordion>
+
+<Accordion title="List members of group">
+Retrieves all the members for a group. only members of this group or users with admin-level permissions will be able to use this api.
+</Accordion>
+
+<Accordion title="List group collaborations">
+Retrieves all the collaborations for a group. the user must have admin permissions to inspect enterprise's groups. each collaboration object has details on which files or folders the group has access to and with what role.
+</Accordion>
+
+<Accordion title="List items in folder">
+Retrieves a page of items in a folder. these items can be files, folders, and web links. to request more information about the folder itself, like its size, use the [get a folder](#get-folders-id) endpoint instead.
+</Accordion>
+
+<Accordion title="List all metadata templates for enterprise">
+Used to retrieve all metadata templates created to be used specifically within the user's enterprise
+</Accordion>
+
+<Accordion title="Get device pin">
+Retrieves information about an individual device pin.
+</Accordion>
+
+<Accordion title="Get metadata template by id">
+Retrieves a metadata template by its id.
+</Accordion>
+
+<Accordion title="Get trashed folder">
+Retrieves a folder that has been moved to the trash. please note that only if the folder itself has been moved to the trash can it be retrieved with this api call. if instead one of its parent folders was moved to the trash, only that folder can be inspected using the [`get /folders/:id/trash`](e://get folders id trash) api. to list all items that have been moved to the trash, please use the [`get /folders/trash/items`](e://get-folders-trash-items/) api.
+</Accordion>
+
+<Accordion title="List legal hold policy assignments">
+Retrieves a list of items a legal hold policy has been assigned to.
+</Accordion>
+
+<Accordion title="List metadata instances on folder">
+Retrieves all metadata for a given folder. this can not be used on the root folder with id `0`.
+</Accordion>
+
+<Accordion title="List all webhooks">
+Returns all defined webhooks for the requesting application. this api only returns webhooks that are applied to files or folders that are owned by the authenticated user. this means that an admin can not see webhooks created by a service account unless the admin has access to those folders, and vice versa.
+</Accordion>
+
+<Accordion title="Get zip download status">
+Returns the download status of a `zip` archive, allowing an application to inspect the progress of the download as well as the number of items that might have been skipped. this endpoint can only be accessed once the download has started. subsequently this endpoint is valid for 12 hours from the start of the download. the url of this endpoint should not be considered as fixed. instead, use the [create zip download](e://post zip downloads) api to request to create a `zip` archive, and then follow the `status url` field in the response to this endpoint.
+</Accordion>
+
+<Accordion title="Get file thumbnail">
+Retrieves a thumbnail, or smaller image representation, of a file. sizes of `32x32`,`64x64`, `128x128`, and `256x256` can be returned in the `.png` format and sizes of `32x32`, `160x160`, and `320x320` can be returned in the `.jpg` format. thumbnails can be generated for the image and video file formats listed [found on our community site][1]. [1]: https://community.box.com/t5/migrating-and-previewing-content/file-types-and-fonts-supported-in-box-content-preview/ta-p/327
+</Accordion>
+
+<Accordion title="List parts">
+Return a list of the chunks uploaded to the upload session so far. the actual endpoint url is returned by the [`create upload session`](e://post-files-upload-sessions) and [`get upload session`](e://get-files-upload-sessions-id) endpoints.
+</Accordion>
+
+<Accordion title="List enterprise device pins">
+Retrieves all the device pins within an enterprise. the user must have admin privileges, and the application needs the "manage enterprise" scope to make this call.
+</Accordion>
+
+<Accordion title="List previous file versions for legal hold policy assignment">
+Get a list of previous file versions for a legal hold assignment. in some cases you may only need the latest file versions instead. in these cases, use the `get /legal hold policy assignments/:id/files on hold` api instead to return any current (latest) versions of a file for this legal hold policy assignment. due to ongoing re-architecture efforts this api might not return all files held for this policy id. instead, this api will only return past file versions held in the newly developed architecture. the `get /file version legal holds` api can be used to fetch current and past versions of files held within the legacy architecture. this endpoint does not support returning any content that is on hold due to a custodian collaborating on a hub. the `get /legal hold policy assignments?policy id=\{id\}` api can be used to find a list of policy assignments for a given policy id.
+</Accordion>
+
+<Accordion title="List retention policy assignments">
+Returns a list of all retention policy assignments associated with a specified retention policy.
+</Accordion>
+
+<Accordion title="List pending collaborations">
+Retrieves all pending collaboration invites for this user.
+</Accordion>
+
+<Accordion title="List metadata cascade policies">
+Retrieves a list of all the metadata cascade policies that are applied to a given folder. this can not be used on the root folder with id `0`.
+</Accordion>
+
+<Accordion title="List shield information barriers">
+Retrieves a list of shield information barrier objects for the enterprise of jwt.
+</Accordion>
+
+<Accordion title="Get metadata template by name">
+Retrieves a metadata template by its `scope` and `templatekey` values. to find the `scope` and `templatekey` for a template, list all templates for an enterprise or globally, or list all templates applied to a file or folder.
+</Accordion>
+
+<Accordion title="Get trashed web link">
+Retrieves a web link that has been moved to the trash.
+</Accordion>
+
+<Accordion title="List box sign requests">
+Gets signature requests created by a user. if the `sign files` and/or `parent folder` are deleted, the signature request will not return in the list.
+</Accordion>
+
+<Accordion title="Get shield information barrier segment member by id">
+Retrieves a shield information barrier segment member by its id.
+</Accordion>
+
+<Accordion title="List recently accessed items">
+Returns information about the recent items accessed by a user, either in the last 90 days or up to the last 1000 items accessed.
+</Accordion>
+
+<Accordion title="List retention policies">
+Retrieves all of the retention policies for an enterprise.
+</Accordion>
+
+<Accordion title="Get retention on file">
+Returns information about a file version retention. **note**: file retention api is now **deprecated**. to get information about files and file versions under retention, see [files under retention](e://get-retention-policy-assignments-id-files-under-retention) or [file versions under retention](e://get-retention-policy-assignments-id-file-versions-under-retention) endpoints.
+</Accordion>
+
+<Accordion title="Get file version">
+Retrieve a specific version of a file. versions are only tracked for box users with premium accounts.
+</Accordion>
+
+<Accordion title="List shield information barrier reports">
+Lists shield information barrier reports.
+</Accordion>
+
+<Accordion title="List shield information barrier segments">
+Retrieves a list of shield information barrier segment objects for the specified information barrier id.
+</Accordion>
+
+<Accordion title="List ai agents">
+Lists ai agents based on the provided parameters.
+</Accordion>
+
+<Accordion title="Get upload session">
+Return information about an upload session. the actual endpoint url is returned by the [`create upload session`](e://post-files-upload-sessions) endpoint.
+</Accordion>
+
+<Accordion title="Get storage policy">
+Fetches a specific storage policy.
+</Accordion>
+
+<Accordion title="List shield information barrier segment restrictions">
+Lists shield information barrier segment restrictions based on provided segment id.
+</Accordion>
+
+<Accordion title="List shield information barrier segment members">
+Lists shield information barrier segment members based on provided segment ids.
+</Accordion>
+
+<Accordion title="Get file versions under retention">
+Returns a list of file versions under retention for a retention policy assignment.
+</Accordion>
+
+<Accordion title="Get shield information barrier with specified id">
+Get shield information barrier based on provided id.
+</Accordion>
+
+<Accordion title="Get shield information barrier segment with specified id">
+Retrieves shield information barrier segment based on provided id..
+</Accordion>
+
+<Accordion title="Get retention policy assignment">
+Retrieves a retention policy assignment
+</Accordion>
+
+<Accordion title="Get storage policy assignment">
+Fetches a specific storage policy assignment.
+</Accordion>
+
+<Accordion title="Get file version legal hold">
+Retrieves information about the legal hold policies assigned to a file version.
+</Accordion>
+
+<Accordion title="Get user avatar">
+Retrieves an image of a the user's avatar.
+</Accordion>
+
+<Accordion title="Get shield information barrier segment restriction by id">
+Retrieves a shield information barrier segment restriction based on provided id.
+</Accordion>
+
+<Accordion title="Get retention policy">
+Retrieves a retention policy.
+</Accordion>
+
+<Accordion title="Get user">
+Retrieves information about a user in the enterprise. the application and the authenticated user need to have the permission to look up users in the entire enterprise. this endpoint also returns a limited set of information for external users who are collaborated on content owned by the enterprise for authenticated users with the right scopes. in this case, disallowed fields will return null instead.
+</Accordion>
+
+<Accordion title="List allowed collaboration domains">
+Returns the list domains that have been deemed safe to create collaborations for within the current enterprise.
+</Accordion>
+
+<Accordion title="List enterprise users">
+Returns a list of all users for the enterprise along with their `user id`, `public name`, and `login`. the application and the authenticated user need to have the permission to look up users in the entire enterprise.
+</Accordion>
+
+<Accordion title="Get task assignment">
+Retrieves information about a task assignment.
+</Accordion>
+
+<Accordion title="Get group membership">
+Retrieves a specific group membership. only admins of this group or users with admin-level permissions will be able to use this api.
+</Accordion>
+
+<Accordion title="Get shared link for file">
+Gets the information for a shared link on a file.
+</Accordion>
+
+<Accordion title="Get folder information">
+Retrieves details for a folder, including the first 100 entries in the folder. passing `sort`, `direction`, `offset`, and `limit` parameters in query allows you to manage the list of returned [folder items](r://folder--full#param-item-collection). to fetch more items within the folder, use the [get items in a folder](e://get-folders-id-items) endpoint.
+</Accordion>
+
+<Accordion title="Get user exempt from collaboration domain restrictions">
+Returns a users who has been exempt from the collaboration domain restrictions.
+</Accordion>
+
+<Accordion title="Get task">
+Retrieves information about a specific task.
+</Accordion>
+
+<Accordion title="List file app item associations">
+**this is a beta feature, which means that its availability might be limited.** returns all app items the file is associated with. this includes app items associated with ancestors of the file. assuming the context user has access to the file, the type/ids are revealed even if the context user does not have **view** permission on the app item.
+</Accordion>
+
+<Accordion title="Get group">
+Retrieves information about a group. only members of this group or users with admin-level permissions will be able to use this api.
+</Accordion>
+
+<Accordion title="List all classifications">
+Retrieves the classification metadata template and lists all the classifications available to this enterprise. this api can also be called by including the enterprise id in the url explicitly, for example `/metadata templates/enterprise 12345/securityclassification-6vmvochwuwo/schema`.
+</Accordion>
+
+<Accordion title="Get legal hold policy">
+Retrieve a legal hold policy.
+</Accordion>
+
+<Accordion title="Get legal hold policy assignment">
+Retrieve a legal hold policy assignment.
+</Accordion>
+
+<Accordion title="Get shared link for folder">
+Gets the information for a shared link on a folder.
+</Accordion>
+
+<Accordion title="List storage policies">
+Fetches all the storage policies in the enterprise.
+</Accordion>
+
+<Accordion title="List user s email aliases">
+Retrieves all email aliases for a user. the collection does not include the primary login for the user.
+</Accordion>
+
+<Accordion title="List storage policy assignments">
+Fetches all the storage policy assignment for an enterprise or user.
+</Accordion>
+
+<Accordion title="List trashed items">
+Retrieves the files and folders that have been moved to the trash. any attribute in the full files or folders objects can be passed in with the `fields` parameter to retrieve those specific attributes that are not returned by default. this endpoint defaults to use offset-based pagination, yet also supports marker-based pagination using the `marker` parameter.
+</Accordion>
+
+<Accordion title="List terms of service user statuses">
+Retrieves an overview of users and their status for a terms of service, including whether they have accepted the terms and when.
+</Accordion>
+
+<Accordion title="List tasks on file">
+Retrieves a list of all the tasks for a file. this endpoint does not support pagination.
+</Accordion>
+
+<Accordion title="Unassign legal hold policy">
+Remove a legal hold from an item. this is an asynchronous process. the policy will not be fully removed yet when the response returns.
+</Accordion>
+
+<Accordion title="List task assignments">
+Lists all of the assignments for a given task.
+</Accordion>
+
+<Accordion title="Remove metadata instance from folder">
+Deletes a piece of folder metadata.
+</Accordion>
+
+<Accordion title="Remove collaboration">
+Deletes a single collaboration.
+</Accordion>
+
+<Accordion title="Remove watermark from file">
+Removes the watermark from a file.
+</Accordion>
+
+<Accordion title="Remove user from list of users exempt from domain restrictions">
+Removes a user's exemption from the restrictions set out by the allowed list of domains for collaborations.
+</Accordion>
+
+<Accordion title="List user s groups">
+Retrieves all the groups for a user. only members of this group or users with admin-level permissions will be able to use this api.
+</Accordion>
+
+<Accordion title="List user and enterprise events">
+Returns up to a year of past events for a given user or for the entire enterprise. by default this returns events for the authenticated user. to retrieve events for the entire enterprise, set the `stream type` to `admin logs streaming` for live monitoring of new events, or `admin logs` for querying across historical events. the user making the api call will need to have admin privileges, and the application will need to have the scope `manage enterprise properties` checked.
+</Accordion>
+
+<Accordion title="List teams integration mappings">
+Lists [teams integration mappings](https://support.box.com/hc/en-us/articles/360044681474-using-box-for-teams) in a users' enterprise. you need admin or co-admin role to use this endpoint.
+</Accordion>
+
+<Accordion title="List slack integration mappings">
+Lists [slack integration mappings](https://support.box.com/hc/en-us/articles/4415585987859-box-as-the-content-layer-for-slack) in a users' enterprise. you need admin or co-admin role to use this endpoint.
+</Accordion>
+
+<Accordion title="Remove classification from folder">
+Removes any classifications from a folder. this api can also be called by including the enterprise id in the url explicitly, for example `/folders/:id/enterprise 12345/securityclassification-6vmvochwuwo`.
+</Accordion>
+
+<Accordion title="Remove watermark from folder">
+Removes the watermark from a folder.
+</Accordion>
+
+<Accordion title="Restore folder">
+Restores a folder that has been moved to the trash. an optional new parent id can be provided to restore the folder to in case the original folder has been deleted. during this operation, part of the file tree will be locked, mainly the source folder and all of its descendants, as well as the destination folder. for the duration of the operation, no other move, copy, delete, or restore operation can performed on any of the locked folders.
+</Accordion>
+
+<Accordion title="List terms of services">
+Returns the current terms of service text and settings for the enterprise.
+</Accordion>
+
+<Accordion title="Update file">
+Updates a file. this can be used to rename or move a file, create a shared link, or lock a file.
+</Accordion>
+
+<Accordion title="Update comment">
+Update the message of a comment.
+</Accordion>
+
+<Accordion title="Update folder">
+Updates a folder. this can be also be used to move the folder, create shared links, update collaborations, and more.
+</Accordion>
+
+<Accordion title="Update storage policy assignment">
+Updates a specific storage policy assignment.
+</Accordion>
+
+<Accordion title="Update legal hold policy">
+Update legal hold policy.
+</Accordion>
+
+<Accordion title="Remove webhook">
+Deletes a webhook.
+</Accordion>
+
+<Accordion title="Restore web link">
+Restores a web link that has been moved to the trash. an optional new parent id can be provided to restore the web link to in case the original folder has been deleted.
+</Accordion>
+
+<Accordion title="List workflows">
+Returns list of workflows that act on a given `folder id`, and have a flow with a trigger type of `workflow manual start`. you application must be authorized to use the `manage box relay` application scope within the developer console in to use this endpoint.
+</Accordion>
+
+<Accordion title="Unassign storage policy">
+Delete a storage policy assignment. deleting a storage policy assignment on a user will have the user inherit the enterprise's default storage policy. there is a rate limit for calling this endpoint of only twice per user in a 24 hour time frame.
+</Accordion>
+
+<Accordion title="Remove comment">
+Permanently deletes a comment.
+</Accordion>
+
+<Accordion title="Update group membership">
+Updates a user's group membership. only admins of this group or users with admin-level permissions will be able to use this api.
+</Accordion>
+
+<Accordion title="Update file request">
+Updates a file request. this can be used to activate or deactivate a file request.
+</Accordion>
+
+<Accordion title="Update group">
+Updates a specific group. only admins of this group or users with admin-level permissions will be able to use this api.
+</Accordion>
+
+<Accordion title="Update retention policy">
+Updates a retention policy.
+</Accordion>
+
+<Accordion title="Permanently remove file">
+Permanently deletes a file that is in the trash. this action cannot be undone.
+</Accordion>
+
+<Accordion title="Remove device pin">
+Deletes an individual device pin.
+</Accordion>
+
+<Accordion title="Update terms of service">
+Updates a specific terms of service.
+</Accordion>
+
+<Accordion title="Unassign task">
+Deletes a specific task assignment.
+</Accordion>
+
+<Accordion title="Update slack integration mapping">
+Updates a [slack integration mapping](https://support.box.com/hc/en-us/articles/4415585987859-box-as-the-content-layer-for-slack). supports updating the box folder id and options. you need admin or co-admin role to use this endpoint.
+</Accordion>
+
+<Accordion title="Update shared link on file">
+Updates a shared link on a file.
+</Accordion>
+
+<Accordion title="Permanently remove folder">
+Permanently deletes a folder that is in the trash. this action cannot be undone.
+</Accordion>
+
+<Accordion title="Update task">
+Updates a task. this can be used to update a task's configuration, or to update its completion state.
+</Accordion>
+
+<Accordion title="Update teams integration mapping">
+Updates a [teams integration mapping](https://support.box.com/hc/en-us/articles/360044681474-using-box-for-teams). supports updating the box folder id and options. you need admin or co-admin role to use this endpoint.
+</Accordion>
+
+<Accordion title="Review files on legal hold policy assignment">
+Get a list of files with current file versions for a legal hold assignment. in some cases you may want to get previous file versions instead. in these cases, use the `get /legal hold policy assignments/:id/file versions on hold` api instead to return any previous versions of a file for this legal hold policy assignment. due to ongoing re-architecture efforts this api might not return all file versions held for this policy id. instead, this api will only return the latest file version held in the newly developed architecture. the `get /file version legal holds` api can be used to fetch current and past versions of files held within the legacy architecture. this endpoint does not support returning any content that is on hold due to a custodian collaborating on a hub. the `get /legal hold policy assignments?policy id=\{id\}` api can be used to find a list of policy assignments for a given policy id.
+</Accordion>
+
+<Accordion title="Update task assignment">
+Updates a task assignment. this endpoint can be used to update the state of a task assigned to a user.
+</Accordion>
+
+<Accordion title="Remove web link">
+Deletes a web link.
+</Accordion>
+
+<Accordion title="Remove domain from list of allowed collaboration domains">
+Removes a domain from the list of domains that have been deemed safe to create collaborations for within the current enterprise.
+</Accordion>
+
+<Accordion title="Update ai agent">
+Updates an ai agent.
+</Accordion>
+
+<Accordion title="Update webhook">
+Updates a webhook.
+</Accordion>
+
+<Accordion title="Update shared link on folder">
+Updates a shared link on a folder.
+</Accordion>
+
+<Accordion title="Update terms of service status for existing user">
+Updates the status for a terms of service for a user.
+</Accordion>
+
+<Accordion title="Upload file">
+Uploads a small file to box. for file sizes over 50mb we recommend using the chunk upload apis. the `attributes` part of the body must come **before** the `file` part. requests that do not follow this format when uploading the file will receive a http `400` error with a `metadata after file contents` error code.
+</Accordion>
+
+<Accordion title="Update web link">
+Updates a web link object.
+</Accordion>
+
+<Accordion title="Remove metadata template">
+Delete a metadata template and its instances. this deletion is permanent and can not be reversed.
+</Accordion>
+
+<Accordion title="Remove email alias">
+Removes an email alias from a user.
+</Accordion>
+
+<Accordion title="Update user">
+Updates a managed or app user in an enterprise. this endpoint is only available to users and applications with the right admin permissions.
+</Accordion>
+
+<Accordion title="Permanently remove web link">
+Permanently deletes a web link that is in the trash. this action cannot be undone.
+</Accordion>
+
+<Accordion title="Upload part of file">
+Uploads a chunk of a file for an upload session. the actual endpoint url is returned by the [`create upload session`](e://post-files-upload-sessions) and [`get upload session`](e://get-files-upload-sessions-id) endpoints.
+</Accordion>
+
+<Accordion title="Remove file version">
+Move a file version to the trash. versions are only tracked for box users with premium accounts.
+</Accordion>
+
+<Accordion title="Remove retention policy assignment">
+Removes a retention policy assignment applied to content.
+</Accordion>
+
+<Accordion title="Request access token">
+Request an access token using either a client-side obtained oauth 2.0 authorization code or a server-side jwt assertion. an access token is a string that enables box to verify that a request belongs to an authorized session. in the normal order of operations you will begin by requesting authentication from the [authorize](#get-authorize) endpoint and box will send you an authorization code. you will then send this code to this endpoint to exchange it for an access token. the returned access token can then be used to to make box api calls.
+</Accordion>
+
+<Accordion title="Preflight check before upload">
+Performs a check to verify that a file will be accepted by box before you upload the entire file.
+</Accordion>
+
+<Accordion title="Upload file version">
+Update a file's content. for file sizes over 50mb we recommend using the chunk upload apis. the `attributes` part of the body must come **before** the `file` part. requests that do not follow this format when uploading the file will receive a http `400` error with a `metadata after file contents` error code.
+</Accordion>
+
+<Accordion title="Update shared link on web link">
+Updates a shared link on a web link.
+</Accordion>
+
+<Accordion title="Resend box sign request">
+Resends a signature request email to all outstanding signers.
+</Accordion>
+
+<Accordion title="Remove group">
+Permanently deletes a group. only users with admin-level permissions will be able to use this api.
+</Accordion>
+
+<Accordion title="Remove shared link from folder">
+Removes a shared link from a folder.
+</Accordion>
+
+<Accordion title="Restore file">
+Restores a file that has been moved to the trash. an optional new parent id can be provided to restore the file to in case the original folder has been deleted.
+</Accordion>
+
+<Accordion title="Restore file version">
+Restores a specific version of a file after it was deleted. don't use this endpoint to restore box notes, as it works with file formats such as pdf, doc, pptx or similar.
+</Accordion>
+
+<Accordion title="Update shield information barrier segment with specified id">
+Updates the shield information barrier segment based on provided id..
+</Accordion>
+
+<Accordion title="Update all box skill cards on file">
+An alternative method that can be used to overwrite and update all box skill metadata cards on a file.
+</Accordion>
+
+<Accordion title="Revoke access token">
+Revoke an active access token, effectively logging a user out that has been previously authenticated.
+</Accordion>
+
+<Accordion title="List users exempt from collaboration domain restrictions">
+Returns a list of users who have been exempt from the collaboration domain restrictions.
+</Accordion>
+
+<Accordion title="Remove shared link from file">
+Removes a shared link from a file.
+</Accordion>
+
+<Accordion title="Promote file version">
+Promote a specific version of a file. if previous versions exist, this method can be used to promote one of the older versions to the top of the version history. this creates a new copy of the old version and puts it at the top of the versions history. the file will have the exact same contents as the older version, with the the same hash digest, `etag`, and name as the original. other properties such as comments do not get updated to their former values. don't use this endpoint to restore box notes, as it works with file formats such as pdf, doc, pptx or similar.
+</Accordion>
+
+<Accordion title="Remove shared link from web link">
+Removes a shared link from a web link.
+</Accordion>
+
+<Accordion title="Remove task">
+Removes a task from a file.
+</Accordion>
+
+<Accordion title="Remove metadata instance from file">
+Deletes a piece of file metadata.
+</Accordion>
+
+<Accordion title="Update collaboration">
+Updates a collaboration. can be used to change the owner of an item, or to accept collaboration invites.
+</Accordion>
+
+<Accordion title="Starts workflow based on request body">
+Initiates a flow with a trigger type of `workflow manual start`. you application must be authorized to use the `manage box relay` application scope within the developer console.
+</Accordion>
+
+<Accordion title="Refresh access token">
+Refresh an access token using its client id, secret, and refresh token.
+</Accordion>
+
+<Accordion title="Remove legal hold policy">
+Delete an existing legal hold policy. this is an asynchronous process. the policy will not be fully deleted yet when the response returns.
+</Accordion>
+
+<Accordion title="Transfer owned folders">
+Transfers ownership of a specific folder (with id 0) from one user to another in the box cloud storage system. this endpoint should be used when you need to change the owner of a user's root folder, effectively transferring all of their content to another user. it's particularly useful in scenarios such as employee offboarding or role transitions within an organization. the operation is irreversible, so it should be used with caution. note that this endpoint specifically targets the folder with id 0, which typically represents a user's root folder in box.
+</Accordion>
+
+<Accordion title="Remove metadata cascade policy">
+Deletes a metadata cascade policy.
+</Accordion>
+
+<Accordion title="Remove classification from file">
+Removes any classifications from a file. this api can also be called by including the enterprise id in the url explicitly, for example `/files/:id//enterprise 12345/securityclassification-6vmvochwuwo`.
+</Accordion>
+
+<Accordion title="Remove user from group">
+Deletes a specific group membership. only admins of this group or users with admin-level permissions will be able to use this api.
+</Accordion>
+
+<Accordion title="Remove upload session">
+Abort an upload session and discard all data uploaded. this cannot be reversed. the actual endpoint url is returned by the [`create upload session`](e://post-files-upload-sessions) and [`get upload session`](e://get-files-upload-sessions-id) endpoints.
+</Accordion>
+
+<Accordion title="Remove box skill cards from file">
+Removes any box skills cards metadata from a file.
+</Accordion>
+
+<Accordion title="Search for content">
+Searches for files, folders, web links, and shared files across the users content or across the entire enterprise.
+</Accordion>
+
+<Accordion title="Query files folders by metadata">
+Create a search using sql-like syntax to return items that match specific metadata. by default, this endpoint returns only the most basic info about the items for which the query matches. to get additional fields for each item, including any of the metadata, use the `fields` attribute in the query.
+</Accordion>
+

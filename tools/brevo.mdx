@@ -1,0 +1,888 @@
+Brevo (formerly Sendinblue) delivers email marketing, SMS campaigns, and marketing automation solutions, empowering businesses to nurture leads, engage audiences, and drive conversions
+
+<Accordion title="Activate the ecommerce app">
+Getting access to brevo ecommerce.
+</Accordion>
+
+<Accordion title="Add existing contacts to a list">
+This endpoint allows adding existing contacts to a specific list by its id. users can add contacts through their email addresses or ids, with a max limit of 150 per request. successful additions and failures are reported in the response.
+</Accordion>
+
+<Accordion title="Add a new domain to the list of blocked domains">
+Blocks a new domain in order to avoid messages being sent to the same
+</Accordion>
+
+<Accordion title="Add email and or sms credits to a specific child account">
+This post endpoint lets resellers add email/sms credits to a child account using 'childidentifier'. it needs json input for the credit amount. successful requests update both child and reseller credit balances, with error handling via specific codes.
+</Accordion>
+
+<Accordion title="Brevo Aggregate Email Activity">
+This endpoint will show the aggregated stats for past 90 days by default if `startdate` and `enddate` or `days` is not passed. the date range can not exceed 90 days
+</Accordion>
+
+<Accordion title="Authenticate a domain">
+The put endpoint '/senders/domains/\{domainname\}/authenticate' authenticates domain names, returning success with details or errors for bad requests or non-existent domains.
+</Accordion>
+
+<Accordion title="Associate a dedicated ip to the child">
+To assign a dedicated ip to a reseller's child account, send a post request to `/reseller/children/\{childidentifier\}/ips/associate` with the child's id and ip address. possible responses: 204 (success), 400 (bad request), 404 (child not found).
+</Accordion>
+
+<Accordion title="Brevo Check Reseller Child Account Creation Status">
+This endpoint allows resellers to check if a child account has been successfully created by providing the child's identifier. it returns a boolean status and handles errors such as bad requests or unauthorized access.
+</Accordion>
+
+<Accordion title="Check user permission">
+This endpoint fetches permissions for a user based on email, detailing their status and privileges (e.g., manage email campaigns) or returns errors for bad requests.
+</Accordion>
+
+<Accordion title="Check admin user permissions">
+This endpoint checks an admin's permissions via email, supporting a get request for detailed user status, group associations, and feature access specifics, including api keys, plans, and management of users and apps.
+</Accordion>
+
+<Accordion title="Create and send a whatsapp campaign">
+Create and manage whatsapp campaigns by specifying details like name, template id, schedule, and recipients. essential fields include template id and recipient info. it generates success confirmation or detailed errors.
+</Accordion>
+
+<Accordion title="Create an event">
+Create an event to track a contact's interaction.
+</Accordion>
+
+<Accordion title="Create a deal">
+Endpoint '/crm/deals' allows for deal creation with required name & optional attributes like owner, amount, pipeline, & stage. supports json requests & returns the created deal id with 201 or 400 for invalid data.
+</Accordion>
+
+<Accordion title="Creates an sms campaign">
+To create an sms campaign, define details like name, sender, message, recipients, and schedule. messages must comply with length limits and have opt-out info. success or error codes indicate campaign status.
+</Accordion>
+
+<Accordion title="Create a domain for a child account">
+Endpoint allows resellers to create a domain for a child account by specifying the child's identifier. it requires a json body with the domain. responses include domain added, bad request, unauthorized reseller, and child not found scenarios.
+</Accordion>
+
+<Accordion title="Create categories in batch">
+This endpoint enables batch creation and optional update of e-commerce categories via json, requiring unique ids for each. it reports counts of new and updated categories or provides error details on failures.
+</Accordion>
+
+<Accordion title="Create an api key for a sub account">
+This endpoint will generate an api v3 key for a sub account
+</Accordion>
+
+<Accordion title="Create an email campaign">
+This endpoint allows creation of email campaigns with json, detailing name, sender, and content. it requires essential fields, supports html and a/b testing. success yields a 201 status and campaign id; failures return a 400 error.
+</Accordion>
+
+<Accordion title="Delete an external feed">
+This endpoint will delete an external feed.
+</Accordion>
+
+<Accordion title="Delete a group">
+This endpoint allows you to delete a group of sub-organizations. when a group is deleted, the sub-organizations are no longer part of this group. the users associated with the group are no longer associated with the group once deleted.
+</Accordion>
+
+<Accordion title="Delete a webhook">
+Delete an existing webhook by its id. returns "webhook deleted" on success or detailed error messages for failures like invalid parameters, permissions issues, and more.
+</Accordion>
+
+<Accordion title="Creates a reseller child">
+This endpoint creates reseller child accounts requiring company info, email, and password in json. it returns a 201 status, authkey, and id on success, or 400/403 errors for bad requests or insufficient permissions.
+</Accordion>
+
+<Accordion title="Create contact attribute">
+This endpoint enables creating contact attributes in various categories by specifying an attribute name and category, accepting json objects with attribute details. success returns a 201 status; failures return an error message.
+</Accordion>
+
+<Accordion title="Delete a folder and all its lists">
+This endpoint deletes a contact folder and its lists using a folderid. success results in a 204 status, while errors return 400 or 404 with details.
+</Accordion>
+
+<Accordion title="Create an external feed">
+This endpoint will create an external feed.
+</Accordion>
+
+<Accordion title="Delete an inactive email template">
+Delete an inactive email template by its id. supports error responses for bad requests and cases where the template id is not found.
+</Accordion>
+
+<Accordion title="Create an email template">
+The endpoint enables creating custom transactional email templates with details like sender, subject, content, etc. successful creations yield a 201 status and template id; failures return errors and codes.
+</Accordion>
+
+<Accordion title="Create a folder">
+Endpoint "/contacts/folders" allows creating a contact folder. send a post request with the folder's name in json format. on success, returns a 201 status with the created folder's id. possible errors include bad requests and specific failure codes.
+</Accordion>
+
+<Accordion title="Export an sms campaign s recipients">
+It returns the background process id which on completion calls the notify url that you have set in the input.
+</Accordion>
+
+<Accordion title="Export all webhook events">
+This endpoint will submit a request to get the history of webhooks in the csv file. the link to download the csv file will be sent to the webhook that was provided in the notifyurl.
+</Accordion>
+
+<Accordion title="Download a file">
+This endpoint allows downloading a file by id. specify `id` in the path to request a file. successful requests return a temporary link to download the file, valid for 5 minutes. responses may include errors for invalid data or if the file is not found.
+</Accordion>
+
+<Accordion title="Create contact via doi double opt in flow">
+This endpoint enables the creation of a contact through the double opt-in (doi) process. it requires the contact's email, template id, redirection url, and list ids for inclusion. responses indicate contact creation, update, or errors.
+</Accordion>
+
+<Accordion title="Delete a whatsapp campaign">
+Deletes a specified whatsapp campaign by campaignid. on success, returns a 204 status with no content. errors lead to a 400 or 404 response, detailing the issue with error codes and messages.
+</Accordion>
+
+<Accordion title="Enable disable sub account application s">
+Api endpoints for the corporate owner to enable/disable applications on the sub-account
+</Accordion>
+
+<Accordion title="Delete hardbounces">
+Delete hardbounces. to use carefully (e.g. in case of temporary isp failures)
+</Accordion>
+
+<Accordion title="Export contacts">
+It returns the background process id which on completion calls the notify url that you have set in the input. file will be available in csv.
+</Accordion>
+
+<Accordion title="Create a group of sub accounts">
+This endpoint allows to create a group of sub-accounts
+</Accordion>
+
+<Accordion title="Get all folders">
+This api endpoint fetches contact folders with pagination and optional sorting. it supports page size, index, and sorting direction, defaulting values if unspecified. it returns folder id, name, and contact counts, handling errors like bad requests.
+</Accordion>
+
+<Accordion title="Delete an sms campaign">
+This endpoint allows for the deletion of an sms campaign by campaignid. it responds with a 204 code on successful deletion, and error codes (400 or 404) for failures like invalid request or campaign id not found.
+</Accordion>
+
+<Accordion title="Generate sso token to access sub account">
+This endpoint generates an sso token to authenticate and access a sub-account of the master using the account endpoint https://account-app.brevo.com/account/login/sub-account/sso/[token], where [token] will be replaced by the actual token.
+</Accordion>
+
+<Accordion title="Get all deals">
+The `get /crm/deals` endpoint fetches a list of deals with optional filters (name, company, contact ids), supporting pagination (`offset`, `limit`) and sort order, returning deal details and linked entities.
+</Accordion>
+
+<Accordion title="Generate sso token to access admin account">
+This endpoint generates an sso token to authenticate and access the admin account using the endpoint https://account-app.brevo.com/account/login/corporate/sso/[token], where [token] will be replaced by the actual token.
+</Accordion>
+
+<Accordion title="Brevo Filter Transactional Emails List">
+This endpoint will show the list of emails for past 30 days by default. to retrieve emails before that time, please pass startdate and enddate in query filters.
+</Accordion>
+
+<Accordion title="Get all companies">
+This endpoint retrieves a list of companies with optional filters, supports pagination, sorting, and limits, includes company details in responses, and provides error specifics.
+</Accordion>
+
+<Accordion title="Brevo Delete Reseller Child By Id">
+Delete a reseller's child account using their identifier. requires the child's id or auth key. success or failure responses include status codes 204 (deleted), 400 (bad request), 403 (unauthorized), or 404 (not found).
+</Accordion>
+
+<Accordion title="Create a company">
+This api endpoint enables creating a company with details (name, attributes, country code) in json. it returns a unique id upon success, and specific error codes and messages for issues like invalid data.
+</Accordion>
+
+<Accordion title="Create a list">
+The '/contacts/lists' post endpoint creates a contact list in a folder by its id and list name, returning the new list's id on success or error codes and messages on failure.
+</Accordion>
+
+<Accordion title="Export the recipients of an email campaign">
+Export email campaign recipients by post to '/emailcampaigns/\{campaignid\}/exportrecipients' with the id and recipient type (e.g., 'openers', 'clickers') in the body. an optional webhook url for notifications can be included.
+</Accordion>
+
+<Accordion title="Get all sender domains for a specific child account">
+Fetch all verified sender domains for a specific reseller's child account by providing the child's identifier. returns domain status and examples of successful calls. handles errors for bad requests, unauthorized access, and resource not found.
+</Accordion>
+
+<Accordion title="Delete an smtp transactional log">
+This endpoint deletes smtp logs using a message id or email, confirms with a 204 status, and gives error details for issues like bad requests or missing message ids.
+</Accordion>
+
+<Accordion title="Get all pipelines">
+This endpoint (`/crm/pipeline/details/all`) retrieves all pipeline details, including names, ids, and stages. it returns an array of pipeline objects on success or error codes for invalid requests.
+</Accordion>
+
+<Accordion title="Create coupons for a coupon collection">
+The '/coupons' post endpoint enables coupon creation in collections, requiring 'collectionid' (uuidv4) and 'coupons' array. it returns 204, 400, 401, 404 statuses based on the request's nature.
+</Accordion>
+
+<Accordion title="Delete a list">
+Deletes a contact list by its id. returns a 204 response if successful, or errors such as 400 (bad request) and 404 (list id not found) with detailed codes and messages for failure reasons.
+</Accordion>
+
+<Accordion title="Get all task types">
+This endpoint retrieves all task types, returning their ids and titles in json format. it's tagged under "tasks" with a successful response indicating the detailed task types available.
+</Accordion>
+
+<Accordion title="Create a new domain">
+This api endpoint (`post /senders/domains`) adds a new domain, requiring a domain name in json format in the body. it returns the domain id, name, a success message, and dns verification records upon success or error messages and codes if it fails.
+</Accordion>
+
+<Accordion title="Get all notes">
+This endpoint retrieves crm notes, supporting filters (entity type, ids, date range), pagination, and sorting by creation date. it returns note content, ids, author, timestamps, and issues a 400 error for invalid queries.
+</Accordion>
+
+<Accordion title="Get all the dedicated ips for your account">
+Retrieve a list of dedicated ip addresses for your account, including ip details such as id, ip address, status (active/inactive), and associated domain.
+</Accordion>
+
+<Accordion title="Get all the dedicated ips for a sender">
+This endpoint fetches a list of dedicated ips for a sender using their senderid, detailing each ip's address, domain, and weight. it handles success, bad requests, and unfound sender ids.
+</Accordion>
+
+<Accordion title="Create a contact">
+This endpoint allows creating or updating a contact with various options like email, sms settings, and custom attributes. successful creation returns the contact id, while updates and errors have specific responses.
+</Accordion>
+
+<Accordion title="Get all tasks">
+This endpoint fetches a filtered task list based on type, status, assignee, contacts, deals, and company ids within a date range. it offers pagination, sorting, and outputs tasks' details including ids, names, and linked entities.
+</Accordion>
+
+<Accordion title="Get all files">
+This endpoint retrieves files filtered by entity types, ids, dates, and supports pagination and sorting. it filters by companies, deals, contacts, etc., offering details like name and size. errors have codes and messages for invalid requests.
+</Accordion>
+
+<Accordion title="Create a new sender">
+The post `/senders` endpoint creates new senders with name, email (requires verification), and optional dedicated ips (with domain and weight). returns sender id, spf, dkim statuses, or error codes/messages.
+</Accordion>
+
+<Accordion title="Get all the contacts">
+This endpoint fetches contacts with pagination and supports filtering by creation or modification dates, and sorting. parameters: limit, offset, modifiedsince, createdsince, sort, segmentid, listids. returns contact details and count.
+</Accordion>
+
+<Accordion title="Delete scheduled emails by batchid or messageid">
+Delete scheduled batch of emails by batchid or single scheduled email by messageid
+</Accordion>
+
+<Accordion title="Delete a company">
+Delete a company by id. requires the company id in the path. success results in a 204 status, while errors return 400 (invalid data) or 404 (not found) with detailed error messages.
+</Accordion>
+
+<Accordion title="Get all your sms activity unaggregated events">
+This endpoint retrieves detailed sms event stats, allowing for pagination, date range, and phone number/event type/tag filtering. it includes specifics like message id and bounce reasons, with error handling.
+</Accordion>
+
+<Accordion title="Delete a message sent by an agent">
+Only agents’ messages can be deleted.
+</Accordion>
+
+<Accordion title="Create orders in batch">
+Create multiple orders at one time instead of one order at a time
+</Accordion>
+
+<Accordion title="Get all your coupon collections">
+The `/couponcollections` endpoint provides access to all coupon collections, supporting pagination, sorting by creation date, and includes important details like id, name, default coupon, creation and expiry dates, and coupon counts.
+</Accordion>
+
+<Accordion title="Fetch all events history for one particular received email">
+This endpoint will show the list of all events history for one particular received email.
+</Accordion>
+
+<Accordion title="Get all the lists">
+The endpoint fetches all contact lists, supporting pagination (via `limit` and `offset`), sorting (by creation time), and filtering. it returns details like ids, names, subscriber counts, and folder ids.
+</Accordion>
+
+<Accordion title="Get all the segments">
+The get endpoint '/contacts/segments' retrieves segments, allowing filtering, pagination via 'limit' and 'offset', and sorting with 'sort'. it returns listings including id, name, category, and last update time.
+</Accordion>
+
+<Accordion title="Get all webhooks">
+Retrieve all webhooks via a get request to the `/webhooks` endpoint, with filter and sort options by type and date. the response includes description, url, id, events, creation/modification dates, and details on batching, authentication, and headers.
+</Accordion>
+
+<Accordion title="Create a coupon collection">
+Create a coupon collection by sending json with 'name' and 'defaultcoupon'. success returns the new collection's uuid. errors detailed for bad requests and unauthorized access.
+</Accordion>
+
+<Accordion title="Create products in batch">
+The `/products/batch` endpoint allows for batch creation and updating of products in an ecommerce system. it accepts a json request body detailing product information, such as id, name, and price. responses include counts of created and updated products.
+</Accordion>
+
+<Accordion title="Fetch all external feeds">
+This endpoint can fetch all created external feeds.
+</Accordion>
+
+<Accordion title="Delete sub account from group">
+This endpoint allows you to remove a sub-organization from a group.
+</Accordion>
+
+<Accordion title="Get an automated message">
+This endpoint fetches an automated message by id, detailing its id, type, text, sender, and creation time, and includes error codes for invalid data or not found items.
+</Accordion>
+
+<Accordion title="Create a new sub account under a master account">
+This endpoint will create a new sub-account under a master account
+</Accordion>
+
+<Accordion title="Get all your whatsapp activity unaggregated events">
+This endpoint will show the unaggregated statistics for whatsapp activity (30 days by default if `startdate` and `enddate` or `days` is not passed. the date range can not exceed 90 days)
+</Accordion>
+
+<Accordion title="Get all your transactional email activity unaggregated events">
+This endpoint will show the aggregated stats for past 30 days by default if `startdate` and `enddate` or `days` is not passed. the date range can not exceed 90 days
+</Accordion>
+
+<Accordion title="Get an email campaign report">
+Retrieve comprehensive reports for email campaigns by supplying the campaign id and optional stat filters, covering everything from global stats and link analytics to recipient interactions.
+</Accordion>
+
+<Accordion title="Get an sms campaign">
+This endpoint provides detailed data on an sms campaign, including content, status, schedule, sender, dates, recipient data, and delivery statistics, with error handling for invalid requests.
+</Accordion>
+
+<Accordion title="Delete a note">
+Endpoint `/crm/notes/\{id\}` allows deleting a specific note by its id. it returns a 204 status code when successful, or a 400/404 with error details if the request fails. essential for managing crm notes efficiently.
+</Accordion>
+
+<Accordion title="Get an a b test email campaign results">
+Obtain winning version of an a/b test email campaign
+</Accordion>
+
+<Accordion title="Get a category details">
+This ecommerce endpoint retrieves details of a specific category by id, including its name, creation and modification timestamps, and url. responses include successful details retrieval, bad request errors, and not found errors for invalid ids.
+</Accordion>
+
+<Accordion title="Delete a contact">
+Delete a contact using an id or email via 'identifier.' successful deletions return 204; failures may yield 400, 404, or 405 errors if attempting to delete a registered email.
+</Accordion>
+
+<Accordion title="Get an external feed by uuid">
+This endpoint will update an external feed.
+</Accordion>
+
+<Accordion title="Get a company">
+Retrieve company details by id. provides company attributes, linked contacts & deals. errors for invalid id or missing company.
+</Accordion>
+
+<Accordion title="Fetch scheduled emails by batchid or messageid">
+Fetch scheduled batch of emails by batchid or single scheduled email by messageid (can retrieve data upto 30 days old)
+</Accordion>
+
+<Accordion title="Get a child account s details">
+This endpoint enables resellers to fetch child account details using an auth key or id, offering data on company info, credits, email/sms usage, and tech specifics such as ips and api keys. it also details responses for invalid or unauthorized requests.
+</Accordion>
+
+<Accordion title="Get a contact s details">
+This endpoint provides the last 90 days' contact stats by default. for older data, use the get contact campaign stats endpoint with specific date ranges. more info: https://developers.brevo.com/reference/contacts-7#getcontactstats
+</Accordion>
+
+<Accordion title="Get a coupon collection by id">
+Fetch a specific coupon collection's details by id, including name, creation date, and coupon metrics. returns errors for bad requests, unauthorized access, or if not found.
+</Accordion>
+
+<Accordion title="Dissociate a dedicated ip to the child">
+This endpoint lets resellers remove a dedicated ip from a child account by providing the child's identifier and the ip address. a successful removal returns a 204 status, with failures giving 400 or 404 errors based on the issue.
+</Accordion>
+
+<Accordion title="Delete a contact from a list">
+This endpoint enables users to delete specific, a batch, or all contacts from a list using `listid`. contacts can be specified by emails, ids, or selecting `all`. the response details successes, failures, and a process id for batch deletions.
+</Accordion>
+
+<Accordion title="Create update a category">
+This endpoint facilitates the creation or update of ecommerce categories, requiring json details like id for updates, and name for creation. creation returns status 201 with the category's id; updates return 204. errors give a 400 status.
+</Accordion>
+
+<Accordion title="Create a note">
+This endpoint enables users to create notes in the crm with text and linked ids (contact, deal, company), returning the note's id or errors for invalid inputs/formats.
+</Accordion>
+
+<Accordion title="Delete a domain">
+Deletes a specified domain from the system. requires the domain name in the path. responses include success (200 ok, domain deleted), bad request (400, with various error codes), and not found (404, domain does not exist).
+</Accordion>
+
+<Accordion title="Delete a sender">
+This api endpoint deletes a sender by id, requiring an integer id. successful deletions return a 204 code, while errors return 400 with details and 404 if the id is not found.
+</Accordion>
+
+<Accordion title="Create a whatsapp template">
+This endpoint enables whatsapp campaign template creation, requiring `name`, `language`, `category`, and `bodytext`. `mediaurl` and `headertext` are optional. success returns a 201 status and template id; failures return error details.
+</Accordion>
+
+<Accordion title="Delete a file">
+This endpoint allows for the deletion of a specific file by id. on success, it returns a 204 status. errors related to invalid data or file not found are handled with 400 and 404 statuses, respectively, detailing the nature of the failure.
+</Accordion>
+
+<Accordion title="Delete a task">
+This endpoint deletes a specified task by its id. success returns 204 with no content. errors yield a 400 for invalid requests, detailing the issue, or a 404 if the task id isn't found, with specific error messages and codes provided for clarity.
+</Accordion>
+
+<Accordion title="Delete a sub account">
+Endpoint `/corporate/subaccount/\{id\}` allows for deletion of a specified sub-account by id. it returns `204` if successful, `400` for bad requests (e.g., invalid parameters), and `404` if the sub-account is not found.
+</Accordion>
+
+<Accordion title="Delete a deal">
+This endpoint allows for the deletion of a specified deal by its id. upon successful deletion, a 204 status is returned. errors are detailed with specific codes and messages for issues like invalid data (400) or missing ids (404).
+</Accordion>
+
+<Accordion title="Create a webhook">
+The "/webhooks" endpoint enables webhook creation via a json payload specifying the events, url, and optional settings (description, batch mode, auth, headers, type). it returns the webhook's id upon success, and detailed error messages for bad requests.
+</Accordion>
+
+<Accordion title="Delete an automated message">
+This endpoint deletes an automated message by its id, responds with 204 if successful, and provides error codes 400 or 404 with details if it fails.
+</Accordion>
+
+<Accordion title="Create update a product">
+This endpoint facilitates creating or updating ecommerce products, allowing post of details like id and price. it returns 201 for creation (including product id) or 204 for updates, and a 400 error for invalid requests.
+</Accordion>
+
+<Accordion title="Create a task">
+This endpoint enables users to create tasks in the crm, requiring task name, type id, and due date, with options for additional details. successful creation yields a unique task id.
+</Accordion>
+
+<Accordion title="Delete an attribute">
+Delete a specific attribute from a contact by specifying its category and name. categories include normal, transactional, etc. successful deletion returns a 204 status. errors return relevant codes such as 'bad request' or 'attribute not found'.
+</Accordion>
+
+<Accordion title="Delete an email campaign">
+This endpoint allows for the deletion of an email campaign by providing the campaign's id. on success, it confirms the deletion without content. errors return detailed messages for issues like bad requests or if the campaign id is not found.
+</Accordion>
+
+<Accordion title="Get a message">
+Fetches a specific message in a conversation by its id. supports detailed object including message id, type (agent/visitor), text, agent and visitor info, timestamps, and file attachments if any. errors for invalid requests or missing items are detailed.
+</Accordion>
+
+<Accordion title="Get a list s details">
+This get endpoint fetches details about a contact list using its listid, including id, name, subscribers, blacklisted contacts, and email campaign stats with optional date range. it returns list details, error messages, or a 404 error if not found.
+</Accordion>
+
+<Accordion title="Get a group details">
+This endpoint allows you to retrieve a specific group’s information such as the list of sub-organizations and the user associated with the group.
+</Accordion>
+
+<Accordion title="Get a webhook details">
+Retrieve details of a specific webhook by its id, including events it's configured for, type (marketing/transactional), creation/modification dates, url, description, and more. supports error handling for bad requests and unfound ids.
+</Accordion>
+
+<Accordion title="Get a deal">
+This get endpoint fetches details for a deal using its id, including attributes and linked contacts/companies. it requires an 'id' parameter and returns status codes 200, 400 for invalid ids, and 404 for missing deals.
+</Accordion>
+
+<Accordion title="Get pipeline stages">
+This endpoint is deprecated. prefer /crm/pipeline/details/\{pipelineid\} instead.
+</Accordion>
+
+<Accordion title="Get file details">
+This endpoint fetches detailed file information by id, including name, authorid, and more. responses vary from successful retrieval (200) to invalid data (400) and not found (404).
+</Accordion>
+
+<Accordion title="Get company attributes">
+This endpoint retrieves a list of company attributes, including names, labels, types, options, and required status in json format. suitable for understanding company data structure.
+</Accordion>
+
+<Accordion title="Get a note">
+The `/crm/notes/\{id\}` endpoint supports get requests to fetch details of a specific note by id, including text, linked contacts, deals, author information, and timestamps, with responses for successful retrieval, invalid data, or note not found.
+</Accordion>
+
+<Accordion title="Get sub account details">
+This endpoint will provide the details for the specified sub-account company
+</Accordion>
+
+<Accordion title="Get lists in a folder">
+This openapi endpoint fetches lists from a contact folder with options for limit, offset, and sort. it details list id, name, subscriber count, supports sorting, pagination, and flags errors like bad requests or missing folders.
+</Accordion>
+
+<Accordion title="Get contacts in a list">
+This endpoint fetches contacts from a specific list with filter, pagination, and sorting options. it supports detailed queries, including attributes and status, and handles errors like bad requests and missing list ids.
+</Accordion>
+
+<Accordion title="Get a shared template url">
+Get a unique url to share & import an email template from one brevo account to another.
+</Accordion>
+
+<Accordion title="Get email campaigns statistics for a contact">
+Fetches email campaign stats for a contact by email/id with optional date filters (max 90 days), including sent messages, deliveries, opens, clicks, bounces, complaints, and unsubscribes.
+</Accordion>
+
+<Accordion title="Get order details">
+Get all the orders
+</Accordion>
+
+<Accordion title="Get a pipeline">
+Access deal pipeline details by id. fetch the name, id, and stages of a specific pipeline to manage deals effectively. returns data in json format. error codes included for invalid requests.
+</Accordion>
+
+<Accordion title="Get session token to access brevo sso">
+It returns a session [token] which will remain valid for a short period of time. a child account will be able to access a white-labeled section by using the following url pattern =&gt; https:/email.mydomain.com/login/sso?token=[token]
+</Accordion>
+
+<Accordion title="Get the details of requested master account">
+This endpoint will provide the details of the master account.
+</Accordion>
+
+<Accordion title="Get deal attributes">
+This endpoint (`/crm/attributes/deals`) fetches deal attributes, returning an array of attribute details including internal name, label, type, options, and if required.
+</Accordion>
+
+<Accordion title="Get the list of all your senders">
+The "/senders" [get] endpoint fetches a list of account senders, allowing ip/domain filtering. it reveals sender id, name, email, status, and ips, supports dedicated ip filters, and reports success or bad request errors.
+</Accordion>
+
+<Accordion title="Get the list of all admin users">
+This endpoint allows you to list all admin users of your admin account
+</Accordion>
+
+<Accordion title="Get the list of all the events for the received emails">
+This endpoint will show the list of all the events for the received emails.
+</Accordion>
+
+<Accordion title="Get the list of groups">
+This endpoint allows you to list all groups created on your admin account.
+</Accordion>
+
+<Accordion title="Get the list of blocked or unsubscribed transactional contacts">
+Retrieve a list of contacts blocked or unsubscribed from transactional emails within a specified date range. supports pagination, sender filtering, and sorting.
+</Accordion>
+
+<Accordion title="Get the personalized content of a sent transactional email">
+Fetch the content of a sent transactional email using its unique id. this includes email details like recipient, subject, send date, events, body content, and attachment count.
+</Accordion>
+
+<Accordion title="Get the list of all your domains">
+The `/senders/domains` endpoint provides a complete list of domains linked to your account, detailing each domain's id, name, auth status, verification status, and any dedicated ips, along with property details and error information for invalid requests.
+</Accordion>
+
+<Accordion title="List all attributes">
+This get endpoint at '/contacts/attributes' lists all available contact attributes in your account. it responds with attribute details including name, category (normal, transactional, etc.), type (text, date, etc.), and enumeration for category types.
+</Accordion>
+
+<Accordion title="Link and unlink company with contact and deal">
+This endpoint allows for updating a company's links to contacts and deals via provided ids, requiring a json with id arrays. successful updates return code 204, and validation errors yield a 400 status.
+</Accordion>
+
+<Accordion title="Import contacts">
+It returns the background process id which on completion calls the notify url that you have set in the input. **note**: - any contact attribute that doesn't exist in your account will be ignored at import end.
+</Accordion>
+
+<Accordion title="Get the list of all the sub accounts of the master account">
+This endpoint will provide the list all the sub-accounts of the master account.
+</Accordion>
+
+<Accordion title="Get the list of all children accounts">
+The `/reseller/children` endpoint enables resellers to view child account info, supporting pagination via `limit` and `offset`. it shows details like name, email, credits, and handles errors like unauthorized access.
+</Accordion>
+
+<Accordion title="Get the list of email templates">
+This endpoint retrieves a list of email templates, allowing filtering by status, pagination through limit and offset parameters, and sorting by creation order. supports querying active/inactive templates and customization on returned results.
+</Accordion>
+
+<Accordion title="Get a whatsapp campaign">
+This endpoint fetches details of a whatsapp campaign by id, including its name, status, sender, recipients, template, and dates, plus error messages for invalid or absent campaigns.
+</Accordion>
+
+<Accordion title="Link and unlink a deal with contacts and companies">
+This endpoint patch `/crm/deals/link-unlink/\{id\}` links/unlinks deals with contacts/companies by id. it requires a deal id and json with contact/company ids. it returns a 204 status for success or 400 for invalid data.
+</Accordion>
+
+<Accordion title="Revoke an admin user">
+This endpoint allows to revoke/remove an invited member of your admin account
+</Accordion>
+
+<Accordion title="Get the list of all your users">
+This endpoint fetches invited organization users, detailing their email, ownership, activation status, and feature access (e.g., marketing, conversations, crm). responses can be successful user data or a 400 error for bad requests.
+</Accordion>
+
+<Accordion title="Get user activity logs">
+This endpoint fetches organization user activity logs, allows date range filtering, and supports pagination. it returns activities with details like type, time, email, ip, and browser info.
+</Accordion>
+
+<Accordion title="Returns the information for all your created sms campaigns">
+This endpoint delivers detailed sms campaign data, including the ability to filter by status, date, and sort. it supports queries for various parameters, offering insights into content, scheduling, sender, recipients, and performance metrics.
+</Accordion>
+
+<Accordion title="Get a product s details">
+This ecommerce endpoint allows fetching product details by id, including its name, dates, images, and metadata. it supports get requests, and provides error codes and messages for issues like bad requests or missing product ids.
+</Accordion>
+
+<Accordion title="Return the informations for a process">
+Retrieve process details by id, including its name, status, and export url upon completion. supports querying with the process id and returns response codes for success (200), bad request (400), or not found (404).
+</Accordion>
+
+<Accordion title="Return all your products">
+This ecommerce api allows for detailed product searches with filters (e.g., price, categories), and supports pagination. it offers thorough product information, including images and metadata.
+</Accordion>
+
+<Accordion title="Send invitation to an admin user">
+This endpoint invites members to manage the admin account. it details permissions for features like my plan, api (none), user management, and app management (not in entv2), with a note on conditional access based on the 'all features access' flag.
+</Accordion>
+
+<Accordion title="Send a message as an agent">
+This endpoint enables agents to send messages in `conversations` using a json with `visitorid` and `text` required, and optional fields like `agentid`. success returns message details; failures return error codes.
+</Accordion>
+
+<Accordion title="Get your account information plan and credits details">
+This endpoint retrieves detailed account information, including user's personal details (name, email, company, address), plan specifics, credits, transactional email account status, and marketing automation platform activation.
+</Accordion>
+
+<Accordion title="Revoke user permission">
+The put endpoint '/organization/user/invitation/revoke/\{email\}' revokes user permissions via email, returning status and credit notes on success, and manages unauthorized access with error codes and messages.
+</Accordion>
+
+<Accordion title="Returns the template information">
+Fetch email template details by templateid for transactional emails, including name, subject, status, content, and more. supports fetching by template id with a path parameter. responses include success and error cases.
+</Accordion>
+
+<Accordion title="Get the list of blocked domains">
+Get the list of blocked domains
+</Accordion>
+
+<Accordion title="Send a template to your test list">
+The `/smtp/templates/\{templateid\}/sendtest` endpoint sends a template email to a test list or specified addresses, with `templateid` and optional `emailto`. max 50 emails/day. responses: 204 (success), 400 (bad request), 404 (id not found).
+</Accordion>
+
+<Accordion title="Send your sms campaign immediately">
+This endpoint enables sending an sms campaign instantly via post to '/smscampaigns/\{campaignid\}/sendnow', needing a campaignid. it returns 204 for success, and errors 400, 402, or 404 for various failures.
+</Accordion>
+
+<Accordion title="Send sms message to a mobile number">
+The '/transactionalsms/smd' post endpoint sends sms (transactional/marketing), requiring sender, recipient, content, and options. success leads to a 201 status, messageid, credits used; failures return error codes/messages.
+</Accordion>
+
+<Accordion title="Managing the status of the order">
+Manages the transactional status of the order
+</Accordion>
+
+<Accordion title="Send invitation to user">
+Brevo provides email, calls, and automations with customizable access levels. permissions vary by plan, with `all features access` for complete control. selection of features and permissions is crucial when adding users.
+</Accordion>
+
+<Accordion title="Send the report of a campaign">
+A pdf will be sent to the specified email addresses
+</Accordion>
+
+<Accordion title="Send an automated message to a visitor">
+Example of automated messages: order status, announce new features in your web app, etc.
+</Accordion>
+
+<Accordion title="Unblock an existing domain from the list of blocked domains">
+Unblocks an existing domain from the list of blocked domains
+</Accordion>
+
+<Accordion title="Update an email campaign status">
+Update email campaign status (suspended, archive, etc.) using its id. requires id in path, new status in json. successful updates return 204, 400 for bad requests, 404 if id not found.
+</Accordion>
+
+<Accordion title="Sets agent s status to online for 2 3 minutes">
+We recommend pinging this endpoint every minute for as long as the agent has to be considered online.
+</Accordion>
+
+<Accordion title="Get your sms activity aggregated over a period of time">
+Fetch aggregated sms activity reports over a specified period using start/end dates or a number of past days. includes metrics like delivered, bounced, and replied sms. filters available for specific tags.
+</Accordion>
+
+<Accordion title="Send an email campaign immediately based on campaignid">
+This endpoint sends an email campaign instantly via post, requiring a campaignid in the path. responses include success (204), invalid request errors (400), insufficient credits (402), and invalid campaign id errors (404).
+</Accordion>
+
+<Accordion title="Send a test sms campaign">
+Endpoint allows sending a test sms for a specific campaign by id. requires the recipient's mobile number in json format. responds with success or error detailing issues like invalid parameters or campaign id not found.
+</Accordion>
+
+<Accordion title="Send your whatsapp template for approval">
+This endpoint sends whatsapp campaign templates for approval, requiring a template id. a successful submission returns a 200 status; errors return specific codes and messages for issues like bad requests or unauthorized access.
+</Accordion>
+
+<Accordion title="Update an external feed">
+This endpoint will update an external feed.
+</Accordion>
+
+<Accordion title="Update an email template">
+Update a transactional email template by specifying a template id and providing updated details such as tag, sender info, template name, content, and more. supports modifying template status and attaching files via url.
+</Accordion>
+
+<Accordion title="Update a campaign s status">
+Endpoint updates sms campaign status via put; include campaign id, desired status in body. supports various statuses; successful updates return 204, errors may return 400 or 404.
+</Accordion>
+
+<Accordion title="Unblock or resubscribe a transactional contact">
+To unblock a transactional email contact, send a delete request to `/smtp/blockedcontacts/\{email\}` with their email in the url. possible responses are 204 (unblocked), 400 (bad request), and 404 (email not found).
+</Accordion>
+
+<Accordion title="Update a company">
+This endpoint allows for the partial update of a company's details by its id. it requires a json body with company details, such as name and attributes, and responds with updated company information. errors are returned for invalid data or not found ids.
+</Accordion>
+
+<Accordion title="Update an email campaign">
+This endpoint updates email campaign details, including tags, content, schedule, and sender info. features a/b testing, ip warmup, and metrics. it also handles errors for invalid inputs or missing ids.
+</Accordion>
+
+<Accordion title="Send a transactional email">
+This endpoint lets users send or schedule transactional emails with customizable sender details, recipients, content, attachments, and headers. it supports tags and templates for management and personalization.
+</Accordion>
+
+<Accordion title="Update an automated message">
+Update a message by its id by sending the new text in json format. successful updates show the updated message details; failures return error codes and messages.
+</Accordion>
+
+<Accordion title="Remove email and or sms credits from a specific child account">
+This endpoint enables resellers to deduct email/sms credits from a child account using `childidentifier`. requests must specify credit amounts. responses may confirm removal or report errors such as unauthorized access or account not found.
+</Accordion>
+
+<Accordion title="Update a group of sub accounts">
+This endpoint allows to update a group of sub-accounts
+</Accordion>
+
+<Accordion title="Update a folder">
+The put endpoint `/contacts/folders/\{folderid\}` updates a contact folder's name using its id and a json payload. it returns 204 on success, 400 for bad requests, and 404 if the id is not found.
+</Accordion>
+
+<Accordion title="Update a coupon collection by id">
+This endpoint allows updating a coupon collection's default coupon by specifying its id. provide the id in the path and updated values in the json body. responses include success (200 with details), bad request (400), and unauthorized (401).
+</Accordion>
+
+<Accordion title="Remove reseller child s sender domain">
+This endpoint enables resellers to delete domains for a child account using the child's id and domain name, ensuring secure removal by managing potential errors and unauthorized access.
+</Accordion>
+
+<Accordion title="Update a list">
+Update contact lists by id. accepts renaming the list or moving it to a different folder. requires `listid` in the path and json body with `name` or `folderid`. returns `204` on success or specific error codes for failures such as `400` and `404`.
+</Accordion>
+
+<Accordion title="Get your sms activity aggregated per day">
+Get daily aggregated sms reports covering requests, deliveries, and more, customizable by date, days past, and tags, with detailed stats and sorting options.
+</Accordion>
+
+<Accordion title="Update a contact">
+This endpoint updates a contact's details, including attributes and blacklist statuses, using either an id or email. it accepts a json body and returns codes for success (204), bad request (400), or not found (404).
+</Accordion>
+
+<Accordion title="Resend  cancel admin user invitation">
+This endpoint will allow the user to: - resend an admin user invitation - cancel an admin user invitation
+</Accordion>
+
+<Accordion title="Update a message sent by an agent">
+Only agents’ messages can be edited.
+</Accordion>
+
+<Accordion title="Send a whatsapp message">
+This endpoint is used to send a whatsapp message. 
+
+(**the first message you send using the api must contain a template id. you must create a template on whatsapp on the brevo platform to fetch the template id.**)
+</Accordion>
+
+<Accordion title="Return all the processes for your account">
+This api endpoint fetches all account processes, enabling result customization (limit, offset, sort) and showing process ids, names, statuses, and export urls. it supports pagination and sorting.
+</Accordion>
+
+<Accordion title="Update a note">
+This endpoint updates a note by id, allowing changes to text, contacts, deals, and companies. it requires a json body with text and optional linked ids. on success, it returns http 204, and for errors, returns 400, 404, or 415.
+</Accordion>
+
+<Accordion title="Return all your categories">
+The `/categories` endpoint supports pagination, sorting, and filtering for retrieving categories. it provides details like id, name, urls, and timestamps along with the total count, and handles errors for invalid requests.
+</Accordion>
+
+<Accordion title="Update a sender">
+Update a sender's details by senderid, including name, email, and dedicated ips. supports replacing all existing ips with new ones if specified. errors for bad requests or missing sender id are handled with specific codes and messages.
+</Accordion>
+
+<Accordion title="Update a webhook">
+Update a webhook by including its id in the path and updating details in the request body like description, url, and more. successful updates return 204, while invalid requests return 400, and missing webhook ids return 404.
+</Accordion>
+
+<Accordion title="Update a task">
+This endpoint permits updating specific crm task details (e.g., name, duration, type, date, notes, status, assignments, linked entities) and reminders. it returns error messages for invalid data or missing task id.
+</Accordion>
+
+<Accordion title="Return all your created email campaigns">
+This endpoint fetches email campaigns based on filters like type, status, and stats. it allows queries by date, supports pagination, and sorting, returning comprehensive details on campaigns, their statistics, and recipient information.
+</Accordion>
+
+<Accordion title="Return all your created whatsapp templates">
+This endpoint fetches created whatsapp template messages, offering filters like dates, pagination, and sorting. parameters: startdate, enddate, limit, offset, sort, source. it returns details such as id, name, status, and creation date.
+</Accordion>
+
+<Accordion title="Get your transactional email activity aggregated per day">
+This endpoint provides daily reports on email activities like requests, deliveries, and clicks, with filters by date or tags, and sorting options. it also supports pagination with customizable settings.
+</Accordion>
+
+<Accordion title="Return all your created whatsapp campaigns">
+This endpoint fetches whatsapp campaigns, allowing filters by date, pagination, and sort by modification. it provides campaign name, status, template id, and message stats.
+</Accordion>
+
+<Accordion title="Update a whatsapp campaign">
+Update whatsapp campaign details like name, status, schedule, and recipients using the campaign id. supports campaign edits, rescheduling, and recipient list updates. responses detail update success, deletion, or errors like bad requests.
+</Accordion>
+
+<Accordion title="Send an email campaign to your test list">
+This endpoint sends test email campaigns, specified by `campaignid`, to up to 50 recipients daily. it returns a 204 code for success and provides detailed messages for failures due to invalid emails or limit breaches.
+</Accordion>
+
+<Accordion title="Returns a folder s details">
+This endpoint fetches details of a specific contacts folder including id, name, and subscriber counts based on the provided `foldergb` input. it returns folder details or errors for bad requests or when the folder id isn't found.
+</Accordion>
+
+<Accordion title="Update an sms campaign">
+This endpoint updates an sms campaign by id, allowing modifications to its name, sender, content, recipient lists, schedule, and more. success returns a 204 status; errors yield 400 or 404 with details.
+</Accordion>
+
+<Accordion title="Send an sms campaign s report">
+Send report of sent and archived campaign, to the specified email addresses, with respective data and a pdf attachment in detail.
+</Accordion>
+
+<Accordion title="Retrieve inbound attachment with download token">
+This endpoint will retrieve inbound attachment with download token.
+</Accordion>
+
+<Accordion title="Update a deal">
+This endpoint updates a deal's details using its id, requiring a path 'id' parameter and a json body with the information. success returns a 204 code; errors have specific codes/messages for invalid data or missing id.
+</Accordion>
+
+<Accordion title="Get your whatsapp api account information">
+Access whatsapp api account details including business id, sending limits, and phone number quality. view account, phone number, and business verification statuses. handle errors with specific codes and messages.
+</Accordion>
+
+<Accordion title="Get a task">
+Get details of a specific task by its id in the crm system. requires the task's unique string id. returns task details, including type, name, and related contacts, deals, and companies. possible errors: 400 (invalid id) and 404 (task not found).
+</Accordion>
+
+<Accordion title="Resend  cancel invitation">
+This endpoint lets users resend or cancel an email invitation by specifying the action and user email, providing success confirmation or unauthorized access errors.
+</Accordion>
+
+<Accordion title="Update reseller child s sender domain">
+Update a reseller's child sender domain by specifying childidentifier and domainname. requires the new domain value in the request. supports error handling for invalid requests and permissions.
+</Accordion>
+
+<Accordion title="Brevo Update Child Info Based On Id">
+This endpoint updates a reseller's child profile using their identifier, allowing changes to email, names, company, and password. it handles incorrect inputs or unauthorized actions with detailed error messages.
+</Accordion>
+
+<Accordion title="Update multiple contacts">
+The `/contacts/batch` `post` endpoint enables bulk contact updates, including emails, sms, external ids, and more. it requires a structured object with identifiers and update values. responses indicate success (204) or error (400) with messages.
+</Accordion>
+
+<Accordion title="Upload an image to your account s image gallery">
+Upload an image to the image gallery in your account. this post endpoint at '/emailcampaigns/images' requires an 'imageurl' (absolute url, max 2mb, formats: jpeg, jpg, png, bmp, gif) and optional 'name'. successful uploads return the image url.
+</Accordion>
+
+<Accordion title="Update sub account plan">
+This endpoint will update the sub-account plan
+</Accordion>
+
+<Accordion title="Update contact attribute">
+This api endpoint updates a contact attribute, requiring its category and name. it accepts a new value or values with labels in the request, responding with `204` for success, or error codes like `400`/`404` for invalid requests or not found attributes.
+</Accordion>
+
+<Accordion title="Brevo Update Child Account Status By Identifier">
+Update a reseller's child account status by id, including email, sms, marketing, and platform preferences. requires child id and status in json. responses show update success or errors for invalid requests/permissions.
+</Accordion>
+
+<Accordion title="Update permission for a user">
+Brevo provides features like email campaigns, deals, and calls with customizable user access levels, including creation and editing. ensure to specify the appropriate permission level for each user based on your plan for an optimal experience.
+</Accordion>
+
+<Accordion title="Validate sender using otp">
+Validates a sender with a provided otp via put request on '/senders/\{senderid\}/validate'. requires senderid in the path and an otp in the json body. responses include 204 (verified), 400 (bad request), and 404 (sender id not found).
+</Accordion>
+
+<Accordion title="Upload a file">
+The `post /crm/files` endpoint enables file uploads, linking them to crm entities. it requires multipart/form-data and returns ids upon success or error details on failure.
+</Accordion>
+
+<Accordion title="Validate domain configuration">
+This api endpoint checks a domain's verification, authentication, and dns records by requiring a `domainname`. it returns the domain's statuses and records on success, or error messages on failure.
+</Accordion>
+

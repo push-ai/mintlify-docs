@@ -1,0 +1,79 @@
+Mixpanel is an analytics platform that helps companies measure user
+    engagement and retention.
+
+<Accordion title="List Saved Cohorts">
+Get list of all cohorts in a mixpanel project. returns cohort details including name, id, count, description, creation date, and visibility. the query api has a rate limit of 60 queries per hour and a maximum of 5 concurrent queries.
+</Accordion>
+
+<Accordion title="List Saved Funnels">
+Get the names and funnel ids of your funnels. the query api has a rate limit of 60 queries per hour and a maximum of 5 concurrent queries.
+</Accordion>
+
+<Accordion title="Get Aggregate Event Counts">
+Get aggregate event counts over time. supports different types of aggregation: general, unique, average, sum.
+</Accordion>
+
+<Accordion title="Execute JQL Query">
+Execute a custom jql (javascript query language) query against mixpanel's query api. key constraints: - 60 queries/hour, max 5 concurrent queries. - 2-minute execution timeout. - 5 gb data processing limit, 2 gb output limit. - no remote network requests (xmlhttprequest) are allowed inside the jql script.
+</Accordion>
+
+<Accordion title="Get Aggregated Event Property Values">
+Get unique, total, or average data for a single event and property over days, weeks, or months. the query api has a rate limit of 60 queries per hour and a maximum of 5 concurrent queries.
+</Accordion>
+
+<Accordion title="Get Profile Event Activity">
+Get event activity feed for specified users from mixpanel query api. the query api has a rate limit of 60 queries per hour and a maximum of 5 concurrent queries.
+</Accordion>
+
+<Accordion title="Query Frequency Report">
+Get data about how frequently users are performing events. the query api has a rate limit of 60 queries per hour and a maximum of 5 concurrent queries. example response with unit="day" and addiction unit="hour": \{ "2012-01-01": [305, 107, 60, 41, ...], # users who did event in 1+ hours, 2+ hours, etc. "2012-01-02": [495, 204, 117, 77, ...], "2012-01-03": [671, 324, 176, 122, ...] \}
+</Accordion>
+
+<Accordion title="Get Top Event Properties">
+Get the top property names for an event. the query api has a rate limit of 60 queries per hour and a maximum of 5 concurrent queries.
+</Accordion>
+
+<Accordion title="Query Numeric Segmentation Report">
+Get data for an event, segmented and filtered by properties, with values placed into numeric buckets. the query api has a rate limit of 60 queries per hour and a maximum of 5 concurrent queries.
+</Accordion>
+
+<Accordion title="Query Saved Insight">
+Get data from your insights reports. the query api has a rate limit of 60 queries per hour and a maximum of 5 concurrent queries.
+</Accordion>
+
+<Accordion title="Get Top Events">
+Get a list of the most common events over the last 31 days. the query api has a rate limit of 60 queries per hour and a maximum of 5 concurrent queries.
+</Accordion>
+
+<Accordion title="Query Saved Funnel">
+Get data for a funnel. the query api has a rate limit of 60 queries per hour and a maximum of 5 concurrent queries.
+</Accordion>
+
+<Accordion title="Query Profiles">
+Query user or group profile data from mixpanel. returns list of profiles that match specified parameters. the query api has a rate limit of 60 queries per hour and a maximum of 5 concurrent queries.
+</Accordion>
+
+<Accordion title="Query Segmentation Report">
+Get data for an event, segmented and filtered by properties. the query api has a rate limit of 60 queries per hour and a maximum of 5 concurrent queries.
+</Accordion>
+
+<Accordion title="Query Numeric Sum Report">
+Sums an expression for events per unit time. the query api has a rate limit of 60 queries per hour and a maximum of 5 concurrent queries. example response: \{ "status": "ok", "computed at": "2024-01-20t12:00:00", "results": \{ "2024-01-01": 150.5, "2024-01-02": 245.75, "2024-01-03": 198.25 \} \}
+</Accordion>
+
+<Accordion title="Query Numeric Average Report">
+Averages an expression for events per unit time. the query api has a rate limit of 60 queries per hour and a maximum of 5 concurrent queries. example response: \{ "status": "ok", "results": \{ "2024-01-01": 25.5, "2024-01-02": 32.75, "2024-01-03": 28.25 \} \}
+</Accordion>
+
+<Accordion title="Get Today's Top Events">
+Get the top events for today, with their counts and the normalized percent change from yesterday. the query api has a rate limit of 60 queries per hour and a maximum of 5 concurrent queries.
+</Accordion>
+
+<Accordion title="Get Top Event Property Values">
+Get the top values for a property. the query api has a rate limit of 60 queries per hour and a maximum of 5 concurrent queries.
+</Accordion>
+
+<Accordion title="Query Retention Report">
+Get cohort analysis data. the query api has a rate limit of 60 queries per hour and a maximum of 5 concurrent queries.
+</Accordion>
+

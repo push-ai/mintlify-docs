@@ -1,0 +1,38 @@
+Browse.ai allows you to turn any website into an API using its advanced web automation and data extraction tools, enabling easy monitoring and data retrieval from websites.
+
+<Accordion title="Delete a specific task">
+This tool allows you to delete a specific task in browseai by its task id. it is used for cleaning up completed or failed tasks, managing resources, and maintaining your task list.
+</Accordion>
+
+<Accordion title="Create Webhook">
+This tool creates a new webhook for a browseai robot. webhooks are used to receive notifications when tasks are completed or data changes are detected. the webhook will be called with the task details when specific events occur. it is useful for: - setting up automated notifications for task completion - receiving real-time updates when changes are detected - integrating browseai with your own systems - automating workflows based on robot task results the webhook can be configured to trigger on different events: - task.completed: when a task is successfully completed - task.failed: when a task fails - changes.detected: when changes are detected during monitoring
+</Accordion>
+
+<Accordion title="Delete a specific monitor">
+This tool allows users to delete a specific monitor from their browse ai account. it uses the delete method and requires a valid monitor id.
+</Accordion>
+
+<Accordion title="Get Robots List">
+This tool retrieves a list of all robots under your account in browse ai. each robot represents an automated task that can be trained to perform various web operations like opening webpages, logging in, clicking buttons, filling forms, extracting data, and monitoring changes. it is useful for: - getting an overview of all your automated tasks - checking the status of your robots - retrieving robot ids for use with other api endpoints - monitoring when robots were last updated or created
+</Accordion>
+
+<Accordion title="Get Task Details">
+This tool retrieves detailed information about a specific task in browse ai by its task id. it returns comprehensive details including the task's status, execution results, associated metadata, timestamps, and configuration. it complements existing tools by providing an in-depth view of individual task execution, including metadata and error details if applicable.
+</Accordion>
+
+<Accordion title="Get Robot Tasks">
+This tool retrieves all tasks associated with a specific robot in browse ai. it provides a paginated list of tasks with their details including status, input parameters, captured data, screenshots, and lists. it is useful for: - monitoring task execution status - retrieving captured data and screenshots - analyzing task execution history - debugging robot performance
+</Accordion>
+
+<Accordion title="Run Robot">
+This tool allows you to trigger the execution of a browseai robot on demand. the tool will run a specified robot with the provided parameters and return the task details. it requires a robot id and optional input parameters (such as url, search term, or other parameters) to configure the robot's execution. it is useful for: - starting robot executions programmatically - automating data collection tasks - triggering robots with custom parameters - integrating robot execution in workflows
+</Accordion>
+
+<Accordion title="Bulk Run Tasks">
+This action allows users to bulk run up to 50,000 tasks using a specified robot. it provides a post endpoint at /v2/robots/\{robotid\}/bulk-tasks and supports parameters such as robot id (required), title (required), and input parameters (required). this bulk operation is essential for large-scale data extraction.
+</Accordion>
+
+<Accordion title="Create Monitor">
+This tool creates a new monitor for a specific robot in browse ai. it allows you to configure a monitor with a schedule (frequency and interval) for automatic execution, along with optional custom name and input parameters, enabling automated tracking of website changes.
+</Accordion>
+

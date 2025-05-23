@@ -1,0 +1,38 @@
+Ngrok creates secure tunnels to locally hosted applications, enabling developers to share and test webhooks or services without configuring complex network settings
+
+<Accordion title="Delete API Key">
+Delete an api key by its id. this action permanently removes the specified api key from your ngrok account. this is an important security feature that allows users to revoke access when an api key is compromised or no longer needed. once deleted, the api key cannot be recovered and any services using it will lose access.
+</Accordion>
+
+<Accordion title="Get IP Restriction Details">
+This tool retrieves detailed information about a specific ip restriction by its id. it is used to control which ip addresses can access ngrok resources, including the api, by fetching complete details of the ip restriction. this action is essential for auditing and verification in ip restriction management.
+</Accordion>
+
+<Accordion title="List HTTPS Edges">
+Lists all https edges in your ngrok account. https edges are configurations that tell ngrok how to handle https traffic. the action returns a paginated list of all https edges associated with your account.
+</Accordion>
+
+<Accordion title="List API Keys">
+This tool lists all api keys owned by the user. the api keys are used to authenticate api requests to ngrok's rest api. the endpoint returns a paginated list of api keys.
+</Accordion>
+
+<Accordion title="List All Endpoints">
+List all active endpoints on the ngrok account. this tool will list all active endpoints on the ngrok account, providing visibility into running tunnels and endpoints. it requires no input parameters beyond authentication and serves as a fundamental component for monitoring, managing, and referencing ngrok resources.
+</Accordion>
+
+<Accordion title="Create API Key">
+Creates a new api key for authenticating with the ngrok api. this tool allows programmatic creation of api keys that can be used to access ngrok's api services.
+</Accordion>
+
+<Accordion title="List IP Policy Rules">
+This tool lists all ip policy rules associated with your ngrok account. it retrieves detailed information including rule id, creation timestamp, description, metadata, cidr, the associated ip policy, and the action (allow or deny) for each rule. it supports pagination with parameters 'limit' for the maximum number of results and 'before id' for pagination.
+</Accordion>
+
+<Accordion title="List IP Restrictions">
+This tool retrieves a list of all ip restrictions configured on the ngrok account. it allows users to audit and review all ip-based access restrictions on their ngrok account for enhanced security management. the api endpoint supports pagination with optional parameters such as 'limit' and 'before id', and returns a detailed json response containing attributes like id, uri, created at, description, metadata, enforced, type, and associated ip policies.
+</Accordion>
+
+<Accordion title="List Active Tunnels">
+List all active tunnels in the ngrok account. this tool lists all active tunnels in the ngrok account, providing details such as tunnel id, public url, start time, protocol, configuration details, and metadata. it requires no input parameters beyond authentication and returns a paginated list of all running tunnels with their complete status information.
+</Accordion>
+

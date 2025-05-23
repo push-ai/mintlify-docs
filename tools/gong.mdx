@@ -1,0 +1,218 @@
+Gong is a platform for video meetings, call recording, and team collaboration.
+
+<Accordion title="Add call media  v2 calls id media">
+Adds a call media, recorded by a telephony system (pbx) or other media recording facility. gong accepts call recordings in various audio and video file formats, including wav, mp3, mp4, mkv and flac. if uploading a dual-channel (stereo) file separated by speaker, make sure to specify which channel correspondsto the company team member (rep) in the parties/mediachannelid parameter of the add new call operation. when accessed through a bearer token authorization method, this endpoint requires the scope 'api:calls:create'.
+</Accordion>
+
+<Accordion title="List of calls in a specific folder  v2 library folder content">
+Given a folder id, this endpoint retrieves a list of calls in it. when accessed through a bearer token authorization method, this endpoint requires the scope 'api:library:read'.
+</Accordion>
+
+<Accordion title="Get generic crm integration details  v2 crm integrations">
+&lt;style&gt;.public-api-info \{ background: rgb(222, 235, 255);\}.public-api-tip \{ background: rgb(227, 252, 239);\}.public-api-parameter \{ background: rgba(9,30,66,0.08);\}.public-api-note \{ background: rgb(234, 230, 255);\}.public-api-important \{ background: rgb(255, 250, 230);\}.public-api-critical \{ background: rgb(255, 235, 230);\}table, th, td \{ border: 1px solid gray; border-collapse: collapse;\}th, td \{ padding: 5px;\}th \{ text-align: left;\}img \{ border: 2px solid #d3d5d9;\}&lt;/style&gt;&lt;p&gt;returns the crm integration you set up using the &lt;code&gt;put /v2/crm/integrations&lt;/code&gt; endpoint. you can only have one integration at a time. &lt;/p&gt;&lt;p&gt;when accessed using a bearer token, this endpoint requires the 'api:crm:integrations:read' scope.&lt;/p&gt;
+</Accordion>
+
+<Accordion title="Add new call  v2 calls">
+When using this endpoint, either provide a downloadmediaurl or use the returned callid in a follow-up request to /v2/calls/\{id\}/media to upload the media file. when accessed through a bearer token authorization method, this endpoint requires the scope 'api:calls:create'.
+</Accordion>
+
+<Accordion title="Delete a gong meeting  v2 meetings">
+When accessed through a bearer token authorization method, this endpoint requires the scope 'api:meetings:user:delete'.
+</Accordion>
+
+<Accordion title="Assign prospects to flow">
+Use this endpoint to assign a number of prospects to a flow. prospects can be contacts or leads in your crm. generate a list of comma separated crm ids of the prospects you want to add to a flow. the flowinstanceowneremail parameter is the email address of the gong user who set up the flow instance and owns the flow to-dos. you can assign up to 200 prospects to a flow in a single request. when accessed through a bearer token authorization method, this endpoint requires the scope 'api:flows:write'.
+</Accordion>
+
+<Accordion title="Aggregate user activity statistics">
+Lists the activity of multiple users within the gong system during a defined period. given the period, this endpoint returns multiple records, one for each user, with an applicable activity during the period. each record includes statistics about the user's activity. when accessed through a bearer token authorization method, this endpoint requires the scope 'api:stats:user-actions'.
+</Accordion>
+
+<Accordion title="Aggregate activity by period via api">
+Lists the aggregated activity of multiple users within the gong system for each time period within the defined date range. this endpoint returns multiple records, one for each user. for each user there are items for every time period in the date range, including statistics about the user's activity. records are returned only for users with activity in the range. when accessed through a bearer token authorization method, this endpoint requires the scope 'api:stats:user-actions'.
+</Accordion>
+
+<Accordion title="Delete users from call access list">
+Remove individual user access from calls. the request can only remove access previously given by the /v2/calls/users-access api. if a given user does not have access to the call, they will be unaffected. if a given user does have access to the call, but not through the pubic api (for example if the call was shared with the user), the user's access will remain unchanged. when accessed through a bearer token authorization method, this endpoint requires the scope 'api:call-user-access:write'.
+</Accordion>
+
+<Accordion title="List schema fields  v2 crm entity schema">
+Retrieves the comprehensive schema of crm entities in the gong platform. this endpoint provides detailed metadata about the structure, attributes, and relationships of entities within the customer relationship management (crm) system. it is particularly useful for developers integrating with gong's api who need to understand the data model of the crm entities. the endpoint returns a complete view of all crm entity schemas, which can be used for data mapping, validation, or building dynamic forms. note that this endpoint does not accept any parameters, meaning it returns the full schema without filtering options. while powerful, be mindful of potential performance implications when dealing with large, complex crm structures.
+</Accordion>
+
+<Accordion title="Erase data for email address">
+Given an email address, this endpoint deletes from the gong system any calls or email messages that reference this address. email messages sent to or from the address are deleted. calls where the email address appears (as a lead, contact, attendee or speaker) are deleted. leads or contacts with the email address are deleted. the deletion is not immediate, and may take several hours to complete. this endpoint contains a data integrity protection mechanism to prevent the deletion of an abnormal number of objects. if the deletion fails please contact support at help@gong.io delete the data from your crm and email system before performing this operation so that private data is not re-imported into gong. when accessed through a bearer token authorization method, this endpoint requires the scope 'api:data-privacy:delete'.
+</Accordion>
+
+<Accordion title="Manage user call access">
+Returns a list of users who have received individual access to calls through the api. this endpoint doesn't cover user that have access for other reasons (such as sharing recipients, or access through permission profiles). when accessed through a bearer token authorization method, this endpoint requires the scope 'api:call-user-access:read'.
+</Accordion>
+
+<Accordion title="Retrieve data privacy info for email address">
+Shows the elements in the gong system that reference the given email address. given an emails address, this endpoint returns details of all calls and email messages that reference this address, and any leads or contacts with this email address. when accessed through a bearer token authorization method, this endpoint requires the scope 'api:data-privacy:read'.
+</Accordion>
+
+<Accordion title="Retrieve user settings history  v2 users id settings history">
+Retrieve a specific user's settings history. when accessed through a bearer token authorization method, this endpoint requires the scope 'api:users:read'.
+</Accordion>
+
+<Accordion title="Post a digital interaction  v2 digital interaction">
+When accessed through a bearer token authorization method, this endpoint requires the scope 'api:digital-interactions:write'.
+</Accordion>
+
+<Accordion title="Update a gong meeting  v2 meetings meetingid">
+When accessed through a bearer token authorization method, this endpoint requires the scope 'api:meetings:user:update'.
+</Accordion>
+
+<Accordion title="Retrieve users from permission profile">
+Returns a list of all users whose access is controlled by the given permission profile. when accessed through a bearer token authorization method, this endpoint requires the scope 'api:users:read'.
+</Accordion>
+
+<Accordion title="Retrieve library folders  v2 library folders">
+Use this endpoint to retrieve a list of public library folders. we do not allow retrieval of either private or archived folders. when accessed through a bearer token authorization method, this endpoint requires the scope 'api:library:read'.
+</Accordion>
+
+<Accordion title="Create activity scorecards report">
+Retrieve all the answers for the scorecards that were reviewed during a specified date range, for calls that took place during a specified date range, for specific scorecards or for specific reviewed users. when accessed through a bearer token authorization method, this endpoint requires the scope 'api:stats:scorecards'.
+</Accordion>
+
+<Accordion title="Erase data for phone number">
+Given a phone number, this endpoint deletes from the gong system any leads or contacts with a matching phone number or mobile phone number. email messages sent to or from these leads/contacts are deleted. calls where the leads/contacts appear are deleted. the deletion is not immediate, and may take several hours to complete. this endpoint contains a data integrity protection mechanism to prevent the deletion of an abnormal number of objects. if the deletion fails please contact support at help@gong.io delete the data from your crm and email system before performing this operation so that private data is not re-imported into gong. when accessed through a bearer token authorization method, this endpoint requires the scope 'api:data-privacy:delete'.
+</Accordion>
+
+<Accordion title="Create a new gong meeting  v2 meetings">
+When accessed through a bearer token authorization method, this endpoint requires the scope 'api:meetings:user:create'.
+</Accordion>
+
+<Accordion title="Retrieve data for a specific call  v2 calls id">
+Retrieve data for a specific call. when accessed through a bearer token authorization method, this endpoint requires the scope 'api:calls:read:basic'.
+</Accordion>
+
+<Accordion title="Retrieve user  v2 users id">
+Retrieve a specific user. when accessed through a bearer token authorization method, this endpoint requires the scope 'api:users:read'.
+</Accordion>
+
+<Accordion title="Retrieve logs data by type and time range  v2 logs">
+List log entries that took place during a specified time range. when accessed through a bearer token authorization method, this endpoint requires the scope 'api:logs:read'.
+</Accordion>
+
+<Accordion title="Retrieve manual crm call associations">
+Returns a list of all calls that were manually associated or re-associated with crm account and deal/opportunity since a given time. actions will be listed in the ascending order of their timing. notice if a call was associated and later re-associated the api will return both events. when accessed through a bearer token authorization method, this endpoint requires the scope 'api:crm-calls:manual-association:read'.
+</Accordion>
+
+<Accordion title="Upload crm objects  v2 crm entities">
+Uploads crm data files to the gong platform for integration and analysis. this endpoint allows users to send large crm data files (up to 200mb) using a multipart/form-data request. it should be used when integrating crm systems with gong's revenue intelligence platform to provide up-to-date customer interaction data. the endpoint is specifically designed for file uploads and does not support other operations like querying or modifying existing data. ensure that the uploaded file contains properly structured crm data compatible with gong's system for successful integration and subsequent analysis.
+</Accordion>
+
+<Accordion title="Get permission profile">
+Returns a permission profile.
+</Accordion>
+
+<Accordion title="List users by filter  v2 users extensive">
+List multiple users. when accessed through a bearer token authorization method, this endpoint requires the scope 'api:users:read'.
+</Accordion>
+
+<Accordion title="Update shared content event">
+Push engagement events into gong and display them as events in gong’s activity timeline, when a gong user shares content with external participants (for example, a contract was “shared” by the account executive with his prospects) when accessed through a bearer token authorization method, this endpoint requires the scope 'api:engagement-data:write'.
+</Accordion>
+
+<Accordion title="Get request status  v2 crm request status">
+The getcrmrequeststatus endpoint retrieves the current status of crm integration requests in the gong platform. it allows users to check the progress and outcome of operations related to crm data uploads, synchronization, or other crm-related processes. this endpoint is particularly useful for monitoring the health and progress of crm integrations, troubleshooting issues, and ensuring data consistency between gong and connected crm systems. it should be used when you need to verify if a crm integration request has been completed, is still in progress, or has encountered any errors. the endpoint does not modify any data and is intended for status checking only. note that the specific details returned may vary depending on the type and complexity of the crm integration request being queried.
+</Accordion>
+
+<Accordion title="Retrieve filtered call details">
+Lists detailed call data for calls that took place during a specified date range, have specified call ids or hosted by specified users. when accessed through a bearer token authorization method, this endpoint requires the scope 'api:calls:read:extensive'. moreover, clients requesting media download urls by the contentselector.exposedfields.media field should also have the scope 'api:calls:read:media-url'.
+</Accordion>
+
+<Accordion title="Give individual users access to calls  v2 calls users access">
+Give individual users access to calls. if a user already has access (perhaps the call was shared with them, or they have access through their permission profiles) the request will have no effect. when accessed through a bearer token authorization method, this endpoint requires the scope 'api:call-user-access:write'.
+</Accordion>
+
+<Accordion title="Fetch all permission profiles">
+Returns a list of all permission profiles. the listing is in the alphabetical order of the profile names.
+</Accordion>
+
+<Accordion title="Retrieve scorecards details  v2 settings scorecards">
+Retrieve all the scorecards within the gong system. when accessed through a bearer token authorization method, this endpoint requires the scope 'api:settings:scorecards:read'.
+</Accordion>
+
+<Accordion title="Get crm objects  v2 crm entities">
+Retrieves crm entities from the gong platform. this endpoint allows users to fetch various crm objects such as accounts, deals, and contacts that have been integrated with gong's revenue intelligence system. it provides a way to access and utilize crm data within the context of gong's conversation analysis and insights. use this endpoint when you need to synchronize crm data with gong or when you want to retrieve the latest crm entity information for analysis or reporting purposes. the endpoint does not modify any data and is intended for read-only operations. note that the specific fields and structure of the returned entities may vary based on the crm system integrated with gong.
+</Accordion>
+
+<Accordion title="List all coaching metrics  v2 coaching">
+List all of the coaching metrics of a manager. when accessed through a bearer token authorization method, this endpoint requires the scope 'api:coaching:read'.
+</Accordion>
+
+<Accordion title="Register a generic crm integration  v2 crm integrations">
+Updates an existing crm integration in the gong platform. this endpoint allows you to modify the details of a previously set up integration between gong and your customer relationship management (crm) system. it's primarily used for changing the integration's name or reassigning the ownership to a different team member. this operation is crucial for maintaining accurate and up-to-date integration configurations, especially when there are changes in your organization's structure or integration strategies. note that this endpoint only updates the integration metadata and does not affect the actual data synchronization between gong and your crm.
+</Accordion>
+
+<Accordion title="List flows for crm prospects">
+Get the gong engage flows assigned to the given prospects. when accessed through a bearer token authorization method, this endpoint requires the scope 'api:flows:read'.
+</Accordion>
+
+<Accordion title="Integration settings  v2 integration settings">
+When accessed through a bearer token authorization method, this endpoint requires the scope 'api:integration-settings:write'.
+</Accordion>
+
+<Accordion title="List all company workspaces  v2 workspaces">
+Returns a list of all workspaces including their details. when accessed through a bearer token authorization method, this endpoint requires the scope 'api:workspaces:read'.
+</Accordion>
+
+<Accordion title="Delete a generic crm integration  v2 crm integrations">
+Deletes an existing crm integration from the gong platform. this endpoint should be used when you want to disconnect or remove a previously established integration between gong and a crm system, such as hubspot. it's particularly useful when you need to change crm providers, stop syncing data between gong and a specific crm, or troubleshoot integration issues by removing and re-adding the connection. the deletion is likely permanent, so use this endpoint with caution. it's important to note that this operation may affect data synchronization and potentially impact existing analytics or reports that rely on the integrated crm data.
+</Accordion>
+
+<Accordion title="Retrieve tracker details  v2 settings trackers">
+Retrieves details of all keyword trackers in the system or in a given workspace. when accessed through a bearer token authorization method, this endpoint requires the 'api:settings:trackers:read' scope.
+</Accordion>
+
+<Accordion title="Report event of a custom action  v2 customer engagement action">
+Push engagement events into gong and display them as events in gong’s activity timeline, when a content is engaged by an external participant (for example, a contract was “signed” by the prospect) when accessed through a bearer token authorization method, this endpoint requires the scope 'api:engagement-data:write'.
+</Accordion>
+
+<Accordion title="List gong engage flows  v2 flows">
+Engage flows have the following visibility types: * company: visible to everyone in the company, can only be edited by users with edit permissions. * personal: reps can set up their own flows which are only available to them. * shared: reps can share a flow with other reps. those reps can then add leads to the flow. this endpoint returns all company flows, together with personal flows and flows shared with the user specified in the flowemailowner parameter. when accessed through a bearer token authorization method, use the 'api:flows:read' scope.
+</Accordion>
+
+<Accordion title="List all users  v2 users">
+List all of the company's users. when accessed through a bearer token authorization method, this endpoint requires the scope 'api:users:read'.
+</Accordion>
+
+<Accordion title="Create permission profile  v2 permission profile">
+Create a permission profile in a given workspace.
+</Accordion>
+
+<Accordion title="Post interaction filter stats">
+Returns interaction stats for users based on calls that have whisper turned on. when accessed through a bearer token authorization method, this endpoint requires the scope 'api:stats:interaction'.
+</Accordion>
+
+<Accordion title="Data privacy for phone number">
+Shows the elements in the gong system that reference the given phone number. given a phone number, this endpoint returns details of any leads or contacts with this phone number and their associated calls and email messages. when accessed through a bearer token authorization method, this endpoint requires the scope 'api:data-privacy:read'.
+</Accordion>
+
+<Accordion title="Report content viewed event">
+Push engagement events into gong and display them as events in gong’s activity timeline, when a content is viewed by an external participant (for example, a contract was “viewed” by the prospect) when accessed through a bearer token authorization method, this endpoint requires the scope 'api:engagement-data:write'.
+</Accordion>
+
+<Accordion title="Update permission profile  v2 permission profile">
+Update a permission profile.
+</Accordion>
+
+<Accordion title="Post meeting integration status">
+When accessed through a bearer token authorization method, this endpoint requires the scope 'api:meetings:integration:status'.
+</Accordion>
+
+<Accordion title="Retrieve transcripts of calls  v2 calls transcript">
+Returns transcripts for calls that took place during the specified date period. if call ids are specified, only transcripts for calls with those ids that took place during the time period are returned. when accessed through a bearer token authorization method, this endpoint requires the scope 'api:calls:read:transcript'.
+</Accordion>
+
+<Accordion title="Retrieve call data by date range  v2 calls">
+List calls that took place during a specified date range. when accessed through a bearer token authorization method, this endpoint requires the scope 'api:calls:read:basic'.
+</Accordion>
+
+<Accordion title="Post day by day activity stats">
+Retrieve the daily activity of multiple users within the gong system for a range of dates. this endpoint returns records including statistics about each user's activity, on the daily level. records are returned only for users with activity in the range. when accessed through a bearer token authorization method, this endpoint requires the scope 'api:stats:user-actions:detailed'.
+</Accordion>
+

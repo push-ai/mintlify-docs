@@ -1,0 +1,42 @@
+RetellAI captures calls and transcripts, enabling businesses to analyze conversations, extract insights, and enhance customer interactions in one centralized platform
+
+<Accordion title="Retrieve call details">
+The /v2/list-calls endpoint retrieves call records with filters (agent id, timestamps), offers sorting, pagination, and handles different responses (success, bad request, unauthorized, server error) in json format.
+</Accordion>
+
+<Accordion title="Retrieve details of a specific phone number">
+Fetches the details of a given phone number in e.164 format.
+</Accordion>
+
+<Accordion title="List all phone numbers">
+Retrieves a list of all phone numbers associated with the account.
+</Accordion>
+
+<Accordion title="Delete phone number">
+Deletes an existing phone number identified by its e.164 format.
+</Accordion>
+
+<Accordion title="Buy a new phone number  bind agents">
+This endpoint allows purchasing a new phone number with a specified area code and binding it to designated agents for inbound and outbound calls. it requires json with agent ids and area code. responses indicate the creation status or errors.
+</Accordion>
+
+<Accordion title="Retrieve call details by id">
+Retrieve call details by id for web/phone calls, including type, agent id, status, timestamps, and web access token; covering responses from success to server errors.
+</Accordion>
+
+<Accordion title="Create a new outbound phone call">
+Initiate an outbound call by post to '/v2/create-phone-call'. requires 'from number' and 'to number' in e.164 format. optional overrides and metadata supported. on success, returns call details including type, status, and ids.
+</Accordion>
+
+<Accordion title="Retrieve details of a specific voice">
+"access specific voice details including its name, provider, accent, gender, and a preview audio url using the unique voice id. parameters required."
+</Accordion>
+
+<Accordion title="Update phone number">
+Updates the agent bound to a purchased phone number.
+</Accordion>
+
+<Accordion title="Create a new web call">
+The /v2/create-web-call endpoint creates a web call with a unique agent id, returning call details like type, token, call id, and status in json format, with a 201 response. optional metadata and variables can be included.
+</Accordion>
+

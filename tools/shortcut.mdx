@@ -1,0 +1,490 @@
+Shortcut aligns product development work with company objectives so teams can execute with a shared purpose.
+
+<Accordion title="Create label">
+Create label allows you to create a new label in shortcut.
+</Accordion>
+
+<Accordion title="Create epic comment comment">
+This endpoint allows you to create a nested comment reply to an existing epic comment.
+</Accordion>
+
+<Accordion title="Create group">
+Creates a new group in the shortcut system with customizable properties. this endpoint allows you to set up a group with a unique mention name, display name, optional description, and various customization options. use this when you need to establish a new team, department, or any other collective within your shortcut workspace. the created group can include members, associated workflows, and visual customizations like color and icon. this endpoint is particularly useful for organizing your shortcut workspace structure, facilitating team collaboration, and streamlining workflow management. note that while member and workflow associations can be set during creation, they can also be modified later using separate endpoints.
+</Accordion>
+
+<Accordion title="Create iteration">
+The createiteration endpoint allows you to create a new iteration in shortcut, which represents a time-boxed period for completing a set of stories or tasks. this endpoint is crucial for teams using agile methodologies, enabling them to plan and track progress over specific time periods. use this endpoint when setting up sprint cycles, planning releases, or organizing work into manageable timeframes. the endpoint requires essential information such as the iteration's name and date range, while also offering options to add followers, associate groups, and attach labels for better organization and tracking. it's important to note that while multiple groups can be added via the api, the current web ui only displays one group association. this endpoint should not be used for modifying existing iterations; instead, use the dedicated update endpoint for such changes.
+</Accordion>
+
+<Accordion title="Create milestone">
+(deprecated: use 'create objective') create milestone allows you to create a new milestone in shortcut.
+</Accordion>
+
+<Accordion title="Create epic comment">
+This endpoint allows you to create a threaded comment on an epic.
+</Accordion>
+
+<Accordion title="Create linked file">
+Create linked file allows you to create a new linked file in shortcut.
+</Accordion>
+
+<Accordion title="Create story comment">
+Create comment allows you to create a comment on any story.
+</Accordion>
+
+<Accordion title="Create story reaction">
+Create a reaction to a story comment.
+</Accordion>
+
+<Accordion title="Delete category">
+Delete category can be used to delete any category.
+</Accordion>
+
+<Accordion title="Create task">
+Create task is used to create a new task in a story.
+</Accordion>
+
+<Accordion title="Create story link">
+Story links (called story relationships in the ui) allow you create semantic relationships between two stories. the parameters read like an active voice grammatical sentence: subject -&gt; verb -&gt; object. the subject story acts on the object story; the object story is the direct object of the sentence. the subject story "blocks", "duplicates", or "relates to" the object story. examples: - "story 5 blocks story 6” -- story 6 is now "blocked" until story 5 is moved to a done workflow state. - "story 2 duplicates story 1” -- story 2 represents the same body of work as story 1 (and should probably be archived). - "story 7 relates to story 3”
+</Accordion>
+
+<Accordion title="Delete epic">
+Delete epic can be used to delete the epic. the only required parameter is epic id.
+</Accordion>
+
+<Accordion title="Delete custom field">
+Deletes a specific custom field from the shortcut system using its unique public identifier. this endpoint should be used when you need to permanently remove a custom field that is no longer required in your workflows or project structure. it's important to note that this operation is irreversible, and once a custom field is deleted, all data associated with it will be lost. use this endpoint with caution, ensuring that the custom field is no longer needed and that its deletion won't negatively impact any existing processes or data integrity within your shortcut instance.
+</Accordion>
+
+<Accordion title="Delete epic comment">
+This endpoint allows you to delete a comment from an epic.
+</Accordion>
+
+<Accordion title="Delete entity template">
+Deletes a specific entity template from the shortcut api. this endpoint should be used when you need to permanently remove a template that is no longer needed or is obsolete. it's important to note that this operation cannot be undone, so it should be used with caution. the deletion is performed on a single template identified by its public id, adhering to the best practice of controlling deletion on a per-resource basis. this endpoint is part of the api v3, which may include enhanced features or changes compared to previous versions.
+</Accordion>
+
+<Accordion title="Create category">
+Create category allows you to create a new category in shortcut.
+</Accordion>
+
+<Accordion title="Delete file">
+Delete file deletes a previously uploaded file.
+</Accordion>
+
+<Accordion title="Delete label">
+Delete label can be used to delete any label.
+</Accordion>
+
+<Accordion title="Delete linked file">
+Delete linked file can be used to delete any previously attached linked-file.
+</Accordion>
+
+<Accordion title="Delete iteration">
+Deletes a specific iteration from the shortcut project management system. this endpoint should be used when you need to permanently remove an iteration and all its associated data from your project workflow. it's particularly useful for cleaning up completed or cancelled iterations that are no longer needed. be cautious when using this endpoint, as the deletion is irreversible and will remove all data associated with the specified iteration. ensure you have the correct iteration id before proceeding with the deletion to avoid unintended data loss.
+</Accordion>
+
+<Accordion title="Create story">
+Create story is used to add a new story to your shortcut workspace. this endpoint requires that either **workflow state id** or **project id** be provided, but will reject the request if both or neither are specified. the workflow state id has been marked as required and is the recommended field to specify because we are in the process of sunsetting projects in shortcut.
+</Accordion>
+
+<Accordion title="Delete milestone">
+(deprecated: use 'delete objective') delete milestone can be used to delete any milestone.
+</Accordion>
+
+<Accordion title="Create multiple stories">
+Create multiple stories allows you to create multiple stories in a single request using the same syntax as [create story](https://developer.shortcut.com/api/rest/v3#create-story).
+</Accordion>
+
+<Accordion title="Delete multiple stories">
+Delete multiple stories allows you to delete multiple archived stories at once.
+</Accordion>
+
+<Accordion title="Delete story">
+Delete story can be used to delete any story.
+</Accordion>
+
+<Accordion title="Create story from template">
+Create story from template is used to add a new story derived from a template to your shortcut workspace.
+</Accordion>
+
+<Accordion title="Delete objective">
+Delete objective can be used to delete any objective.
+</Accordion>
+
+<Accordion title="Delete story comment">
+Delete a comment from any story.
+</Accordion>
+
+<Accordion title="Delete project">
+Delete project can be used to delete a project. projects can only be deleted if all associated stories are moved or deleted. in the case that the project cannot be deleted, you will receive a 422 response.
+</Accordion>
+
+<Accordion title="Delete story link">
+Removes the relationship between the stories for the given story link.
+</Accordion>
+
+<Accordion title="Create objective">
+Create objective allows you to create a new objective in shortcut.
+</Accordion>
+
+<Accordion title="Delete story reaction">
+Delete a reaction from any story comment.
+</Accordion>
+
+<Accordion title="Disable story templates">
+Disables the story template feature for the workspace.
+</Accordion>
+
+<Accordion title="Delete task">
+Delete task can be used to delete any previously created task on a story.
+</Accordion>
+
+<Accordion title="Disable iterations">
+Disables iterations for the current workspace
+</Accordion>
+
+<Accordion title="Create project">
+Create project is used to create a new shortcut project.
+</Accordion>
+
+<Accordion title="Create entity template">
+Create a new entity template for the workspace.
+</Accordion>
+
+<Accordion title="Create epic">
+Create epic allows you to create a new epic in shortcut.
+</Accordion>
+
+<Accordion title="Get category">
+Get category returns information about the selected category.
+</Accordion>
+
+<Accordion title="Get custom field">
+Retrieves detailed information about a specific custom field in shortcut using its unique public identifier. this endpoint allows developers to fetch the properties and configuration of a custom field, which can include its name, type, possible values, and any other associated metadata. it's particularly useful when you need to inspect or validate a custom field's settings programmatically, or when integrating custom field data into external systems. the endpoint should be used when detailed information about a single custom field is required, rather than for bulk operations or listing all custom fields. note that this endpoint only provides read access to custom field data and cannot be used to modify the custom field.
+</Accordion>
+
+<Accordion title="Get current member info">
+Returns information about the authenticated member.
+</Accordion>
+
+<Accordion title="Enable iterations">
+Enables iterations for the current workspace
+</Accordion>
+
+<Accordion title="Enable story templates">
+Enables the story template feature for the workspace.
+</Accordion>
+
+<Accordion title="List epics">
+List epics returns a list of all epics and their attributes.
+</Accordion>
+
+<Accordion title="Get epic">
+Get epic returns information about the selected epic.
+</Accordion>
+
+<Accordion title="List repositories">
+List repositories returns a list of all repositories and their attributes.
+</Accordion>
+
+<Accordion title="List epic comments">
+Get a list of all comments on an epic.
+</Accordion>
+
+<Accordion title="Get repository">
+Get repository returns information about the selected repository.
+</Accordion>
+
+<Accordion title="Get project">
+Get project returns information about the selected project.
+</Accordion>
+
+<Accordion title="Get objective">
+Get objective returns information about a chosen objective.
+</Accordion>
+
+<Accordion title="List label stories">
+List all of the stories with the label.
+</Accordion>
+
+<Accordion title="Update category">
+Update category allows you to replace a category name with another name. if you try to name a category something that already exists, you will receive a 422 response.
+</Accordion>
+
+<Accordion title="Unlink productboard from epic">
+This endpoint allows you to unlink a productboard epic.
+</Accordion>
+
+<Accordion title="Get entity template">
+Get entity template returns information about a given entity template.
+</Accordion>
+
+<Accordion title="Search milestones">
+Search milestones lets you search milestones based on desired parameters. since ordering of results can change over time (due to search ranking decay, new milestones being created), the `next` value from the previous response can be used as the path and query string for the next page to ensure stable ordering.
+</Accordion>
+
+<Accordion title="List epic stories">
+Get a list of all stories in an epic.
+</Accordion>
+
+<Accordion title="Get epic workflow">
+Returns the epic workflow for the workspace.
+</Accordion>
+
+<Accordion title="Update multiple stories">
+Update multiple stories allows you to make changes to numerous stories at once.
+</Accordion>
+
+<Accordion title="List linked files">
+List linked files returns a list of all linked-files and their attributes.
+</Accordion>
+
+<Accordion title="Update story link">
+Updates the stories and/or the relationship for the given story link.
+</Accordion>
+
+<Accordion title="Update custom field">
+Update custom field can be used to update the definition of a custom field. the order of items in the 'values' collection is interpreted to be their ascending sort order.to delete an existing enum value, simply omit it from the 'values' collection. new enum values may be created inline by including an object in the 'values' collection having a 'value' entry with no 'id' (eg. \{'value': 'mynewvalue', 'color key': 'green'\}).
+</Accordion>
+
+<Accordion title="Update group">
+Updates an existing group in the shortcut workspace. this endpoint allows you to modify various properties of a group, including its name, description, color, members, and associated workflows. use this when you need to change group details, add or remove members, or update the group's visual representation. it's particularly useful for team reorganizations, project changes, or general maintenance of your shortcut workspace structure. note that while many fields are optional, you should include any fields you wish to modify; omitted fields will retain their current values.
+</Accordion>
+
+<Accordion title="Get epic comment">
+This endpoint returns information about the selected epic comment.
+</Accordion>
+
+<Accordion title="Update entity template">
+Update an entity template's name or its contents.
+</Accordion>
+
+<Accordion title="Get external link stories">
+Get stories which have a given external link associated with them.
+</Accordion>
+
+<Accordion title="Update objective">
+Update objective can be used to update objective properties.
+</Accordion>
+
+<Accordion title="Update story comment">
+Update comment replaces the text of the existing comment.
+</Accordion>
+
+<Accordion title="List stories">
+List stories returns a list of all stories in a selected project and their attributes.
+</Accordion>
+
+<Accordion title="List story comment">
+Lists comments associated with a story
+</Accordion>
+
+<Accordion title="Update project">
+Update project can be used to change properties of a project.
+</Accordion>
+
+<Accordion title="Update milestone">
+(deprecated: use 'update objective') update milestone can be used to update milestone properties.
+</Accordion>
+
+<Accordion title="Get story">
+Get story returns information about a chosen story.
+</Accordion>
+
+<Accordion title="Upload files">
+Upload files uploads one or many files and optionally associates them with a story. use the multipart/form-data content-type to upload. each `file` key should contain a separate file. each uploadedfile's name comes from the content-disposition header "filename" directive for that field.
+</Accordion>
+
+<Accordion title="Get file">
+Get file returns information about the selected uploadedfile.
+</Accordion>
+
+<Accordion title="List workflows">
+Returns a list of all workflows in the workspace.
+</Accordion>
+
+<Accordion title="Update task">
+Update task can be used to update task properties.
+</Accordion>
+
+<Accordion title="List members">
+Returns information about members of the workspace.
+</Accordion>
+
+<Accordion title="List files">
+List files returns a list of all uploadedfiles in the workspace.
+</Accordion>
+
+<Accordion title="Get story comment">
+Get comment is used to get comment information.
+</Accordion>
+
+<Accordion title="Update story">
+Update story can be used to update story properties.
+</Accordion>
+
+<Accordion title="Update epic">
+Update epic can be used to update numerous fields in the epic. the only required parameter is epic id, which can be found in the shortcut ui.
+</Accordion>
+
+<Accordion title="Get group">
+Retrieves detailed information about a specific group in the shortcut workspace using its unique public identifier. this endpoint allows developers to fetch comprehensive data about a group, including its name, type, and associated metadata. it's particularly useful when you need to access or verify group details programmatically, such as during workflow automations or when building integrations that involve group management. the endpoint provides more granular control and information compared to what's available through the web application, making it valuable for advanced group-related operations and data analysis within your shortcut projects.
+</Accordion>
+
+<Accordion title="Search objectives">
+Search objectives lets you search objectives based on desired parameters. since ordering of results can change over time (due to search ranking decay, new objectives being created), the `next` value from the previous response can be used as the path and query string for the next page to ensure stable ordering.
+</Accordion>
+
+<Accordion title="Update epic comment">
+This endpoint allows you to update a threaded comment on an epic.
+</Accordion>
+
+<Accordion title="Shortcut Search">
+Search lets you search epics and stories based on desired parameters. since ordering of the results can change over time (due to search ranking decay, new epics and stories being created), the `next` value from the previous response can be used as the path and query string for the next page to ensure stable ordering.
+</Accordion>
+
+<Accordion title="Search epics">
+Search epics lets you search epics based on desired parameters. since ordering of stories can change over time (due to search ranking decay, new epics being created), the `next` value from the previous response can be used as the path and query string for the next page to ensure stable ordering.
+</Accordion>
+
+<Accordion title="Get story link">
+Returns the stories and their relationship for the given story link.
+</Accordion>
+
+<Accordion title="Update iteration">
+This endpoint allows you to update an existing iteration in shortcut. it provides comprehensive control over various aspects of an iteration, including its metadata, associated members and groups, labels, and timeframe. use this endpoint when you need to modify any details of an ongoing or upcoming iteration, such as adjusting dates, adding followers, or updating labels. the endpoint is particularly useful for project managers or team leads who need to refine iteration details as the project progresses. note that while you can update multiple aspects of an iteration in a single call, only the fields you include in the request will be modified; omitted fields will retain their current values.
+</Accordion>
+
+<Accordion title="List groups">
+A group in our api maps to a "team" within the shortcut product. a team is a collection of users that can be associated to stories, epics, and iterations within shortcut.
+</Accordion>
+
+<Accordion title="Get iteration">
+Retrieves detailed information about a specific iteration in the shortcut project management system. this endpoint allows users to fetch comprehensive data about a single iteration, including its name, status, start and end dates, associated stories, and progress metrics. it should be used when detailed information about a particular iteration is needed, such as during sprint planning, progress tracking, or retrospective analysis. the endpoint provides a snapshot of the iteration at the time of the request and does not include real-time updates. it's particularly useful for project managers, scrum masters, and team members who need to review or report on iteration-specific data. note that this endpoint only retrieves information and does not allow for modification of the iteration details.
+</Accordion>
+
+<Accordion title="Get task">
+Returns information about a chosen task.
+</Accordion>
+
+<Accordion title="Get key result">
+Get key result returns information about a chosen key result.
+</Accordion>
+
+<Accordion title="Search iterations">
+Search iterations lets you search iterations based on desired parameters. since ordering of results can change over time (due to search ranking decay, new iterations being created), the `next` value from the previous response can be used as the path and query string for the next page to ensure stable ordering.
+</Accordion>
+
+<Accordion title="Update key result">
+Update key result allows updating a key result's name or initial, observed, or target values.
+</Accordion>
+
+<Accordion title="List milestones">
+(deprecated: use 'list objectives') list milestones returns a list of all milestones and their attributes.
+</Accordion>
+
+<Accordion title="Update label">
+Update label allows you to replace a label name with another name. if you try to name a label something that already exists, you will receive a 422 response.
+</Accordion>
+
+<Accordion title="Get workflow">
+Get workflow returns information about a chosen workflow.
+</Accordion>
+
+<Accordion title="List milestone epics">
+(deprecated: use 'list objective epics') list all of the epics within the milestone.
+</Accordion>
+
+<Accordion title="List iteration stories">
+Get a list of all stories in an iteration.
+</Accordion>
+
+<Accordion title="List labels">
+List labels returns a list of all labels and their attributes.
+</Accordion>
+
+<Accordion title="List label epics">
+List all of the epics with the label.
+</Accordion>
+
+<Accordion title="List group stories">
+List the stories assigned to the group. (by default, limited to 1,000).
+</Accordion>
+
+<Accordion title="Get label">
+Get label returns information about the selected label.
+</Accordion>
+
+<Accordion title="List categories">
+List categories returns a list of all categories and their attributes.
+</Accordion>
+
+<Accordion title="Search stories">
+Search stories lets you search stories based on desired parameters. since ordering of stories can change over time (due to search ranking decay, new stories being created), the `next` value from the previous response can be used as the path and query string for the next page to ensure stable ordering.
+</Accordion>
+
+<Accordion title="List iterations">
+Retrieves a list of all iterations in the shortcut project management system. iterations represent specific time periods for planning and tracking work, allowing teams to organize their development cycles. this endpoint provides comprehensive information about each iteration, including its name, start and end dates, status, and associated stories or tasks. use this endpoint when you need an overview of all iterations for project planning, progress tracking, or reporting purposes. it's particularly useful for analyzing past performance, planning future sprints, or getting a high-level view of the project timeline. note that the response may be paginated for projects with a large number of iterations, and you might need to make multiple requests to retrieve the full dataset.
+</Accordion>
+
+<Accordion title="Update linked file">
+Updated linked file allows you to update properties of a previously attached linked-file.
+</Accordion>
+
+<Accordion title="List objectives">
+List objectives returns a list of all objectives and their attributes.
+</Accordion>
+
+<Accordion title="Story history">
+Retrieves the complete history of changes for a specific story in the shortcut project management system. this endpoint allows users to track all modifications, updates, and revisions made to a story over time, providing a comprehensive timeline of its evolution. it's particularly useful for project managers, team members, and stakeholders who need to understand how a story has changed, who made the changes, and when they occurred. the endpoint returns a chronological list of all events and modifications associated with the specified story, helping teams maintain transparency and accountability in their project workflows. note that this endpoint focuses solely on the history of a single story and does not provide information about related stories or overall project status.
+</Accordion>
+
+<Accordion title="List projects">
+List projects returns a list of all projects and their attributes.
+</Accordion>
+
+<Accordion title="Get linked file">
+Get file returns information about the selected linked file.
+</Accordion>
+
+<Accordion title="List category milestones">
+List category milestones returns a list of all milestones with the category.
+</Accordion>
+
+<Accordion title="List category objectives">
+Returns a list of all objectives with the category.
+</Accordion>
+
+<Accordion title="List objective epics">
+List all of the epics within the objective.
+</Accordion>
+
+<Accordion title="Unlink comment thread from slack">
+Unlinks a comment from its linked slack thread (comment replies and slack replies will no longer be synced)
+</Accordion>
+
+<Accordion title="Update file">
+Update file updates the properties of an uploadedfile (but not its content).
+</Accordion>
+
+<Accordion title="Get milestone">
+(deprecated: use 'get objective') get milestone returns information about a chosen milestone.
+</Accordion>
+
+<Accordion title="List custom fields">
+Retrieves a list of all custom fields defined in the shortcut api. this endpoint allows developers to fetch information about user-defined fields that have been added to extend the functionality of standard fields in integrations. it's particularly useful when you need to understand the structure and types of custom data being used across the system. the endpoint returns details about each custom field, which may include their identifiers, names, types, and any associated metadata. use this endpoint when you need to inventory existing custom fields, prepare for data migrations, or dynamically adjust your application's data model to accommodate custom fields. note that this endpoint does not create, modify, or delete custom fields; it's purely for retrieval of existing custom field definitions.
+</Accordion>
+
+<Accordion title="Search stories old">
+Search stories lets you search stories based on desired parameters.
+</Accordion>
+
+<Accordion title="Get member">
+Returns information about a member.
+</Accordion>
+
+<Accordion title="List entity templates">
+List all the entity templates for the workspace.
+</Accordion>
+

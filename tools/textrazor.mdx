@@ -1,0 +1,50 @@
+TextRazor is a natural language processing API that extracts meaning, entities, and relationships from text, powering advanced content analysis and sentiment detection
+
+<Accordion title="Classify Text">
+This tool will classify text into predefined categories using textrazor's classification capabilities. it takes input text, optional cleanup mode and language, and returns a list of relevant categories with their confidence scores from the analysis. the tool supports various built-in classifiers including: - textrazor iab: iab qag segments - textrazor iab content taxonomy 3.0: iab content taxonomy v3.0 (2022) - textrazor mediatopics 2023q1: latest iptc media topics (march 2023) - and other versions of these taxonomies
+</Accordion>
+
+<Accordion title="Extract Entailments from Text">
+This tool extracts entailments from text using textrazor's api. it identifies words or phrases that can be logically inferred from the given text by analyzing logical implications and relationships.
+</Accordion>
+
+<Accordion title="Dictionary Manager">
+The textrazor dictionary manager tool allows users to create, update, and manage custom entity dictionaries in textrazor. it provides endpoints for creating/updating dictionaries, listing dictionaries, getting a specific dictionary, and deleting dictionaries, as well as managing the entries within these dictionaries (adding, retrieving, and deleting entries).
+</Accordion>
+
+<Accordion title="Analyze Dependency Trees">
+The dependencytreesaction analyzes the grammatical relationships between words in text by creating dependency trees. it provides detailed syntactic analysis by identifying the grammatical relationships between words and their parent words in a sentence. this tool is useful for: - understanding sentence structure - analyzing grammatical relationships - parsing complex sentences - supporting advanced linguistic analysis tasks
+</Accordion>
+
+<Accordion title="Get Account Information">
+This tool retrieves comprehensive information about a textrazor account, providing essential details about the account's status, usage, and limits. it returns an account object containing properties such as the current subscription plan, concurrent request limits, and daily usage among others, making it crucial for monitoring api usage, managing requests, and ensuring compliance with subscription limits.
+</Accordion>
+
+<Accordion title="Extract Word Senses">
+This tool performs word sense disambiguation on the input text by identifying the most likely meanings of words in context. it uses textrazor's 'senses' extractor to determine the semantic meaning and provides detailed data including word, sense, confidence score, part of speech, position, synset, and definition.
+</Accordion>
+
+<Accordion title="Extract Grammatical Relations from Text">
+This tool extracts grammatical relations between words in the text. it identifies the relationships between different parts of sentences, including subjects, objects, and predicates. the relations extractor provides detailed syntactic analysis of the text.
+</Accordion>
+
+<Accordion title="Spelling Correction">
+This tool performs spelling correction on the provided text using textrazor's deep spelling correction system. it analyzes the input text for spelling errors and provides context-based corrections.
+</Accordion>
+
+<Accordion title="Extract Topics from Text">
+A tool to extract topics from text using textrazor's topic extraction capabilities. topics represent the main themes and concepts discussed in the text, with relevance scores indicating their importance to the document.
+</Accordion>
+
+<Accordion title="Extract Named Entities from Text">
+Extract named entities (people, places, companies, etc.) from text using textrazor's entity extraction api. the tool will identify and classify named entities within the provided text, returning detailed information about each entity including its type, confidence score, and relevance score.
+</Accordion>
+
+<Accordion title="Extract Phrases from Text">
+The extractphrases action extracts meaningful phrases from input text using textrazor's phrase extraction capability. it analyzes text to identify important phrases and multi-word expressions that aid in tasks like content analysis, keyword extraction, and summarization.
+</Accordion>
+
+<Accordion title="Analyze Content with TextRazor">
+A comprehensive content analysis tool that combines multiple textrazor extractors to perform a complete analysis of the input text. this action allows users to analyze text content with multiple extractors in a single api call.
+</Accordion>
+

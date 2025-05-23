@@ -1,0 +1,378 @@
+Google Super App combines all Google services including Drive, Calendar, Gmail, Sheets, Analytics, Ads, and more, providing a unified platform for seamless integration and management of your digital life.
+
+<Accordion title="Create Google Sheet">
+Create a new google sheet.
+</Accordion>
+
+<Accordion title="Create Meet">
+Create a google meet space!
+</Accordion>
+
+<Accordion title="Create Event">
+Create a new event in a google calendar.
+</Accordion>
+
+<Accordion title="Create Task List">
+Create a new task list in google tasks.
+</Accordion>
+
+<Accordion title="Batch Update Spreadsheet">
+Perform a batch update operation on a specified google sheets spreadsheet. note: if no first cell location is provided, the values will be appended to the first empty row of the sheet from the top.
+</Accordion>
+
+<Accordion title="Create Folder">
+Create a new folder in google drive. if parent id is provided, it must be a valid google drive folder id. the folder will be created in the root directory if no parent id is specified.
+</Accordion>
+
+<Accordion title="Create Label">
+Action to create a new label in gmail.
+</Accordion>
+
+<Accordion title="Create a File from Text">
+Create a file from text. max 10mb in size.
+</Accordion>
+
+<Accordion title="Duplicate Calendar">
+Action to duplicate a google calendar based on the provided summary. the duplicated calendar can be used similarly to manage other goals.
+</Accordion>
+
+<Accordion title="Format Cell">
+Apply formatting to a specified range of cells in a google sheets spreadsheet. note: the current implementation incorrectly uses logic for updating cell values. this needs to be refactored.
+</Accordion>
+
+<Accordion title="Clear Spreadsheet Values">
+Clear values from a specified range in a spreadsheet.
+</Accordion>
+
+<Accordion title="Clear Tasks">
+Clear all completed tasks from the specified task list in google tasks.
+</Accordion>
+
+<Accordion title="Add Enrichment">
+Adds an enrichment at a specified position in a defined album.
+</Accordion>
+
+<Accordion title="Get Contacts">
+Action to get info of contacts saved in google for an authorized account. a custom integration with `https://www.googleapis.com/auth/contacts.readonly` scope is required to use this action.
+</Accordion>
+
+<Accordion title="Delete Draft">
+Delete an email draft using gmail's api.
+</Accordion>
+
+<Accordion title="Download a File from Google Drive">
+Download a file.
+</Accordion>
+
+<Accordion title="Get customer lists">
+Getcustomerlists tool will list all customer lists in google ads.
+</Accordion>
+
+<Accordion title="Edit File">
+Edit a file. max 10mb in size.
+</Accordion>
+
+<Accordion title="Find Free Slots">
+Find free slots in a google calendar based on for a specific time period.
+</Accordion>
+
+<Accordion title="Get Album">
+Returns the album based on the specified albumid.
+</Accordion>
+
+<Accordion title="Get Current Date and Time">
+Action to get the current date and time of a specified timezone, given its utc offset value.
+</Accordion>
+
+<Accordion title="Get Or Create Document By Id">
+Finds or creates a specific document.
+</Accordion>
+
+<Accordion title="Get Gmail Attachment">
+Get an attachment from a mail.
+</Accordion>
+
+<Accordion title="Get Directions">
+Requires: valid google maps api key gets directions between locations using google maps directions api. this action provides detailed directions between two points, including: - turn-by-turn navigation steps - distance and duration for each step - alternative routes when available - support for waypoints - different travel modes examples: ```python # basic direction request request = getdirectionrequest( origin="disneyland", destination="universal studios hollywood" ) # complex route with waypoints and preferences request = getdirectionrequest( origin="los angeles airport", destination="santa monica pier", waypoints="venice beach,getty center", mode="driving", avoid="highways", units="metric" ) ```
+</Accordion>
+
+<Accordion title="Download Photos Media Item">
+Downloads a media item from google photos and returns it as a file.
+</Accordion>
+
+<Accordion title="Add File Sharing Preference">
+Add file sharing preferences, including domain-level permissions requiring a domain field.
+</Accordion>
+
+<Accordion title="Copy File">
+Copy a file
+</Accordion>
+
+<Accordion title="Fetch Message by Message ID">
+Fetch messages by message id from gmail.
+</Accordion>
+
+<Accordion title="Get Spreadsheet Info">
+Retrieve information about an existing google sheet.
+</Accordion>
+
+<Accordion title="Get Meet Details">
+Retrieve details of a google meet space.
+</Accordion>
+
+<Accordion title="Fetch Emails">
+Action to fetch all emails from gmail.
+</Accordion>
+
+<Accordion title="Get Sheet Names">
+Get all the worksheet names in a spreadsheet. note: use this action to get valid sheet names before using any other action.
+</Accordion>
+
+<Accordion title="Get Route">
+Computes routes between two points using google maps routes api. this action calculates routes between two locations, taking into account: - real-time traffic conditions (when routingpreference is traffic aware) - route preferences (avoiding tolls, highways, ferries) - alternative routes (when computealternativeroutes is true) - different travel modes (driving, walking, cycling, etc.) the response includes details like: - total distance in meters - estimated duration - encoded polyline for route visualization
+</Accordion>
+
+<Accordion title="Get Task">
+Retrieve the specified task from the task list in google tasks.
+</Accordion>
+
+<Accordion title="Fetch Google Calendar">
+Action to fetch a calendar based on the provided calendar id.
+</Accordion>
+
+<Accordion title="Create Album">
+Creates a new album in google photos.
+</Accordion>
+
+<Accordion title="Get People">
+Action to get contacts info of people.
+</Accordion>
+
+<Accordion title="Get Task List">
+Get a task list in google tasks.
+</Accordion>
+
+<Accordion title="Get Transcripts by Conference Record ID">
+Retrieve transcripts by conference record id.
+</Accordion>
+
+<Accordion title="Get Campaign By Id">
+Getcampaignbyid tool will return details of a campaign in google ads.
+</Accordion>
+
+<Accordion title="Create customer list">
+Createcustomerlist tool will create a customer list in google ads.
+</Accordion>
+
+<Accordion title="Modify Label to Email">
+Modify a label to an email in gmail.
+</Accordion>
+
+<Accordion title="List Gmail Labels">
+List all labels in the user's gmail account.
+</Accordion>
+
+<Accordion title="List Media Items">
+Lists all media items from a user's google photos library.
+</Accordion>
+
+<Accordion title="List Google Calendars">
+Action to list all google calendars from the user's calendar list with pagination.
+</Accordion>
+
+<Accordion title="Insert Task">
+Create a new task on the specified task list in google tasks.
+</Accordion>
+
+<Accordion title="List Albums">
+Lists all albums shown to a user in the albums tab of google photos.
+</Accordion>
+
+<Accordion title="Add or remove to customer list">
+Addorremovetocustomerlist tool will add a contact to a customer list in google ads. note: it takes 6 to 12 hours for changes to be reflected in the customer list.
+</Accordion>
+
+<Accordion title="Get Profile">
+Get the profile of the authenticated user.
+</Accordion>
+
+<Accordion title="List Task Lists">
+List all task lists of an authenticated user in google tasks.
+</Accordion>
+
+<Accordion title="Lookup Spreadsheet Row">
+Lookup a row in a specific spreadsheet by a column and value.
+</Accordion>
+
+<Accordion title="List Threads">
+Action to list threads in gmail. this action returns a list of threads and a page token to retrieve the next page of results. the next page token is returned in the response of this action (i.e 'listthreads') if there are more results to be fetched, which you can use in the 'pagetoken' field of the request to fetch the next page of results. if not available, the last page of results is returned.
+</Accordion>
+
+<Accordion title="Get Conference Record by Space Name, Meeting Code, Start Time, End Time">
+Get conference record by space name, meeting code, start time, end time
+</Accordion>
+
+<Accordion title="Move to Trash">
+Move an email message to trash using gmail's api.
+</Accordion>
+
+<Accordion title="Fetch Message by Thread ID">
+Fetch messages by thread id from gmail with pagination support. to use pagination, you can set the 'pagetoken' in the request to the value of the 'nextpagetoken' in the response of the previous action. the 'nextpagetoken' is returned in the response of this action (i.e 'fetchmessagebythreadid') if there are more results to be fetched. if not provided, the first page of results is returned.
+</Accordion>
+
+<Accordion title="Modify Thread Labels">
+Action to modify labels of a thread in gmail.
+</Accordion>
+
+<Accordion title="Batch Add Media Items">
+Adds one or more media items to an album in google photos.
+</Accordion>
+
+<Accordion title="Nearby Search">
+Searches for places near a specified location using google maps places api.
+</Accordion>
+
+<Accordion title="Get Recordings by Conference Record ID">
+Retrieve recordings by conference record id.
+</Accordion>
+
+<Accordion title="List Drafts">
+List all email drafts using gmail's api.
+</Accordion>
+
+<Accordion title="List Tasks">
+Retrieve all tasks in the specified task list from google tasks.
+</Accordion>
+
+<Accordion title="Find Event">
+Find events in a google calendar based on a search query.
+</Accordion>
+
+<Accordion title="Batch Create Media Items">
+Unified action to upload media files and create them as items in google photos.
+</Accordion>
+
+<Accordion title="Batch Get Spreadsheet">
+Perform a batch get on a specific spreadsheet. note: if ranges aren't provided, data from the first sheet will be returned.
+</Accordion>
+
+<Accordion title="Create Document">
+Creates a new google docs document with an optional title and text.
+</Accordion>
+
+<Accordion title="Create Document Markdown">
+Creates a new google docs document with an optional title and text.
+</Accordion>
+
+<Accordion title="Batch Get Media Items">
+Returns the list of media items for the specified media item identifiers.
+</Accordion>
+
+<Accordion title="Delete Event">
+Delete an event from a google calendar.
+</Accordion>
+
+<Accordion title="Delete Task">
+Delete the specified task from the task list in google tasks.
+</Accordion>
+
+<Accordion title="Find Folder">
+Find folder
+</Accordion>
+
+<Accordion title="Delete Folder or File">
+Delete folder or file
+</Accordion>
+
+<Accordion title="Create Email Draft">
+Create a draft email using gmail's api.
+</Accordion>
+
+<Accordion title="Delete Task List">
+Delete a task list in google tasks.
+</Accordion>
+
+<Accordion title="Delete Message">
+Delete an email message using gmail's api. note: this action requires the integration to have the `https://mail.google.com/` scope.
+</Accordion>
+
+<Accordion title="Find Files">
+Find files present in google drive. can be used to search for files by name and content.
+</Accordion>
+
+<Accordion title="Patch Calendar">
+Action to update a google calendar based on the provided calendar id and other required and optional parameters. note that 'summary' is a mandatory parameter. use googlecalendar list calendars action to get the list of calendars and their ids.
+</Accordion>
+
+<Accordion title="Parse a File from Google Drive">
+Parse a file. max 10mb in size. &lt;&lt;DEPRECATED use DOWNLOAD_FILE&gt;&gt;
+</Accordion>
+
+<Accordion title="Remove Attendee from Event">
+Remove an attendee from an existing event in a google calendar.
+</Accordion>
+
+<Accordion title="Remove Label">
+Action to remove a label in gmail.
+</Accordion>
+
+<Accordion title="Update Google Event">
+Update an existing event in a google calendar.
+</Accordion>
+
+<Accordion title="Reply to Email Thread">
+Action to reply to an email thread in gmail.
+</Accordion>
+
+<Accordion title="Update Existing Document">
+Updates an existing google docs document with the provided edits.
+</Accordion>
+
+<Accordion title="Patch Task List">
+Update the authenticated user's specified task list in google tasks.
+</Accordion>
+
+<Accordion title="Patch Task">
+Update the specified task in the task list in google tasks.
+</Accordion>
+
+<Accordion title="Quick Add Event">
+Create a new event in a google calendar based on a simple text string like 'appointment at somewhere on june 3rd 10am-10:25am' you can only give title and timeslot here. no recurring meetings and no attendee can be added here. this is not a preferred endpoint. only use this if no other endpoint is possible.
+</Accordion>
+
+<Accordion title="Upload File">
+Upload a file to google drive. max file size is 5mb.
+</Accordion>
+
+<Accordion title="Update Media Item">
+Updates a media item's description in google photos.
+</Accordion>
+
+<Accordion title="Upload Media">
+Upload a media file to google photos. supports images (up to 200mb) and videos (up to 20gb).
+</Accordion>
+
+<Accordion title="Text Search">
+Searches for places using a text query in google maps places api.
+</Accordion>
+
+<Accordion title="Sheet From Json">
+Create a new google sheet from a json object. this action takes a json structure and converts it into a google sheet where: - the first row contains the keys as headers - subsequent rows contain the corresponding values - all rows must have the same structure (keys) args: title (str): the title of the new google sheet sheet name (str): name of the worksheet within the spreadsheet sheet json (list[dict]): list of dictionaries with consistent keys
+</Accordion>
+
+<Accordion title="Send Email">
+Send an email using gmail's api.
+</Accordion>
+
+<Accordion title="Search Media Items">
+Searches for media items in a user's google photos library.
+</Accordion>
+
+<Accordion title="Search People">
+Provides a list of contacts in the authenticated user's grouped contacts that matches the search query. the query matches on a contact's names, nicknames, emailaddresses, phonenumbers, and organizations fields that are from the contact source. a custom integration with `https://www.googleapis.com/auth/contacts.readonly` scope is required to use this action.
+</Accordion>
+
+<Accordion title="Update Document Markdown">
+Updates an existing google docs document created using markdown with the new markdown text.
+</Accordion>
+

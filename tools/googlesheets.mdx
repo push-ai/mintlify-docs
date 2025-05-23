@@ -1,0 +1,39 @@
+Google Sheets is a web-based spreadsheet program that is part of the
+    Google Drive office suite.
+
+<Accordion title="Lookup Spreadsheet Row">
+Lookup a row in a specific spreadsheet by a column and value.
+</Accordion>
+
+<Accordion title="Sheet From Json">
+Create a new google sheet from a json object. this action takes a json structure and converts it into a google sheet where: - the first row contains the keys as headers - subsequent rows contain the corresponding values - all rows must have the same structure (keys) args: title (str): the title of the new google sheet sheet name (str): name of the worksheet within the spreadsheet sheet json (list[dict]): list of dictionaries with consistent keys
+</Accordion>
+
+<Accordion title="Batch Get Spreadsheet">
+Perform a batch get on a specific spreadsheet. note: if ranges aren't provided, data from the first sheet will be returned.
+</Accordion>
+
+<Accordion title="Batch Update Spreadsheet">
+Perform a batch update operation on a specified google sheets spreadsheet. note: if no first cell location is provided, the values will be appended to the first empty row of the sheet from the top.
+</Accordion>
+
+<Accordion title="Clear Spreadsheet Values">
+Clear values from a specified range in a spreadsheet.
+</Accordion>
+
+<Accordion title="Get Sheet Names">
+Get all the worksheet names in a spreadsheet. note: use this action to get valid sheet names before using any other action.
+</Accordion>
+
+<Accordion title="Create Google Sheet">
+Create a new google sheet.
+</Accordion>
+
+<Accordion title="Get Spreadsheet Info">
+Retrieve information about an existing google sheet.
+</Accordion>
+
+<Accordion title="Format Cell">
+Apply formatting to a specified range of cells in a google sheets spreadsheet. note: the current implementation incorrectly uses logic for updating cell values. this needs to be refactored.
+</Accordion>
+

@@ -1,0 +1,70 @@
+Semantic Scholar is an AI-powered academic search engine that helps researchers discover and understand scientific literature
+
+<Accordion title="Details about a paper s authors">
+Retrieves the list of authors for a specific paper identified by its unique paper id in the semantic scholar database. this endpoint is useful when you need detailed information about the contributors to a particular academic publication. it provides access to the author data associated with the paper, which may include names, affiliations, and potentially other metadata. this tool should be used when users require author information for a known paper, such as when exploring collaborations or tracking an author's body of work. it does not provide the full paper content or other paper metadata beyond author information.
+</Accordion>
+
+<Accordion title="Details about a paper">
+Examples: &lt;ul&gt; &lt;li&gt;&lt;code&gt;https://api.semanticscholar.org/graph/v1/paper/649def34f8be52c8b66281af98ae884c09aef38b&lt;/code&gt;&lt;/li&gt; &lt;ul&gt; &lt;li&gt;returns a paper with its paperid and title. &lt;/li&gt; &lt;/ul&gt; &lt;li&gt;&lt;code&gt;https://api.semanticscholar.org/graph/v1/paper/649def34f8be52c8b66281af98ae884c09aef38b?fields=url,year,authors&lt;/code&gt;&lt;/li&gt; &lt;ul&gt; &lt;li&gt;returns the paper's paperid, url, year, and list of authors. &lt;/li&gt; &lt;li&gt;each author has authorid and name.&lt;/li&gt; &lt;/ul&gt; &lt;li&gt;&lt;code&gt;https://api.semanticscholar.org/graph/v1/paper/649def34f8be52c8b66281af98ae884c09aef38b?fields=citations.authors&lt;/code&gt;&lt;/li&gt; &lt;ul&gt; &lt;li&gt;returns the paper's paperid and list of citations. &lt;/li&gt; &lt;li&gt;each citation has its paperid plus its list of authors.&lt;/li&gt; &lt;li&gt;each author has their 2 always included fields of authorid and name.&lt;/li&gt; &lt;/ul&gt; 
+
+ limitations: &lt;ul&gt; &lt;li&gt;can only return up to 10 mb of data at a time.&lt;/li&gt; &lt;/ul&gt; &lt;/ul&gt;
+</Accordion>
+
+<Accordion title="Text snippet search">
+Return the text snippets that most closely match the query. text snippets are excerpts of approximately 500 words, drawn from a paper's title, abstract, and body text, but excluding figure captions and the bibliography. it will return the highest ranked snippet first, as well as some basic data about the paper it was found in. examples: &lt;ul&gt; &lt;li&gt;&lt;code&gt;https://api.semanticscholar.org/graph/v1/snippet/search?query=the literature graph is a property graph with directed edges&limit=1&lt;/code&gt;&lt;/li&gt; &lt;ul&gt; &lt;li&gt;returns a single snippet that is the highest ranked match.&lt;/li&gt; &lt;li&gt;each snippet has text, snippetkind, section, annotation data, and score. as well as the following data about the paper it comes from: corpusid, title, authors, and openaccessinfo.&lt;/li&gt; &lt;/ul&gt; &lt;/ul&gt; 
+
+ limitations: &lt;ul&gt; &lt;li&gt;you must include a query.&lt;/li&gt; &lt;li&gt;if you don't set a limit, it will automatically return 10 results.&lt;/li&gt; &lt;li&gt;the max limit allowed is 1000.&lt;/li&gt; &lt;/ul&gt; &lt;/ul&gt;
+</Accordion>
+
+<Accordion title="Details about a paper s citations">
+Retrieves a list of citations for a specific academic paper using its unique semantic scholar paper id. this endpoint is useful for researchers and developers who want to explore the impact and connections of a particular academic work within the broader scientific literature. it provides information about other papers that have cited the specified paper, allowing users to trace the influence of research and discover related works. the endpoint should be used when analyzing the reception and impact of a specific paper, building citation networks, or conducting bibliometric studies. it does not provide the full text of citing papers or detailed information about the citations beyond basic metadata.
+</Accordion>
+
+<Accordion title="Details about a paper s references">
+Retrieves the list of references cited by a specific paper in the semantic scholar database. this endpoint allows users to explore the scholarly context of a publication by accessing its bibliography. it's particularly useful for understanding the foundation of a paper's research, tracing the development of ideas, or conducting literature reviews. the tool returns details about the cited papers, which may include their titles, authors, publication dates, and semantic scholar ids. it should be used when analyzing a paper's sources or investigating the connections between different academic works. note that this endpoint only provides outgoing references (papers cited by the specified paper) and not incoming citations (papers that cite the specified paper).
+</Accordion>
+
+<Accordion title="Get details for multiple authors at once">
+Retrieves detailed information for multiple authors from semantic scholar in a single api call. this endpoint allows users to efficiently fetch data for a batch of authors by providing their unique semantic scholar ids. it's particularly useful for applications that need to gather information on multiple authors simultaneously, reducing the number of individual api calls required. the endpoint accepts a list of author ids and returns comprehensive details for each author, which may include their publications, citations, and other relevant academic information. while the exact response structure is not specified in the given schema, users can expect rich metadata about the requested authors.
+</Accordion>
+
+<Accordion title="Details about an author">
+Examples: &lt;ul&gt; &lt;li&gt;&lt;code&gt;https://api.semanticscholar.org/graph/v1/author/1741101&lt;/code&gt;&lt;/li&gt; &lt;ul&gt; &lt;li&gt;returns the author's authorid and name.&lt;/li&gt; &lt;/ul&gt; &lt;li&gt;&lt;code&gt;https://api.semanticscholar.org/graph/v1/author/1741101?fields=url,papers&lt;/code&gt;&lt;/li&gt; &lt;ul&gt; &lt;li&gt;returns the author's authorid, url, and list of papers. &lt;/li&gt; &lt;li&gt;each paper has its paperid plus its title.&lt;/li&gt; &lt;/ul&gt; &lt;li&gt;&lt;code&gt;https://api.semanticscholar.org/graph/v1/author/1741101?fields=url,papers.abstract,papers.authors&lt;/code&gt;&lt;/li&gt; &lt;ul&gt; &lt;li&gt;returns the author's authorid, url, and list of papers. &lt;/li&gt; &lt;li&gt;each paper has its paperid, abstract, and list of authors.&lt;/li&gt; &lt;li&gt;in that list of authors, each author has their authorid and name.&lt;/li&gt; &lt;/ul&gt; 
+
+ limitations: &lt;ul&gt; &lt;li&gt;can only return up to 10 mb of data at a time.&lt;/li&gt; &lt;/ul&gt; &lt;/ul&gt;
+</Accordion>
+
+<Accordion title="Details about an author s papers">
+Retrieves a list of papers authored by a specific researcher identified by their unique semantic scholar author id. this endpoint is particularly useful for conducting literature reviews, analyzing an author's body of work, or tracking a researcher's publications over time. it provides a comprehensive view of an author's contributions to their field of study. the endpoint returns only the papers associated with the specified author and does not include co-authored works where the specified author is not listed as a primary author. note that the response may be paginated for authors with a large number of publications, and additional api calls might be necessary to retrieve the complete list of papers.
+</Accordion>
+
+<Accordion title="Get details for multiple papers at once">
+The semanticscholar paper batch endpoint allows users to retrieve data for multiple academic papers in a single api call. this endpoint is particularly useful when you need to fetch information for a batch of papers efficiently, reducing the number of individual api requests. it accepts an array of paper ids and returns the corresponding data for each paper. use this endpoint when you have a list of known paper ids and want to retrieve their details simultaneously. keep in mind that while there's no specified limit on the number of ids you can send, very large batches may be subject to api rate limiting or response size restrictions.
+</Accordion>
+
+<Accordion title="Paper bulk search">
+Behaves similarly to &lt;code&gt;/paper/search&lt;/code&gt;, but is intended for bulk retrieval of basic paper data without search relevance: &lt;ul&gt; &lt;li&gt;text query is optional and supports boolean logic for document matching.&lt;/li&gt; &lt;li&gt;papers can be filtered using various criteria.&lt;/li&gt; &lt;li&gt;up to 1,000 papers will be returned in each call.&lt;/li&gt; &lt;li&gt;if there are more matching papers, a continuation "token" will be present.&lt;/li&gt; &lt;li&gt;the query can be repeated with the token param added to efficiently continue fetching matching papers.&lt;/li&gt; &lt;/ul&gt; 
+
+ returns a structure with an estimated total matches, batch of matching papers, and a continuation token if more results are available. 
+
+ limitations: &lt;ul&gt; &lt;li&gt;nested paper data, such as citations, references, etc, is not available via this method.&lt;/li&gt; &lt;li&gt;up to 10,000,000 papers can be fetched via this method. for larger needs, please use the &lt;a href="datasets/"&gt;datasets api&lt;/a&gt; to retrieve full copies of the corpus.&lt;/li&gt; &lt;/ul&gt;
+</Accordion>
+
+<Accordion title="Search for authors by name">
+The authorsearch endpoint allows users to search for authors within the semantic scholar database. it provides a way to find academic authors based on their names or other identifying information. this endpoint is particularly useful when you need to retrieve author metadata, such as their publications, affiliations, or research areas. the search functionality supports partial name matches and is case-insensitive, making it flexible for various search scenarios. use this endpoint when you want to discover authors or verify author information in the context of academic research. note that the search results may be limited and paginated, so multiple requests might be necessary for comprehensive results.
+</Accordion>
+
+<Accordion title="Suggest paper query completions">
+To support interactive query-completion, return minimal information about papers matching a partial query example: &lt;code&gt;https://api.semanticscholar.org/graph/v1/paper/autocomplete?query=semanti&lt;/code&gt;
+</Accordion>
+
+<Accordion title="Paper title search">
+Behaves similarly to &lt;code&gt;/paper/search&lt;/code&gt;, but is intended for retrieval of a single paper based on closest title match to given query. examples: &lt;ul&gt; &lt;li&gt;&lt;code&gt;https://api.semanticscholar.org/graph/v1/paper/search/match?query=construction of the literature graph in semantic scholar&lt;/code&gt;&lt;/li&gt; &lt;ul&gt; &lt;li&gt;returns a single paper that is the closest title match.&lt;/li&gt; &lt;li&gt;each paper has its paperid, title, and matchscore as well as any other requested fields.&lt;/li&gt; &lt;/ul&gt; &lt;li&gt;&lt;code&gt;https://api.semanticscholar.org/graph/v1/paper/search/match?query=totalgarbagenonsense&lt;/code&gt;&lt;/li&gt; &lt;ul&gt; &lt;li&gt;returns with a 404 error and a "title match not found" message.&lt;/li&gt; &lt;/ul&gt; &lt;/ul&gt; 
+
+ limitations: &lt;ul&gt; &lt;li&gt;will only return the single highest match result.&lt;/li&gt; &lt;/ul&gt; &lt;/ul&gt;
+</Accordion>
+
+<Accordion title="Paper relevance search">
+The searchpapers endpoint allows users to search for academic papers within the semantic scholar database. it provides a powerful way to discover relevant scientific literature based on user-defined search criteria. this endpoint should be used when researchers, students, or developers need to find papers related to specific topics, authors, or time periods. the search functionality supports various query parameters to refine and customize the search results, making it suitable for both broad exploratory searches and targeted inquiries. however, users should be aware that the search is limited to papers indexed by semantic scholar, and very recent publications might not be immediately available. the endpoint returns a list of papers matching the search criteria, along with selected metadata fields, facilitating efficient literature review and analysis.
+</Accordion>
+

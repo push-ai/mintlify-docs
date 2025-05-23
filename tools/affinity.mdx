@@ -1,0 +1,82 @@
+Affinity helps private capital investors to find, manage, and close more deals
+
+<Accordion title="Get metadata on a single list">
+Returns metadata on a single list.
+</Accordion>
+
+<Accordion title="Get a company s list entries">
+Summarize company data across all lists, including list-specific fields and metadata like creation date and author. access requires "export data from lists" permission.
+</Accordion>
+
+<Accordion title="Get a person s lists">
+Returns metadata for all the lists on which the given person appears.
+</Accordion>
+
+<Accordion title="Get metadata on a single list s fields">
+Returns metadata on the fields available on a single list. use the returned field ids to request field data from the get `/v2/lists/\{listid\}/list-entries` endpoint.
+</Accordion>
+
+<Accordion title="Get a person s list entries">
+Summary: browse rows for a person in all lists, showing field data and entry metadata like creation time and author. requires "export data from lists" permission.
+</Accordion>
+
+<Accordion title="Get a single company">
+Retrieve basic company info and specific field data by using `fieldids` or `fieldtypes` parameters. multiple fields can be queried. no field data if parameters aren't specified. requires "export all organizations directory" permission.
+</Accordion>
+
+<Accordion title="Get metadata on a single saved view">
+Returns metadata on a single saved view.
+</Accordion>
+
+<Accordion title="Get a single opportunity">
+Get basic details about an opportunity without field data via provided endpoints. field data requires using specific list entry apis and the "export data from lists" permission.
+</Accordion>
+
+<Accordion title="Get all companies">
+Affinity api allows paginated access to company info and custom fields. use `fieldids` or `fieldtypes` to specify data in a request. retrieve field ids/types via get `/v2/companies/fields`. export permission needed.
+</Accordion>
+
+<Accordion title="Get all list entries on a list">
+Access and export essential data and metadata for companies, persons, or opportunities from a list, specifying data via `fieldids` or `fieldtypes`. "export data from lists" permission is necessary.
+</Accordion>
+
+<Accordion title="Get metadata on company fields">
+Returns metadata on non-list-specific company fields. use the returned field ids to request field data from the get `/v2/companies` and get `/v2/companies/\{id\}` endpoints.
+</Accordion>
+
+<Accordion title="Get a single person">
+Use get `/v2/persons/fields` with `fieldids` or `fieldtypes` for detailed data; basic info by default. request multiple fields at once. "export all people" permission needed.
+</Accordion>
+
+<Accordion title="Get all list entries on a saved view">
+Use the endpoint to access rows in a saved view with specific filters and selected fields from a web app. it doesn't maintain sort order, supports only sheet-type views, and requires export permissions.
+</Accordion>
+
+<Accordion title="Get metadata on person fields">
+Returns metadata on non-list-specific person fields. use the returned field ids to request field data from the get `/v2/persons` and get `/v2/persons/\{id\}` endpoints.
+</Accordion>
+
+<Accordion title="Get all opportunities">
+Pagination through opportunities in affinity yields basic info but excludes field data. for field data, use specified get endpoints. "export data from lists" permission needed.
+</Accordion>
+
+<Accordion title="Get current user">
+Returns metadata about the current user.
+</Accordion>
+
+<Accordion title="Get all persons">
+The affinity api offers paginated access to person data using `fieldids` or `fieldtypes`. bulk extraction needs special permissions and supports multiple parameters.
+</Accordion>
+
+<Accordion title="Get a company s lists">
+Returns metadata for all the lists on which the given company appears.
+</Accordion>
+
+<Accordion title="Get metadata on all lists">
+Returns metadata on lists.
+</Accordion>
+
+<Accordion title="Get metadata on saved views">
+Returns metadata on the saved views on a list.
+</Accordion>
+

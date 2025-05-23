@@ -1,0 +1,86 @@
+Webflow is a no-code website design and hosting platform, letting users build responsive sites, launch online stores, and maintain content without coding
+
+<Accordion title="Get Collection Item">
+This tool retrieves a specific item from a webflow collection. it allows users to fetch detailed information about a single collection item using its unique identifier. the tool is used to get an item's details such as its id, timestamps (lastpublished, lastupdated, createdon), archive/draft status, fielddata, and cmslocaleid. this tool requires appropriate 'cms:read' authentication scope.
+</Accordion>
+
+<Accordion title="Delete Webflow Collection Item">
+This tool allows you to delete a specific item from a collection in webflow. it permanently removes the item from the specified collection and complements existing collection management tools. the tool requires a collection id to identify the collection and an item id to identify the item, with an optional cms locale id parameter for handling multi-language content.
+</Accordion>
+
+<Accordion title="Get Collection Details">
+Retrieves a specific collection by its id from a webflow site. this endpoint returns detailed information about the collection, including its name, slug, and schema. it requires a valid collection id as a parameter and complements the webflow list collections tool for accessing specific collection details. this tool requires the 'cms:read' authentication scope.
+</Accordion>
+
+<Accordion title="Upload Asset to Webflow">
+This tool allows users to upload assets (files, images, etc.) to a webflow site. it involves a two-step process: first, generating a pre-signed amazon s3 upload url by calling the webflow api, and second, uploading the file to that s3 url. the tool requires parameters such as site id, file name, file content, md5, and optionally asset folder id to correctly upload and manage assets for the specified webflow site.
+</Accordion>
+
+<Accordion title="Update Order">
+This tool allows updating specific fields of an existing order in webflow. it's particularly useful for managing order fulfillment details and adding internal notes.
+</Accordion>
+
+<Accordion title="Get Webflow Site Information">
+This tool retrieves detailed information about a specific webflow site. it includes site id, workspaceid, creation and update dates, display names, and other settings like previewurl, timezone, customdomains, and locale settings. it requires a valid 'site id' and appropriate 'sites:read' authentication scope.
+</Accordion>
+
+<Accordion title="Get Item Inventory">
+This tool retrieves the current inventory levels for a specific item in a webflow collection. it provides information about the item's inventory quantity and type (finite or infinite) and complements the webflow update item inventory action by allowing users to check inventory levels before making any updates.
+</Accordion>
+
+<Accordion title="List Webflow Collections">
+This tool retrieves a list of all collections for a given webflow site. it uses the site id (obtained from webflow list webflow sites) to return a list of collections, each with properties such as id, name, slug, singularname, lastupdated, and fields. this tool is fundamental for working with webflow's cms and requires appropriate 'cms:read' authentication scope.
+</Accordion>
+
+<Accordion title="Create Webflow Collection Item">
+This tool creates a new item in a specified webflow collection. it requires the collection id and field data parameters (including required name and slug) and optionally accepts an is draft flag. authentication is assumed to be provided, and the collection id can be obtained by using the webflow list collections tool.
+</Accordion>
+
+<Accordion title="Fulfill Order">
+This tool allows you to mark an order as fulfilled in webflow's e-commerce system. it's essential for managing order fulfillment in webflow stores.
+</Accordion>
+
+<Accordion title="Publish Webflow Site">
+This tool publishes a webflow site, making all staged changes live. it uses the post /sites/\{site id\}/publish api endpoint and requires a valid site id, with an optional domains array to specify custom domains. it is essential for deploying updates made to site content, design, or structure.
+</Accordion>
+
+<Accordion title="List Form Submissions">
+This tool retrieves a list of form submissions for a specific webflow site. it allows users to fetch form submission data with pagination support and optional filtering by form element id.
+</Accordion>
+
+<Accordion title="Refund Order">
+This tool allows you to refund a webflow e-commerce order. when executed, it reverses the stripe charge and sets the order's status to 'refunded'. it handles customer returns or order cancellations.
+</Accordion>
+
+<Accordion title="Unfulfill Order">
+This tool allows you to mark a previously fulfilled order as unfulfilled in webflow. it is useful for reversing a fulfillment action when an order was mistakenly marked as fulfilled or if there are issues with shipment.
+</Accordion>
+
+<Accordion title="List Webflow Sites">
+This tool retrieves a list of all webflow sites accessible to the authenticated user. it is a fundamental and independent action which only requires an authentication token and returns details for each site including site id, name, shortname, lastpublished, previewurl, timezone, and status.
+</Accordion>
+
+<Accordion title="List Collection Items">
+This tool retrieves a list of items from a specified collection in webflow. it supports pagination and filtering, and is essential for fetching multiple items from a collection, such as blog posts, products, or any content stored in collections.
+</Accordion>
+
+<Accordion title="Update Item Inventory">
+This tool allows you to update the inventory levels of a specific sku item in your webflow e-commerce site by either setting the inventory quantity directly or updating it incrementally. it updates the inventory status using the patch /collections/:collection id/items/:item id/inventory endpoint and requires the 'ecommerce:write' scope.
+</Accordion>
+
+<Accordion title="Update Webflow Collection Item">
+This tool allows updating an existing item in a webflow collection using the patch /collections/\{collection id\}/items/\{item id\} endpoint. it accepts required parameters such as collection id, item id, and fields, and optional 'live' flag and cms locale id. the update operation modifies any fields available in the collection's schema and returns the updated item along with metadata.
+</Accordion>
+
+<Accordion title="List Webflow Orders">
+This tool retrieves a list of all orders for a specified webflow site using the get /sites/\{site id\}/orders endpoint. it accepts a required site id parameter and optional parameters such as status (to filter orders by their status), offset (for pagination), and limit (specifies the number of items per request). the response includes order details like order id, created on, customer info, status, total, items, shipping address, billing address, and payment info. this functionality supports ecommerce workflow management and requires the scope ecommerce:read.
+</Accordion>
+
+<Accordion title="List Pages">
+This tool retrieves a list of all pages for a specified webflow site. it can access both static and cms-driven pages and provides information such as the page's unique identifier, name, url slug, creation and update timestamps, and publication status. it is useful for auditing site structure, building site maps, and monitoring page updates.
+</Accordion>
+
+<Accordion title="Get Order Details">
+This tool retrieves detailed information about a specific order in webflow. it allows users to fetch comprehensive order details including customer information, items purchased, payment status, and shipping details. the response includes order status, customer details, billing and shipping information, items purchased, payment details, order total, timestamps, fulfillment status, and additional comments or tracking information.
+</Accordion>
+

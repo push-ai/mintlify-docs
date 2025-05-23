@@ -1,0 +1,21 @@
+Google Maps is a web mapping platform and consumer application offering satellite imagery,
+    aerial photography, street maps, 360° interactive panoramic views of streets, real-time
+    traffic conditions, and route planning for traveling by foot, car, bike, air and public
+    transportation.
+
+<Accordion title="Get Directions">
+Requires: valid google maps api key gets directions between locations using google maps directions api. this action provides detailed directions between two points, including: - turn-by-turn navigation steps - distance and duration for each step - alternative routes when available - support for waypoints - different travel modes examples: ```python # basic direction request request = getdirectionrequest( origin="disneyland", destination="universal studios hollywood" ) # complex route with waypoints and preferences request = getdirectionrequest( origin="los angeles airport", destination="santa monica pier", waypoints="venice beach,getty center", mode="driving", avoid="highways", units="metric" ) ```
+</Accordion>
+
+<Accordion title="Nearby Search">
+Searches for places near a specified location using google maps places api.
+</Accordion>
+
+<Accordion title="Get Route">
+Computes routes between two points using google maps routes api. this action calculates routes between two locations, taking into account: - real-time traffic conditions (when routingpreference is traffic aware) - route preferences (avoiding tolls, highways, ferries) - alternative routes (when computealternativeroutes is true) - different travel modes (driving, walking, cycling, etc.) the response includes details like: - total distance in meters - estimated duration - encoded polyline for route visualization
+</Accordion>
+
+<Accordion title="Text Search">
+Searches for places using a text query in google maps places api.
+</Accordion>
+

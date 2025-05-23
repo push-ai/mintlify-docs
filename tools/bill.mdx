@@ -1,0 +1,838 @@
+Integration with Bill.com API
+
+<Accordion title="Create an employee">
+Create a new employee.
+</Accordion>
+
+<Accordion title="Archive a vendor">
+Archive an existing vendor. in the response, the `archived` field is set as `true`. you can restore an archived vendor with `post /v3/vendors/\{vendorid\}/restore`. there is no change when you archive an archived vendor.
+</Accordion>
+
+<Accordion title="Api login as user">
+The loginasuser endpoint allows partners to authenticate and log in as a specific user within a designated organization in the bill system. this powerful feature enables partners to access and interact with an organization's account on behalf of a particular user, facilitating seamless integration and support. it should be used when a partner needs to perform actions or access information as if they were the specified user within the organization. this endpoint requires careful use and proper authorization, as it effectively allows impersonation of a user. while it supports mfa for enhanced security, partners should ensure they have explicit permission from the organization and user before utilizing this functionality.
+</Accordion>
+
+<Accordion title="Check app health">
+Retrieve app details, such as version and deployment location.
+</Accordion>
+
+<Accordion title="Create an accounting class">
+Create a new accounting class.
+</Accordion>
+
+<Accordion title="Archive a user">
+Archive an existing user. in the response, the `archived` field is set as `true`." you can restore an archived user with `post /v3/users/\{userid\}/restore`. there is no change when you archive an archived user.
+</Accordion>
+
+<Accordion title="Archive an item">
+Archive an existing item. in the response, the `archived` field is set as `true`.
+</Accordion>
+
+<Accordion title="Create a chart of accounts">
+Create a new chart of accounts.
+</Accordion>
+
+<Accordion title="Create a bulk payment">
+This endpoint allows you to create and process multiple bill payments in a single api call. it streamlines the payment process for businesses by enabling batch processing of payments to one or multiple vendors. the endpoint supports various funding sources, including bank accounts, credit/debit cards, bill balance (wallet), and ap cards. it offers flexibility in payment scheduling, delivery methods, and transaction tracking. use this endpoint when you need to efficiently manage and execute multiple payments simultaneously, reducing the number of individual api calls and simplifying your payment workflows. note that certain parameters may be required based on the chosen funding source, and there are specific rules for vendor and bill identification that must be followed.
+</Accordion>
+
+<Accordion title="Create a customer">
+Create a new customer. see [customers](doc:ar-customers) in the guides section for more information, sample requests, and responses.
+</Accordion>
+
+<Accordion title="Delete a budget">
+Delete an existing budget.
+</Accordion>
+
+<Accordion title="Create custom field values">
+Create new custom field values.
+</Accordion>
+
+<Accordion title="Create an image upload url for a reimbursement">
+Create an image upload url that can be used to upload receipts for reimbursements.
+</Accordion>
+
+<Accordion title="Create a user">
+Create a new user. the currently signed-in user must have the `administrator` user role in the bill organization to perform this operation. see [organizations and users](doc:organizations-users) in the guides section for more information, sample requests, and responses.
+</Accordion>
+
+<Accordion title="Delete a card">
+Delete an existing card.
+</Accordion>
+
+<Accordion title="Create a reimbursement">
+Create a reimbursement
+</Accordion>
+
+<Accordion title="Delete a custom field">
+Delete a custom field.
+</Accordion>
+
+<Accordion title="Delete custom field values">
+Delete custom fields. values cannot be assigned to current or future transactions. the values will remain assigned to past transactions.
+</Accordion>
+
+<Accordion title="Delete a member from a budget">
+Delete a member from a budget
+</Accordion>
+
+<Accordion title="Delete customer connection">
+Delete an existing network connection with a customer. in addition, use this endpoint to cancel a pending customer connection invite. you can send a new connection invitation after an existing connection or invitation is canceled. **note**: if the invited customer does not respond to an invitation for 60 days, the invitation expires. see [bill network](doc:bill-network) in the guides section for more information, sample requests, and responses.
+</Accordion>
+
+<Accordion title="Delete a vendor bank account">
+Delete the existing vendor bank account for a vendor. to update vendor bank account information, you must first delete the existing vendor bank account (with `delete /v3/vendors/\{vendorid\}/bank-account`), and then create a new vendor bank account (with `post /v3/vendors/\{vendorid\}/bank-account`) with the updated information.
+</Accordion>
+
+<Accordion title="Delete a reimbursement">
+Delete a specified reimbursement.
+</Accordion>
+
+<Accordion title="Create a recurring bill">
+Create a recurring bill. see [recurring bills](doc:ap-recurring-bills) in the guides section for more information, sample requests, and responses.
+</Accordion>
+
+<Accordion title="Delete vendor connection">
+Delete an existing network connection with a vendor. in addition, use this endpoint to cancel a pending vendor connection invite. you can send a new connection invitation after an existing connection or invitation is canceled. **note**: if the invited vendor does not respond to an invitation for 60 days, the invitation expires. see [bill network](doc:bill-network) in the guides section for more information, sample requests, and responses.
+</Accordion>
+
+<Accordion title="Delete a user">
+Delete an existing user.
+</Accordion>
+
+<Accordion title="Get a single member for a budget">
+Get a single member for a budget
+</Accordion>
+
+<Accordion title="Get accounting class details">
+Get details about an existing accounting class.
+</Accordion>
+
+<Accordion title="Get api session details">
+Get details about your current api session. this includes information about the current organization id, user id, and mfa status of the organization.
+</Accordion>
+
+<Accordion title="Get attachment details">
+Get details about an attachment. from the response, use `downloadlink` in a get request to download the attachment. ``` curl '{downloadlink}&sessionid={session id}' --output {attachment name} ```
+</Accordion>
+
+<Accordion title="Generate mfa challenge">
+Generates a multi-factor authentication (mfa) challenge for enhanced security in the bill api. this endpoint initiates the mfa process by creating a challenge that the user must respond to with their authentication token. it provides the option to use either the primary or a backup mfa device for generating the challenge. this tool should be used when implementing mfa flows in your application, particularly before sensitive operations like accessing billing information or making payments. the generated challenge is typically time-sensitive and should be responded to promptly for successful authentication.
+</Accordion>
+
+<Accordion title="Get audit trail details for a vendor">
+Get audit trail details about changes made to a vendor object. the audit trail lists records for each create and edit operation. see [getting audit trail details](doc:getting-audit-trail-details) in the guides section for more information, sample requests, and responses.
+</Accordion>
+
+<Accordion title="Create a vendor">
+Creates a new vendor in the bill.com system with comprehensive details for invoicing and payment processing. this endpoint allows you to set up a vendor's basic information, address, payment preferences, tax details, and auto-pay settings. it's particularly useful when onboarding new suppliers or updating existing vendor information en masse. the endpoint requires at minimum the vendor's name and address, but allows for extensive customization of payment terms, currencies, and automated payment rules. note that enabling auto-pay features requires additional authentication through mfa. use this endpoint when you need to add new vendors to your bill.com account or update existing vendors with new information.
+</Accordion>
+
+<Accordion title="Accept network invitation">
+Accept a network invitation that was sent to the organization by a vendor or customer. when the invitation is accepted, the organization is connected with the vendor or customer in the bill network. see [bill network](doc:bill-network) in the guides section for more information, sample requests, and responses.
+</Accordion>
+
+<Accordion title="Get bank account details">
+Get details about an existing bank account.
+</Accordion>
+
+<Accordion title="Api partner login">
+Authenticates a partner user and initiates a session with the bill api. this endpoint should be used at the beginning of any integration session to obtain necessary authentication tokens or session identifiers. it verifies the partner's credentials and grants access to other api endpoints. the login process is a prerequisite for accessing any protected resources or performing operations within the bill system. note that this endpoint does not provide any financial or account information directly; it only establishes an authenticated session.
+</Accordion>
+
+<Accordion title="Get chart of accounts details">
+Get details about an existing chart of accounts.
+</Accordion>
+
+<Accordion title="Get card funding purpose">
+Get a list of card funding purpose values based on the vendor and card brand. when you create a payment (`post /v3/payments` or `post /v3/payments/bulk`) with a `card account` funding account `type`, bill requires a vendor industry value for compliance. when bill cannot identify the vendor industry, the `cardfundingpurpose` field must be set in your payment request. use this endpoint to get the list of card funding purpose values you can set. if you get an empty 200 response, bill has information about the vendor industry and setting the `cardfundingpurpose` field is not required in your payment request.
+</Accordion>
+
+<Accordion title="Api logout">
+Sign out of your bill developer account. in response, the current `sessionid` expires and your api session is terminated. you will be required to sign in again with `/v3/login` before you can make another api call.
+</Accordion>
+
+<Accordion title="Add phone for mfa setup">
+Sets up multi-factor authentication (mfa) for a user account in the bill api. this endpoint allows users to configure their preferred method of receiving authentication tokens, enhancing account security. it should be used when a user wants to enable mfa or update their existing mfa settings. the setup process requires providing a phone number, selecting between voice calls or text messages for token delivery, and specifying if it's a primary or backup device. this endpoint is crucial for implementing a robust security layer but does not handle the actual authentication process or token validation.
+</Accordion>
+
+<Accordion title="Get check image data">
+Get images of an existing check sent to a vendor. from the response, use `downloadlink` in a get request to download the front and back images of the check. ``` curl '{downloadlink}&sessionid={session id}' --output {check name} ```
+</Accordion>
+
+<Accordion title="Get card account details">
+Get details about an existing card account.
+</Accordion>
+
+<Accordion title="Add phone for risk verification">
+Add a phone number for the currently signed-in user. bill requires the signed-in user to have a linked phone number for initiating risk verification for the organization. you can check whether a phone number has been added for the user with `get /v3/risk-verifications/phone`. after you add a phone number with this endpoint, you can initiate risk verification for the organization with `post /v3/risk-verifications`.
+</Accordion>
+
+<Accordion title="Get card details">
+Get details about an existing card.
+</Accordion>
+
+<Accordion title="Get customer invitation status">
+Get the status of an existing invitation sent with `post /v3/network/invitation/customer/\{customerid\}`. when the customer accepts the invitation, your organization is connected with the customer. **note**: if the invited customer does not respond to an invitation for 60 days, the invitation expires. see [bill network](doc:bill-network) in the guides section for more information, sample requests, and responses.
+</Accordion>
+
+<Accordion title="Get customer details">
+Get details about an existing customer.
+</Accordion>
+
+<Accordion title="Get bill details">
+Get details about an existing bill.
+</Accordion>
+
+<Accordion title="Api login">
+Sign in to your bill developer account. in the response, your api session is created and a bill-generated `sessionid` is available. use the `sessionid` in all subsequent api calls to confirm that you are in a signed-in session. to create an mfa-trusted api session, set `remembermeid` and `device` in addition to the required fields. see [mfa setup](ref:setup) for information about the bill mfa process. you can sign out with `post /v3/logout`. if your api session is inactive for 35 minutes, the session expires and you are automatically signed out. see [api partner login](ref:partnerlogin) for information about the additional permissions you get with the api partner login. **note**: this section is about authentication for working with the bill v3 api. see [authentication with spend & expense api token](doc:authentication-with-api-token) for information about authentication for the spend & expense api endpoints.
+</Accordion>
+
+<Accordion title="Create a vendor bank account">
+Create a vendor bank account for an existing vendor. to update vendor bank account information, you must first delete the existing vendor bank account (with `delete /v3/vendors/\{vendorid\}/bank-account`), and then create a new vendor bank account (with `post /v3/vendors/\{vendorid\}/bank-account`) with the updated information. **note**: when you add vendor bank account information, bill requires 2 business days to complete a one-time verification of the bank account. payments sent to the vendor are processed after the one-time verification is complete. see [get list of vendor payment options](ref:listpaymentoptions) to get details about vendor payment options and payment process dates.
+</Accordion>
+
+<Accordion title="Get custom field details">
+Get details about a custom field.
+</Accordion>
+
+<Accordion title="Get department details">
+Get details about an existing department.
+</Accordion>
+
+<Accordion title="Get budget details">
+Get details about an existing budget.
+</Accordion>
+
+<Accordion title="Get employee details">
+Get details about an existing employee.
+</Accordion>
+
+<Accordion title="Create a vendor card">
+Create a new vendor card.
+</Accordion>
+
+<Accordion title="Get document upload status">
+Get status of a document upload. use this endpoint to identify when a document upload is complete. * at the start of the document upload process (`in progress`), bill generates an `uploadid` for the document. the value begins with `0du`. * when the document upload is complete (`uploaded`), bill generates a `documentid` for the document. the value begins with `00h`.
+</Accordion>
+
+<Accordion title="Archive a customer">
+Archive an existing customer. in the response, the `archived` field is set as `true`. you can restore an archived customer with `post /v3/customers/\{customerid\}/restore`. there is no change when you archive an archived customer.
+</Accordion>
+
+<Accordion title="Get custom field value">
+Get details about a custom fields values.
+</Accordion>
+
+<Accordion title="Get document details">
+Get details about a document associated with a bill. from the response, use `downloadlink` in a get request to download the document. ``` curl '{downloadlink}&sessionid={session id}' --output {document name} ```
+</Accordion>
+
+<Accordion title="Approve or deny a reimbursement">
+Approve or deny a reimbursement.
+</Accordion>
+
+<Accordion title="Archive a bank account user">
+Archive an existing bank account user. in the response, the `archived` field is set as `true` and the bank account user `verificationstatus` is set as `unverified`.
+</Accordion>
+
+<Accordion title="Archive an accounting class">
+Archive an existing accounting class. in the response, the `archived` field is set as `true`.
+</Accordion>
+
+<Accordion title="Archive a department">
+Archive an existing department. in the response, the `archived` field is set as `true`.
+</Accordion>
+
+<Accordion title="Create an item">
+Create a new item.
+</Accordion>
+
+<Accordion title="Create custom field">
+Create a new custom field.
+</Accordion>
+
+<Accordion title="Archive a bank account">
+Archive an existing bank account. in the response, the `archived` field is set as `true`. archiving a bank account at bill has a set of requirements. * **bank account status**: the bank account `status` must be set as `verified`. you can verify the bank account with `post /v3/funding-accounts/banks/\{bankaccountid\}/verify`. * **bank account user status**: the bank account user `verificationstatus` must be set as `verified`. to begin the verification process, nominate a bank account user with `post /v3/funding-accounts/banks/users`.
+</Accordion>
+
+<Accordion title="Archive multiple departments">
+Archive multiple departments with one api request. in the response, the `archived` field is set as `true`.
+</Accordion>
+
+<Accordion title="Archive multiple employees">
+Archive multiple employees with one api request. in the response, the `archived` field for each object is set as `true`.
+</Accordion>
+
+<Accordion title="Archive a bill">
+Archive an existing bill. in the response, the `archived` field is set as `true`. you can restore an archived bill with `post /v3/bills/\{billid\}/restore`. there is no change when you archive an archived bill.
+</Accordion>
+
+<Accordion title="Archive a job">
+Archive an existing job. in the response, the `archived` field is set as `true`.
+</Accordion>
+
+<Accordion title="Create a bank account">
+Create a new bank account. the currently signed-in user must have the `administrator` user role in the bill organization to perform this operation. bill sends an email notification for informing you about changes to your funding accounts. **note**: when you create a bank account, bill sends a test ach payment to the bank account to confirm whether the account details are accurate. in the response, three fields are set to their default values. * the bank account `status` is set as `pending`. you can verify the bank account with `post /v3/funding-accounts/banks/\{bankaccountid\}/verify`. * the `payables` and `receivables` values are set as `false`. to update these values, update the bank account with `patch /v3/funding-accounts/banks/\{bankaccountid\}`. see [bank account setup (v3 api)](doc:bank-account-setup-v3-api) in the guides section for more information, sample requests, and responses.
+</Accordion>
+
+<Accordion title="Archive a recurring bill">
+Archive a recurring bill. in the response, the `archived` field is set as `true`. you can restore an archived recurring bill with `post /v3/recurringbills/\{recurringbillid\}/restore`. there is no change when you archive an archived recurring bill. when a recurring bill is modified, all future bills are automatically changed.
+</Accordion>
+
+<Accordion title="Create a department">
+Create a new department.
+</Accordion>
+
+<Accordion title="Create a job">
+Create a new job.
+</Accordion>
+
+<Accordion title="Archive a location">
+Archive an existing location. in the response, the `archived` field is set as `true`.
+</Accordion>
+
+<Accordion title="Create an invoice">
+Create a new invoice. see [invoices](doc:ar-invoices) in the guides section for more information, sample requests, and responses.
+</Accordion>
+
+<Accordion title="Create a location">
+Create a new location.
+</Accordion>
+
+<Accordion title="Create a bill">
+Create a new bill. see [bills](doc:ap-bills) in the guides section for more information, sample requests, and responses.
+</Accordion>
+
+<Accordion title="Archive mutliple chart of accounts">
+Archive multiple chart of accounts with one api request. in the response, the `archived` field for each object is set as `true`.
+</Accordion>
+
+<Accordion title="Archive an invoice">
+Archive an existing invoice. in the response, the `archived` field is set as `true`. you can restore an archived invoice with `post /v3/invoices/\{invoiceid\}/restore`. there is no change when you archive an archived invoice.
+</Accordion>
+
+<Accordion title="Archive an employee">
+Archive an existing employee. in the response, the `archived` field is set as `true`.
+</Accordion>
+
+<Accordion title="Archive multiple locations">
+Archive multiple locations with one api request. in the response, the `archived` field for each object is set as `true`.
+</Accordion>
+
+<Accordion title="Archive multiple jobs">
+Archive multiple jobs with one api request. in the response, the `archived` field for each object is set as `true`.
+</Accordion>
+
+<Accordion title="Create an organization">
+Create a new organization. this operation requires partner-level permissions. * a `sessionid` header value generated with [api partner login](ref:partnerlogin) * an `appkey` header value see [organizations for bill partners](doc:partner-organizations) in the guides section for more information, sample requests, and responses.
+</Accordion>
+
+<Accordion title="Archive a chart of accounts">
+Archive an existing chart of accounts. in the response, the `archived` field is set as `true`.
+</Accordion>
+
+<Accordion title="Archive multiple items">
+Archive multiple items with one api request. in the response, the `archived` field for each object is set as `true`.
+</Accordion>
+
+<Accordion title="Create a budget">
+Create a new budget for a company.
+</Accordion>
+
+<Accordion title="Cancel a payment">
+Cancel an existing payment. you can attempt to cancel a payment with `post /v3/payments/\{paymentid\}/cancel` based on a set of conditions. see &lt;a href="https://help.bill.com/hc/en-us/articles/115005898063"&gt;payment cancelation and void cut-off timing&lt;/a&gt; in the bill help center to learn about the bill cancel payment process and timing. if the conditions are not met, you cannot cancel the payment. at that point, you can attempt to void the payment with `post /v3/payments/\{paymentid\}/void`.
+</Accordion>
+
+<Accordion title="Create a payment">
+Create a payment. see [get list of vendor payment options](ref:listpaymentoptions) to get details about vendor payment options and payment process dates. **note**: creating a payment requires an mfa-trusted api session. see [mfa setup](ref:setup) for information about the bill mfa process. see [payments](doc:ap-payments) in the guides section for more information, sample requests, and responses.
+</Accordion>
+
+<Accordion title="Archive multiple accounting classes">
+Archive multiple accounting classes with one api request. in the response, the `archived` field for each object is set as `true`.
+</Accordion>
+
+<Accordion title="Get current user details">
+Get details about the current user.
+</Accordion>
+
+<Accordion title="Get funding account permissions">
+Get the funding account permissions available for the current organization and current organization user.
+</Accordion>
+
+<Accordion title="Get list of bank account users">
+Get a list of bank account user objects. in the response, if the bank account user `verificationstatus` is set as `nominated`, user verification must be completed before the user can pay with the specified bank account. by default, you get 20 results on one page of results. set `max` in your request to get up to 100 results on one page.
+</Accordion>
+
+<Accordion title="Get list of vendor payment options">
+Get a list of vendor payment options available based on the funding account options available in the signed-in user's bill organization and on the payment methods accepted by a vendor. see [vendor payment options](doc:vendor-payment-options) in the guides section for more information, sample requests, and responses.
+</Accordion>
+
+<Accordion title="Get invoice details">
+Get details about an existing invoice.
+</Accordion>
+
+<Accordion title="Get item details">
+Get details about an existing item.
+</Accordion>
+
+<Accordion title="Get location details">
+Get details about an existing location.
+</Accordion>
+
+<Accordion title="Get transaction custom field details">
+Get details about existing transaction custom fields
+</Accordion>
+
+<Accordion title="Get list of organization industries">
+Get a list of available values for the `industry` field for an organization. use this information to set the `industry` field in your `post /v3/partner/organizations` or `patch /v3/organizations/\{organizationid\}` request.
+</Accordion>
+
+<Accordion title="Get risk verification details">
+Get risk verification details for an existing organization.
+</Accordion>
+
+<Accordion title="Get list of employees">
+Get a list of employee objects. by default, you get 20 results on one page of results. set `max` in your request to get up to 100 results on one page. see [search operations with lists](doc:search-op-with-lists) in the guides section for filtering, sorting, and pagination examples.
+</Accordion>
+
+<Accordion title="Get list of organizations">
+Get a list of organization objects. by default, you get 20 results on one page of results. set `max` in your request to get up to 100 results on one page. see [search operations with lists](doc:search-op-with-lists) in the guides section for filtering, sorting, and pagination examples. this operation requires partner-level permissions. * a `sessionid` header value generated with [api partner login](ref:partnerlogin) * an `appkey` header value
+</Accordion>
+
+<Accordion title="Get international payments configuration">
+Get international payments (not usd) configuration that is required for compliance with international payment rules of a vendor country and vendor bank account. this information is based on vendor country, bill currency, and vendor account type. use this endpoint for getting information before creating an international vendor. in the response, the required `paymentpurpose` and `regulatoryfields` information is retrieved for the vendor. **note**: if you are adding `paymentpurpose` and `regulatoryfields` information after creating an international vendor, use `get /v3/vendors/\{vendorid\}/configuration` to get the required configuration for your created vendor. see [creating an international vendor](doc:creating-an-international-vendor) for more information on how to set `paymentpurpose` and `regulatoryfields`.
+</Accordion>
+
+<Accordion title="Get list of bills">
+Get a list of bill objects. by default, you get 20 results on one page of results. set `max` in your request to get up to 100 results on one page. see [search operations with lists](doc:search-op-with-lists) in the guides section for filtering, sorting, and pagination examples.
+</Accordion>
+
+<Accordion title="Get list of documents">
+Get a list of documents associated with a bill. from the response, use `downloadlink` in a get request to download the document. ``` curl '{downloadlink}&sessionid={session id}' --output {document name} ```
+</Accordion>
+
+<Accordion title="Get list of vendor attachments">
+Get a list of attachments associated with a vendor. from the response, use `downloadlink` in a get request to download the attachment. ``` curl '{downloadlink}&sessionid={session id}' --output {attachment name} ```
+</Accordion>
+
+<Accordion title="Get job details">
+Get details about an existing job.
+</Accordion>
+
+<Accordion title="Get vendor details">
+Get details about an existing vendor.
+</Accordion>
+
+<Accordion title="Get vendor invitation status">
+Get the status of an existing invitation sent with `post /v3/network/invitation/vendor/\{vendorid\}`. when the vendor accepts the invitation, your organization is connected with the vendor. **note**: if the invited vendor does not respond to an invitation for 60 days, the invitation expires. see [bill network](doc:bill-network) in the guides section for more information, sample requests, and responses.
+</Accordion>
+
+<Accordion title="Get list of recurring bills">
+Get a list of recurring bill objects. by default, you get 20 results on one page of results. set `max` in your request to get up to 100 results on one page. see [search operations with lists](doc:search-op-with-lists) in the guides section for filtering, sorting, and pagination examples.
+</Accordion>
+
+<Accordion title="Get list of payments">
+Get a list of payment objects. by default, you get 20 results on one page of results. set `max` in your request to get up to 100 results on one page. see [search operations with lists](doc:search-op-with-lists) in the guides section for filtering, sorting, and pagination examples.
+</Accordion>
+
+<Accordion title="Initiate risk verification for an organization">
+Initiate risk verification for an organization. the currently signed-in user must have the `administrator` user role in the bill organization to perform this operation. **note**: you must add a phone number for the signed-in user (with `post /v3/risk-verifications/phone`) before you can initiate risk verification. bill partners must add a phone number for a created user with `post /v3/partner/risk-verifications/\{userid\}/phone`. as a bill partner, when you create an organization and then create a user for that organization, it is important that you initiate risk verification with `post /v3/risk-verifications`. bill performs a kyc/kyb (know you customer/know your business) check based on the provided organization information. bill sends an email notification for risk verficiation. when the check is complete, bill approves the organization for bill ap and ar operations.
+</Accordion>
+
+<Accordion title="Get transaction custom field value details">
+Get details about an existing transaction custom field and values
+</Accordion>
+
+<Accordion title="Get list of invoices">
+Get a list of invoice objects. by default, you get 20 results on one page of results. set `max` in your request to get up to 100 results on one page. see [search operations with lists](doc:search-op-with-lists) in the guides section for filtering, sorting, and pagination examples.
+</Accordion>
+
+<Accordion title="Get organization details">
+Get details about an existing organization. the currently signed-in user must have the `administrator` user role in the bill organization to perform this operation. see [organizations and users](doc:organizations-users) in the guides section for more information, sample requests, and responses.
+</Accordion>
+
+<Accordion title="Invite a customer in the bill network">
+Send an invitation to connect a customer created in your organization with a customer in the network. bill sends an invitation email to the customer email address. when the customer accepts the invitation, the customer in your organization is connected with the invited customer. if the invited customer does not respond, delete the invitation (with `delete /v3/network/invitation/customer/\{customerid\}`) before sending a new invitation. **note**: if the invited customer does not respond to an invitation for 60 days, the invitation expires. see [bill network](doc:bill-network) in the guides section for more information, sample requests, and responses.
+</Accordion>
+
+<Accordion title="Restore an archived customer">
+Restore an archived customer. in the response, the `archived` field is set as `false`. you can perform any valid bill operation on restored customers. there is no change when you restore a restored customer.
+</Accordion>
+
+<Accordion title="Get transaction details">
+Get details about an existing transaction.
+</Accordion>
+
+<Accordion title="Invite a vendor in the bill network">
+Send an invitation to connect a vendor created in your organization with a vendor in the network. bill sends an invitation email to the vendor email address. when the vendor accepts the invitation, the vendor in your organization is connected with the invited vendor. if the invited vendor does not respond, delete the invitation (with `delete /v3/network/invitation/vendor/\{vendorid\}`) before sending a new invitation. **note**: if the invited vendor does not respond to an invitation for 60 days, the invitation expires. see [bill network](doc:bill-network) in the guides section for more information, sample requests, and responses.
+</Accordion>
+
+<Accordion title="Restore an archived bill">
+Restore an archived bill. in the response, the `archived` field is set as `false`. you can perform any valid bill operation on restored bills. there is no change when you restore a restored bill.
+</Accordion>
+
+<Accordion title="Restore an archived chart of accounts">
+Restore an archived chart of accounts. in the response, the `archived` field is set as `false`.
+</Accordion>
+
+<Accordion title="Get list of invoice attachments">
+Get a list of attachments associated with an invoice. from the response, use `downloadlink` in a get request to download the attachment. ``` curl '{downloadlink}&sessionid={session id}' --output {attachment name} ```
+</Accordion>
+
+<Accordion title="Restore an archived accounting class">
+Restore an archived accounting class. in the response, the `archived` field is set as `false`.
+</Accordion>
+
+<Accordion title="Replace a recurring bill">
+Update the number of line items in a recurring bill. you can also update other recurring bill details. you can use the put operation to add, remove, or replace the number of line items in a recurring bill. a set of rules apply with the put operation. * when you add a new line item, a new line item `id` is generated in the bill. * when you omit an existing line item `id`, the line item is removed from the bill. when a recurring bill is modified, all future bills are automatically changed.
+</Accordion>
+
+<Accordion title="Mfa step up for api session">
+Set your current api session as mfa trusted. ideally, when you sign in with `post /v3/login`, set `remembermeid` and `device` in your request to generate an mfa-trusted api session. in case you sign in without `remembermeid` and `device` in your request, you can use this `post /v3/mfa/step-up` endpoint to mark the current api session as mfa trusted.
+</Accordion>
+
+<Accordion title="Get organization price plan details">
+Get the bill price plan details for an existing organization. the currently signed-in user must have the `administrator` user role in the bill organization to perform this operation. a bill price plan for an organization provides a range of information, including monthly subscription fees and the terms and conditions for additional charges in the price plan.
+</Accordion>
+
+<Accordion title="Restore an archived employee">
+Restore an archived employee. in the response, the `archived` field is set as `false`.
+</Accordion>
+
+<Accordion title="Restore an archived item">
+Restore an archived item. in the response, the `archived` field is set as `false`.
+</Accordion>
+
+<Accordion title="Restore an archived invoice">
+Restore an archived invoice. in the response, the `archived` field is set as `false`. you can perform any valid bill operation on restored invoices. there is no change when you restore a restored invoice.
+</Accordion>
+
+<Accordion title="Restore an archived department">
+Restore an archived department. in the response, the `archived` field is set as `false`.
+</Accordion>
+
+<Accordion title="Restore an archived job">
+Restore an archived job. in the response, the `archived` field is set as `false`.
+</Accordion>
+
+<Accordion title="Nominate a bank account user">
+Nominate a bank account user. when you nominate a user, bill performs a set of operations. * the bank account user `verificationstatus` is set as `nominated`. * bill sends the user an email asking them to sign in to the bill web app and complete identity verification. after user identity verification is successful, the bank account user `verificationstatus` is set as `verified` and the user can pay with the specified bank account. **note**: the bank account `status` must be set as `verified` before you can nominate bank account users.
+</Accordion>
+
+<Accordion title="Get user details">
+Get details about a existing user.
+</Accordion>
+
+<Accordion title="Restore an archived recurring bill">
+Restore an archived recurring bill. in the response, the `archived` field is set as `false`. you can perform any valid bill operation on restored recurring bills. there is no change when you restore a restored recurring bill. when a recurring bill is modified, all future bills are automatically changed.
+</Accordion>
+
+<Accordion title="Get list of budgets">
+Get a list of budget objects for the current user's company.
+</Accordion>
+
+<Accordion title="Restore an archived location">
+Restore an archived location. in the response, the `archived` field is set as `false`.
+</Accordion>
+
+<Accordion title="Get pan jwt">
+Get a jwt token for retrieving a card's pan (full account number). the jwt token contains all the information required for retrieving details about a virtual card (16-digit pan, cvv, and expiration date). the jwt token lifespan is 5 minutes. you can convert the retrieved jwt token to get the related virtual card details with `post https://app-dev-sandbox.divvy.co/de/rest/pan`. ``` curl --location --request post 'https://app-dev-sandbox.divvy.co/de/rest/pan' --header 'content-type: application/json' --data-raw '{"token":"{jwt token}"}' ``` **note**: use `post https://api.divvy.co/de/rest/pan` in the production environment.
+</Accordion>
+
+<Accordion title="Get list of items">
+Get a list of item objects. by default, you get 20 results on one page of results. set `max` in your request to get up to 100 results on one page. see [search operations with lists](doc:search-op-with-lists) in the guides section for filtering, sorting, and pagination examples.
+</Accordion>
+
+<Accordion title="Get list of cards">
+Get a list of card objects.
+</Accordion>
+
+<Accordion title="Get payment details">
+Get details about an existing payment.
+</Accordion>
+
+<Accordion title="Get user role details">
+Get details about an existing user role.
+</Accordion>
+
+<Accordion title="Restore an archived user">
+Restore an archived user. in the response, the `archived` field is set as `false`. you can perform any valid bill operation on restored users. there is no change when you restore a restored user.
+</Accordion>
+
+<Accordion title="Restore multiple accounting classes">
+Restore multiple accounting classes with one api request. in the response, the `archived` field for each object is set as `false`.
+</Accordion>
+
+<Accordion title="Restore multiple chart of accounts">
+Restore multiple chart of accounts with one api request. in the response, the `archived` field for each object is set as `false`.
+</Accordion>
+
+<Accordion title="Record ar payment">
+Record an invoice payment received outside your bill system. apply the recorded payment amount to one or more invoices for a customer. any recorded unapplied amount is an overpayment and is available as a customer balance in your bill system. see [recording an ar payment](doc:recording-an-ar-payment) in the guides section for more information, sample requests, and responses.
+</Accordion>
+
+<Accordion title="Get vendor bank account details">
+Get details about an existing vendor bank account.
+</Accordion>
+
+<Accordion title="Get phone status for risk verification">
+Check whether a phone number has been added for the currently signed-in user. bill requires the signed-in user to have a linked phone number for initiating risk verification for the organization. in the response, if `hasphone` is `false`, you can add a phone number for the user with `post /v3/risk-verifications/phone`. after you add a phone number, you can initiate risk verification for the organization with `post /v3/risk-verifications`.
+</Accordion>
+
+<Accordion title="Search for an organization in the bill networks">
+Search for a customer, vendor, or verified national vendor. you can search in the bill network and verified national vendor network. when you search in the bill network, there are two `name` requirements for getting search results. * your search term must have a minimum of three characters. * your search term must be a complete word. you will not get search results when your search term is a partial word. when you search in the verified national vendor network, search results are based on both a complete and partial match on `name` and `ziporpostalcode`. you can further filter your search by the billing statement `accountnumber` with the vendor. for example, your verizon internet bill account number. see [bill network](doc:bill-network) in the guides section for more information, sample requests, and responses.
+</Accordion>
+
+<Accordion title="Retrieve customer attachments">
+Retrieves all attachments associated with a specific customer in the bill api. this endpoint allows businesses to fetch documents, invoices, or any other files that have been uploaded and linked to a particular customer account. it should be used when there's a need to access or review all attachment files for a given customer, such as during auditing, customer service inquiries, or account management tasks. the endpoint returns a collection of attachment metadata and potentially the attachment contents, depending on the api's implementation. it does not modify any data and is typically used for read-only operations. note that this endpoint focuses on customer-specific attachments and may not include system-wide or non-customer-related files.
+</Accordion>
+
+<Accordion title="Send an invoice">
+Send an invoice to a customer email address. you can send the invoice to multiple email addresses. see [invoices](doc:ar-invoices) in the guides section for more information, sample requests, and responses.
+</Accordion>
+
+<Accordion title="Restore multiple employees">
+Restore multiple employees with one api request. in the response, the `archived` field for each object is set as `false`.
+</Accordion>
+
+<Accordion title="Restore multiple departments">
+Restore multiple departments with one api request. in the response, the `archived` field is set as `false`.
+</Accordion>
+
+<Accordion title="Get list of card accounts">
+Get a list of card account objects.
+</Accordion>
+
+<Accordion title="Get recurring bill details">
+Get details about an existing recurring bill.
+</Accordion>
+
+<Accordion title="Restore multiple locations">
+Restore multiple locations with one api request. in the response, the `archived` field for each object is set as `false`.
+</Accordion>
+
+<Accordion title="Get vendor configuration">
+Get international payments (not usd) configuration after vendor creation. this configuration is required for compliance with international payment rules of a vendor country and vendor bank account. in the response, the required `paymentpurpose` and `regulatoryfields` information is retrieved for the vendor. **note**: if you are adding `paymentpurpose` and `regulatoryfields` information during international vendor creation, use `get /v3/vendors/configuration/international-payments` to get the required configuration before vendor creation. see [creating an international vendor](doc:creating-an-international-vendor) for more information on how to set `paymentpurpose` and `regulatoryfields`.
+</Accordion>
+
+<Accordion title="Restore multiple items">
+Restore multiple items with one api request. in the response, the `archived` field for each object is set as `false`.
+</Accordion>
+
+<Accordion title="Update an employee">
+Update details about an existing employee.
+</Accordion>
+
+<Accordion title="Update an accounting class">
+Update details about an existing accounting class.
+</Accordion>
+
+<Accordion title="Get reimbursement details">
+Get details about a specified reimbursement.
+</Accordion>
+
+<Accordion title="Update an invoice">
+Update details about an invoice line item. you can also update other invoice details. you can use the patch operation to modify line item details, such as `amount`, `quantity`, and `description`. the invoice line item `id` does not change with a patch operation.
+</Accordion>
+
+<Accordion title="Get list of card account users">
+Get a list of card account user objects. in the response, if the card account user `verificationstatus` is set as `nominated`, user verification must be completed before the user can pay with the specified card account. by default, you get 20 results on one page of results. set `max` in your request to get up to 100 results on one page.
+</Accordion>
+
+<Accordion title="Update an item">
+Update details about an existing item.
+</Accordion>
+
+<Accordion title="Update an organization">
+Update details about an existing organization. the currently signed-in user must have the `administrator` user role in the bill organization to perform this operation. see [organizations and users](doc:organizations-users) in the guides section for more information, sample requests, and responses.
+</Accordion>
+
+<Accordion title="Get list of ap cards">
+Get a list of ap card objects. with the ap card, you can earn rewards simply by paying your bills. the ap card is a payment method that enables you to send fast payments with no transaction fees or annual fees. you can use the ap card with any vendor who accepts virtual card payments. see [ap card frequently asked questions (faqs)](https://help.bill.com/direct/s/article/000003348) in the bill help to learn more about ap card.
+</Accordion>
+
+<Accordion title="Update a bank account">
+Update details about an existing bank account. this operation follows a set of rules. * **bank account `status` requirement**: the bank account `status` must be set as `verified` before you can update any details about the bank account. you can verify the bank account with `post /v3/funding-accounts/banks/\{bankaccountid\}/verify`. * **update field restrictions**: you cannot update the `routingnumber`, `accountnumber`, and account `type` values for a bank account. if you want to update any of these values, create a new bank account with `post /v3/funding-accounts/banks`.
+</Accordion>
+
+<Accordion title="Update a customer">
+Update details about an existing customer.
+</Accordion>
+
+<Accordion title="Replace a bill">
+Update the number of line items in a bill. you can also update other bill details. you can use the put operation to add, remove, or replace the number of line items in a bill. a set of rules apply with the put operation. * when you add a new line item, a new line item `id` is generated in the bill. * when you omit an existing line item `id`, the line item is removed from the bill.
+</Accordion>
+
+<Accordion title="Update a chart of accounts">
+Update details about an existing chart of accounts.
+</Accordion>
+
+<Accordion title="Restore multiple jobs">
+Restore multiple jobs with one api request. in the response, the `archived` field for each object is set as `false`.
+</Accordion>
+
+<Accordion title="Replace an invoice">
+Update the number of line items in an invoice. you can also update other invoice details. you can use the put operation to add, remove, or replace the number of line items in an invoice. a set of rules apply with the put operation. * when you add a new line item, a new line item `id` is generated in the invoice. * when you omit an existing line item `id`, the line item is removed from the invoice.
+</Accordion>
+
+<Accordion title="Update a bill">
+Update details about a bill line item. you can also update other bill details. you can use the patch operation to modify line item details, such as `amount` and `description`. the bill line item `id` does not change with a patch operation.
+</Accordion>
+
+<Accordion title="Get list of bank accounts">
+Get a list of bank account objects. by default, you get 20 results on one page of results. set `max` in your request to get up to 100 results on one page. see [search operations with lists](doc:search-op-with-lists) in the guides section for filtering, sorting, and pagination examples.
+</Accordion>
+
+<Accordion title="Update a budget">
+Update details about an existing budget.
+</Accordion>
+
+<Accordion title="Update a custom field and values on a transaction">
+Update a custom field and values on a transaction.
+</Accordion>
+
+<Accordion title="Get list of jobs">
+Get a list of job objects. by default, you get 20 results on one page of results. set `max` in your request to get up to 100 results on one page. see [search operations with lists](doc:search-op-with-lists) in the guides section for filtering, sorting, and pagination examples.
+</Accordion>
+
+<Accordion title="Get list of members for a budget">
+Get a list of members for a budget.
+</Accordion>
+
+<Accordion title="Get list of accounting classes">
+Get a list of accounting class objects. by default, you get 20 results on one page of results. set `max` in your request to get up to 100 results on one page. see [search operations with lists](doc:search-op-with-lists) in the guides section for filtering, sorting, and pagination examples.
+</Accordion>
+
+<Accordion title="Get list of locations">
+Get a list of location objects. by default, you get 20 results on one page of results. set `max` in your request to get up to 100 results on one page. see [search operations with lists](doc:search-op-with-lists) in the guides section for filtering, sorting, and pagination examples.
+</Accordion>
+
+<Accordion title="Get list of mfa phone numbers">
+Get a list of phone numbers that have been added for setting up mfa in the current organization.
+</Accordion>
+
+<Accordion title="Get list of user roles">
+Get a list of user role objects. by default, you get 20 results on one page of results. set `max` in your request to get up to 100 results on one page. see [search operations with lists](doc:search-op-with-lists) in the guides section for filtering, sorting, and pagination examples.
+</Accordion>
+
+<Accordion title="Get list of transactions">
+Get a list of transaction objects.
+</Accordion>
+
+<Accordion title="Get list of users">
+Get a list of user objects. by default, you get 20 results on one page of results. set `max` in your request to get up to 100 results on one page. see [search operations with lists](doc:search-op-with-lists) in the guides section for filtering, sorting, and pagination examples.
+</Accordion>
+
+<Accordion title="Get list of departments">
+Get a list of department objects. by default, you get 20 results on one page of results. set `max` in your request to get up to 100 results on one page. see [search operations with lists](doc:search-op-with-lists) in the guides section for filtering, sorting, and pagination examples.
+</Accordion>
+
+<Accordion title="Restore an archived vendor">
+Restore an archived vendor. in the response, the `archived` field is set as `false`. you can perform any valid bill operation on restored vendors. there is no change when you restore a restored vendor.
+</Accordion>
+
+<Accordion title="Get list of chart of accounts">
+Get a list of chart of accounts objects. by default, you get 20 results on one page of results. set `max` in your request to get up to 100 results on one page. see [search operations with lists](doc:search-op-with-lists) in the guides section for filtering, sorting, and pagination examples.
+</Accordion>
+
+<Accordion title="Get list of customers">
+Get a list of customer objects. by default, you get 20 results on one page of results. set `max` in your request to get up to 100 results on one page. see [search operations with lists](doc:search-op-with-lists) in the guides section for filtering, sorting, and pagination examples.
+</Accordion>
+
+<Accordion title="Get list of custom fields">
+Get list of custom fields.
+</Accordion>
+
+<Accordion title="Get list of values for custom field">
+Get list of values for custom field.
+</Accordion>
+
+<Accordion title="Get list of vendors">
+Get a list of vendor objects. by default, you get 20 results on one page of results. set `max` in your request to get up to 100 results on one page. see [search operations with lists](doc:search-op-with-lists) in the guides section for filtering, sorting, and pagination examples.
+</Accordion>
+
+<Accordion title="Get list of reimbursements">
+Get a list of reimbursement objects.
+</Accordion>
+
+<Accordion title="Validate phone for mfa setup">
+Validates the setup of multi-factor authentication (mfa) for a user's account in the bill api. this endpoint is used as the final step in the mfa setup process, confirming that the user has successfully received and can provide the validation token sent to their registered phone number. it should be called immediately after the user receives the mfa setup token via the specified method (voice call or sms). the endpoint ensures that the mfa setup is correctly configured and functional, adding an extra layer of security to the user's account. it's important to note that this endpoint does not actually enable mfa; it only validates the setup process.
+</Accordion>
+
+<Accordion title="Update budget member funds">
+Add a member to a budget or update an existing member of the budget
+</Accordion>
+
+<Accordion title="Update a job">
+Update details about an existing job.
+</Accordion>
+
+<Accordion title="Upload bill document">
+Upload a document for an existing bill. **note**: when you upload a document, it takes a few minutes for bill to complete the upload process. you can get the document upload status with `get /v3/documents/upload-status`. see [documents and attachments](doc:documents-attachments) in the guides section for more information, sample requests, and responses.
+</Accordion>
+
+<Accordion title="Update a department">
+Update details about an existing department.
+</Accordion>
+
+<Accordion title="Update transaction">
+Update a transaction
+</Accordion>
+
+<Accordion title="Update a vendor card">
+Update a new vendor card.
+</Accordion>
+
+<Accordion title="Void a payment">
+Void an existing payment. void a bill payment that has started processing and cannot be canceled (with `post /v3/payments/\{paymentid\}/cancel`). you can attempt to void payments made both with bill (online) and outside bill (offline). ### void a payment made with bill (online) in your /`post /v3/payments/\{paymentid\}/void` request: * set `paymentid` as the bill-generated id of the payment. the value begins with `stp`. * set `type` as the void payment request type * set `reason` as the reason for voiding the payment see [can i cancel or void a payables payment?](https://help.bill.com/direct/s/article/115005898063) in the bill help center to learn about the bill void payment process and timing in the production environment.
+</Accordion>
+
+<Accordion title="Update a location">
+Update details about an existing location.
+</Accordion>
+
+<Accordion title="Verify a bank account">
+Verifies a bank account by initiating a small deposit transaction. this endpoint is used to confirm the validity and ownership of a bank account before it can be used for funding or receiving payments. it simulates a micro-deposit process commonly used in financial systems for account verification. the api requires specifying a deposit amount, which must be between $0.01 and $0.99. this verification step is crucial for ensuring the security and accuracy of financial transactions within the bill payment system. note that in the sandbox environment, using a deposit amount of $0.50 will always result in a successful verification, allowing for easy testing and integration.
+</Accordion>
+
+<Accordion title="Update a vendor">
+Update details about an existing vendor. ### requirements for enabling vendor payments vendor address details are required for paying a vendor by check or for inviting the vendor to join the bill network. * `line1` * `city` * `ziporpostalcode` * `country` * `payeename` **note**: you cannot add or update vendor bank account information with this endpoint. you can add and manage vendor bank account information with a dedicated set of endpoints. * **create a vendor bank account**: `post /v3/vendors/\{vendorid\}/bank-account` * **get vendor bank account details**: `get /v3/vendors/\{vendorid\}/bank-account` * **delete a vendor bank account**: `delete /v3/vendors/\{vendorid\}/bank-account`
+</Accordion>
+
+<Accordion title="Update a reimbursement">
+Update a reimbursement
+</Accordion>
+
+<Accordion title="Update custom field details">
+Update settings for a custom field.
+</Accordion>
+
+<Accordion title="Update a list of budget members in a budget">
+Update a list of budget members in a budget.
+</Accordion>
+
+<Accordion title="Validate mfa challenge">
+Validates a multi-factor authentication (mfa) challenge in the bill api. this endpoint is used to complete the mfa process by verifying the token sent to the user's registered phone number. it should be called after initiating an mfa challenge with the 'post /v3/mfa/challenge' endpoint. the function provides options for remembering the device or machine for an extended period, enhancing user convenience for trusted devices while maintaining security. it's crucial for implementing secure, two-factor authentication flows in applications integrated with the bill api.
+</Accordion>
+
+<Accordion title="Update a user">
+Update details about an existing user.
+</Accordion>
+
+<Accordion title="Upload invoice attachment">
+Upload an attachment for an invoice. **note**: when you upload an attachment, it takes a few minutes for bill to complete the upload process. see [documents and attachments](doc:documents-attachments) in the guides section for more information, sample requests, and responses.
+</Accordion>
+
+<Accordion title="Upload customer attachment">
+Upload an attachment for an existing customer. **note**: when you upload an attachment, it takes a few minutes for bill to complete the upload process. see [documents and attachments](doc:documents-attachments) in the guides section for more information, sample requests, and responses.
+</Accordion>
+
+<Accordion title="Update a recurring bill">
+Update details about a recurring bill line item. you can also update other recurring bill details. you can use the patch operation to modify line item details, such as amount and description. the recurring bill line item `id` does not change with a patch operation. when a recurring bill is modified, all future bills are automatically changed.
+</Accordion>
+
+<Accordion title="Upload vendor attachment">
+Upload an attachment for an existing vendor. **note**: when you upload an attachment, it takes a few minutes for bill to complete the upload process. see [documents and attachments](doc:documents-attachments) in the guides section for more information, sample requests, and responses.
+</Accordion>
+

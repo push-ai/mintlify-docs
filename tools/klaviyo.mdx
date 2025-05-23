@@ -1,0 +1,2242 @@
+Klaviyo is a data-driven email and SMS marketing platform that allows e-commerce brands to deliver targeted messages, track conversions, and scale customer relationships
+
+<Accordion title="Assign campaign message template">
+Creates a non-reusable version of the template and assigns it to the message.
+
+
+
+*rate limits*:
+
+burst: `10/s`
+
+steady: `150/m` **scopes:** `campaigns:write`
+</Accordion>
+
+<Accordion title="Bulk create events">
+This api endpoint creates or updates profiles by batching up to 1,000 events, with a 5mb payload limit. minimum required: a profile id and metric name. it has rate limits of 10 events per second burst and 150 events per minute. scope is `events:write`.
+</Accordion>
+
+<Accordion title="Bulk create client events">
+Use the client-side endpoint with a public api key to track profile activity. it accepts up to 1000 events/request with rates of 10/s burst and 150/m steady. for server-side, use the bulk create event endpoint.
+</Accordion>
+
+<Accordion title="Create campaign clone">
+Clones an existing campaign, returning a new campaign based on the original with a new id and name.
+
+
+
+*rate limits*:
+
+burst: `10/s`
+
+steady: `150/m` **scopes:** `campaigns:write`
+</Accordion>
+
+<Accordion title="Create campaign send job">
+Trigger a campaign to send asynchronously
+
+
+
+*rate limits*:
+
+burst: `10/s`
+
+steady: `150/m` **scopes:** `campaigns:write`
+</Accordion>
+
+<Accordion title="Create back in stock subscription">
+Use the server-side endpoint to subscribe to restock alerts, following the back in stock api guide. for client-side, use the post endpoint provided. rate limits: 350/s burst and 3500/m steady. required scopes: catalogs:write, profiles:write.
+</Accordion>
+
+<Accordion title="Create tag relationships flows">
+Assign tags to flows using their ids in the request body, ensuring a flow is not linked to over 100 tags. rate limits are 3/s burst and 60/m steady. required scopes: `flows:write` and `tags:write`. tag: flow-tag association limits
+</Accordion>
+
+<Accordion title="Create campaign recipient estimation job">
+Start an async task to update campaign recipient estimates. track it using the `get campaign recipient estimation job` and get the final count via `get campaign recipient estimation`. rate limits are 10/s burst, 150/m steady with `campaigns:write` scope.
+</Accordion>
+
+<Accordion title="Create tag group">
+Create tag groups up to 50 per account, defaulting to non-exclusive unless specified. related resources can have multiple non-exclusive tags but only one if exclusive. rate limits: 3/s burst, 60/m steady. scopes needed: tags:read, tags:write.
+</Accordion>
+
+<Accordion title="Create catalog category">
+Create a new catalog category.
+
+
+
+*rate limits*:
+
+burst: `75/s`
+
+steady: `700/m` **scopes:** `catalogs:write`
+</Accordion>
+
+<Accordion title="Create template render">
+Render an email template with specific context and sparse fieldsets, then get html/plain text. rate limit: 3/s burst, 60/m steady. scope: templates:read.
+</Accordion>
+
+<Accordion title="Create tag relationships campaigns">
+Summary: link a tag to campaigns, ensuring a limit of 100 tags per campaign. campaign ids should be sent via request body. rate limit: 3/s, 60/m. required scopes: campaigns:write, tags:write. tag: #campaigntagginglimits
+</Accordion>
+
+<Accordion title="Delete catalog category">
+Delete a catalog category using the given category id.
+
+
+
+*rate limits*:
+
+burst: `75/s`
+
+steady: `700/m` **scopes:** `catalogs:write`
+</Accordion>
+
+<Accordion title="Create campaign">
+Creates a campaign given a set of parameters, then returns it.
+
+
+
+*rate limits*:
+
+burst: `10/s`
+
+steady: `150/m` **scopes:** `campaigns:write`
+</Accordion>
+
+<Accordion title="Delete campaign">
+Delete a campaign with the given campaign id.
+
+
+
+*rate limits*:
+
+burst: `10/s`
+
+steady: `150/m` **scopes:** `campaigns:write`
+</Accordion>
+
+<Accordion title="Create coupon">
+Creates a new coupon.
+
+
+
+*rate limits*:
+
+burst: `3/s`
+
+steady: `60/m` **scopes:** `coupons:write`
+</Accordion>
+
+<Accordion title="Create catalog category relationships items">
+Create a new item relationship for the given category id.
+
+
+
+*rate limits*:
+
+burst: `75/s`
+
+steady: `700/m` **scopes:** `catalogs:write`
+</Accordion>
+
+<Accordion title="Delete catalog item relationships categories">
+Delete catalog category relationships for the given item id.
+
+
+
+*rate limits*:
+
+burst: `75/s`
+
+steady: `700/m` **scopes:** `catalogs:write`
+</Accordion>
+
+<Accordion title="Create webhook">
+Create a new webhook
+
+
+
+*rate limits*:
+
+burst: `1/s`
+
+steady: `15/m` **scopes:** `webhooks:write`
+</Accordion>
+
+<Accordion title="Delete catalog category relationships items">
+Delete item relationships for the given category id.
+
+
+
+*rate limits*:
+
+burst: `75/s`
+
+steady: `700/m` **scopes:** `catalogs:write`
+</Accordion>
+
+<Accordion title="Create catalog item">
+Create a new catalog item.
+
+
+
+*rate limits*:
+
+burst: `75/s`
+
+steady: `700/m` **scopes:** `catalogs:write`
+</Accordion>
+
+<Accordion title="Delete catalog variant">
+Delete a catalog item variant with the given variant id.
+
+
+
+*rate limits*:
+
+burst: `75/s`
+
+steady: `700/m` **scopes:** `catalogs:write`
+</Accordion>
+
+<Accordion title="Delete coupon">
+Delete the coupon with the given coupon id.
+
+
+
+*rate limits*:
+
+burst: `3/s`
+
+steady: `60/m` **scopes:** `coupons:write`
+</Accordion>
+
+<Accordion title="Delete catalog item">
+Delete a catalog item with the given item id.
+
+
+
+*rate limits*:
+
+burst: `75/s`
+
+steady: `700/m` **scopes:** `catalogs:write`
+</Accordion>
+
+<Accordion title="Delete flow">
+Delete a flow with the given flow id.
+
+
+
+*rate limits*:
+
+burst: `3/s`
+
+steady: `60/m` **scopes:** `flows:write`
+</Accordion>
+
+<Accordion title="Delete coupon code">
+Deletes a coupon code specified by the given identifier synchronously. if a profile has been assigned to the coupon code, an exception will be raised
+
+
+
+*rate limits*:
+
+burst: `350/s`
+
+steady: `3500/m` **scopes:** `coupon-codes:write`
+</Accordion>
+
+<Accordion title="Delete list">
+Delete a list with the given list id.
+
+
+
+*rate limits*:
+
+burst: `10/s`
+
+steady: `150/m` **scopes:** `lists:write`
+</Accordion>
+
+<Accordion title="Create catalog item relationships categories">
+Create a new catalog category relationship for the given item id.
+
+
+
+*rate limits*:
+
+burst: `75/s`
+
+steady: `700/m` **scopes:** `catalogs:write`
+</Accordion>
+
+<Accordion title="Create template clone">
+Clone a template by its id, but cloning fails if account has 1,000+ templates. api limit: 1,000 templates. rate limits are 10 per second and 150 per minute. requires `templates:write` scope.
+</Accordion>
+
+<Accordion title="Create tag relationships lists">
+Summary: a tag can be added to one or more lists, with a max of 100 tags per list. use the request body to link tag and list ids. tag: #apiusagelimits scopes: lists:write, tags:write
+</Accordion>
+
+<Accordion title="Delete tag relationships flows">
+Remove a tag's association with one or more flows. use the request body to pass in the id(s) of the flows(s) whose association with the tag will be removed.
+
+
+
+*rate limits*:
+
+burst: `3/s`
+
+steady: `60/m` **scopes:** `flows:write` `tags:write`
+</Accordion>
+
+<Accordion title="Delete segment">
+Delete a segment with the given segment id.
+
+
+
+*rate limits*:
+
+burst: `3/s`
+
+steady: `60/m` **scopes:** `segments:write`
+</Accordion>
+
+<Accordion title="Delete tag relationships campaigns">
+Disconnect a tag from campaigns using the campaign id(s) in the request body. rate limits: 3 requests/second, 60 requests/minute. required scopes: campaigns:write, tags:write.
+</Accordion>
+
+<Accordion title="Delete tag">
+Delete the tag with the given tag id. any associations between the tag and other resources will also be removed.
+
+
+
+*rate limits*:
+
+burst: `3/s`
+
+steady: `60/m` **scopes:** `tags:read` `tags:write`
+</Accordion>
+
+<Accordion title="Delete tag group">
+Delete a specified tag group and its contents; associated resource links will be removed. the default group is undeletable. rate limits: 3/s burst, 60/m steady. requires tags:read and tags:write permissions.
+</Accordion>
+
+<Accordion title="Delete tag relationships lists">
+Remove a tag's association with one or more lists. use the request body to pass in the id(s) of the list(s) whose association with the tag will be removed.
+
+
+
+*rate limits*:
+
+burst: `3/s`
+
+steady: `60/m` **scopes:** `lists:write` `tags:write`
+</Accordion>
+
+<Accordion title="Delete template">
+Delete a template with the given template id.
+
+
+
+*rate limits*:
+
+burst: `10/s`
+
+steady: `150/m` **scopes:** `templates:write`
+</Accordion>
+
+<Accordion title="Create coupon code">
+Synchronously creates a coupon code for the given coupon.
+
+
+
+*rate limits*:
+
+burst: `350/s`
+
+steady: `3500/m` **scopes:** `coupon-codes:write`
+</Accordion>
+
+<Accordion title="Delete tag relationships segments">
+Use the request body to de-associate a tag from specified segment ids. rate limits are 3 requests/sec and 60 requests/min. required scopes are 'segments:write' and 'tags:write'.
+</Accordion>
+
+<Accordion title="Create tag relationships segments">
+Summary: set tag associations with segments using the request body, limited to one tag per segment and up to 100 tags per segment. rate limits are three requests per second and sixty per minute. tags: segments:write, tags:write
+</Accordion>
+
+<Accordion title="Delete webhook">
+Delete a webhook with the given id.
+
+
+
+*rate limits*:
+
+burst: `1/s`
+
+steady: `15/m` **scopes:** `webhooks:write`
+</Accordion>
+
+<Accordion title="Get account">
+Retrieve a single account object by its account id. you can only request the account by which the private api key was generated.
+
+
+
+*rate limits*:
+
+burst: `1/s`
+
+steady: `15/m` **scopes:** `accounts:read`
+</Accordion>
+
+<Accordion title="Get bulk profile import job">
+Get a bulk profile import job with the given job id.
+
+
+
+*rate limits*:
+
+burst: `10/s`
+
+steady: `150/m` **scopes:** `lists:read` `profiles:read`
+</Accordion>
+
+<Accordion title="Get accounts">
+Use a private api key to fetch an associated account's details like contact info, timezone, and currency, as well as validate the key. rate limit: 1 request/second, 15 requests/minute. scope required: `accounts:read`.
+</Accordion>
+
+<Accordion title="Create catalog variant">
+Create a new variant for a related catalog item.
+
+
+
+*rate limits*:
+
+burst: `75/s`
+
+steady: `700/m` **scopes:** `catalogs:write`
+</Accordion>
+
+<Accordion title="Create template">
+Summary: custom html templates can be created unless an account reaches 1,000 template limit. use sparse fieldsets to request specific fields. rate limits are 10 per second and 150 per minute. requires 'templates:write' scope.
+</Accordion>
+
+<Accordion title="Add profile to list">
+Use the subscribe profiles endpoint to add profiles to a list by id, with a max of 1000 per call. ideal for giving marketing consent. rate limits: 10/s burst, 150/m steady. requires lists:write and profiles:write scopes.
+</Accordion>
+
+<Accordion title="Create list">
+Create a new list.
+
+
+
+*rate limits*:
+
+burst: `10/s`
+
+steady: `150/m`
+
+daily: `100/d` **scopes:** `lists:write`
+</Accordion>
+
+<Accordion title="Create or update push token">
+Migrate or create push tokens with klaviyo's endpoint, utilizing their mobile sdks for ios & android. rate limits: 75/s burst, 700/m steady. requires profiles:write and push-tokens:write scopes.
+</Accordion>
+
+<Accordion title="Create or update client profile">
+Update user profiles without tracking using a public client-side api; use a private server-side api for identifier changes. burst rate is 350 requests/sec and 3500 requests/min with 'profiles:write' access.
+</Accordion>
+
+<Accordion title="Create or update client push token">
+This endpoint for mobile sdks (ios & android) creates/updates push tokens using a public api key. push notifications must be enabled. for migrating tokens use the server-side post endpoint. rate limits are 3/s burst, 150/m steady.
+</Accordion>
+
+<Accordion title="Create client back in stock subscription">
+Use the endpoint for client-side back in stock notifications with a public api key. for server-side, use post /api/back-in-stock-subscriptions. limits are 350 requests per second and 3500 per minute. requires 'catalogs:write' and 'profiles:write' scopes.
+</Accordion>
+
+<Accordion title="Create tag">
+Summary: instructions on creating a tag within an account's designated tag group with a maximum of 500 tags, with optional tag group specification. rate limits are 3/s burst and 60/min steady. tag: #tagcreationlimitandrate
+</Accordion>
+
+<Accordion title="Create client event">
+Create client-side events to track profiles using a public api key, not for updating identifiers (server-side only). rate limits: 350/s, 3500/m. use `events:write` scope.
+</Accordion>
+
+<Accordion title="Create profile">
+Create a new profile.
+
+
+
+*rate limits*:
+
+burst: `75/s`
+
+steady: `700/m` **scopes:** `profiles:write`
+</Accordion>
+
+<Accordion title="Create segment">
+Create a segment.
+
+
+
+*rate limits*:
+
+burst: `1/s`
+
+steady: `15/m`
+
+daily: `100/d` **scopes:** `segments:write`
+</Accordion>
+
+<Accordion title="Create or update profile">
+Create/update a profile with given attributes. returns 201 for creation, 200 for update. empty fields are cleared with `null`; omitted fields remain. rate limits: 75/s burst, 700/m steady. scope required: `profiles:write`.
+</Accordion>
+
+<Accordion title="Create event">
+Create or update a profile event with minimum identifiers and metric name. success means validation, not completion. burst limit: 350/s, steady: 3500/m. scope required: `events:write`.
+</Accordion>
+
+<Accordion title="Create client subscription">
+Endpoint manages email/sms opt-ins using consent and requires public api key for client use. allows single-channel with details. rate limit: 100/s burst, 700/m steady, under 'subscriptions:write'.
+</Accordion>
+
+<Accordion title="Get bulk profile import job profiles">
+Get profiles for the bulk profile import job with the given id.
+
+
+
+*rate limits*:
+
+burst: `10/s`
+
+steady: `150/m` **scopes:** `profiles:read`
+</Accordion>
+
+<Accordion title="Get bulk profile import job relationships profiles">
+Get profile relationships for the bulk profile import job with the given id.
+
+
+
+*rate limits*:
+
+burst: `10/s`
+
+steady: `150/m` **scopes:** `profiles:read`
+</Accordion>
+
+<Accordion title="Get bulk profile import jobs">
+Get all bulk profile import jobs. returns a maximum of 100 jobs per request.
+
+
+
+*rate limits*:
+
+burst: `10/s`
+
+steady: `150/m` **scopes:** `lists:read` `profiles:read`
+</Accordion>
+
+<Accordion title="Get bulk profile import job lists">
+Get list for the bulk profile import job with the given id.
+
+
+
+*rate limits*:
+
+burst: `10/s`
+
+steady: `150/m` **scopes:** `lists:read`
+</Accordion>
+
+<Accordion title="Get bulk profile import job errors">
+Get import errors for the bulk profile import job with the given id.
+
+
+
+*rate limits*:
+
+burst: `10/s`
+
+steady: `150/m` **scopes:** `profiles:read`
+</Accordion>
+
+<Accordion title="Get catalog category">
+Get a catalog category with the given category id.
+
+
+
+*rate limits*:
+
+burst: `350/s`
+
+steady: `3500/m` **scopes:** `catalogs:read`
+</Accordion>
+
+<Accordion title="Get coupon">
+Get a specific coupon with the given coupon id.
+
+
+
+*rate limits*:
+
+burst: `75/s`
+
+steady: `700/m` **scopes:** `coupons:read`
+</Accordion>
+
+<Accordion title="Get campaign message template">
+Return the related template
+
+
+
+*rate limits*:
+
+burst: `10/s`
+
+steady: `150/m` **scopes:** `campaigns:read` `templates:read`
+</Accordion>
+
+<Accordion title="Get delete items job">
+Get a catalog item bulk delete job with the given job id.
+
+
+
+*rate limits*:
+
+burst: `350/s`
+
+steady: `3500/m` **scopes:** `catalogs:read`
+</Accordion>
+
+<Accordion title="Get bulk profile import job relationships lists">
+Get list relationship for the bulk profile import job with the given id.
+
+
+
+*rate limits*:
+
+burst: `10/s`
+
+steady: `150/m` **scopes:** `lists:read`
+</Accordion>
+
+<Accordion title="Get delete variants job">
+Get a catalog variant bulk delete job with the given job id.
+
+
+
+*rate limits*:
+
+burst: `350/s`
+
+steady: `3500/m` **scopes:** `catalogs:read`
+</Accordion>
+
+<Accordion title="Get coupon relationships coupon codes">
+Gets the coupon relationship associated with the given coupon code id
+
+
+
+*rate limits*:
+
+burst: `75/s`
+
+steady: `700/m` **scopes:** `coupons:read`
+</Accordion>
+
+<Accordion title="Get campaign">
+Returns a specific campaign based on a required id.
+
+
+
+*rate limits*:
+
+burst: `10/s`
+
+steady: `150/m` **scopes:** `campaigns:read`
+</Accordion>
+
+<Accordion title="Get catalog categories">
+Retrieve up to 100 account catalog categories, sortable by creation date. only `$custom` integration and `$default` catalog types supported. rate limits are 350/s and 3500/m. requires `catalogs:read` scope.
+</Accordion>
+
+<Accordion title="Get campaign message relationships template">
+Returns the id of the related template
+
+
+
+*rate limits*:
+
+burst: `10/s`
+
+steady: `150/m` **scopes:** `campaigns:read` `templates:read`
+</Accordion>
+
+<Accordion title="Get delete variants jobs">
+Get all catalog variant bulk delete jobs. returns a maximum of 100 jobs per request.
+
+
+
+*rate limits*:
+
+burst: `350/s`
+
+steady: `3500/m` **scopes:** `catalogs:read`
+</Accordion>
+
+<Accordion title="Get delete categories jobs">
+Get all catalog category bulk delete jobs. returns a maximum of 100 jobs per request.
+
+
+
+*rate limits*:
+
+burst: `350/s`
+
+steady: `3500/m` **scopes:** `catalogs:read`
+</Accordion>
+
+<Accordion title="Get event">
+Get an event with the given event id.
+
+
+
+*rate limits*:
+
+burst: `10/s`
+
+steady: `150/m` **scopes:** `events:read`
+</Accordion>
+
+<Accordion title="Get flow flow actions">
+Get all flow actions associated with the given flow id. returns a maximum of 50 flows per request, which can be paginated with cursor-based pagination.
+
+
+
+*rate limits*:
+
+burst: `3/s`
+
+steady: `60/m` **scopes:** `flows:read`
+</Accordion>
+
+<Accordion title="Get flow action relationships messages">
+Retrieves up to 50 flow message relationships per request for a specified flow action id, with cursor pagination. rate limits: 3/s burst, 60/min steady. requires `flows:read` scope.
+</Accordion>
+
+<Accordion title="Get create categories job">
+Get a catalog category bulk create job with the given job id. an `include` parameter can be provided to get the following related resource data: `categories`.
+
+
+
+*rate limits*:
+
+burst: `350/s`
+
+steady: `3500/m` **scopes:** `catalogs:read`
+</Accordion>
+
+<Accordion title="Get catalog category items">
+Retrieve up to 100 sorted items per request from a category using the category id. sort by 'created' field. rate limits are 350/s burst and 3500/m steady. requires 'catalogs:read' scope.
+</Accordion>
+
+<Accordion title="Get flow">
+Get a flow with the given flow id.
+
+
+
+*rate limits*:
+
+burst: `3/s`
+
+steady: `60/m` **scopes:** `flows:read`
+</Accordion>
+
+<Accordion title="Get coupons">
+Get all coupons in an account. to learn more, see our [coupons api guide](https://developers.klaviyo.com/en/docs/use klaviyos coupons api).
+
+
+
+*rate limits*:
+
+burst: `75/s`
+
+steady: `700/m` **scopes:** `coupons:read`
+</Accordion>
+
+<Accordion title="Get flow for flow action">
+Get the flow associated with the given action id.
+
+
+
+*rate limits*:
+
+burst: `3/s`
+
+steady: `60/m` **scopes:** `flows:read`
+</Accordion>
+
+<Accordion title="Get flows">
+Get all flows in an account. returns a maximum of 50 flows per request, which can be paginated with cursor-based pagination.
+
+
+
+*rate limits*:
+
+burst: `3/s`
+
+steady: `60/m` **scopes:** `flows:read`
+</Accordion>
+
+<Accordion title="Get flow message relationships action">
+Get the [relationship](https://developers.klaviyo.com/en/reference/api overview#relationships) for a flow message's flow action, given the flow id.
+
+
+
+*rate limits*:
+
+burst: `3/s`
+
+steady: `60/m` **scopes:** `flows:read`
+</Accordion>
+
+<Accordion title="Get catalog category relationships items">
+Get all items in the given category id. returns a maximum of 100 items per request.
+
+
+
+*rate limits*:
+
+burst: `350/s`
+
+steady: `3500/m` **scopes:** `catalogs:read`
+</Accordion>
+
+<Accordion title="Get flow message">
+Get the flow message of a flow with the given message id.
+
+
+
+*rate limits*:
+
+burst: `3/s`
+
+steady: `60/m` **scopes:** `flows:read`
+</Accordion>
+
+<Accordion title="Get campaign recipient estimation">
+Get estimated recipients for a given campaign id using `create campaign recipient estimation job`. rate limits are 10/s burst and 150/m steady. required scope: `campaigns:read`.
+</Accordion>
+
+<Accordion title="Get flow message template">
+Return the related template
+
+
+
+*rate limits*:
+
+burst: `3/s`
+
+steady: `60/m` **scopes:** `templates:read`
+</Accordion>
+
+<Accordion title="Get flow message relationships template">
+Returns the id of the related template
+
+
+
+*rate limits*:
+
+burst: `3/s`
+
+steady: `60/m` **scopes:** `templates:read`
+</Accordion>
+
+<Accordion title="Get create categories jobs">
+Get all catalog category bulk create jobs. returns a maximum of 100 jobs per request.
+
+
+
+*rate limits*:
+
+burst: `350/s`
+
+steady: `3500/m` **scopes:** `catalogs:read`
+</Accordion>
+
+<Accordion title="Get events">
+Get all events in an account requests can be sorted by the following fields: `datetime`, `timestamp` returns a maximum of 200 events per page.
+
+
+
+*rate limits*:
+
+burst: `350/s`
+
+steady: `3500/m` **scopes:** `events:read`
+</Accordion>
+
+<Accordion title="Get campaign recipient estimation job">
+Retrieve the status of a recipient estimation job triggered with the `create campaign recipient estimation job` endpoint.
+
+
+
+*rate limits*:
+
+burst: `10/s`
+
+steady: `150/m` **scopes:** `campaigns:read`
+</Accordion>
+
+<Accordion title="Get flow relationships flow actions">
+Retrieve all flow action relationships for a specific flow id, sortable by `id`, `status`, `created`, `updated`. refine with filters, max 50 per page, paginated by `page[size]` and `page[number]`. rate limits: burst 3/s, steady 60/m. scope: `flows:read`.
+</Accordion>
+
+<Accordion title="Get flow tags">
+Return all tags associated with the given flow id.
+
+
+
+*rate limits*:
+
+burst: `3/s`
+
+steady: `60/m` **scopes:** `flows:read` `tags:read`
+</Accordion>
+
+<Accordion title="Get catalog item">
+Get a specific catalog item with the given item id.
+
+
+
+*rate limits*:
+
+burst: `350/s`
+
+steady: `3500/m` **scopes:** `catalogs:read`
+</Accordion>
+
+<Accordion title="Get flow relationships tags">
+Return the tag ids of all tags associated with the given flow.
+
+
+
+*rate limits*:
+
+burst: `3/s`
+
+steady: `60/m` **scopes:** `flows:read` `tags:read`
+</Accordion>
+
+<Accordion title="Get event metric">
+Get the metric for an event with the given event id.
+
+
+
+*rate limits*:
+
+burst: `350/s`
+
+steady: `3500/m` **scopes:** `events:read` `metrics:read`
+</Accordion>
+
+<Accordion title="Get form">
+Get the form with the given id.
+
+
+
+*rate limits*:
+
+burst: `3/s`
+
+steady: `60/m` **scopes:** `forms:read`
+</Accordion>
+
+<Accordion title="Get coupon code">
+Returns a coupon code specified by the given identifier.
+
+
+
+*rate limits*:
+
+burst: `350/s`
+
+steady: `3500/m` **scopes:** `coupon-codes:read`
+</Accordion>
+
+<Accordion title="Get create items job">
+Get a catalog item bulk create job with the given job id. an `include` parameter can be provided to get the following related resource data: `items`.
+
+
+
+*rate limits*:
+
+burst: `350/s`
+
+steady: `3500/m` **scopes:** `catalogs:read`
+</Accordion>
+
+<Accordion title="Get forms">
+Get all forms in an account.
+
+
+
+*rate limits*:
+
+burst: `3/s`
+
+steady: `60/m` **scopes:** `forms:read`
+</Accordion>
+
+<Accordion title="Get campaign relationships campaign messages">
+Returns the ids of all messages associated with the given campaign.
+
+
+
+*rate limits*:
+
+burst: `10/s`
+
+steady: `150/m` **scopes:** `campaigns:read`
+</Accordion>
+
+<Accordion title="Get delete items jobs">
+Get all catalog item bulk delete jobs. returns a maximum of 100 jobs per request.
+
+
+
+*rate limits*:
+
+burst: `350/s`
+
+steady: `3500/m` **scopes:** `catalogs:read`
+</Accordion>
+
+<Accordion title="Get event profile">
+Get the profile associated with an event with the given event id.
+
+
+
+*rate limits*:
+
+burst: `350/s`
+
+steady: `3500/m` **scopes:** `events:read` `profiles:read`
+</Accordion>
+
+<Accordion title="Get form version">
+Get the form version with the given id.
+
+
+
+*rate limits*:
+
+burst: `3/s`
+
+steady: `60/m` **scopes:** `forms:read`
+</Accordion>
+
+<Accordion title="Get form for form version">
+Get the form associated with the given form version.
+
+
+
+*rate limits*:
+
+burst: `3/s`
+
+steady: `60/m` **scopes:** `forms:read`
+</Accordion>
+
+<Accordion title="Get form id for form version">
+Get the id of the form associated with the given form version.
+
+
+
+*rate limits*:
+
+burst: `3/s`
+
+steady: `60/m` **scopes:** `forms:read`
+</Accordion>
+
+<Accordion title="Get catalog items">
+Retrieve up to 100 sorted catalog items per account, with `$custom` integration and `$default` type. rate limits: 350/s burst, 3500/m steady. scope required: `catalogs:read`.
+</Accordion>
+
+<Accordion title="Get create items jobs">
+Get all catalog item bulk create jobs. returns a maximum of 100 jobs per request.
+
+
+
+*rate limits*:
+
+burst: `350/s`
+
+steady: `3500/m` **scopes:** `catalogs:read`
+</Accordion>
+
+<Accordion title="Get list">
+Api allows 75 req/sec and 700 req/min, but with 'profile count' param, it's 1 req/sec and 15 req/min. 'lists:read' scope needed. see developer guide for details.
+</Accordion>
+
+<Accordion title="Get images">
+Get all images in an account.
+
+
+
+*rate limits*:
+
+burst: `10/s`
+
+steady: `150/m` **scopes:** `images:read`
+</Accordion>
+
+<Accordion title="Get lists">
+Retrieve a filtered selection of account lists by fields like `id`, `name`, `created`, and `updated`. limited to 10 results per page with burst rate limits of 75 requests/second and a steady rate of 700 requests/minute. requires `lists:read` scope.
+</Accordion>
+
+<Accordion title="Get flow action">
+Get a flow action from a flow with the given flow action id.
+
+
+
+*rate limits*:
+
+burst: `3/s`
+
+steady: `60/m` **scopes:** `flows:read`
+</Accordion>
+
+<Accordion title="Get event relationships metric">
+Get a list of related metrics for an event
+
+
+
+*rate limits*:
+
+burst: `350/s`
+
+steady: `3500/m` **scopes:** `events:read` `metrics:read`
+</Accordion>
+
+<Accordion title="Get campaign relationships tags">
+Returns the ids of all tags associated with the given campaign.
+
+
+
+*rate limits*:
+
+burst: `3/s`
+
+steady: `60/m` **scopes:** `campaigns:read` `tags:read`
+</Accordion>
+
+<Accordion title="Get campaigns">
+To list campaigns, use a channel filter (`email` or `sms`). rate limits apply: 10/s (burst), 150/m (steady). required scope: `campaigns:read`.
+</Accordion>
+
+<Accordion title="Get list relationships tags">
+Returns the tag ids of all tags associated with the given list.
+
+
+
+*rate limits*:
+
+burst: `3/s`
+
+steady: `60/m` **scopes:** `lists:read` `tags:read`
+</Accordion>
+
+<Accordion title="Get list tags">
+Return all tags associated with the given list id.
+
+
+
+*rate limits*:
+
+burst: `3/s`
+
+steady: `60/m` **scopes:** `lists:read` `tags:read`
+</Accordion>
+
+<Accordion title="Get event relationships profile">
+Get profile [relationships](https://developers.klaviyo.com/en/reference/api overview#relationships) for an event with the given event id.
+
+
+
+*rate limits*:
+
+burst: `350/s`
+
+steady: `3500/m` **scopes:** `events:read` `profiles:read`
+</Accordion>
+
+<Accordion title="Get list profiles">
+Retrieve profiles in a list by id, filterable by email/phone/push token/join date, sortable by join date. regular rate limit: 75/s, 700/m; with predictive analytics: 10/s, 150/m. details at klaviyo guide. scopes required: lists:read, profiles:read.
+</Accordion>
+
+<Accordion title="Get create variants job">
+Get a catalog variant bulk create job with the given job id. an `include` parameter can be provided to get the following related resource data: `variants`.
+
+
+
+*rate limits*:
+
+burst: `350/s`
+
+steady: `3500/m` **scopes:** `catalogs:read`
+</Accordion>
+
+<Accordion title="Get campaign send job">
+Get a campaign send job
+
+
+
+*rate limits*:
+
+burst: `10/s`
+
+steady: `150/m` **scopes:** `campaigns:read`
+</Accordion>
+
+<Accordion title="Get flow action for message">
+Get the flow action for a flow message with the given message id.
+
+
+
+*rate limits*:
+
+burst: `3/s`
+
+steady: `60/m` **scopes:** `flows:read`
+</Accordion>
+
+<Accordion title="Get metric">
+Get a metric with the given metric id.
+
+
+
+*rate limits*:
+
+burst: `10/s`
+
+steady: `150/m` **scopes:** `metrics:read`
+</Accordion>
+
+<Accordion title="Get list relationships profiles">
+Get profile membership [relationships](https://developers.klaviyo.com/en/reference/api overview#relationships) for a list with the given list id.
+
+
+
+*rate limits*:
+
+burst: `75/s`
+
+steady: `700/m` **scopes:** `lists:read` `profiles:read`
+</Accordion>
+
+<Accordion title="Get create variants jobs">
+Get all catalog variant bulk create jobs. returns a maximum of 100 jobs per request.
+
+
+
+*rate limits*:
+
+burst: `350/s`
+
+steady: `3500/m` **scopes:** `catalogs:read`
+</Accordion>
+
+<Accordion title="Get metrics">
+Get all metrics in an account. requests can be filtered by the following fields: integration `name`, integration `category` returns a maximum of 200 results per page.
+
+
+
+*rate limits*:
+
+burst: `10/s`
+
+steady: `150/m` **scopes:** `metrics:read`
+</Accordion>
+
+<Accordion title="Get profile relationships lists">
+Get list memberships for a profile with the given profile id.
+
+
+
+*rate limits*:
+
+burst: `3/s`
+
+steady: `60/m` **scopes:** `lists:read` `profiles:read`
+</Accordion>
+
+<Accordion title="Get profile lists">
+Get list memberships for a profile with the given profile id.
+
+
+
+*rate limits*:
+
+burst: `3/s`
+
+steady: `60/m` **scopes:** `lists:read` `profiles:read`
+</Accordion>
+
+<Accordion title="Get image">
+Get the image with the given image id.
+
+
+
+*rate limits*:
+
+burst: `10/s`
+
+steady: `150/m` **scopes:** `images:read`
+</Accordion>
+
+<Accordion title="Get profile">
+Get the profile with the given profile id.
+
+
+
+*rate limits*:
+
+burst: `75/s`
+
+steady: `700/m` **scopes:** `profiles:read`
+</Accordion>
+
+<Accordion title="Get profiles">
+Retrieve account profiles, sort by various fields. rate limits: 75/s burst, 700/m steady; lower with `predictive analytics`. details at developers.klaviyo.com. requires `profiles:read` scope.
+</Accordion>
+
+<Accordion title="Get segments">
+Fetch segments from an account with filters like `name`, `created`, and `updated`. max 10 results/page. rate limits are 75/s burst, 700/m steady. requires `segments:read` scope.
+</Accordion>
+
+<Accordion title="Get delete categories job">
+Get a catalog category bulk delete job with the given job id.
+
+
+
+*rate limits*:
+
+burst: `350/s`
+
+steady: `3500/m` **scopes:** `catalogs:read`
+</Accordion>
+
+<Accordion title="Get profile relationships segments">
+Get segment membership relationships for a profile with the given profile id.
+
+
+
+*rate limits*:
+
+burst: `3/s`
+
+steady: `60/m` **scopes:** `profiles:read` `segments:read`
+</Accordion>
+
+<Accordion title="Get segment">
+Fetch a segment by id with default rates of 75/s and 700/m, or with `additional-fields` at 1/s and 15/m. for details, visit the provided guide. required scope: `segments:read`.
+</Accordion>
+
+<Accordion title="Get catalog item categories">
+Retrieve the catalog categories for an item by id, sorted by 'created' date, with a 100-category maximum per request. rate limits: 350/s burst, 3500/m steady. requires 'catalogs:read' scope.
+</Accordion>
+
+<Accordion title="Get profile segments">
+Get segment memberships for a profile with the given profile id.
+
+
+
+*rate limits*:
+
+burst: `3/s`
+
+steady: `60/m` **scopes:** `profiles:read` `segments:read`
+</Accordion>
+
+<Accordion title="Get flow action messages">
+Retrieve up to 50 flow messages per request by action id, sortable by various fields, with ascending/descending options, and paginated using `page[size]` and `page[number]`. rate limits: 3/s burst, 60/m steady. scope required: `flows:read`.
+</Accordion>
+
+<Accordion title="Get segment profiles">
+Retrieve profiles in a segment by id, filtering by email, phone, token, or join date, and sorting by join date. rate limit: 75/s burst, 700/m steady. requires profiles:read and segments:read scopes.
+</Accordion>
+
+<Accordion title="Get coupon code relationships coupon">
+Gets a list of coupon code relationships associated with the given coupon id
+
+
+
+*rate limits*:
+
+burst: `75/s`
+
+steady: `700/m` **scopes:** `coupon-codes:read`
+</Accordion>
+
+<Accordion title="Get segment relationships profiles">
+Get all profile membership [relationships](https://developers.klaviyo.com/en/reference/api overview#relationships) for the given segment id.
+
+
+
+*rate limits*:
+
+burst: `75/s`
+
+steady: `700/m` **scopes:** `profiles:read` `segments:read`
+</Accordion>
+
+<Accordion title="Get flow action relationships flow">
+Get the flow associated with the given action id.
+
+
+
+*rate limits*:
+
+burst: `3/s`
+
+steady: `60/m` **scopes:** `flows:read`
+</Accordion>
+
+<Accordion title="Get catalog variant">
+Get a catalog item variant with the given variant id.
+
+
+
+*rate limits*:
+
+burst: `350/s`
+
+steady: `3500/m` **scopes:** `catalogs:read`
+</Accordion>
+
+<Accordion title="Get coupon for coupon code">
+Get the coupon associated with a given coupon code id.
+
+
+
+*rate limits*:
+
+burst: `75/s`
+
+steady: `700/m` **scopes:** `coupons:read`
+</Accordion>
+
+<Accordion title="Get catalog item relationships categories">
+Get all catalog categories that a particular item is in. returns a maximum of 100 categories per request.
+
+
+
+*rate limits*:
+
+burst: `350/s`
+
+steady: `3500/m` **scopes:** `catalogs:read`
+</Accordion>
+
+<Accordion title="Get coupon code bulk create jobs">
+Get all coupon code bulk create jobs. returns a maximum of 100 jobs per request.
+
+
+
+*rate limits*:
+
+burst: `75/s`
+
+steady: `700/m` **scopes:** `coupon-codes:read`
+</Accordion>
+
+<Accordion title="Get campaign message campaign">
+Return the related campaign
+
+
+
+*rate limits*:
+
+burst: `10/s`
+
+steady: `150/m` **scopes:** `campaigns:read`
+</Accordion>
+
+<Accordion title="Get campaign message">
+Returns a specific message based on a required id.
+
+
+
+*rate limits*:
+
+burst: `10/s`
+
+steady: `150/m` **scopes:** `campaigns:read`
+</Accordion>
+
+<Accordion title="Get campaign campaign messages">
+Return all messages that belong to the given campaign.
+
+
+
+*rate limits*:
+
+burst: `10/s`
+
+steady: `150/m` **scopes:** `campaigns:read`
+</Accordion>
+
+<Accordion title="Get catalog item variants">
+Retrieve up to 100 variants per request for a specific item id, sortable by creation date. rate limits are 350/s burst and 3500/m steady. requires 'catalogs:read' scope.
+</Accordion>
+
+<Accordion title="Get campaign message relationships campaign">
+Returns the id of the related campaign
+
+
+
+*rate limits*:
+
+burst: `10/s`
+
+steady: `150/m` **scopes:** `campaigns:read`
+</Accordion>
+
+<Accordion title="Get catalog variants">
+Retrieve up to 100 account variants per request, sortable by creation date. supports only `$custom` integration and `$default` catalog types. rate limits are 350/s burst and 3500/m steady. requires `catalogs:read` scope.
+</Accordion>
+
+<Accordion title="Get campaign tags">
+Return all tags that belong to the given campaign.
+
+
+
+*rate limits*:
+
+burst: `3/s`
+
+steady: `60/m` **scopes:** `campaigns:read` `tags:read`
+</Accordion>
+
+<Accordion title="Get coupon code bulk create job">
+Get a coupon code bulk create job with the given job id.
+
+
+
+*rate limits*:
+
+burst: `75/s`
+
+steady: `700/m` **scopes:** `coupon-codes:read`
+</Accordion>
+
+<Accordion title="Get coupon codes">
+Obtains coupon codes using necessary coupon or profile filters. rate limits: 350/s, 3500/m. requires 'coupon-codes:read' scope.
+</Accordion>
+
+<Accordion title="Get coupon codes for coupon">
+Gets a list of coupon codes associated with the given coupon id
+
+
+
+*rate limits*:
+
+burst: `75/s`
+
+steady: `700/m` **scopes:** `coupon-codes:read`
+</Accordion>
+
+<Accordion title="Get segment relationships tags">
+If `related resource` is `tags`, returns the tag ids of all tags associated with the given segment id.
+
+
+
+*rate limits*:
+
+burst: `3/s`
+
+steady: `60/m` **scopes:** `segments:read` `tags:read`
+</Accordion>
+
+<Accordion title="Spawn bulk profile import job">
+Initiate a job to create/update a batch of profiles, up to 10,000 with a max size of 5mb per request. rate limits: 10/s burst, 150/m steady. requires `lists:write` and `profiles:write` scopes. more info in the bulk profile import api guide.
+</Accordion>
+
+<Accordion title="Get tag relationships lists">
+Returns the ids of all lists associated with the given tag.
+
+
+
+*rate limits*:
+
+burst: `3/s`
+
+steady: `60/m` **scopes:** `lists:read` `tags:read`
+</Accordion>
+
+<Accordion title="Spawn update items job">
+You can bulk update up to 100 catalog items with a 5mb payload limit. a max of 500 jobs can run concurrently. rate limits are 75 requests/second and 700 requests/minute. required scope: `catalogs:write`.
+</Accordion>
+
+<Accordion title="Suppress profiles">
+Suppress profiles by email, segment, or list id to stop email marketing, regardless of consent. view guides for details. max 100 emails per request, with rate limits of 75/s and 700/m. scopes: profiles:write, subscriptions:write.
+</Accordion>
+
+<Accordion title="Get webhooks">
+Get all webhooks in an account.
+
+
+
+*rate limits*:
+
+burst: `1/s`
+
+steady: `15/m` **scopes:** `webhooks:read`
+</Accordion>
+
+<Accordion title="Get tag">
+Retrieve the tag with the given tag id.
+
+
+
+*rate limits*:
+
+burst: `3/s`
+
+steady: `60/m` **scopes:** `tags:read`
+</Accordion>
+
+<Accordion title="Get tag tag group">
+Returns the tag group resource for a given tag id.
+
+
+
+*rate limits*:
+
+burst: `3/s`
+
+steady: `60/m` **scopes:** `tags:read`
+</Accordion>
+
+<Accordion title="Get tag group relationships tags">
+Returns the tag ids of all tags inside the given tag group.
+
+
+
+*rate limits*:
+
+burst: `3/s`
+
+steady: `60/m` **scopes:** `tags:read`
+</Accordion>
+
+<Accordion title="Subscribe profiles">
+The api supports double opt-in for marketing, with 'historical import' bypassing consent. it resets opt-outs for returning users. caps at 1000 profiles, 75/s, and 700/min. needs 'lists:write', 'profiles:write', 'subscriptions:write' permissions.
+</Accordion>
+
+<Accordion title="Update catalog category relationships items">
+Update item relationships for the given category id.
+
+
+
+*rate limits*:
+
+burst: `75/s`
+
+steady: `700/m` **scopes:** `catalogs:write`
+</Accordion>
+
+<Accordion title="Spawn update variants job">
+Create a job to bulk update up to 100 catalog variants with a 5mb payload limit. a max of 500 jobs may run concurrently. rate limits are 75/s burst and 700/m steady. requires `catalogs:write` scope.
+</Accordion>
+
+<Accordion title="Get segment tags">
+Return all tags associated with the given segment id.
+
+
+
+*rate limits*:
+
+burst: `3/s`
+
+steady: `60/m` **scopes:** `segments:read` `tags:read`
+</Accordion>
+
+<Accordion title="Get tag group tags">
+Return the tags for a given tag group id.
+
+
+
+*rate limits*:
+
+burst: `3/s`
+
+steady: `60/m` **scopes:** `tags:read`
+</Accordion>
+
+<Accordion title="Get webhook">
+Get the webhook with the given id.
+
+
+
+*rate limits*:
+
+burst: `1/s`
+
+steady: `15/m` **scopes:** `webhooks:read`
+</Accordion>
+
+<Accordion title="Update catalog category">
+Update a catalog category with the given category id.
+
+
+
+*rate limits*:
+
+burst: `75/s`
+
+steady: `700/m` **scopes:** `catalogs:write`
+</Accordion>
+
+<Accordion title="Request profile deletion">
+To delete a profile, use only one identifier: email, phone number, or id. requests are asynchronous and can be tracked. ensure legal compliance; refer to docs. rate limits: 3 per second, 60 per minute.
+</Accordion>
+
+<Accordion title="Get tag relationships segments">
+Returns the ids of all segments associated with the given tag.
+
+
+
+*rate limits*:
+
+burst: `3/s`
+
+steady: `60/m` **scopes:** `segments:read` `tags:read`
+</Accordion>
+
+<Accordion title="Update catalog item relationships categories">
+Update catalog category relationships for the given item id.
+
+
+
+*rate limits*:
+
+burst: `75/s`
+
+steady: `700/m` **scopes:** `catalogs:write`
+</Accordion>
+
+<Accordion title="Update catalog item">
+Update a catalog item with the given item id.
+
+
+
+*rate limits*:
+
+burst: `75/s`
+
+steady: `700/m` **scopes:** `catalogs:write`
+</Accordion>
+
+<Accordion title="Get webhook topic">
+Get the webhook topic with the given id.
+
+
+
+*rate limits*:
+
+burst: `1/s`
+
+steady: `15/m` **scopes:** `webhooks:read`
+</Accordion>
+
+<Accordion title="Get tag relationships tag group">
+Returns the id of the tag group related to the given tag.
+
+
+
+*rate limits*:
+
+burst: `3/s`
+
+steady: `60/m` **scopes:** `tags:read`
+</Accordion>
+
+<Accordion title="Update coupon">
+*rate limits*:
+
+burst: `3/s`
+
+steady: `60/m` **scopes:** `coupons:write`
+</Accordion>
+
+<Accordion title="Get template">
+Get a template with the given template id.
+
+
+
+*rate limits*:
+
+burst: `10/s`
+
+steady: `150/m` **scopes:** `templates:read`
+</Accordion>
+
+<Accordion title="Update tag group">
+Update the tag group with the given tag group id. only a tag group's `name` can be changed. a tag group's `exclusive` or `default` value cannot be changed.
+
+
+
+*rate limits*:
+
+burst: `3/s`
+
+steady: `60/m` **scopes:** `tags:read` `tags:write`
+</Accordion>
+
+<Accordion title="Get templates">
+Retrieve account templates with sorting options (`id`, `name`, `created`, `updated`). limit of 10 results per page, rate limits at 10/s burst and 150/m steady. requires `templates:read` scope.
+</Accordion>
+
+<Accordion title="Update tag">
+Update the tag with the given tag id. only a tag's `name` can be changed. a tag cannot be moved from one tag group to another.
+
+
+
+*rate limits*:
+
+burst: `3/s`
+
+steady: `60/m` **scopes:** `tags:read` `tags:write`
+</Accordion>
+
+<Accordion title="Unregister client push token">
+This endpoint unsubscribes a push token, for use with klaviyo's mobile sdks and a public api key. push notifications must be on. rate limits are 3/s and 60/m.
+</Accordion>
+
+<Accordion title="Update segment">
+Update a segment with the given segment id.
+
+
+
+*rate limits*:
+
+burst: `1/s`
+
+steady: `15/m`
+
+daily: `100/d` **scopes:** `segments:write`
+</Accordion>
+
+<Accordion title="Update catalog variant">
+Update a catalog item variant with the given variant id.
+
+
+
+*rate limits*:
+
+burst: `75/s`
+
+steady: `700/m` **scopes:** `catalogs:write`
+</Accordion>
+
+<Accordion title="Update coupon code">
+Updates a coupon code specified by the given identifier synchronously. we allow updating the 'status' and 'expires at' of coupon codes.
+
+
+
+*rate limits*:
+
+burst: `350/s`
+
+steady: `3500/m` **scopes:** `coupon-codes:write`
+</Accordion>
+
+<Accordion title="Get webhook topics">
+Get all webhook topics in a klaviyo account.
+
+
+
+*rate limits*:
+
+burst: `1/s`
+
+steady: `15/m` **scopes:** `webhooks:read`
+</Accordion>
+
+<Accordion title="Unsubscribe profiles">
+Opt-out profiles from email or sms marketing. unsubscribe up to 100 profiles at a time with burst (75/s) and steady (700/m) rate limits. use different method to remove without affecting subscriptions. more on consent and removal in the provided links.
+</Accordion>
+
+<Accordion title="Update template">
+Update a template with the given template id. does not currently update drag & drop templates.
+
+
+
+*rate limits*:
+
+burst: `10/s`
+
+steady: `150/m` **scopes:** `templates:write`
+</Accordion>
+
+<Accordion title="Upload image from file">
+Upload an image from a file. if you want to import an image from an existing url or a data uri, use the upload image from url endpoint instead.
+
+
+
+*rate limits*:
+
+burst: `3/s`
+
+steady: `100/m`
+
+daily: `100/d` **scopes:** `images:write`
+</Accordion>
+
+<Accordion title="Update webhook">
+Update the webhook with the given id.
+
+
+
+*rate limits*:
+
+burst: `1/s`
+
+steady: `15/m` **scopes:** `webhooks:write`
+</Accordion>
+
+<Accordion title="Get update categories job">
+Get a catalog category bulk update job with the given job id. an `include` parameter can be provided to get the following related resource data: `categories`.
+
+
+
+*rate limits*:
+
+burst: `350/s`
+
+steady: `3500/m` **scopes:** `catalogs:read`
+</Accordion>
+
+<Accordion title="Upload image from url">
+Import an image from a url or data uri. if you want to upload an image from a file, use the upload image from file endpoint instead.
+
+
+
+*rate limits*:
+
+burst: `3/s`
+
+steady: `100/m`
+
+daily: `100/d` **scopes:** `images:write`
+</Accordion>
+
+<Accordion title="Get tag groups">
+Retrieve up to 25 tag groups per account, sortable/filterable by specific attributes. default group included. supports cursor pagination and adheres to rate limits of 3 requests per second and 60 per minute. requires `tags:read` scope.
+</Accordion>
+
+<Accordion title="Unsuppress profiles">
+Remove 'user suppressed' blocks on profiles manually via email, segment, or list id. does not affect unsubscribes or other suppressions. limits: 100 emails per request, 75/s burst, 700/m steady. scope: 'subscriptions:write'.
+</Accordion>
+
+<Accordion title="Update flow status">
+Update the status of a flow with the given flow id, and all actions in that flow.
+
+
+
+*rate limits*:
+
+burst: `3/s`
+
+steady: `60/m` **scopes:** `flows:write`
+</Accordion>
+
+<Accordion title="Merge profiles">
+Queue a task to merge one source profile into a destination profile using their ids. deletes the source afterwards. visit help center for details. rate limits: 10/s burst, 150/m steady. needs `profiles:write` scope.
+</Accordion>
+
+<Accordion title="Get update categories jobs">
+Get all catalog category bulk update jobs. returns a maximum of 100 jobs per request.
+
+
+
+*rate limits*:
+
+burst: `350/s`
+
+steady: `3500/m` **scopes:** `catalogs:read`
+</Accordion>
+
+<Accordion title="Get tag group">
+Retrieve the tag group with the given tag group id.
+
+
+
+*rate limits*:
+
+burst: `3/s`
+
+steady: `60/m` **scopes:** `tags:read`
+</Accordion>
+
+<Accordion title="Query campaign values">
+Returns the requested campaign analytics values data
+
+
+
+*rate limits*:
+
+burst: `1/s`
+
+steady: `2/m`
+
+daily: `225/d` **scopes:** `campaigns:read`
+</Accordion>
+
+<Accordion title="Update image">
+Update the image with the given image id.
+
+
+
+*rate limits*:
+
+burst: `10/s`
+
+steady: `150/m` **scopes:** `images:write`
+</Accordion>
+
+<Accordion title="Update campaign">
+Update a campaign with the given campaign id.
+
+
+
+*rate limits*:
+
+burst: `10/s`
+
+steady: `150/m` **scopes:** `campaigns:write`
+</Accordion>
+
+<Accordion title="Spawn coupon code bulk create job">
+Create a coupon-code-bulk-create-job to bulk create a list of coupon codes. max number of jobs queued at once we allow for is 100.
+
+
+
+*rate limits*:
+
+burst: `75/s`
+
+steady: `700/m` **scopes:** `coupon-codes:write`
+</Accordion>
+
+<Accordion title="Get update items job">
+Get a catalog item bulk update job with the given job id. an `include` parameter can be provided to get the following related resource data: `items`.
+
+
+
+*rate limits*:
+
+burst: `350/s`
+
+steady: `3500/m` **scopes:** `catalogs:read`
+</Accordion>
+
+<Accordion title="Get tags">
+Retrieve up to 50 account tags at once, filterable/sortable by name or id, with cursor pagination. rate limits: 3/s burst, 60/m steady. requires `tags:read` scope.
+</Accordion>
+
+<Accordion title="Update list">
+Update the name of a list with the given list id.
+
+
+
+*rate limits*:
+
+burst: `10/s`
+
+steady: `150/m` **scopes:** `lists:write`
+</Accordion>
+
+<Accordion title="Update campaign message">
+Update a campaign message
+
+
+
+*rate limits*:
+
+burst: `10/s`
+
+steady: `150/m` **scopes:** `campaigns:write`
+</Accordion>
+
+<Accordion title="Query flow series">
+Returns the requested flow analytics series data
+
+
+
+*rate limits*:
+
+burst: `1/s`
+
+steady: `2/m`
+
+daily: `225/d` **scopes:** `flows:read`
+</Accordion>
+
+<Accordion title="Get update items jobs">
+Get all catalog item bulk update jobs. returns a maximum of 100 jobs per request.
+
+
+
+*rate limits*:
+
+burst: `350/s`
+
+steady: `3500/m` **scopes:** `catalogs:read`
+</Accordion>
+
+<Accordion title="Update profile">
+Update profiles with the provided id. setting fields to `null` clears them; omitting fields retains existing data. rate limits: 75/s burst, 700/m steady. required scope: `profiles:write`.
+</Accordion>
+
+<Accordion title="Spawn create categories job">
+Create bulk job for up to 100 catalog categories with a 5mb size limit and a max of 500 concurrent jobs. rate limits: 75/s burst, 700/m steady. requires 'catalogs:write' scope.
+</Accordion>
+
+<Accordion title="Get update variants job">
+Get a catalog variate bulk update job with the given job id. an `include` parameter can be provided to get the following related resource data: `variants`.
+
+
+
+*rate limits*:
+
+burst: `350/s`
+
+steady: `3500/m` **scopes:** `catalogs:read`
+</Accordion>
+
+<Accordion title="Update campaign send job">
+Permanently cancel the campaign, setting the status to canceled or revert the campaign, setting the status back to draft
+
+
+
+*rate limits*:
+
+burst: `10/s`
+
+steady: `150/m` **scopes:** `campaigns:write`
+</Accordion>
+
+<Accordion title="Get tag relationships campaigns">
+Returns the ids of all campaigns associated with the given tag.
+
+
+
+*rate limits*:
+
+burst: `3/s`
+
+steady: `60/m` **scopes:** `campaigns:read` `tags:read`
+</Accordion>
+
+<Accordion title="Get version ids for form">
+Get the ids of the form versions for the given form.
+
+
+
+*rate limits*:
+
+burst: `3/s`
+
+steady: `60/m` **scopes:** `forms:read`
+</Accordion>
+
+<Accordion title="Get versions for form">
+Get the form versions for the given form.
+
+
+
+*rate limits*:
+
+burst: `3/s`
+
+steady: `60/m` **scopes:** `forms:read`
+</Accordion>
+
+<Accordion title="Spawn delete items job">
+Delete batches of catalog items with a bulk job, max 100 items/request, 5mb size limit, and up to 500 concurrent jobs. rate limits are 75/s burst and 700/m steady. requires `catalogs:write` scope.
+</Accordion>
+
+<Accordion title="Query flow values">
+Returns the requested flow analytics values data
+
+
+
+*rate limits*:
+
+burst: `1/s`
+
+steady: `2/m`
+
+daily: `225/d` **scopes:** `flows:read`
+</Accordion>
+
+<Accordion title="Spawn delete categories job">
+Delete multiple catalog categories in bulk, with a limit of 100 per request and a 5mb payload size. a maximum of 500 concurrent jobs permitted. rate limits are 75/s burst and 700/min steady. requires `catalogs:write` scope.
+</Accordion>
+
+<Accordion title="Spawn create items job">
+Create batches of up to 100 catalog items with a 5mb size limit using the bulk job, which allows 500 concurrent jobs. rate limits are 75/s burst and 700/m steady. requires `catalogs:write` scope.
+</Accordion>
+
+<Accordion title="Spawn create variants job">
+Initiate a job to bulk create up to 100 catalog variants, with a 5mb payload size limit. a max of 500 jobs can run concurrently. rate limits are 75/s burst and 700/m steady. requires 'catalogs:write' scope.
+</Accordion>
+
+<Accordion title="Get update variants jobs">
+Get all catalog variant bulk update jobs. returns a maximum of 100 jobs per request.
+
+
+
+*rate limits*:
+
+burst: `350/s`
+
+steady: `3500/m` **scopes:** `catalogs:read`
+</Accordion>
+
+<Accordion title="Spawn update categories job">
+Create a job to bulk update up to 100 categories, with a 5mb size limit and a maximum of 500 concurrent jobs. burst rate limit is 75/s, steady is 700/m. requires `catalogs:write` scope.
+</Accordion>
+
+<Accordion title="Spawn delete variants job">
+Delete multiple catalog variants with a bulk job, max 100 per request, 5mb size limit. only 500 jobs can run concurrently. rate limits: 75/s burst, 700/m steady. requires `catalogs:write` scope.
+</Accordion>
+
+<Accordion title="Get tag relationships flows">
+Returns the ids of all flows associated with the given tag.
+
+
+
+*rate limits*:
+
+burst: `3/s`
+
+steady: `60/m` **scopes:** `flows:read` `tags:read`
+</Accordion>
+
+<Accordion title="Remove profile from list">
+Delete profiles from a marketing list using its id without affecting overall consent. use unsubscribe profiles for complete unsubscribing. limit: 1000 profiles per call, 10 calls/s, 150 calls/m. required scopes: `lists:write`, `profiles:write`.
+</Accordion>
+
+<Accordion title="Query metric aggregates">
+The klaviyo endpoint fetches metric events, handling json requests for custom data queries, sorting, and filtering; offers grouping and time-based filters; requires adherence to rate limits (3 requests per second, 60 per minute) under 'metrics:read'.
+</Accordion>
+

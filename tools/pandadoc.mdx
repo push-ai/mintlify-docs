@@ -1,0 +1,58 @@
+PandaDoc offers document creation, e-signatures, and workflow automation, helping sales teams and businesses streamline proposals, contracts, and agreement processes
+
+<Accordion title="Create Document from File Upload">
+Creates a new document in pandadoc by uploading a file (pdf, docx, etc.). this tool converts existing documents into pandadoc documents for processing, signing, and tracking through the pandadoc system.
+</Accordion>
+
+<Accordion title="Create Contact">
+This tool creates a new contact in pandadoc. it allows you to add a new contact with their personal and professional information to your pandadoc account. the tool is completely independent and doesn't require any external resource ids or dependencies.
+</Accordion>
+
+<Accordion title="Create Document Attachment">
+Creates and adds an attachment to a pandadoc document. this tool allows you to attach downloadable files such as supplemental materials, excel spreadsheets, or other content without embedding them directly into the document. attachments can be added only to documents in 'document.draft' status, with a maximum of 10 files per document and a size limit of 50mb per file.
+</Accordion>
+
+<Accordion title="Create Document Folder">
+Creates a new folder in pandadoc to organize documents. this action allows users to create a new folder with a specified name and optionally set a parent folder to create a nested folder structure.
+</Accordion>
+
+<Accordion title="Get Template Details">
+This tool retrieves detailed information about a specific template by its id. the endpoint returns comprehensive template details including metadata, content details, and sharing settings.
+</Accordion>
+
+<Accordion title="List Contacts">
+A tool to list and search contacts in pandadoc. it retrieves a list of contacts with various options including filtering by email, search query, pagination, and shared status. all parameters are optional and it supports flexible queries to get contacts.
+</Accordion>
+
+<Accordion title="List Document Folders">
+This tool retrieves a list of all document folders in pandadoc. it's a standalone action that doesn't require any external dependencies or resource ids. the tool will return a list of folders containing documents, with each folder containing information about its id, name, and parent folder relationship.
+</Accordion>
+
+<Accordion title="List Templates">
+This tool retrieves a list of all templates available in the pandadoc account. it supports parameters to filter templates by name, shared status, deleted status, pagination, and tag filtering, and returns detailed template information.
+</Accordion>
+
+<Accordion title="Move Document to Folder">
+This tool allows users to move a document to a specific folder within their pandadoc account. it performs a post request to move the document to the specified folder. both the document and the destination folder must exist.
+</Accordion>
+
+<Accordion title="Create or Update Contact">
+This tool creates a new contact or updates an existing one in pandadoc based on the email address. if a contact with the provided email exists, it will be updated; otherwise, a new contact will be created.
+</Accordion>
+
+<Accordion title="Create Template">
+This tool allows users to create a new template in pandadoc from a pdf file or from scratch. it handles file upload validation, parameter checks, proper error handling, and authentication with the pandadoc api. the template can be created either by uploading a pdf file or by providing a structured content object that defines the template layout and elements.
+</Accordion>
+
+<Accordion title="Delete Template">
+This tool deletes a specific template from pandadoc. once a template is deleted, it cannot be recovered. this action is permanent and should be used with caution.
+</Accordion>
+
+<Accordion title="Delete Contact">
+This tool allows you to delete a contact from your pandadoc account. the action is permanent and cannot be undone.
+</Accordion>
+
+<Accordion title="Create PandaDoc Webhook">
+Creates a new webhook subscription in pandadoc to receive notifications about specific events. this action allows you to set up webhook notifications for various document-related events such as status changes, recipient completions, and updates. the webhook will send http notifications to your specified endpoint when the configured events occur.
+</Accordion>
+

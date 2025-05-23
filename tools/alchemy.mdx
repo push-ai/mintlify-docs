@@ -1,0 +1,30 @@
+Alchemy is a blockchain development platform that provides powerful APIs and developer tools for building and scaling Ethereum applications
+
+<Accordion title="Get Token Metadata">
+This tool retrieves metadata for a given token contract address, including the token's name, symbol, decimals, and logo url if available. it is essential for applications that need to display token information, handle token transfers, or manage token listings.
+</Accordion>
+
+<Accordion title="Get NFT Contract Metadata">
+This tool retrieves metadata for a given nft smart contract. essential for obtaining basic nft collection details such as contract name, symbol, total supply, token type (erc721 vs erc1155), contract deployer address, deployed block number, opensea metadata, and contract verification status.
+</Accordion>
+
+<Accordion title="Get Token Balances">
+This tool retrieves erc20 token balances for a specified ethereum address. it can either return balances for all tokens an address has ever interacted with or for a specific set of token contract addresses. it is useful for checking token balances for wallets, monitoring erc20 token holdings, portfolio tracking, and defi applications.
+</Accordion>
+
+<Accordion title="Get NFTs for Contract">
+This tool retrieves all nfts for a given contract address. it is designed to return a complete list of nfts from a specific nft collection by accepting parameters such as contractaddress (required), withmetadata (optional), pagesize (optional), and pagekey (optional). the tool is useful for analyzing collections, building nft marketplaces, and creating collection analytics.
+</Accordion>
+
+<Accordion title="Get NFT Sales">
+This tool will retrieve nft sales data across various marketplaces. it allows users to query historical nft sales data with filtering options such as fromblock, toblock, order, marketplace, and limit in order to track nft sales activity, analyze historical data, monitor specific collections, and get real-time updates on nft transactions.
+</Accordion>
+
+<Accordion title="Get Transaction Count">
+This tool retrieves the number of transactions sent from a specific address (also known as the nonce). it uses the eth gettransactioncount endpoint to return the transaction count for an address at a specified block tag (latest, pending, earliest, or a hex block number), which is essential for determining the nonce for subsequent transactions.
+</Accordion>
+
+<Accordion title="Get NFT Owners">
+This tool retrieves the owner(s) for a specific nft token, supporting both erc721 and erc1155 tokens on ethereum and several layer 2 chains such as polygon, arbitrum, optimism, and base. it requires the contract address and tokenid, and returns a list of owner addresses along with an optional pagination key for further results.
+</Accordion>
+

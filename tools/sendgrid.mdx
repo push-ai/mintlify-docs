@@ -1,0 +1,1498 @@
+SendGrid is a cloud-based email delivery platform providing transactional and marketing email services, with APIs for integration, analytics, and scalability
+
+<Accordion title="Activate a transactional template version">
+**this endpoint allows you to activate a version of one of your templates.**
+</Accordion>
+
+<Accordion title="Add an ip to an authenticated domain">
+**this endpoint allows you to add an ip address to an authenticated domain.**
+</Accordion>
+
+<Accordion title="Add a batch of ips to an ip pool">
+This operation appends a batch of ips to an ip pool. this operation requires all ip assignments to succeed. if any ip assignments fail, this endpoint will return an error.
+</Accordion>
+
+<Accordion title="Add an ip address to a pool">
+Add an ip address to a pool with this endpoint. activation in sendgrid needed first. it takes up to 60 seconds. possible to add to multiple pools. retrieve ips via a specific endpoint.
+</Accordion>
+
+<Accordion title="Add a single recipient to a list">
+**this endpoint allows you to add a single recipient to a list.**
+</Accordion>
+
+<Accordion title="Add ips">
+**this endpoint is for adding a(n) ip address(es) to your account.**
+</Accordion>
+
+<Accordion title="Approve access request">
+**this endpoint allows you to approve an access attempt.** **note:** only teammate admins may approve another teammate’s access request.
+</Accordion>
+
+<Accordion title="Add a twilio sendgrid ip address">
+This operation adds a twilio sendgrid ip address to your account. you can also assign up to 100 subusers to the ip address at creation.
+</Accordion>
+
+<Accordion title="Add suppressions to a suppression group">
+**this endpoint allows you to add email addresses to an unsubscribe group.** if you attempt to add suppressions to a group that has been deleted or does not exist, the suppressions will be added to the global suppressions list.
+</Accordion>
+
+<Accordion title="Add one or more ips to the allow list">
+This endpoint adds allowed ip addresses to a list, which then assigns each ip an id for future removal; ids can be retrieved via a specific retrieval endpoint.
+</Accordion>
+
+<Accordion title="Assign a batch of subusers to an ip">
+This operation appends a batch of subusers to a specified ip address. this endpoint requires all subuser assignments to succeed. if a subuser assignment fails, this endpoint will return an error.
+</Accordion>
+
+<Accordion title="Associate a branded link with a subuser">
+Parent accounts can create and validate branded links, then assign them to subusers through the api or twilio sendgrid app, enabling subusers to use the branded links for mail.
+</Accordion>
+
+<Accordion title="Authenticate an account with single sign on">
+Authenticates and logs in a user to twilio sendgrid as a specific admin identity configured for sso by partner. any additional teammates or subusers will need to log in directly via app.sendgrid.com
+</Accordion>
+
+<Accordion title="Associate an authenticated domain with a given user">
+Associate authenticated domains with subusers under a parent account to enable email sending using the parent's domain. authentication by the parent is required. multiple domains can be linked using the specified endpoint.
+</Accordion>
+
+<Accordion title="Add or update a contact">
+The endpoint can handle 30k contacts or 6mb, reports queuing/errors, needs extra steps to confirm changes and retrieve ids. custom fields must pre-exist and exact identifiers are required for updates; email addresses are auto-lowered in case.
+</Accordion>
+
+<Accordion title="Authenticate a domain">
+The endpoint enables domain authentication for users or subusers, offering two methods—'username' parameter for visibility and modification, or the association workflow for a fixed, non-editable domain assignment.
+</Accordion>
+
+<Accordion title="Add recipient addresses to the global suppression group">
+**this endpoint allows you to add one or more email addresses to the global suppressions group.**
+</Accordion>
+
+<Accordion title="Cancel or pause a scheduled send">
+This api endpoint allows users to cancel or pause a scheduled email by providing its `batch id`. to change or remove this status, specific endpoints must be used; exceeding limits or duplicating actions will trigger a `400` error.
+</Accordion>
+
+<Accordion title="Bulk delete single sends">
+This api endpoint enables the deletion of multiple single sends by providing their ids. retrieve ids with a get request to `/marketing/singlensends`. deletions are irreversible.
+</Accordion>
+
+<Accordion title="Bind authenticated domains to user">
+This endpoint enables linking up to five authenticated domains from a parent account to a subuser, giving them permission to send emails with the parent's domain. domains are prioritized when sending emails.
+</Accordion>
+
+<Accordion title="Create an ip pool">
+Create an ip pool by activating an ip in sendgrid: log in, go to settings &gt; ip addresses, edit selected ip, check to allow sending, and save.
+</Accordion>
+
+<Accordion title="Create an ip pool with a name and ip assignments">
+Creating an ip pool associates specified ips with it. all ips must be successfully assigned, or creation fails with an error. a pool can have up to 100 ips.
+</Accordion>
+
+<Accordion title="Create an sso certificate">
+**this endpoint allows you to create an sso certificate.**
+</Accordion>
+
+<Accordion title="Create a batch id">
+Create a new mail batch id to group email sends, allowing pause or cancel actions via the scheduled sends api.
+</Accordion>
+
+<Accordion title="Create an sso integration">
+**this endpoint allows you to create an sso integration.**
+</Accordion>
+
+<Accordion title="Completed steps">
+This api endpoint checks if a sendgrid account has completed domain authentication (`domain verified`) and single sender verification (`sender verified`), returning boolean values for each.
+</Accordion>
+
+<Accordion title="Create an account">
+Creates a new account, with specified offering, under the organization.
+</Accordion>
+
+<Accordion title="Create a campaign">
+This endpoint enables campaign creation, requiring a subject, sender id, content (html and text suggested), and a list or segment id for sending or scheduling, but not for initial creation.
+</Accordion>
+
+<Accordion title="Create a list">
+**this endpoint allows you to create a list for your recipients.**
+</Accordion>
+
+<Accordion title="Create a branded link">
+Create a new branded link by specifying the root domain, which must align with your from email, and an optional unique subdomain. subusers can request using the `on-behalf-of` header.
+</Accordion>
+
+<Accordion title="Create a custom field">
+**this endpoint allows you to create a custom field.** **you can create up to 120 custom fields.**
+</Accordion>
+
+<Accordion title="Create api keys">
+Use sendgrid app to create an initial api key; then manage others via api. json with 'name' required; 100 key limit. keys have unique ids, default 'full access' unless scopes specified. update scopes with 'update api keys' endpoint.
+</Accordion>
+
+<Accordion title="Create an sso teammate">
+Create an sso teammate with email as username. assign roles using `is admin`, `scopes`, or `persona`. admins have full rights, personas have predefined permissions, and scopes are specific rights. teammates can manage subusers with potential limitations.
+</Accordion>
+
+<Accordion title="Create a new alert">
+**this endpoint allows you to create a new alert.**
+</Accordion>
+
+<Accordion title="Create a new suppression group">
+**this endpoint allows you to create a new suppression group.** to add an email address to the suppression group, [create a suppression](https://docs.sendgrid.com/api-reference/suppressions-suppressions/add-suppressions-to-a-suppression-group).
+</Accordion>
+
+<Accordion title="Create a new event webhook">
+Set up an event webhook by providing a url, choosing events for post requests, and receive a unique id. after creation, you can add names, oauth, and signature verification.
+</Accordion>
+
+<Accordion title="Create a segment">
+New segment endpoint created: supports various operators for date, text, number, and email fields. values must be strings, can specify campaign for email actions. conditions combinable via "and"/"or".
+</Accordion>
+
+<Accordion title="Create a new transactional template version">
+**this endpoint allows you to create a new version of a template.**
+</Accordion>
+
+<Accordion title="Sendgrid Create Integration">
+This endpoint creates an integration for email event forwarding. each integration has a maximum number of allowed integration instances per user. for example, users can create up to 10 segment integrations.
+</Accordion>
+
+<Accordion title="Create a sender identity">
+**this endpoint allows you to create a new sender identity.** you may create up to 100 unique sender identities.
+</Accordion>
+
+<Accordion title="Create design">
+Create new designs via `/designs` by submitting html content. consider email client limitations and see the guide for best practices. convert html to editable modules in the design library, or use preferred tools/migrate existing designs.
+</Accordion>
+
+<Accordion title="Create a parse setting">
+Create a new inbound parse setting with a twilio sendgrid authenticated `hostname` and a public `url` to receive parsed messages via http post. complete domain authentication and mx record setup as instructed in sendgrid documentation.
+</Accordion>
+
+<Accordion title="Create a transactional template">
+**this endpoint allows you to create a transactional template.**
+</Accordion>
+
+<Accordion title="Delete an account">
+To delete an organization's account by id: it revokes api keys/sso, removes sendgrid resources like dedicated ips, and stops billing immediately. this action is irreversible.
+</Accordion>
+
+<Accordion title="Delete ip pool">
+This operation deletes an ip pool and unassigns all ip addresses associated with the pool. ip addresses associated with the deleted pool will remain in your account.
+</Accordion>
+
+<Accordion title="Delete a single event webhook by id">
+Delete a specific event webhook by id with this endpoint. unlike other endpoints which default to the oldest webhook, this requires an id, else it errors to prevent accidental deletions. to disable, not delete, use `enabled` property to `false`.
+</Accordion>
+
+<Accordion title="Delete a campaign">
+**this endpoint allows you to delete a specific campaign.**
+</Accordion>
+
+<Accordion title="Delete a sender identity">
+**this endpoint allows you to delete one of your sender identities.**
+</Accordion>
+
+<Accordion title="Delete a cancellation or pause from a scheduled send">
+**this endpoint allows you to delete the cancellation/pause of a scheduled send.** scheduled sends cancelled less than 10 minutes before the scheduled time are not guaranteed to be cancelled.
+</Accordion>
+
+<Accordion title="Delete a single recipient from a single list">
+**this endpoint allows you to delete a single recipient from a list.**
+</Accordion>
+
+<Accordion title="Create a sender">
+This api endpoint is for creating new senders, with a limit of 100. verification is mandatory, either automatic upon domain authentication or via a confirmation email sent to the sender's address.
+</Accordion>
+
+<Accordion title="Create subuser">
+**this endpoint allows you to create a new subuser.**
+</Accordion>
+
+<Accordion title="Create verified sender request">
+This endpoint creates a new sender identity via `post`, sends a verification email to `from email`, and requires email verification. to resend, use `/resend/\{id\}`. for domain authentication, refer to the domain authentication api.
+</Accordion>
+
+<Accordion title="Deny access request">
+**this endpoint allows you to deny an attempt to access your account.** **note:** only teammate admins may delete a teammate's access request.
+</Accordion>
+
+<Accordion title="Delete blocks">
+This endpoint enables clearing blocked emails either by deleting all with `delete all`=true or by specifying addresses in the `emails` array.
+</Accordion>
+
+<Accordion title="Delete bounces">
+This api endpoint lets users delete bounced emails: either all by setting `delete all` to true, or specific ones by listing them in `emails`. do not use both options together.
+</Accordion>
+
+<Accordion title="Delete invalid emails">
+This endpoint lets you delete email addresses from your invalid list; delete all by setting `delete all` to true, or specify individual addresses to remove.
+</Accordion>
+
+<Accordion title="Delete teammate">
+**this endpoint allows you to delete a teammate.** **only the parent user or an admin teammate can delete another teammate.**
+</Accordion>
+
+<Accordion title="Edit a transactional template">
+This endpoint lets you change the name of a transactional template. for template modifications, create a new version using the provided link.
+</Accordion>
+
+<Accordion title="Delete an alert">
+**this endpoint allows you to delete an alert.**
+</Accordion>
+
+<Accordion title="Delete verified sender">
+Use this endpoint with a sender identity's `id` to remove it from your account. find sender identity ids through the "get all verified senders" endpoint.
+</Accordion>
+
+<Accordion title="Disassociate an authenticated domain from a given user">
+This endpoint removes an authenticated domain from a subuser that was previously assigned by a parent account, used for sending emails under the parent's domain.
+</Accordion>
+
+<Accordion title="Duplicate sendgrid pre built design">
+The endpoint lets you duplicate twilio sendgrid pre-built designs without data. if unnamed, "duplicate:" precedes the original name. the copy gets a unique id, modifiable upon creation. use "list sendgrid pre-built designs" for ids.
+</Accordion>
+
+<Accordion title="Create list">
+This endpoint enables the creation of a new contacts list, which can automate email sending when new contacts are added. a link to the new list is provided in ` metadata`.
+</Accordion>
+
+<Accordion title="Duplicate single send">
+This endpoint duplicates single sends using an id for easy creation, allowing edits via patch. duplicates are named as "copy of" the original, with a 100-character limit for names.
+</Accordion>
+
+<Accordion title="Duplicate design">
+This endpoint duplicates existing designs without requiring data in the request body. if you don't specify a `name`, it's labeled "duplicate:" plus the original's name, but you can set a new name upon creation. each copy gets a unique id.
+</Accordion>
+
+<Accordion title="Delete an authenticated domain">
+**this endpoint allows you to delete an authenticated domain.**
+</Accordion>
+
+<Accordion title="Create custom field definition">
+Create unique case-insensitive custom fields with alphanumeric/underscore names starting with a letter/underscore. save the id for edits/deletes. limited to 500 fields of type date, text, or number. avoid starting with numbers to prevent campaign issues.
+</Accordion>
+
+<Accordion title="Delete a transactional template version">
+**this endpoint allows you to delete a transactional template version.**
+</Accordion>
+
+<Accordion title="Disassociate a branded link from a subuser">
+The endpoint permits parent accounts to remove a branded link from a subuser, with successful disassociations confirmed by a 204 status code response.
+</Accordion>
+
+<Accordion title="Delete a contact identifier">
+This endpoint asynchronously deletes an identifier (not the entire contact) from a contact, failing if it's their only one. allowed identifier types are email, phonenumberid, externalid, or anonymousid.
+</Accordion>
+
+<Accordion title="Edit a transactional template version">
+**this endpoint allows you to edit the content of your template version.**
+</Accordion>
+
+<Accordion title="Export contacts">
+Use the endpoint to export contact lists or segments by email, with notifications, or download as csvs using an 'id'. specify the data by id and choose json or csv output with a max file size option.
+</Accordion>
+
+<Accordion title="Delete a specific block">
+**this endpoint allows you to delete a specific email address from your blocks list.**
+</Accordion>
+
+<Accordion title="Sendgrid Delete Bulk Integration">
+This endpoint deletes integrations.
+</Accordion>
+
+<Accordion title="Erase recipients email data">
+Sendgrid's delete recipients' email data operation removes personal data of up to 5,000 unique email recipients or a 256kb payload per request. invalid emails return an error, and deletions are account-specific, not affecting subusers.
+</Accordion>
+
+<Accordion title="Domain warn list">
+The endpoint provides a list of domains with dmarc, divided by how they fail (hard or soft). hard failures prevent mail delivery using those domains as sender identities. for more on dmarc, visit sendgrid's guide.
+</Accordion>
+
+<Accordion title="Delete a custom field">
+**this endpoint allows you to delete a custom field by id.**
+</Accordion>
+
+<Accordion title="Email dns records to a co worker">
+Use sendgrid for domain validation and branding by sharing dns records—cname for automated security, or txt/mx otherwise. include `link id` for link branding and `domain id` for domain auth.
+</Accordion>
+
+<Accordion title="Edit an sso teammate">
+This endpoint allows admin or parent users to adjust sso teammate permissions using 'is admin', 'scopes', or 'persona', and to control subuser access, including restrictions.
+</Accordion>
+
+<Accordion title="Export single send stats">
+This endpoint exports single send stats in .csv format, allowing specification of multiple single sends by separating their ids with commas in the `ids` parameter.
+</Accordion>
+
+<Accordion title="Delete contacts">
+Use this endpoint to bulk delete contacts with `ids` as a list of ids or `delete all contacts` set to `"true"` for all. deletions are asynchronous. regularly export contacts as a backup.
+</Accordion>
+
+<Accordion title="Filter messages by message id">
+Get all of the details about the specified message.
+</Accordion>
+
+<Accordion title="Enable disable website access for a subuser">
+Enable/disable website access for a subuser, while still preserving email send functionality.
+</Accordion>
+
+<Accordion title="Delete an ip pool">
+**this endpoint allows you to delete an ip pool.**
+</Accordion>
+
+<Accordion title="Delete an sso certificate">
+**this endpoint allows you to delete an sso certificate.** you can retrieve a certificate's id from the response provided by the "get all sso integrations" endpoint.
+</Accordion>
+
+<Accordion title="Enable disable a subuser">
+**this endpoint allows you to enable or disable a subuser.**
+</Accordion>
+
+<Accordion title="Delete a specific spam report">
+This endpoint removes a spam report for an email, lifting suppression and allowing email to be sent to that address. use with caution and recipient consent, or use bypass filters for exceptions.
+</Accordion>
+
+<Accordion title="Delete a specific invalid email">
+**this endpoint allows you to remove a specific email address from the invalid email address list.**
+</Accordion>
+
+<Accordion title="Get all automation stats">
+Retrieve all your automation stats by default or specify with 'automation ids'. results are paginated with customizable 'page size' (1-50, default 25) and 'page token' for specific pages.
+</Accordion>
+
+<Accordion title="Filter all messages">
+Summarize email activity filtering: use url-encoded queries in the format `query=\{type\}="\{content\}"` to search email activity. example: filter by email with `query=to email%3d"example@example.com"`. reference more at sendgrid query reference.
+</Accordion>
+
+<Accordion title="Delete segment">
+**this endpoint allows you to delete a segment by id.**
+</Accordion>
+
+<Accordion title="Sendgrid Filter Segments By Parent Ids">
+Retrieve segments using `parent list ids` as a filter. an empty or unmatched query returns an empty result with a 200 code. filters combine `parent list ids` and the absence or presence of `no parent list id` with segment ids.
+</Accordion>
+
+<Accordion title="Delete a global suppression">
+This endpoint removes an email from suppressions, allowing future emails to be sent to it. use with consent or bypass filters for one-off emails.
+</Accordion>
+
+<Accordion title="Get all field definitions">
+**this endpoint retrieves all defined custom fields and reserved fields.**
+</Accordion>
+
+<Accordion title="Delete custom field definition">
+**this endpoint deletes a defined custom field.** you can delete only custom fields; reserved fields cannot be deleted.
+</Accordion>
+
+<Accordion title="Get all accounts">
+Retrieves all accounts under the organization.
+</Accordion>
+
+<Accordion title="Delete an sso integration">
+**this endpoint allows you to delete an idp configuration by id.** you can retrieve the ids for your configurations from the response provided by the "get all sso integrations" endpoint.
+</Accordion>
+
+<Accordion title="Delete pending teammate">
+**this endpoint allows you to delete a pending teammate invite.**
+</Accordion>
+
+<Accordion title="Get all available offerings">
+Retrieves offerings available under the organization.
+</Accordion>
+
+<Accordion title="Get account offerings">
+Retrieves offering information about the specified account.
+</Accordion>
+
+<Accordion title="Get all categories">
+**this endpoint allows you to retrieve all the categories associated with your single sends.** this endpoint will return your latest 1,000 categories.
+</Accordion>
+
+<Accordion title="Get all ip pools that have associated ips">
+The function lists your ip pools and samples up to 10 ips from each. for more ips per pool, use "get ips assigned to an ip pool." max of 100 ip pools per user.
+</Accordion>
+
+<Accordion title="Get all existing exports">
+This endpoint provides an array with details on active or completed export jobs. each object includes `export type`, `status`, and downloadable `urls` for ready exports. useful when export ids are unknown.
+</Accordion>
+
+<Accordion title="Get all sender identities">
+**this endpoint allows you to retrieve a list of all sender identities that have been created for your account.**
+</Accordion>
+
+<Accordion title="Delete a list">
+**this endpoint allows you to delete a specific recipient list with the given id.**
+</Accordion>
+
+<Accordion title="Get all lists">
+**this endpoint returns an array of all of your contact lists.**
+</Accordion>
+
+<Accordion title="Get all single sends">
+Retrieve a list of your single sends with brief details, including their ids. for in-depth information on a specific single send, use its id at the `/marketing/singlesends/\{id\}` endpoint.
+</Accordion>
+
+<Accordion title="Delete single send by id">
+This endpoint lets you delete a single send with its id, which you can obtain by a get request to `/marketing/singlensends`. note: deletion is irreversible.
+</Accordion>
+
+<Accordion title="Edit verified sender">
+Update a sender identity by sending a `patch` request with the `id` and json-formatted changes. unchanged fields will stay the same. retrieve ids via `get` to `/verified senders`.
+</Accordion>
+
+<Accordion title="Get all single sends stats">
+Retrieve single sends stats with options for filtering by ids, pagination, and custom page sizes from 1-50. default response batch is 25.
+</Accordion>
+
+<Accordion title="Delete design">
+**this endpoint allows you to delete a single design**. be sure to check the id of the design you intend to delete before making this request; deleting a design is a permanent action.
+</Accordion>
+
+<Accordion title="Get all sso integrations">
+**this endpoint allows you to retrieve all sso integrations tied to your twilio sendgrid account.** the ids returned by this endpoint can be used by the apis additional endpoints to modify your sso integrations.
+</Accordion>
+
+<Accordion title="Get all sso certificates by integration">
+**this endpoint allows you to retrieve all your idp configurations by configuration id.** the `integration id` expected by this endpoint is the `id` returned in the response by the "get all sso integrations" endpoint.
+</Accordion>
+
+<Accordion title="Download csv">
+**this endpoint will return a presigned url that can be used to download the csv that was requested from the "request a csv" endpoint.**
+</Accordion>
+
+<Accordion title="Delete a recipient">
+**this endpoint allows you to delete a single recipient with the given id from your contact database.** &gt; use this to permanently delete your recipients from all of your contact lists and all segments if required by applicable law.
+</Accordion>
+
+<Accordion title="Delete api keys">
+**this endpoint allows you to revoke an existing api key using an `api key id`** authentications using a revoked api key will fail after after some small propogation delay. if the api key id does not exist, a `404` status will be returned.
+</Accordion>
+
+<Accordion title="Delete single send schedule">
+Cancel a scheduled single send by making a delete request with its id to the endpoint. this action doesn't delete the single send content, only stops the send-out.
+</Accordion>
+
+<Accordion title="Export contacts status">
+Use this endpoint with an `id` from "export contacts" to check the status and get `urls` for downloading your csv contact export files. regular exports are recommended for backups.
+</Accordion>
+
+<Accordion title="Delete a reverse dns record">
+This endpoint deletes a reverse dns record, returning a 204 code on success. retrieve record ids using the "retrieve all reverse dns records" endpoint.
+</Accordion>
+
+<Accordion title="Delete a subuser">
+**this endpoint allows you to delete a subuser.** this is a permanent action. once deleted, a subuser cannot be retrieved.
+</Accordion>
+
+<Accordion title="Duplicate a transactional template">
+**this endpoint allows you to duplicate a transactional template.**
+</Accordion>
+
+<Accordion title="Delete a batch of ips from an ip pool">
+This operation removes a batch of ips from an ip pool. all ips associated with the pool will be unassigned from the deleted pool. however, this operation does not remove the ips from your account.
+</Accordion>
+
+<Accordion title="Delete a bounce">
+**this endpoint allows you to remove an email address from your bounce list.**
+</Accordion>
+
+<Accordion title="Delete spam reports">
+This endpoint lets users delete spam reports, lifting email suppression for specified addresses. it's advised only when recipients want to resume emails. two deletion methods: 'delete all' or listing emails. use 'bypass filters' for exceptions.
+</Accordion>
+
+<Accordion title="Delete a batch of subusers from an ip">
+This operation removes a batch of subusers from a specified ip address.
+</Accordion>
+
+<Accordion title="Delete a parse setting">
+**this endpoint allows you to delete a specific inbound parse setting by hostname.** you can retrieve all your inbound parse settings and their associated host names with the "retrieve all parse settings" endpoint.
+</Accordion>
+
+<Accordion title="Delete a segment">
+**this endpoint allows you to delete a segment from your recipients database.** you also have the option to delete all the contacts from your marketing campaigns recipient database who were in this segment.
+</Accordion>
+
+<Accordion title="Delete a suppression from a suppression group">
+This endpoint removes an email from a suppression group, re-enabling email delivery unless specified otherwise, and should only be used when recipients opt back in.
+</Accordion>
+
+<Accordion title="Get all verified senders">
+Retrieve all sender identities (verified/unverified) for an account via an endpoint. customize results using `limit`, `lastseenid`, and `id` parameters to define the results scope.
+</Accordion>
+
+<Accordion title="Delete a branded link">
+Delete a branded link using this endpoint; successful deletion returns a 204 status. record link details beforehand as they're not provided. subuser deletions are possible with their id in the header.
+</Accordion>
+
+<Accordion title="Delete a template">
+**this endpoint allows you to delete a transactional template.**
+</Accordion>
+
+<Accordion title="Create segment">
+Segment `name` has to be unique. a user can not create a new segment with an existing segment name.
+</Accordion>
+
+<Accordion title="Delete a sender">
+**this endpoint allows you to delete an existing sender.**
+</Accordion>
+
+<Accordion title="Create single send">
+The endpoint lets you create a single send draft without needing a template id; it now uses `email config`. a set `send at` doesn't schedule it; it must be done through another endpoint or ui.
+</Accordion>
+
+<Accordion title="Delete a suppression group">
+This api endpoint deletes email suppression groups. deleted group members get globally suppressed if they unsubscribe. use with caution, only if recipients want to resubscribe. bypass filters available for exceptions.
+</Accordion>
+
+<Accordion title="Get an sso certificate">
+**this endpoint allows you to retrieve an individual sso certificate.**
+</Accordion>
+
+<Accordion title="Get an account s state">
+Retrieve the state of the specified account.
+</Accordion>
+
+<Accordion title="Get a contact by id">
+**this endpoint returns the full details and all fields for the specified contact**. the "get contacts by identifier" endpoint can be used to get the id of a contact.
+</Accordion>
+
+<Accordion title="Remove list and optional contacts">
+**this endpoint allows you to deletes a specific list.** optionally, you can also delete contacts associated to the list. the query parameter, `delete contacts=true`, will delete the list and start an asynchronous job to delete associated contacts.
+</Accordion>
+
+<Accordion title="List sendgrid pre built designs">
+The `designs/pre-builts` endpoint fetches a list of twilio sendgrid's ready-made designs, not user-specific ones, with 100 results per request by default, adjustable with `page size`. useful for duplicating and editing design ids.
+</Accordion>
+
+<Accordion title="Get single sends search">
+Search for single sends by specifying `name`, `status`, and `categories` in the request body. example provided for drafts or scheduled items related to "shoes".
+</Accordion>
+
+<Accordion title="Get a list of subusers assigned to an ip">
+The api lists subuser ids with a specific ip, retrieves up to 100 per request, and iterates with `after key` for more. use [subusers api](https://docs.sendgrid.com/api-reference/subusers-api/list-all-subusers) for details.
+</Accordion>
+
+<Accordion title="Get a list of all senders">
+**this endpoint allows you to get a list of all your senders.**
+</Accordion>
+
+<Accordion title="Get automation click tracking stats by id">
+**this endpoint lets you retrieve click-tracking stats for a single automation**. the stats returned list the urls embedded in your automation and the number of clicks each one received.
+</Accordion>
+
+<Accordion title="Get automation stats by id">
+Retrieve detailed stats for a specific automation by id, with optional date and aggregation filters, or use another endpoint to get stats for multiple automations.
+</Accordion>
+
+<Accordion title="Get information on a single suppression group">
+**this endpoint allows you to retrieve a single suppression group.**
+</Accordion>
+
+<Accordion title="Get an sso integration">
+**this endpoint allows you to retrieve an sso integration by id.** you can retrieve the ids for your configurations from the response provided by the "get all sso integrations" endpoint.
+</Accordion>
+
+<Accordion title="Sendgrid Get Integration">
+This endpoint returns the data for a specific integration.
+</Accordion>
+
+<Accordion title="Sendgrid List Integration">
+This endpoint returns all the integrations for the user making this call.
+</Accordion>
+
+<Accordion title="List the authenticated domain associated with the given user">
+Parent accounts can link validated domains to subusers through an endpoint, allowing subusers to email from those domains. the api supports multiple domain associations and listings.
+</Accordion>
+
+<Accordion title="Get total contact count">
+**this endpoint returns the total number of contacts you have stored.** twilio sendgrid recommends exporting your contacts regularly as a backup to avoid issues or lost data.
+</Accordion>
+
+<Accordion title="Get signed event webhook s public key">
+Retrieve a webhook's public key using its id via this endpoint; if no id is given, the oldest key is returned. useful for signature verification and toggling signature settings. multiple ids can be found using the "get all event webhooks" endpoint.
+</Accordion>
+
+<Accordion title="Remove one or more ips from the allow list">
+This endpoint lets you remove ips from your allowed list by sending an array of their ids, obtained from another endpoint. carefully select ips to avoid blocking your account access. if blocked, submit a support ticket.
+</Accordion>
+
+<Accordion title="Get a specific sender">
+**this endpoint allows you to get the details for a specific sender by `id`.**
+</Accordion>
+
+<Accordion title="Rename an ip pool">
+**this endpoint allows you to update the name of an ip pool.**
+</Accordion>
+
+<Accordion title="Get single send by id">
+**this endpoint allows you to retrieve details about one single send using a single send id.** you can retrieve all of your single sends by making a get request to the `/marketing/singlesends` endpoint.
+</Accordion>
+
+<Accordion title="Remove segment without affecting contacts">
+This endpoint permits the deletion of a segment using `segment id`, but associated contacts remain in the overall list and any other segments they're part of.
+</Accordion>
+
+<Accordion title="Request csv">
+Initiating a backend process creates a csv file of up to 1 million events from the last 30 days, emailed to the user with a 3-day expiry link. limited to one request per 12 hours, it's similar to the get single message but for csv downloads.
+</Accordion>
+
+<Accordion title="Get ips assigned to an ip pool">
+This operation returns the ip addresses that are assigned to the specified ip pool.
+</Accordion>
+
+<Accordion title="Get single send click tracking stats by id">
+**this endpoint lets you retrieve click-tracking stats for one single send**. the stats returned list the urls embedded in the specified single send and the number of clicks each one received.
+</Accordion>
+
+<Accordion title="Get a list by id">
+This endpoint fetches detailed information on a list. using `contact sample=true` includes up to 50 recent contacts and the total contact count in the response.
+</Accordion>
+
+<Accordion title="Resend a sender verification">
+**this endpoint allows you to resend the verification request for a specific sender.**
+</Accordion>
+
+<Accordion title="Manually refresh a segment">
+Manually refresh a segment by segment id.
+</Accordion>
+
+<Accordion title="Import contacts">
+The endpoint permits async csv uploads for up to 1m contacts or 5gb with specified identifiers and file type, supports gzip, field mappings, uses job id for tracking, and recommends regular backups.
+</Accordion>
+
+<Accordion title="Retrieve all assigned ips">
+This api endpoint retrieves assigned ip addresses used to send emails for various domains, where the ip's reputation is influenced by the collective performance of all sending users.
+</Accordion>
+
+<Accordion title="Retrieve address whitelist mail settings">
+This endpoint lets you access settings for whitelisting specific emails or domains to prevent email suppression due to bounces, blocks, or unsubscribes.
+</Accordion>
+
+<Accordion title="Import contacts status">
+Check the status of contact import jobs using `job id` via this endpoint. it shows if the job is pending, completed, errored, or failed. for errors, download the `errors url` file. regular contact exports are advised for backup.
+</Accordion>
+
+<Accordion title="Retrieve all api keys belonging to the authenticated user">
+Retrieve user's api key names and ids with this endpoint; keys themself cannot be retrieved for security. lost keys require recreation. use 'api key id' to manage keys.
+</Accordion>
+
+<Accordion title="Resend sender identity verification">
+**this endpoint allows you to resend a sender identity verification email.**
+</Accordion>
+
+<Accordion title="Presigned url  headers for bulk email validation">
+Get a presigned url and headers to upload an email list for verification. ensure the 'content-type' matches 'file type' in the 'put' request. visit the bulk validation overview page for format and sample request.
+</Accordion>
+
+<Accordion title="Retrieve all ips currently in warmup">
+**this endpoint allows you to retrieve all of your ip addresses that are currently warming up.**
+</Accordion>
+
+<Accordion title="Resend teammate invite">
+**this endpoint allows you to resend a teammate invitation.** teammate invitations will expire after 7 days. resending an invitation will reset the expiration date.
+</Accordion>
+
+<Accordion title="Retrieve all custom fields">
+**this endpoint allows you to retrieve all custom fields.**
+</Accordion>
+
+<Accordion title="Retrieve all blocks">
+Retrieve a paginated list of blocked emails using this endpoint, with adjustable page sizes via the 'limit' parameter and starting points with 'offset' for multiple requests.
+</Accordion>
+
+<Accordion title="Retrieve all invalid emails">
+Retrieve paginated lists of invalid emails with 'limit' for page size and 'offset' to start from a specific position for lists exceeding the limit.
+</Accordion>
+
+<Accordion title="Retrieve all global suppressions">
+Retrieve paginated lists of globally suppressed emails using `limit` for page size and `offset` to start from a specific list position. multiple requests may be needed for large lists.
+</Accordion>
+
+<Accordion title="Retrieve all categories">
+This endpoint provides a paginated list of user categories, with adjustable page size using the `limit` and pagination control using `offset`. multiple requests are needed for large lists.
+</Accordion>
+
+<Accordion title="Remove an ip address from a pool">
+**this endpoint allows you to remove an ip address from an ip pool.**
+</Accordion>
+
+<Accordion title="Retrieve all ip pools an ip address belongs to">
+This endpoint checks which ip pools contain a specific ip, which may be shared across multiple ip pools and affect the ip's reputation based on collective usage for email sending.
+</Accordion>
+
+<Accordion title="Invite teammate">
+Invite teammates to your account through email with this endpoint, assigning initial permissions via the `scopes` array. invites expire after 7 days but can be resent.
+</Accordion>
+
+<Accordion title="Get list contact count">
+**this endpoint returns the number of contacts on a specific list.**
+</Accordion>
+
+<Accordion title="Retrieve all ip pools">
+**this endpoint allows you to get all of your ip pools.**
+</Accordion>
+
+<Accordion title="Retrieve all ip addresses">
+Retrieve a paginated list of assigned/unassigned ips with warmup status, pools, subusers, and dns info. ip reputation is based on email traffic. use `limit` and `offset` parameters to control pagination.
+</Accordion>
+
+<Accordion title="Resend verified sender request">
+This endpoint resends a verification email to a sender identity's 'from address' by using the 'id' of the sender. useful if the original email is lost or needs to be resent. retrieve ids via "get all verified senders" endpoint.
+</Accordion>
+
+<Accordion title="Get single send stats by id">
+Retrieve individual single send stats using its id. for multiple ids, use "get all single sends stats". filter results by date or refine with `group by` and `aggregated by` parameters.
+</Accordion>
+
+<Accordion title="Retrieve all bounces">
+This endpoint retrieves a paginated list of all your bounces, allowing customization of page size with `limit` and starting position with `offset` for multiple requests.
+</Accordion>
+
+<Accordion title="Retrieve all lists">
+**this endpoint allows you to retrieve all of your recipient lists. if you don't have any lists, an empty array will be returned.**
+</Accordion>
+
+<Accordion title="Get subusers engagement quality scores">
+Retrieve seq scores for sendgrid subusers/accounts on a specific date; expect ‘200’ with scores or ‘202’ if unavailable yet, possibly accessible later. scores range from 1-5, with higher numbers indicating better engagement.
+</Accordion>
+
+<Accordion title="Retrieve all of your event webhooks">
+The endpoint fetches all event webhooks as objects in an array, showing each webhook's configuration and id, used to update, delete, or manage signature verification and oauth settings.
+</Accordion>
+
+<Accordion title="Retrieve all mail settings">
+Retrieve a paginated list of mail settings with their `enabled` status and descriptions. control page size with `limit` and list position with `offset` for multiple requests.
+</Accordion>
+
+<Accordion title="Get list of segments">
+The api endpoint retrieves segments, using `parent list ids` to filter results. if no matches are found, a 200 code with an empty array is returned. filters include list ids, absence of parent ids, or specific segment ids.
+</Accordion>
+
+<Accordion title="Remove an ip from an authenticated domain">
+**this endpoint allows you to remove an ip address from that domain's authentication.**
+</Accordion>
+
+<Accordion title="List all authenticated domains">
+Retrieve authenticated domain lists in pages using the `limit` parameter for page size and `offset` to start from specific list positions. multiple requests handle large lists.
+</Accordion>
+
+<Accordion title="Retrieves inbound parse webhook statistics">
+Sendgrid's inbound parse webhook parses incoming emails, up to 30mb, and posts to a specified url, with available integrations listed in their library index.
+</Accordion>
+
+<Accordion title="Retrieve all branded links">
+**this endpoint allows you to retrieve all branded links**. you can submit this request as one of your subusers if you include their id in the `on-behalf-of` header in the request.
+</Accordion>
+
+<Accordion title="Retrieve all pending teammates">
+**this endpoint allows you to retrieve a list of all pending teammate invitations.** each teammate invitation is valid for 7 days. users may resend the invitation to refresh the expiration date.
+</Accordion>
+
+<Accordion title="Retrieve all parse settings">
+**this endpoint allows you to retrieve all of your current inbound parse settings.**
+</Accordion>
+
+<Accordion title="Get a user s account information">
+**this endpoint allows you to retrieve your user account details.** your user's account information includes the user's account type and reputation.
+</Accordion>
+
+<Accordion title="Get teammate subuser access">
+Retrieve subusers accessible to a specified teammate, with available scopes. admin teammates get access to all subusers.
+</Accordion>
+
+<Accordion title="Get open tracking settings">
+The endpoint retrieves settings for tracking email opens using an invisible image. it logs open events when images load, with data available in sendgrid's statistics portal and event webhook.
+</Accordion>
+
+<Accordion title="Retrieve all reverse dns records">
+The endpoint provides a paginated list of reverse dns records, with optional ip prefix search and adjustable page size using 'limit' and 'offset' parameters.
+</Accordion>
+
+<Accordion title="Retrieve all recent access attempts">
+**this endpoint allows you to retrieve a list of all of the ip addresses that recently attempted to access your account either through the user interface or the api.**
+</Accordion>
+
+<Accordion title="Retrieve all recipients on a list">
+**this endpoint allows you to retrieve all recipients on the list with the given id.**
+</Accordion>
+
+<Accordion title="Retrieve all segments">
+**this endpoint allows you to retrieve all of your segments.**
+</Accordion>
+
+<Accordion title="Retrieve all scheduled sends">
+The endpoint provides details of cancelled or paused scheduled sends but only if they have a `batch id`. sends scheduled without a `batch id` via `/mail/send` won't be listed and can't be paused or cancelled later through this endpoint.
+</Accordion>
+
+<Accordion title="Retrieve all suppressions">
+**this endpoint allows you to retrieve a list of all suppressions.**
+</Accordion>
+
+<Accordion title="Get a user s profile">
+**this endpoint allows you to retrieve your current profile details.**
+</Accordion>
+
+<Accordion title="Retrieve all spam reports">
+Retrieve spam reports in pages using `limit` for page size and `offset` to continue from a specific list position. multiple requests handle larger lists.
+</Accordion>
+
+<Accordion title="Get the credits for a subuser">
+**this endpoint allows you to retrieve a credits overview for a subuser.**
+</Accordion>
+
+<Accordion title="Remove a specific ip from the allowed list">
+This endpoint lets you delete an allowed ip address using its id, obtainable via the "retrieve allowed ips" endpoint.
+</Accordion>
+
+<Accordion title="Retrieve access requests">
+Retrieve a list of recent access requests using pagination with `limit` for page size and `offset` to control the start position for additional items.
+</Accordion>
+
+<Accordion title="Retrieve all suppressions for a suppression group">
+**this endpoint allows you to retrieve all suppressed email addresses belonging to the given group.**
+</Accordion>
+
+<Accordion title="Get recipient upload status">
+**this endpoint allows you to check the upload status of a marketing campaigns recipient.**
+</Accordion>
+
+<Accordion title="Retrieve all campaigns">
+Retrieve a paginated list of campaigns in reverse creation order with the api endpoint. if none exist, get an empty array. adjust page size with `limit`, and fetch more with `offset`.
+</Accordion>
+
+<Accordion title="Retrieve all suppression groups associated with the user">
+This endpoint provides a list of user-created suppression groups and can return info for multiple groups when their ids are added to the request with `?id=123456`.
+</Accordion>
+
+<Accordion title="Get remaining ips count">
+**this endpoint gets amount of ip addresses that can still be created during a given period and the price of those ips.**
+</Accordion>
+
+<Accordion title="Retrieve all suppression groups for an email address">
+**this endpoint returns a list of all groups from which the given email address has been unsubscribed.**
+</Accordion>
+
+<Accordion title="Retrieve all teammates">
+Retrieve a paginated list of teammates with the `limit` parameter to set page size and `offset` to specify the starting point for additional items. make multiple requests if needed.
+</Accordion>
+
+<Accordion title="Remove contacts from a list">
+**this endpoint allows you to remove contacts from a given list.** the contacts will not be deleted. only their list membership will be changed.
+</Accordion>
+
+<Accordion title="Get batched contacts by ids">
+This endpoint fetches multiple contacts using their ids, allowing up to 100 ids per request for efficiency over single `get` requests. regular export of contacts is advised for backup.
+</Accordion>
+
+<Accordion title="Get sample contacts">
+The endpoint returns the latest 50 contacts, sorted by email, with the total count included. pagination is deprecated; regular export of contacts is advised.
+</Accordion>
+
+<Accordion title="Get details for an ip address">
+The operation provides details for an ip address, such as its parent account status, warm-up settings, associated pools, add/modify dates, lease status, and enablement, excluding subuser info, which requires a different endpoint.
+</Accordion>
+
+<Accordion title="Get contacts by identifiers">
+Use the endpoint to fetch up to 100 contacts by identifiers (email, phone number, etc.). successful queries return 200, no results return 404, and errors return 400. regular backups are advised.
+</Accordion>
+
+<Accordion title="Get the default authentication">
+This endpoint fetches the default domain authentication, used for sending all mail unless overridden by a 'from' address match. it provides domain details if a default is set; otherwise, it gives general authentication info.
+</Accordion>
+
+<Accordion title="Get contacts by emails">
+Endpoint retrieves up to 100 contacts by email, ignoring case/space; simpler than sgql's search. success returns `200`, `404` for no match, `400` for invalid emails. regular contact backups recommended.
+</Accordion>
+
+<Accordion title="Get sendgrid pre built design">
+The endpoint `/designs/pre-builts/\{id\}` is used to fetch details about a particular pre-built design for duplication and modification.
+</Accordion>
+
+<Accordion title="List Bulk Email Validation Jobs">
+**this endpoint returns a list of all of a user's bulk email validation jobs.**
+</Accordion>
+
+<Accordion title="Get the settings for a single event webhook">
+Retrieve an event webhook by id to get settings, event types, and url details. without id, the oldest is returned. signatures and oauth webhooks have extra properties. use another endpoint for multiple webhook ids.
+</Accordion>
+
+<Accordion title="Get a list of all ip addresses on your account">
+Fetches your account's ip addresses with details such as pool association and warm-up status. 'is parent assigned' and 'pool' must be exclusive. pagination needs 'limit' and 'before key' or 'after key'.
+</Accordion>
+
+<Accordion title="Get engagement quality scores">
+Retrieve your sendgrid engagement quality (seq) scores via api for a chosen date range. get a `200` response for available scores, or a `202` if scores haven't been calculated yet. scores range from 1 to 5, higher indicating better engagement.
+</Accordion>
+
+<Accordion title="Get details for an ip pool">
+This operation retrieves details of an ip pool, such as name, id, some sample ips (up to 10), and the total ip count. for more ips, use "get ips assigned to an ip pool."
+</Accordion>
+
+<Accordion title="List all subusers">
+Retrieve a paginated list of subusers with filtering options. use `username` to filter, `limit` to set page size, and `offset` to navigate through the list.
+</Accordion>
+
+<Accordion title="Get design">
+Access a specific design's details in your design library with a get request to `/designs/\{id\}`. this endpoint is useful for obtaining info to update via patch request.
+</Accordion>
+
+<Accordion title="List designs">
+The `/designs` endpoint fetches a list of user's stored designs, restricted to 100 per request by default but adjustable with `page size`. pre-built designs are at `/designs/pre-builts`.
+</Accordion>
+
+<Accordion title="Get segment by id">
+Get marketing campaigns segment by id
+</Accordion>
+
+<Accordion title="Retrieve click track settings">
+This endpoint retrieves your click tracking settings in sendgrid which tracks user engagement by redirecting and monitoring clicks on up to 1000 links per email.
+</Accordion>
+
+<Accordion title="Retrieve a count of recipients">
+**this endpoint allows you to retrieve the total number of marketing campaigns recipients.**
+</Accordion>
+
+<Accordion title="Retrieve a specific alert">
+**this endpoint allows you to retrieve a specific alert.**
+</Accordion>
+
+<Accordion title="Retrieve forward spam mail settings">
+This endpoint retrieves current forward spam settings, listing specified email addresses receiving spam reports and showing if the feature is active.
+</Accordion>
+
+<Accordion title="Retrieve a bounce">
+**this endpoint allows you to retrieve a specific bounce by email address.**
+</Accordion>
+
+<Accordion title="Retrieve a list of currently allowed ips">
+This endpoint provides a list of authorized ip addresses for your account, each with creation, update dates, and a unique id for potential removal.
+</Accordion>
+
+<Accordion title="Retrieve a global suppression">
+This endpoint retrieves global email suppressions and confirms if an email is suppressed. if suppressed, the email is returned in the response; if not, an empty json object is returned.
+</Accordion>
+
+<Accordion title="Retrieve all the ips in a specified pool">
+**this endpoint allows you to get all of the ip addresses that are in a specific ip pool.**
+</Accordion>
+
+<Accordion title="Retrieve current enforced tls settings">
+This endpoint retrieves enforced tls settings that mandate recipients to support tls 1.1+ or have a valid certificate. if not met, messages are dropped with a "tls required but not supported" block event.
+</Accordion>
+
+<Accordion title="Retrieve a reverse dns record">
+**this endpoint allows you to retrieve a reverse dns record.** you can retrieve the ids associated with all your reverse dns records using the "retrieve all reverse dns records" endpoint.
+</Accordion>
+
+<Accordion title="Retrieve a custom field">
+**this endpoint allows you to retrieve a custom field by id.**
+</Accordion>
+
+<Accordion title="Retrieve an authenticated domain">
+**this endpoint allows you to retrieve a specific authenticated domain.**
+</Accordion>
+
+<Accordion title="Retrieve an existing api key">
+Retrieve an api key's details with its id via this endpoint. nonexistent keys yield a 404 error. key scopes can be modified later. refer to the documentation for scope details.
+</Accordion>
+
+<Accordion title="Retrieve a segment">
+**this endpoint allows you to retrieve a single segment with the given id.**
+</Accordion>
+
+<Accordion title="Retrieve global email statistics">
+Retrieve your global email stats within a specific date range, with parent accounts viewing their own or a subuser's aggregated data via the `on-behalf-of` header, while subusers see only their stats.
+</Accordion>
+
+<Accordion title="Retrieve a single transactional template">
+**this endpoint allows you to retrieve a single transactional template.**
+</Accordion>
+
+<Accordion title="Retrieve a list of scopes for which this user has access">
+This api endpoint lists all accessible scopes for the user's api key, with permissions determining endpoint access. visit sendgrid documentation for more on api key permissions.
+</Accordion>
+
+<Accordion title="Retrieve a single campaign">
+**this endpoint allows you to retrieve a specific campaign.**
+</Accordion>
+
+<Accordion title="Retrieve email statistics by browser">
+Retrieve email stats by browser with advanced stats api, storing 7 days of data, and defaulting to 500 items per request. segment by location, device, and more. visit provided link for details.
+</Accordion>
+
+<Accordion title="Retrieve google analytics settings">
+Retrieve your google analytics settings, which are set to google's recommended defaults, to understand user site activity. for details, use google's guides and best practices links.
+</Accordion>
+
+<Accordion title="Retrieve legacy template mail settings">
+The endpoint retrieves settings for original email templates, with a guide for using and migrating from legacy to newer dynamic transactional templates.
+</Accordion>
+
+<Accordion title="Retrieve a specific block">
+**this endpoint allows you to retrieve a specific email address from your blocks list.**
+</Accordion>
+
+<Accordion title="Retrieve your account email address">
+**this endpoint allows you to retrieve the email address currently on file for your account.**
+</Accordion>
+
+<Accordion title="Retrieve recipients">
+Retrieve all marketing campaign recipients via this endpoint. use batch deletion carefully, as it may lead to empty pages. continue iterating pages until a 404 error occurs to ensure complete retrieval.
+</Accordion>
+
+<Accordion title="Retrieve paged transactional templates">
+**this endpoint allows you to retrieve all transactional templates.**
+</Accordion>
+
+<Accordion title="Retrieve user s authenticated domains">
+The api endpoint allows subusers to fetch up to five domains verified by the main account for sending emails, with a defined order of domain selection.
+</Accordion>
+
+<Accordion title="Retrieve a single list">
+**this endpoint allows you to retrieve a single recipient list.**
+</Accordion>
+
+<Accordion title="Retrieve monthly stats for all subusers">
+Retrieve monthly subuser email stats for a date range but can't sort by metrics like bounce drops, deferred, invalid emails, processed, spam reports, or unsubscribe drops.
+</Accordion>
+
+<Accordion title="Retrieve subuser reputations">
+This endpoint provides sender reputation scores for subusers, reflecting their email performance based on recipient responses and negative actions like bounces or spam reports.
+</Accordion>
+
+<Accordion title="Retrieve email statistics by client type">
+Retrieve email stats by client type with endpoint; stats stored for 7 days, 500 items per request. advanced stats offer detailed insights, segmentable by location, device, and more. visit the provided link for details.
+</Accordion>
+
+<Accordion title="Retrieve the count of billable recipients">
+This endpoint provides the billable count of recipients for marketing campaigns, based on the highest number reached in your account.
+</Accordion>
+
+<Accordion title="Retrieve a specific allowed ip">
+This endpoint retrieves an allowed ip for your account using its id, with ids obtainable from the endpoint listing currently allowed ips.
+</Accordion>
+
+<Accordion title="Retrieve sums of email stats for each category">
+**this endpoint allows you to retrieve the total sum of each email statistic for every category over the given date range.** if you do not define any query parameters, this endpoint will return a sum for each category in groups of 10.
+</Accordion>
+
+<Accordion title="Retrieve the default branded link">
+The endpoint retrieves the default branded link for message sending, prioritizing user-set default, legacy, or sendgrid's default links. subuser requests are possible with id in the header.
+</Accordion>
+
+<Accordion title="Retrieve recipients on a segment">
+**this endpoint allows you to retrieve all of the recipients in a segment with the given id.**
+</Accordion>
+
+<Accordion title="Send a campaign">
+**this endpoint allows you to immediately send an existing campaign.** normally a post request would have a body, but since this endpoint is telling us to send a resource that is already created, a request body is not needed.
+</Accordion>
+
+<Accordion title="Retrieve your username">
+**this endpoint allows you to retrieve your current account username.**
+</Accordion>
+
+<Accordion title="Retrieve your credit balance">
+This endpoint checks an account's base email sending credit balance, which affects per-email charges. more details at sendgrid's billing documentation.
+</Accordion>
+
+<Accordion title="Search recipients">
+This endpoint searches marketing campaigns recipients. variable 'field name' represents custom text fields (url-encoded) or date fields (by unix timestamp) and auto-converts epoch time for 'reserved' date fields to a full day range.
+</Accordion>
+
+<Accordion title="Segment json data by specific criteria">
+Search json data for segments by specifying criteria for dates, text, and campaign ids using operators and boolean logic. optional list ids can refine results. used for email metrics.
+</Accordion>
+
+<Accordion title="Search for suppressions within a group">
+**this endpoint allows you to search a suppression group for multiple suppressions.** when given a list of email addresses and a group id, this endpoint will only return the email addresses that have been unsubscribed from the given group.
+</Accordion>
+
+<Accordion title="Retrieve a branded link">
+**this endpoint allows you to retrieve a specific branded link by providing its id.** you can submit this request as one of your subusers if you include their id in the `on-behalf-of` header in the request.
+</Accordion>
+
+<Accordion title="Retrieve a single recipient">
+**this endpoint allows you to retrieve a single recipient by id from your contact database.**
+</Accordion>
+
+<Accordion title="Singlesend csv stats retrieval">
+Export single send stats in .csv format by specifying one or multiple single send ids in the `ids` query string, separated by commas. data is returned as plain text in .csv for flexible use or saving.
+</Accordion>
+
+<Accordion title="Set up reverse dns">
+**this endpoint allows you to set up reverse dns.**
+</Accordion>
+
+<Accordion title="Send a test campaign">
+**this endpoint allows you to send a test campaign.** to send to multiple addresses, use an array for the json "to" value ["one@address","two@address"]
+</Accordion>
+
+<Accordion title="Retrieve a specific invalid email">
+**this endpoint allows you to retrieve a specific invalid email addresses.**
+</Accordion>
+
+<Accordion title="Retrieve reserved fields">
+**this endpoint allows you to list all fields that are reserved and can't be used for custom field names.**
+</Accordion>
+
+<Accordion title="Retrieve email statistics by country and state province">
+This api endpoint offers detailed email stats by location, with up to 7 days of data stored and 500 items returned per request. more segmentation options are available. see the user guide for details.
+</Accordion>
+
+<Accordion title="Returns a list of all partner settings">
+Retrieve a paginated list of partner settings using the `limit` to set page size and `offset` to specify the starting point for additional items. multiple requests may be needed for long lists.
+</Accordion>
+
+<Accordion title="Retrieve the lists that a recipient is on">
+**this endpoint allows you to retrieve the lists that a given recipient belongs to.** each recipient can be on many lists. this endpoint gives you all of the lists that any one recipient has been added to.
+</Accordion>
+
+<Accordion title="Retrieve scheduled send">
+**this endpoint allows you to retrieve the cancel/paused scheduled send information for a specific `batch id`.**
+</Accordion>
+
+<Accordion title="Send a test marketing email">
+Use the endpoint to test marketing emails with a `template id` and up to 10 contacts. requires a `from address` or `sender id`. supports only dynamic transactional templates. manage with sendgrid app or api.
+</Accordion>
+
+<Accordion title="Stop warming up an ip address">
+This endpoint removes an ip from warmup mode, returning a 204 code if successful. for warmup status details prior to removal, use the "retrieve warmup status" endpoint.
+</Accordion>
+
+<Accordion title="Start warming up an ip address">
+**this endpoint allows you to put an ip address into warmup mode.**
+</Accordion>
+
+<Accordion title="Schedule a campaign">
+This endpoint schedules campaign emails for a specific time, recommending off-peak times like 10:53 instead of on the hour to minimize server deferrals and enhance delivery rates.
+</Accordion>
+
+<Accordion title="Retrieve the monthly email statistics for a single subuser">
+Retrieve monthly email stats for subusers with `sort by metric`, excluding sorts by `bounce drops`, `deferred`, `invalid emails`, `processed`, `spam report drops`, `spam reports`, `unsubscribe drops`.
+</Accordion>
+
+<Accordion title="Toggle signature verification for a single event webhook by id">
+Toggle signature verification for event webhooks via an endpoint. defaults to the oldest webhook if no id is provided. use boolean 'enabled' to set. returns a public key if enabled. retrieve webhook ids and public keys through specific endpoints.
+</Accordion>
+
+<Accordion title="This request returns a single bulk email validation job">
+**this endpoint returns a specific bulk email validation job. you can use this endpoint to check on the progress of a job.**
+</Accordion>
+
+<Accordion title="Update account offerings">
+Updates an account's package and attaches optional add-ons like marketing campaigns, dedicated ips, and expert services. note: accounts are limited to one package.
+</Accordion>
+
+<Accordion title="Update address whitelist mail settings">
+Update email whitelist settings by toggling `enabled`. use `list` to replace entries - include all desired. exclude generic domains for can-spam compliance; whitelist bypasses bounces/unsubscribes for included contacts.
+</Accordion>
+
+<Accordion title="Update an authenticated domain">
+**this endpoint allows you to update the settings for an authenticated domain.**
+</Accordion>
+
+<Accordion title="Retrieve single segment endpoint">
+**this endpoint allows you to retrieve a single segment by id.**
+</Accordion>
+
+<Accordion title="Update an alert">
+**this endpoint allows you to update an alert.**
+</Accordion>
+
+<Accordion title="Retrieve email statistics by device type">
+Retrieve email stats by device type with a 7-day data retention limit. the advanced stats api returns 500 items per request. device types include desktop, webmail, phone, tablet, and other. more analytics available at sendgrid's statistics overview.
+</Accordion>
+
+<Accordion title="Unlink subuser domain">
+The endpoint enables removal of an authenticated domain from subusers, each limited to five domains, to allow mail sending under a parent domain.
+</Accordion>
+
+<Accordion title="Retrieve the warmup status for a specific ip address">
+**this endpoint allows you to retrieve the warmup status for a specific ip address.** you can retrieve all of your warming ips using the "retrieve all ips currently in warmup" endpoint.
+</Accordion>
+
+<Accordion title="Sendgrid Sum Email Stats For Subusers">
+**this endpoint allows you to retrieve the total sums of each email statistic metric for all subusers over the given date range.**
+</Accordion>
+
+<Accordion title="Update an ip pool name">
+This operation will rename an ip pool. an ip pool name cannot start with a dot/period (.) or space.
+</Accordion>
+
+<Accordion title="Update api key name">
+**this endpoint allows you to update the name of an existing api key.** you must pass this endpoint a json request body with a `name` property, which will be used to rename the key associated with the `api key id` passed in the url.
+</Accordion>
+
+<Accordion title="Update a branded link">
+**this endpoint allows you to update a specific branded link. you can use this endpoint to change a branded link's default status.** you can submit this request as one of your subusers if you include their id in the `on-behalf-of` header in the request.
+</Accordion>
+
+<Accordion title="Update a list">
+**this endpoint allows you to update the name of one of your recipient lists.**
+</Accordion>
+
+<Accordion title="Update a campaign">
+**this endpoint allows you to update a specific campaign.** this is especially useful if you only set up the campaign using post /campaigns, but didn't set many of the parameters.
+</Accordion>
+
+<Accordion title="Update a parse setting">
+**this endpoint allows you to update a specific inbound parse setting by hostname.** you can retrieve all your inbound parse settings and their associated host names with the "retrieve all parse settings" endpoint.
+</Accordion>
+
+<Accordion title="Retrieve tracking settings">
+**this endpoint allows you to retrieve a list of all tracking settings on your account.**
+</Accordion>
+
+<Accordion title="Retrieve a specific parse setting">
+**this endpoint allows you to retrieve a specific inbound parse setting by hostname.** you can retrieve all your inbound parse settings and their associated host names with the "retrieve all parse settings" endpoint.
+</Accordion>
+
+<Accordion title="Retrieve specific teammate">
+**this endpoint allows you to retrieve a specific teammate by username.** you can retrieve the username's for each of your teammates using the "retrieve all teammates" endpoint.
+</Accordion>
+
+<Accordion title="Send email with twilio sendgrid">
+The mail send operation uses sendgrid's v3 api to send emails. visit the provided link for an overview, features, limitations, quickstarts, and helper libraries.
+</Accordion>
+
+<Accordion title="Retrieve email statistics by mailbox provider">
+Retrieve email stats by provider with advanced stats api, displaying details like location and device. only 7 days of data stored, 500 items per request. more info at sendgrid's statistics overview.
+</Accordion>
+
+<Accordion title="Update api key name and scopes">
+Update an api key's name and/or scopes using json with a `name` field and `scopes` array. to change only scopes, reuse the existing name. for just a name update, use another endpoint. see the permissions list for scope options. (https://docs.sendgrid.com)
+</Accordion>
+
+<Accordion title="Unschedule a scheduled campaign">
+**this endpoint allows you to unschedule a campaign that has already been scheduled to be sent.** a successful unschedule will return a 204. if the specified campaign is in the process of being sent, the only option is to cancel (a different method).
+</Accordion>
+
+<Accordion title="Update an sso integration">
+**this endpoint allows you to modify an exisiting sso integration.** you can retrieve the ids for your configurations from the response provided by the "get all sso integrations" endpoint.
+</Accordion>
+
+<Accordion title="Update a scheduled send">
+Use this endpoint to change the status of a scheduled send by batch id. status updates fail with a 400 error if previously set with the cancel/pause endpoint.
+</Accordion>
+
+<Accordion title="Update a scheduled campaign">
+**this endpoint allows to you change the scheduled time and date for a campaign to be sent.**
+</Accordion>
+
+<Accordion title="Test an event webhook s settings">
+The endpoint tests event webhooks by sending a fake event to your url. it has unique retry logic and requires specific oauth properties to test oauth configurations. saved credentials can be retrieved except for `oauth client secret`.
+</Accordion>
+
+<Accordion title="Retrieve a specific spam report">
+**this endpoint allows you to retrieve a specific spam report by email address.**
+</Accordion>
+
+<Accordion title="Retrieve a subuser s branded link">
+Retrieve a subuser's branded link, created and validated by the parent account, available through the api or twilio sendgrid's subuser management page.
+</Accordion>
+
+<Accordion title="Retrieve bounce purge mail settings">
+Retrieve and manage your bounce/purge settings for soft/hard bounce suppression lists with twilio sendgrid, either automatically or manually via the app/api.
+</Accordion>
+
+<Accordion title="Retrieve forward bounce mail settings">
+This endpoint fetches the current email forwarding settings for bounce messages, including the recipient email and whether the feature is active.
+</Accordion>
+
+<Accordion title="Retrieve footer mail settings">
+Retrieve and customize your footer settings for email bodies via this endpoint, directly or through twilio sendgrid's mail settings menu.
+</Accordion>
+
+<Accordion title="Retrieve email statistics for categories">
+**this endpoint allows you to retrieve all of your email statistics for each of your categories.** if you do not define any query parameters, this endpoint will return a sum for each category in groups of 10.
+</Accordion>
+
+<Accordion title="Retrieve a specific transactional template version">
+**this endpoint allows you to retrieve a specific version of a template.**
+</Accordion>
+
+<Accordion title="Retrieve subscription tracking settings">
+**this endpoint allows you to retrieve your current settings for subscription tracking.** subscription tracking adds links to the bottom of your emails that allows your recipients to subscribe to, or unsubscribe from, your emails.
+</Accordion>
+
+<Accordion title="Retrieve stats by a specific client type">
+Use advanced stats api to get email statistics by client type (e.g., phone, desktop), offering location and device details. data storage is limited to 7 days with up to 500 items per request. see statistics overview for further information.
+</Accordion>
+
+<Accordion title="Schedule single send">
+Use this endpoint to send a message right away by setting `send at` to `now`, or schedule it by specifying a future time in iso 8601 format (`yyyy-mm-ddthh:mm:ssz`).
+</Accordion>
+
+<Accordion title="Retrieve bounce classification totals">
+This endpoint will return the total number of bounces by classification in descending order for each day. you can retrieve the bounce classification totals in csv format by specifying `"text/csv"` in the accept header.
+</Accordion>
+
+<Accordion title="Update an account s state">
+Update the state of the specified account.
+</Accordion>
+
+<Accordion title="Search contacts">
+Find contacts using this endpoint with a body containing a `query` in sgql. searches must use lowercase, and only the first 50 matches are returned. queries over 20s will timeout. dates are in iso format, not unix timestamps.
+</Accordion>
+
+<Accordion title="Retrieve email statistics for your subusers">
+**this endpoint allows you to retrieve the email statistics for the given subusers.** you may retrieve statistics for up to 10 different subusers by including an additional  subusers  parameter for each additional subuser.
+</Accordion>
+
+<Accordion title="Retrieve bounce classification over time by domain stats">
+This endpoint will return the number of bounces for the classification specified in descending order for each day. you can retrieve the bounce classification totals in csv format by specifying `"text/csv"` in the accept header.
+</Accordion>
+
+<Accordion title="Update custom field definition">
+**this endpoint allows you to update a defined custom field.** only your custom fields can be modified; reserved fields cannot be updated.
+</Accordion>
+
+<Accordion title="Update click tracking settings">
+This endpoint configures click tracking for emails, redirecting links through sendgrid or branded domains for engagement analysis, with a limit of 1000 links per email.
+</Accordion>
+
+<Accordion title="Update a sender identity">
+This api endpoint enables updates to sender identities. changing `from.email` necessitates re-verification. partial updates are valid, but "required" fields must not be empty in patch requests.
+</Accordion>
+
+<Accordion title="Validate a reverse dns record">
+Endpoint checks reverse dns record validity via `valid` in `validation results.a record`. if `false`, it's undetermined, not necessarily invalid. check `reason` for explanation. retrieve ids with "retrieve all reverse dns records" endpoint.
+</Accordion>
+
+<Accordion title="Validate a branded link">
+**this endpoint allows you to validate a branded link.** you can submit this request as one of your subusers if you include their id in the `on-behalf-of` header in the request.
+</Accordion>
+
+<Accordion title="Update a suppression group">
+**this endpoint allows you to update or change a suppression group.**
+</Accordion>
+
+<Accordion title="Validate a batch id">
+Validate a mail batch id to get a `200` status code for a valid one, or a `400` code for an invalid. a valid id simply means it's created, not necessarily assigned to a send.
+</Accordion>
+
+<Accordion title="Update a sender">
+This endpoint updates an existing sender. changes to `from.email` need re-verification. if domain authenticated, new senders auto verify; else, verification email sent. partial updates can be made, but "required" fields in a `patch` must not be empty.
+</Accordion>
+
+<Accordion title="Update a user s profile">
+**this endpoint allows you to update your current profile details.** any one or more of the parameters can be updated via the patch `/user/profile` endpoint. you must include at least one when you patch.
+</Accordion>
+
+<Accordion title="Update bounce purge mail settings">
+Update your bounce settings with twilio sendgrid to automatically delete contacts from suppression lists based on a set schedule in full days for both soft and hard email bounces. manage settings via their app or api.
+</Accordion>
+
+<Accordion title="Update a segment">
+**this endpoint allows you to update a segment.**
+</Accordion>
+
+<Accordion title="Update design">
+The design api enables partial design updates using patch requests, changing only specified fields, like the 'name' field, with no impact on other data.
+</Accordion>
+
+<Accordion title="Update sso certificate">
+**this endpoint allows you to update an existing certificate by id.** you can retrieve a certificate's id from the response provided by the "get all sso integrations" endpoint.
+</Accordion>
+
+<Accordion title="Update details for an ip address">
+The operation modifies an ip address's settings, such as auto warm-up status, parent account assignment, and active status. the request must have one of `is auto warmup`, `is parent assigned`, or `is enabled`.
+</Accordion>
+
+<Accordion title="Validate a domain authentication">
+**this endpoint allows you to validate an authenticated domain. if it fails, it will return an error message describing why the domain could not be validated.**
+</Accordion>
+
+<Accordion title="Update a single event webhook by id">
+Update event webhooks by id with this endpoint or without id to update the oldest one. enable or disable, set url, choose event types, give friendly names, and configure oauth. for signature verification, use a different endpoint.
+</Accordion>
+
+<Accordion title="Update subscription tracking settings">
+**this endpoint allows you to update your current settings for subscription tracking.** subscription tracking adds links to the bottom of your emails that allows your recipients to subscribe to, or unsubscribe from, your emails.
+</Accordion>
+
+<Accordion title="Verify sender request">
+**this endpoint allows you to verify a sender requests.** the token is generated by sendgrid and included in a verification email delivered to the address that's pending verification.
+</Accordion>
+
+<Accordion title="View a sender identity">
+**this endpoint allows you to retrieve a specific sender identity.**
+</Accordion>
+
+<Accordion title="View scheduled time of a campaign">
+**this endpoint allows you to retrieve the date and time that a campaign has been scheduled to be sent.**
+</Accordion>
+
+<Accordion title="Update teammate s permissions">
+This endpoint updates teammate permissions: set `is admin` to `true` for admin rights, otherwise to `false` with relevant scopes. only parent users or admins can modify these settings, and admin users are limited to permission changes.
+</Accordion>
+
+<Accordion title="Update template mail settings">
+The endpoint updates legacy email templates, replaced by more advanced dynamic transactional templates. legacy templates are html-wrapped email content useful for marketing. guidance is available for using and migrating from legacy templates.
+</Accordion>
+
+<Accordion title="Update the credits for a subuser">
+**this endpoint allows you to update the credits for a subuser.**
+</Accordion>
+
+<Accordion title="Update the remaining credits for a subuser">
+**this endpoint allows you to update the remaining credits for a subuser.**
+</Accordion>
+
+<Accordion title="Update your account email address">
+**this endpoint allows you to update the email address currently on file for your account.**
+</Accordion>
+
+<Accordion title="Update your password">
+**this endpoint allows you to update your password.**
+</Accordion>
+
+<Accordion title="Update your username">
+**this endpoint allows you to update the username for your account.**
+</Accordion>
+
+<Accordion title="Update footer mail settings">
+This endpoint updates your email footer settings, enabling a custom footer addition in text/html emails. edit directly or via the twilio sendgrid app.
+</Accordion>
+
+<Accordion title="Update enforced tls settings">
+Update tls settings through the endpoint by setting 'require tls' to 'true' for compulsory tls 1.1+ and valid certificates with recipients. messages without tls are blocked with a specific event notice.
+</Accordion>
+
+<Accordion title="Validate an email">
+**this endpoint allows you to validate an email address.**
+</Accordion>
+
+<Accordion title="Update forward spam mail settings">
+Activate forward spam to send spam reports to specified emails; supports multiple addresses and authenticating domains to receive abuse/postmaster mails. configure via twilio sendgrid app.
+</Accordion>
+
+<Accordion title="Update forward bounce mail settings">
+This endpoint updates bounce forwarding mail settings, allowing users to set an email for bounce report forwards and configure spam mail forwarding in twilio sendgrid app.
+</Accordion>
+
+<Accordion title="Update google analytics settings">
+Update your google analytics settings to track user activity on your site more effectively; defaults follow google's recommendations. for guidance, visit google's url builder and campaign building best practices.
+</Accordion>
+
+<Accordion title="Sendgrid Update Integration">
+This endpoint updates an existing integration.
+</Accordion>
+
+<Accordion title="Update open tracking settings">
+Update your email settings to enable open tracking with sendgrid, which uses an invisible image to log email opens in various reports if the recipient allows images.
+</Accordion>
+
+<Accordion title="Update segment">
+Segment `name` has to be unique. a user can not create a new segment with an existing segment name.
+</Accordion>
+
+<Accordion title="Update list">
+**this endpoint updates the name of a list.**
+</Accordion>
+
+<Accordion title="Update single send">
+Update single send drafts using its id via this endpoint; only changed properties are affected. the 'send at' property sets a date but doesn't schedule it; use schedule single send endpoint or ui to schedule.
+</Accordion>
+

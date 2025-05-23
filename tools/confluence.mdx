@@ -1,0 +1,762 @@
+A tool for team collaboration and knowledge management.
+
+<Accordion title="Convert content ids to content types">
+Converts a list of content ids into their associated content types. this is useful for users migrating from v1 to v2 who may have stored just content ids without their associated type. this will return types as they should be used in v2. notably, this will return `inline-comment` for inline comments and `footer-comment` for footer comments, which is distinct from them both being represented by `comment` in v1. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the requested content. any content that the user does not have permission to view or does not exist will map to `null` in the response.
+</Accordion>
+
+<Accordion title="Create blog post">
+Creates a new blog post in the space specified by the spaceid. by default this will create the blog post as a non-draft, unless the status is specified as draft. if creating a non-draft, the title must not be empty. currently only supports the storage representation specified in the body.representation enums below
+</Accordion>
+
+<Accordion title="Create content property for comment">
+Creates a new content property for a comment. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to update the comment.
+</Accordion>
+
+<Accordion title="Create content property for blog post">
+Creates a new property for a blogpost. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to update the blog post.
+</Accordion>
+
+<Accordion title="Delete content property for smart link in the content tree by id">
+Deletes a content property for a smart link in the content tree by its id. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to edit the smart link in the content tree.
+</Accordion>
+
+<Accordion title="Check site access for a list of emails">
+Returns the list of emails from the input list that do not have access to site. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to access the confluence site ('can use' global permission).
+</Accordion>
+
+<Accordion title="Create bulk user lookup using ids">
+Returns user details for the ids provided in the request body. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to access the confluence site ('can use' global permission). the user must be able to view user profiles in the confluence site.
+</Accordion>
+
+<Accordion title="Create whiteboard">
+Creates a whiteboard in the space. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the corresponding space. permission to create a whiteboard in the space.
+</Accordion>
+
+<Accordion title="Create space property in space">
+Creates a new space property. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to access the confluence site ('can use' global permission) and 'admin' permission for the space.
+</Accordion>
+
+<Accordion title="Create space">
+Creates a space as specified in the payload. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to create spaces.
+</Accordion>
+
+<Accordion title="Delete space property by id">
+Deletes a space property by its id. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to access the confluence site ('can use' global permission) and 'admin' permission for the space.
+</Accordion>
+
+<Accordion title="Get all ancestors of smart link in content tree">
+Returns all ancestors for a given smart link in the content tree by id in top-to-bottom order (that is, the highest ancestor is the first item in the response payload). the number of results is limited by the `limit` parameter and additional results (if available) will be available by calling this endpoint with the id of first ancestor in the response payload. this endpoint returns minimal information about each ancestor. to fetch more details, use a related endpoint, such as [get smart link in the content tree by id](https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-smart-link/#api-embeds-id-get). **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to access the confluence site ('can use' global permission). permission to view the smart link in the content tree and its corresponding space
+</Accordion>
+
+<Accordion title="Get all ancestors of page">
+Returns all ancestors for a given page by id in top-to-bottom order (that is, the highest ancestor is the first item in the response payload). the number of results is limited by the `limit` parameter and additional results (if available) will be available by calling this endpoint with the id of first ancestor in the response payload. this endpoint returns minimal information about each ancestor. to fetch more details, use a related endpoint, such as [get page by id](https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-page/#api-pages-id-get). **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to access the confluence site ('can use' global permission).
+</Accordion>
+
+<Accordion title="Delete content property for whiteboard by id">
+Deletes a content property for a whiteboard by its id. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to edit the whiteboard.
+</Accordion>
+
+<Accordion title="Create content property for database">
+Creates a new content property for a database. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to update the database.
+</Accordion>
+
+<Accordion title="Create content property for page">
+Creates a new content property for a page. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to update the page.
+</Accordion>
+
+<Accordion title="Create content property for folder">
+Creates a new content property for a folder. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to update the folder.
+</Accordion>
+
+<Accordion title="Get all ancestors of whiteboard">
+Returns all ancestors for a given whiteboard by id in top-to-bottom order (that is, the highest ancestor is the first item in the response payload). the number of results is limited by the `limit` parameter and additional results (if available) will be available by calling this endpoint with the id of first ancestor in the response payload. this endpoint returns minimal information about each ancestor. to fetch more details, use a related endpoint, such as [get whiteboard by id](https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-whiteboard/#api-whiteboards-id-get). **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to access the confluence site ('can use' global permission). permission to view the whiteboard and its corresponding space
+</Accordion>
+
+<Accordion title="Get attachments">
+Returns all attachments. the number of results is limited by the `limit` parameter and additional results (if available) will be available through the `next` url present in the `link` response header. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the container of the attachment.
+</Accordion>
+
+<Accordion title="Create content property for attachment">
+Creates a new content property for an attachment. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to update the attachment.
+</Accordion>
+
+<Accordion title="Get blog posts in space">
+Returns all blog posts in a space. the number of results is limited by the `limit` parameter and additional results (if available) will be available through the `next` url present in the `link` response header. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to access the confluence site ('can use' global permission) and view the space. only blog posts that the user has permission to view will be returned.
+</Accordion>
+
+<Accordion title="Get blog post classification level">
+Returns the [classification level](https://developer.atlassian.com/cloud/admin/dlp/rest/intro/#classification%20level) for a specific blog post. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: 'permission to access the confluence site ('can use' global permission) and permission to view the blog post. 'permission to edit the blog post is required if trying to view classification level for a draft.
+</Accordion>
+
+<Accordion title="Get blog post by id">
+Returns a specific blog post. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the blog post and its corresponding space.
+</Accordion>
+
+<Accordion title="Delete whiteboard">
+Delete a whiteboard by id. deleting a whiteboard moves the whiteboard to the trash, where it can be restored later **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the whiteboard and its corresponding space. permission to delete whiteboards in the space.
+</Accordion>
+
+<Accordion title="Delete custom content">
+Delete a custom content by id. deleting a custom content will either move it to the trash or permanently delete it (purge it), depending on the apisupport. to permanently delete a **trashed** custom content, the endpoint must be called with the following param `purge=true`. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the content of the page or blogpost and its corresponding space. permission to delete custom content in the space. permission to administer the space (if attempting to purge).
+</Accordion>
+
+<Accordion title="Get available space permissions">
+Retrieves the available space permissions. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to access the confluence site.
+</Accordion>
+
+<Accordion title="Get blog post versions">
+Returns the versions of specific blog post. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the blog post and its corresponding space.
+</Accordion>
+
+<Accordion title="Get attachments for blog post">
+Returns the attachments of specific blog post. the number of results is limited by the `limit` parameter and additional results (if available) will be available through the `next` url present in the `link` response header. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the content of the blog post and its corresponding space.
+</Accordion>
+
+<Accordion title="Get attachment versions">
+Returns the versions of specific attachment. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the attachment and its corresponding space.
+</Accordion>
+
+<Accordion title="Create content property for smart link in the content tree">
+Creates a new content property for a smart link in the content tree. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to update the smart link in the content tree.
+</Accordion>
+
+<Accordion title="Get account ids of likes for blog post">
+Returns the account ids of likes of specific blog post. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the content of the blog post and its corresponding space.
+</Accordion>
+
+<Accordion title="Get children footer comments">
+Returns the children footer comments of specific comment. the number of results is limited by the `limit` parameter and additional results (if available) will be available through the `next` url present in the `link` response header. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the content of the page and its corresponding space.
+</Accordion>
+
+<Accordion title="Get content properties for blog post">
+Retrieves all content properties tied to a specified blog post. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the blog post.
+</Accordion>
+
+<Accordion title="Get content properties for comment">
+Retrieves content properties attached to a specified comment. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the comment.
+</Accordion>
+
+<Accordion title="Get content properties for custom content">
+Retrieves content properties tied to a specified custom content. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the custom content.
+</Accordion>
+
+<Accordion title="Get content properties for database">
+Retrieves content properties tied to a specified database. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the database.
+</Accordion>
+
+<Accordion title="Create content property for custom content">
+Creates a new content property for a piece of custom content. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to update the custom content.
+</Accordion>
+
+<Accordion title="Delete database">
+Delete a database by id. deleting a database moves the database to the trash, where it can be restored later **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the database and its corresponding space. permission to delete databases in the space.
+</Accordion>
+
+<Accordion title="Get account ids of likes for footer comment">
+Returns the account ids of likes of specific footer comment. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the content of the page/blogpost and its corresponding space.
+</Accordion>
+
+<Accordion title="Get children inline comments">
+Returns the children inline comments of specific comment. the number of results is limited by the `limit` parameter and additional results (if available) will be available through the `next` url present in the `link` response header. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the content of the page and its corresponding space.
+</Accordion>
+
+<Accordion title="Create content property for whiteboard">
+Creates a new content property for a whiteboard. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to update the whiteboard.
+</Accordion>
+
+<Accordion title="Get attachments for custom content">
+Returns the attachments of specific custom content. the number of results is limited by the `limit` parameter and additional results (if available) will be available through the `next` url present in the `link` response header. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the content of the custom content and its corresponding space.
+</Accordion>
+
+<Accordion title="Get content properties for folder">
+Retrieves content properties tied to a specified folder. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the folder.
+</Accordion>
+
+<Accordion title="Get content properties for smart link in the content tree">
+Retrieves content properties tied to a specified smart link in the content tree. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the smart link in the content tree.
+</Accordion>
+
+<Accordion title="Delete attachment">
+Delete an attachment by id. deleting an attachment moves the attachment to the trash, where it can be restored later. to permanently delete an attachment (or "purge" it), the endpoint must be called on a **trashed** attachment with the following param `purge=true`. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the container of the attachment. permission to delete attachments in the space. permission to administer the space (if attempting to purge).
+</Accordion>
+
+<Accordion title="Get content property for comment by id">
+Retrieves a specific content property by id that is attached to a specified comment. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the comment.
+</Accordion>
+
+<Accordion title="Get content properties for page">
+Retrieves content properties tied to a specified page. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the page.
+</Accordion>
+
+<Accordion title="Get content property for blog post by id">
+Retrieves a specific content property by id that is attached to a specified blog post. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the blog post.
+</Accordion>
+
+<Accordion title="Get available space roles">
+Retrieves the available space roles. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to access the confluence site; if requesting a certain space's roles, permission to view the space.
+</Accordion>
+
+<Accordion title="Get content property for custom content by id">
+Retrieves a specific content property by id that is attached to a specified custom content. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the page.
+</Accordion>
+
+<Accordion title="Get content property for database by id">
+Retrieves a specific content property by id that is attached to a specified database. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the database.
+</Accordion>
+
+<Accordion title="Delete folder">
+Delete a folder by id. deleting a folder moves the folder to the trash, where it can be restored later **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the folder and its corresponding space. permission to delete folders in the space.
+</Accordion>
+
+<Accordion title="Get attachments for label">
+Returns the attachments of specified label. the number of results is limited by the `limit` parameter and additional results (if available) will be available through the `next` url present in the `link` response header. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the attachment and its corresponding space.
+</Accordion>
+
+<Accordion title="Get content property for folder by id">
+Retrieves a specific content property by id that is attached to a specified folder. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the folder.
+</Accordion>
+
+<Accordion title="Get content property for page by id">
+Retrieves a specific content property by id that is attached to a specified page. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the page.
+</Accordion>
+
+<Accordion title="Get content property for smart link in the content tree by id">
+Retrieves a specific content property by id that is attached to a specified smart link in the content tree. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the smart link in the content tree.
+</Accordion>
+
+<Accordion title="Get child custom content">
+Returns all child custom content for given custom content id. the number of results is limited by the `limit` parameter and additional results (if available) will be available through the `next` url present in the `link` response header. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to access the confluence site ('can use' global permission). only custom content that the user has permission to view will be returned.
+</Accordion>
+
+<Accordion title="Get content property for whiteboard by id">
+Retrieves a specific content property by id that is attached to a specified whiteboard. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the whiteboard.
+</Accordion>
+
+<Accordion title="Delete footer comment">
+Deletes a footer comment. this is a permanent deletion and cannot be reverted. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the content of the page or blogpost and its corresponding space. permission to delete comments in the space.
+</Accordion>
+
+<Accordion title="Get account ids of likes for inline comment">
+Returns the account ids of likes of specific inline comment. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the content of the page/blogpost and its corresponding space.
+</Accordion>
+
+<Accordion title="Create custom content">
+Creates a new custom content in the given space, page, blogpost or other custom content. only one of `spaceid`, `pageid`, `blogpostid`, or `customcontentid` is required in the request body. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the content of the page or blogpost and its corresponding space. permission to create custom content in the space.
+</Accordion>
+
+<Accordion title="Get custom content by id">
+Returns a specific piece of custom content. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the custom content, the container of the custom content, and the corresponding space (if different from the container).
+</Accordion>
+
+<Accordion title="Get custom content by type in page">
+Returns all custom content for a given type within a given page. the number of results is limited by the `limit` parameter and additional results (if available) will be available through the `next` url present in the `link` response header. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the custom content, the container of the custom content (page), and the corresponding space.
+</Accordion>
+
+<Accordion title="Get content properties for whiteboard">
+Retrieves content properties tied to a specified whiteboard. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the whiteboard.
+</Accordion>
+
+<Accordion title="Get custom content by type in blog post">
+Returns all custom content for a given type within a given blogpost. the number of results is limited by the `limit` parameter and additional results (if available) will be available through the `next` url present in the `link` response header. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the custom content, the container of the custom content (blog post), and the corresponding space.
+</Accordion>
+
+<Accordion title="Delete blog post">
+Delete a blog post by id. by default this will delete blog posts that are non-drafts. to delete a blog post that is a draft, the endpoint must be called on a draft with the following param `draft=true`. discarded drafts are not sent to the trash and are permanently deleted. deleting a blog post that is not a draft moves the blog post to the trash, where it can be restored later. to permanently delete a blog post (or "purge" it), the endpoint must be called on a **trashed** blog post with the following param `purge=true`. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the blog post and its corresponding space. permission to delete blog posts in the space. permission to administer the space (if attempting to purge).
+</Accordion>
+
+<Accordion title="Get blog posts">
+Returns all blog posts. the number of results is limited by the `limit` parameter and additional results (if available) will be available through the `next` url present in the `link` response header. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to access the confluence site ('can use' global permission). only blog posts that the user has permission to view will be returned.
+</Accordion>
+
+<Accordion title="Get custom content comments">
+Returns the comments of the specific custom content. the number of results is limited by the `limit` parameter and additional results (if available) will be available through the `next` url present in the `link` response header. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the custom content and its corresponding containers.
+</Accordion>
+
+<Accordion title="Create database">
+Creates a database in the space. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the corresponding space. permission to create a database in the space.
+</Accordion>
+
+<Accordion title="Get account ids of likes for page">
+Returns the account ids of likes of specific page. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the content of the page and its corresponding space.
+</Accordion>
+
+<Accordion title="Get custom content by type in space">
+Returns all custom content for a given type within a given space. the number of results is limited by the `limit` parameter and additional results (if available) will be available through the `next` url present in the `link` response header. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the custom content and the corresponding space.
+</Accordion>
+
+<Accordion title="Get custom content by type">
+Returns all custom content for a given type. the number of results is limited by the `limit` parameter and additional results (if available) will be available through the `next` url present in the `link` response header. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the custom content, the container of the custom content, and the corresponding space (if different from the container).
+</Accordion>
+
+<Accordion title="Get attachments for page">
+Returns the attachments of specific page. the number of results is limited by the `limit` parameter and additional results (if available) will be available through the `next` url present in the `link` response header. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the content of the page and its corresponding space.
+</Accordion>
+
+<Accordion title="Delete inline comment">
+Deletes an inline comment. this is a permanent deletion and cannot be reverted. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the content of the page or blogpost and its corresponding space. permission to delete comments in the space.
+</Accordion>
+
+<Accordion title="Get custom content versions">
+Returns the versions of specific custom content. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the custom content and its corresponding page and space.
+</Accordion>
+
+<Accordion title="Create folder">
+Creates a folder in the space. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the corresponding space. permission to create a folder in the space.
+</Accordion>
+
+<Accordion title="Get blog posts for label">
+Returns the blogposts of specified label. the number of results is limited by the `limit` parameter and additional results (if available) will be available through the `next` url present in the `link` response header. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the content of the page and its corresponding space.
+</Accordion>
+
+<Accordion title="Get all ancestors of database">
+Returns all ancestors for a given database by id in top-to-bottom order (that is, the highest ancestor is the first item in the response payload). the number of results is limited by the `limit` parameter and additional results (if available) will be available by calling this endpoint with the id of first ancestor in the response payload. this endpoint returns minimal information about each ancestor. to fetch more details, use a related endpoint, such as [get database by id](https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-database/#api-databases-id-get). **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to access the confluence site ('can use' global permission). permission to view the database and its corresponding space
+</Accordion>
+
+<Accordion title="Delete content property for attachment by id">
+Deletes a content property for an attachment by its id. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to attachment the page.
+</Accordion>
+
+<Accordion title="Delete page">
+Delete a page by id. by default this will delete pages that are non-drafts. to delete a page that is a draft, the endpoint must be called on a draft with the following param `draft=true`. discarded drafts are not sent to the trash and are permanently deleted. deleting a page moves the page to the trash, where it can be restored later. to permanently delete a page (or "purge" it), the endpoint must be called on a **trashed** page with the following param `purge=true`. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the page and its corresponding space. permission to delete pages in the space. permission to administer the space (if attempting to purge).
+</Accordion>
+
+<Accordion title="Get all ancestors of folder">
+Returns all ancestors for a given folder by id in top-to-bottom order (that is, the highest ancestor is the first item in the response payload). the number of results is limited by the `limit` parameter and additional results (if available) will be available by calling this endpoint with the id of first ancestor in the response payload. this endpoint returns minimal information about each ancestor. to fetch more details, use a related endpoint, such as [get folder by id](https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-smart-link/#api-folders-id-get). **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to access the confluence site ('can use' global permission). permission to view the folder and its corresponding space
+</Accordion>
+
+<Accordion title="Get child pages">
+Returns all child pages for given page id. the number of results is limited by the `limit` parameter and additional results (if available) will be available through the `next` url present in the `link` response header. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to access the confluence site ('can use' global permission). only pages that the user has permission to view will be returned.
+</Accordion>
+
+<Accordion title="Get attachment by id">
+Returns a specific attachment. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the attachment's container.
+</Accordion>
+
+<Accordion title="Create footer comment">
+Create a footer comment. the footer comment can be made against several locations: - at the top level (specifying pageid or blogpostid in the request body) - as a reply (specifying parentcommentid in the request body) - against an attachment (note: this is different than the comments added via the attachment properties page on the ui, which are referred to as version comments) - against a custom content **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the content of the page or blogpost and its corresponding space. permission to create comments in the space.
+</Accordion>
+
+<Accordion title="Get content property for attachment by id">
+Retrieves a specific content property by id that is attached to a specified attachment. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the attachment.
+</Accordion>
+
+<Accordion title="Delete content property for blogpost by id">
+Deletes a content property for a blogpost by its id. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to edit the blog post.
+</Accordion>
+
+<Accordion title="Delete space default classification level">
+Returns the [default classification level](https://support.atlassian.com/security-and-access-policies/docs/what-is-a-default-classification-level/) for a specific space. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: 'permission to access the confluence site ('can use' global permission) and 'admin' permission for the space.
+</Accordion>
+
+<Accordion title="Get content properties for attachment">
+Retrieves all content properties tied to a specified attachment. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the attachment.
+</Accordion>
+
+<Accordion title="Delete smart link in the content tree">
+Delete a smart link in the content tree by id. deleting a smart link in the content tree moves the smart link to the trash, where it can be restored later **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the smart link in the content tree and its corresponding space. permission to delete smart links in the content tree in the space.
+</Accordion>
+
+<Accordion title="Delete content property for comment by id">
+Deletes a content property for a comment by its id. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to edit the comment.
+</Accordion>
+
+<Accordion title="Create smart link in the content tree">
+Creates a smart link in the content tree in the space. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the corresponding space. permission to create a smart link in the content tree in the space.
+</Accordion>
+
+<Accordion title="Delete content property for database by id">
+Deletes a content property for a database by its id. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to edit the database.
+</Accordion>
+
+<Accordion title="Get attachment comments">
+Returns the comments of the specific attachment. the number of results is limited by the `limit` parameter and additional results (if available) will be available through the `next` url present in the `link` response header. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the attachment and its corresponding containers.
+</Accordion>
+
+<Accordion title="Delete content property for page by id">
+Deletes a content property for a page by its id. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to edit the page.
+</Accordion>
+
+<Accordion title="Create page">
+Creates a page in the space. pages are created as published by default unless specified as a draft in the status field. if creating a published page, the title must be specified. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the corresponding space. permission to create a page in the space.
+</Accordion>
+
+<Accordion title="Delete content property for folder by id">
+Deletes a content property for a folder by its id. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to edit the folder.
+</Accordion>
+
+<Accordion title="Delete content property for custom content by id">
+Deletes a content property for a piece of custom content by its id. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to edit the custom content.
+</Accordion>
+
+<Accordion title="Create inline comment">
+Create an inline comment. this can be at the top level (specifying pageid or blogpostid in the request body) or as a reply (specifying parentcommentid in the request body). note the inlinecommentproperties object in the request body is used to select the text the inline comment should be tied to. this is what determines the text highlighting when viewing a page in confluence. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the content of the page or blogpost and its corresponding space. permission to create comments in the space.
+</Accordion>
+
+<Accordion title="Get permitted operations for attachment">
+Returns the permitted operations on specific attachment. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the parent content of the attachment and its corresponding space.
+</Accordion>
+
+<Accordion title="Get page versions">
+Returns the versions of specific page. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the page and its corresponding space.
+</Accordion>
+
+<Accordion title="Get folder by id">
+Returns a specific folder. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the folder and its corresponding space.
+</Accordion>
+
+<Accordion title="Get database by id">
+Returns a specific database. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the database and its corresponding space.
+</Accordion>
+
+<Accordion title="Get like count for blog post">
+Returns the count of likes of specific blog post. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the content of the blog post and its corresponding space.
+</Accordion>
+
+<Accordion title="Get labels for space content">
+Returns the labels of space content (pages, blogposts etc). the number of results is limited by the `limit` parameter and additional results (if available) will be available through the `next` url present in the `link` response header. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the space. only labels that the user has permission to view will be returned.
+</Accordion>
+
+<Accordion title="Get database classification level">
+Returns the [classification level](https://developer.atlassian.com/cloud/admin/dlp/rest/intro/#classification%20level) for a specific database. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: 'permission to access the confluence site ('can use' global permission) and permission to view the database.
+</Accordion>
+
+<Accordion title="Get permitted operations for page">
+Returns the permitted operations on specific page. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the parent content of the page and its corresponding space.
+</Accordion>
+
+<Accordion title="Get permitted operations for space">
+Returns the permitted operations on specific space. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the corresponding space.
+</Accordion>
+
+<Accordion title="Get space role assignments">
+Retrieves the space role assignments. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the space.
+</Accordion>
+
+<Accordion title="Get space property by id">
+Retrieve a space property by its id. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to access the confluence site ('can use' global permission) and 'view' permission for the space.
+</Accordion>
+
+<Accordion title="Get footer comment by id">
+Retrieves a footer comment by id **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the content of the container and its corresponding space.
+</Accordion>
+
+<Accordion title="Get inline comments">
+Returns all inline comments. the number of results is limited by the `limit` parameter and additional results (if available) will be available through the `next` url present in the `link` response header. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the content of the page and its corresponding space.
+</Accordion>
+
+<Accordion title="Get data policy metadata for the workspace">
+Returns data policy metadata for the workspace. **[permissions](#permissions) required:** only apps can make this request. permission to access the confluence site ('can use' global permission).
+</Accordion>
+
+<Accordion title="Get footer comments for blog post">
+Returns the root footer comments of specific blog post. the number of results is limited by the `limit` parameter and additional results (if available) will be available through the `next` url present in the `link` response header. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the content of the blog post and its corresponding space.
+</Accordion>
+
+<Accordion title="Get footer comment versions">
+Retrieves the versions of the specified footer comment. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the content of the page or blog post and its corresponding space.
+</Accordion>
+
+<Accordion title="Get footer comments">
+Returns all footer comments. the number of results is limited by the `limit` parameter and additional results (if available) will be available through the `next` url present in the `link` response header. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the content of the container and its corresponding space.
+</Accordion>
+
+<Accordion title="Get space role by id">
+Retrieves the space role by id. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to access the confluence site.
+</Accordion>
+
+<Accordion title="Get version details for inline comment version">
+Retrieves version details for the specified inline comment version. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the content of the page or blog post and its corresponding space.
+</Accordion>
+
+<Accordion title="Get version details for page version">
+Retrieves version details for the specified page and version number. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the page.
+</Accordion>
+
+<Accordion title="Get whiteboard classification level">
+Returns the [classification level](https://developer.atlassian.com/cloud/admin/dlp/rest/intro/#classification%20level) for a specific whiteboard. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: 'permission to access the confluence site ('can use' global permission) and permission to view the whiteboard.
+</Accordion>
+
+<Accordion title="Get smart link in the content tree by id">
+Returns a specific smart link in the content tree. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the smart link in the content tree and its corresponding space.
+</Accordion>
+
+<Accordion title="Get like count for footer comment">
+Returns the count of likes of specific footer comment. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the content of the page/blogpost and its corresponding space.
+</Accordion>
+
+<Accordion title="Reset blog post classification level">
+Resets the [classification level](https://developer.atlassian.com/cloud/admin/dlp/rest/intro/#classification%20level) for a specific blog post for the space [default classification level](https://support.atlassian.com/security-and-access-policies/docs/what-is-a-default-classification-level/). **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: 'permission to access the confluence site ('can use' global permission) and permission to view the blog post.
+</Accordion>
+
+<Accordion title="Get spaces with data policies">
+Returns all spaces. the results will be sorted by id ascending. the number of results is limited by the `limit` parameter and additional results (if available) will be available through the `next` url present in the `link` response header. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: only apps can make this request. permission to access the confluence site ('can use' global permission). only spaces that the app has permission to view will be returned.
+</Accordion>
+
+<Accordion title="Reset whiteboard classification level">
+Resets the [classification level](https://developer.atlassian.com/cloud/admin/dlp/rest/intro/#classification%20level) for a specific whiteboard for the space [default classification level](https://support.atlassian.com/security-and-access-policies/docs/what-is-a-default-classification-level/). **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: 'permission to access the confluence site ('can use' global permission) and permission to view the whiteboard.
+</Accordion>
+
+<Accordion title="Invite a list of emails to the site">
+Invite a list of emails to the site. ignores all invalid emails and no action is taken for the emails that already have access to the site. &lt;b&gt;note:&lt;/b&gt; this api is asynchronous and may take some time to complete. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to access the confluence site ('can use' global permission).
+</Accordion>
+
+<Accordion title="Reset database classification level">
+Resets the [classification level](https://developer.atlassian.com/cloud/admin/dlp/rest/intro/#classification%20level) for a specific database for the space [default classification level](https://support.atlassian.com/security-and-access-policies/docs/what-is-a-default-classification-level/). **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: 'permission to access the confluence site ('can use' global permission) and permission to view the database.
+</Accordion>
+
+<Accordion title="Get spaces">
+Returns all spaces. the results will be sorted by id ascending. the number of results is limited by the `limit` parameter and additional results (if available) will be available through the `next` url present in the `link` response header. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to access the confluence site ('can use' global permission). only spaces that the user has permission to view will be returned.
+</Accordion>
+
+<Accordion title="Get footer comments for page">
+Returns the root footer comments of specific page. the number of results is limited by the `limit` parameter and additional results (if available) will be available through the `next` url present in the `link` response header. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the content of the page and its corresponding space.
+</Accordion>
+
+<Accordion title="Get inline comments for blog post">
+Returns the root inline comments of specific blog post. the number of results is limited by the `limit` parameter and additional results (if available) will be available through the `next` url present in the `link` response header. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the content of the blog post and its corresponding space.
+</Accordion>
+
+<Accordion title="Get tasks">
+Returns all tasks. the number of results is limited by the `limit` parameter and additional results (if available) will be available through the `next` url present in the `link` response header. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to access the confluence site ('can use' global permission). only tasks that the user has permission to view will be returned.
+</Accordion>
+
+<Accordion title="Get whiteboard by id">
+Returns a specific whiteboard. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the whiteboard and its corresponding space.
+</Accordion>
+
+<Accordion title="Reset page classification level">
+Resets the [classification level](https://developer.atlassian.com/cloud/admin/dlp/rest/intro/#classification%20level) for a specific page for the space [default classification level](https://support.atlassian.com/security-and-access-policies/docs/what-is-a-default-classification-level/). **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: 'permission to access the confluence site ('can use' global permission) and permission to view the page.
+</Accordion>
+
+<Accordion title="Update blog post">
+Update a blog post by id. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the blog post and its corresponding space. permission to update blog posts in the space.
+</Accordion>
+
+<Accordion title="Update content property for page by id">
+Update a content property for a page by its id. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to edit the page.
+</Accordion>
+
+<Accordion title="Get task by id">
+Returns a specific task. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the containing page or blog post and its corresponding space.
+</Accordion>
+
+<Accordion title="Set space role assignments">
+Sets space role assignments as specified in the payload. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to manage roles in the space.
+</Accordion>
+
+<Accordion title="Get space by id">
+Returns a specific space. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the space.
+</Accordion>
+
+<Accordion title="Update content property for blog post by id">
+Update a content property for blog post by its id. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to edit the blog post.
+</Accordion>
+
+<Accordion title="Update content property for folder by id">
+Update a content property for a folder by its id. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to edit the folder.
+</Accordion>
+
+<Accordion title="Search Content">
+Searches for content using the confluence query language (cql).
+</Accordion>
+
+<Accordion title="Update footer comment">
+Update a footer comment. this can be used to update the body text of a comment. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the content of the page or blogpost and its corresponding space. permission to create comments in the space.
+</Accordion>
+
+<Accordion title="Update database classification level">
+Updates the [classification level](https://developer.atlassian.com/cloud/admin/dlp/rest/intro/#classification%20level) for a specific database. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: 'permission to access the confluence site ('can use' global permission) and permission to edit the database.
+</Accordion>
+
+<Accordion title="Update inline comment">
+Update an inline comment. this can be used to update the body text of a comment and/or to resolve the comment **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the content of the page or blogpost and its corresponding space. permission to create comments in the space.
+</Accordion>
+
+<Accordion title="Get space default classification level">
+Returns the [default classification level](https://support.atlassian.com/security-and-access-policies/docs/what-is-a-default-classification-level/) for a specific space. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: 'permission to access the confluence site ('can use' global permission) and permission to view the space.
+</Accordion>
+
+<Accordion title="Update content property for whiteboard by id">
+Update a content property for a whiteboard by its id. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to edit the whiteboard.
+</Accordion>
+
+<Accordion title="Update content property for smart link in the content tree by id">
+Update a content property for a smart link in the content tree by its id. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to edit the smart link in the content tree.
+</Accordion>
+
+<Accordion title="Get permitted operations for a database">
+Returns the permitted operations on specific database. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the database and its corresponding space.
+</Accordion>
+
+<Accordion title="Update blog post classification level">
+Updates the [classification level](https://developer.atlassian.com/cloud/admin/dlp/rest/intro/#classification%20level) for a specific blog post. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: 'permission to access the confluence site ('can use' global permission) and permission to edit the blog post.
+</Accordion>
+
+<Accordion title="Update content property for comment by id">
+Update a content property for a comment by its id. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to edit the comment.
+</Accordion>
+
+<Accordion title="Update space property by id">
+Update a space property by its id. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to access the confluence site ('can use' global permission) and 'admin' permission for the space.
+</Accordion>
+
+<Accordion title="Update page">
+Update a page by id. when the "current" version is updated, the provided body content is considered as the latest version. this latest body content will be attempted to be merged into the draft version through a content reconciliation algorithm. if two versions are significantly diverged, the latest provided content may entirely override what was previously in the draft. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the page and its corresponding space. permission to update pages in the space.
+</Accordion>
+
+<Accordion title="Get version details for attachment version">
+Retrieves version details for the specified attachment and version number. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the attachment.
+</Accordion>
+
+<Accordion title="Update page classification level">
+Updates the [classification level](https://developer.atlassian.com/cloud/admin/dlp/rest/intro/#classification%20level) for a specific page. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: 'permission to access the confluence site ('can use' global permission) and permission to edit the page.
+</Accordion>
+
+<Accordion title="Update space default classification level">
+Update the [default classification level](https://support.atlassian.com/security-and-access-policies/docs/what-is-a-default-classification-level/) for a specific space. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: 'permission to access the confluence site ('can use' global permission) and 'admin' permission for the space.
+</Accordion>
+
+<Accordion title="Get space permissions assignments">
+Returns space permission assignments for a specific space. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the space.
+</Accordion>
+
+<Accordion title="Update custom content">
+Update a custom content by id. `spaceid` is always required and maximum one of `pageid`, `blogpostid`, or `customcontentid` is allowed in the request body. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the content of the page or blogpost and its corresponding space. permission to update custom content in the space.
+</Accordion>
+
+<Accordion title="Update task">
+Update a task by id. this endpoint currently only supports updating task status. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to edit the containing page or blog post and view its corresponding space.
+</Accordion>
+
+<Accordion title="Update whiteboard classification level">
+Updates the [classification level](https://developer.atlassian.com/cloud/admin/dlp/rest/intro/#classification%20level) for a specific whiteboard. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: 'permission to access the confluence site ('can use' global permission) and permission to edit the whiteboard.
+</Accordion>
+
+<Accordion title="Update content property for attachment by id">
+Update a content property for attachment by its id. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to edit the attachment.
+</Accordion>
+
+<Accordion title="Get permitted operations for a folder">
+Returns the permitted operations on specific folder. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the folder and its corresponding space.
+</Accordion>
+
+<Accordion title="Get space properties in space">
+Returns all properties for the given space. space properties are a key-value storage associated with a space. the limit parameter specifies the maximum number of results returned in a single response. use the `link` response header to paginate through additional results. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to access the confluence site ('can use' global permission) and 'view' permission for the space.
+</Accordion>
+
+<Accordion title="Get version details for blog post version">
+Retrieves version details for the specified blog post and version number. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the blog post.
+</Accordion>
+
+<Accordion title="Update content property for custom content by id">
+Update a content property for a piece of custom content by its id. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to edit the custom content.
+</Accordion>
+
+<Accordion title="Get like count for inline comment">
+Returns the count of likes of specific inline comment. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the content of the page/blogpost and its corresponding space.
+</Accordion>
+
+<Accordion title="Get list of classification levels">
+Returns a list of [classification levels](https://developer.atlassian.com/cloud/admin/dlp/rest/intro/#classification%20level) available. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: 'permission to access the confluence site ('can use' global permission).
+</Accordion>
+
+<Accordion title="Get like count for page">
+Returns the count of likes of specific page. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the content of the page and its corresponding space.
+</Accordion>
+
+<Accordion title="Search Users">
+Searches for users using user-specific queries from the confluence query language (cql).
+</Accordion>
+
+<Accordion title="Get pages">
+Returns all pages. the number of results is limited by the `limit` parameter and additional results (if available) will be available through the `next` url present in the `link` response header. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to access the confluence site ('can use' global permission). only pages that the user has permission to view will be returned.
+</Accordion>
+
+<Accordion title="Get inline comments for page">
+Returns the root inline comments of specific page. the number of results is limited by the `limit` parameter and additional results (if available) will be available through the `next` url present in the `link` response header. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the content of the page and its corresponding space.
+</Accordion>
+
+<Accordion title="Get pages in space">
+Returns all pages in a space. the number of results is limited by the `limit` parameter and additional results (if available) will be available through the `next` url present in the `link` response header. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to access the confluence site ('can use' global permission) and 'view' permission for the space. only pages that the user has permission to view will be returned.
+</Accordion>
+
+<Accordion title="Get page classification level">
+Returns the [classification level](https://developer.atlassian.com/cloud/admin/dlp/rest/intro/#classification%20level) for a specific page. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: 'permission to access the confluence site ('can use' global permission) and permission to view the page. 'permission to edit the page is required if trying to view classification level for a draft.
+</Accordion>
+
+<Accordion title="Get inline comment by id">
+Retrieves an inline comment by id **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the content of the page or blogpost and its corresponding space.
+</Accordion>
+
+<Accordion title="Update content property for database by id">
+Update a content property for a database by its id. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to edit the database.
+</Accordion>
+
+<Accordion title="Get version details for custom content version">
+Retrieves version details for the specified custom content and version number. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the page.
+</Accordion>
+
+<Accordion title="Get labels">
+Returns all labels. the number of results is limited by the `limit` parameter and additional results (if available) will be available through the `next` url present in the `link` response header. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to access the confluence site ('can use' global permission). only labels that the user has permission to view will be returned.
+</Accordion>
+
+<Accordion title="Get inline comment versions">
+Retrieves the versions of the specified inline comment. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the content of the page or blog post and its corresponding space.
+</Accordion>
+
+<Accordion title="Get pages for label">
+Returns the pages of specified label. the number of results is limited by the `limit` parameter and additional results (if available) will be available through the `next` url present in the `link` response header. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the content of the page and its corresponding space.
+</Accordion>
+
+<Accordion title="Get labels for custom content">
+Returns the labels for a specific piece of custom content. the number of results is limited by the `limit` parameter and additional results (if available) will be available through the `next` url present in the `link` response header. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the custom content and its corresponding space. only labels that the user has permission to view will be returned.
+</Accordion>
+
+<Accordion title="Get page by id">
+Returns a specific page. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the page and its corresponding space.
+</Accordion>
+
+<Accordion title="Get labels for page">
+Returns the labels of specific page. the number of results is limited by the `limit` parameter and additional results (if available) will be available through the `next` url present in the `link` response header. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the content of the page and its corresponding space. only labels that the user has permission to view will be returned.
+</Accordion>
+
+<Accordion title="Get permitted operations for blog post">
+Returns the permitted operations on specific blog post. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the parent content of the blog post and its corresponding space.
+</Accordion>
+
+<Accordion title="Get labels for blog post">
+Returns the labels of specific blog post. the number of results is limited by the `limit` parameter and additional results (if available) will be available through the `next` url present in the `link` response header. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the content of the blog post and its corresponding space. only labels that the user has permission to view will be returned.
+</Accordion>
+
+<Accordion title="Get permitted operations for a smart link in the content tree">
+Returns the permitted operations on specific smart link in the content tree. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the smart link in the content tree and its corresponding space.
+</Accordion>
+
+<Accordion title="Get permitted operations for a whiteboard">
+Returns the permitted operations on specific whiteboard. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the whiteboard and its corresponding space.
+</Accordion>
+
+<Accordion title="Get labels for space">
+Returns the labels of specific space. the number of results is limited by the `limit` parameter and additional results (if available) will be available through the `next` url present in the `link` response header. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the space. only labels that the user has permission to view will be returned.
+</Accordion>
+
+<Accordion title="Get permitted operations for footer comment">
+Returns the permitted operations on specific footer comment. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the parent content of the footer comment and its corresponding space.
+</Accordion>
+
+<Accordion title="Get permitted operations for inline comment">
+Returns the permitted operations on specific inline comment. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the parent content of the inline comment and its corresponding space.
+</Accordion>
+
+<Accordion title="Get version details for footer comment version">
+Retrieves version details for the specified footer comment version. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the content of the page or blog post and its corresponding space.
+</Accordion>
+
+<Accordion title="Get labels for attachment">
+Returns the labels of specific attachment. the number of results is limited by the `limit` parameter and additional results (if available) will be available through the `next` url present in the `link` response header. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the parent content of the attachment and its corresponding space. only labels that the user has permission to view will be returned.
+</Accordion>
+
+<Accordion title="Get permitted operations for custom content">
+Returns the permitted operations on specific custom content. **[permissions](https://confluence.atlassian.com/x/ aozkw) required**: permission to view the parent content of the custom content and its corresponding space.
+</Accordion>
+

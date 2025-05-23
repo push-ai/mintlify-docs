@@ -1,0 +1,22 @@
+Formsite helps users create online forms and surveys with drag-and-drop tools, secure data capture, and integrations to simplify workflows
+
+<Accordion title="List All Forms">
+This tool retrieves a list of all forms in the user's formsite account. it provides essential information such as form id, form name, form directory, creation date, last modified date, status, access level, and other metadata. it serves as a foundational tool for further operations.
+</Accordion>
+
+<Accordion title="Get Form Webhooks">
+This tool retrieves all webhooks configured for a specific form in formsite. it uses the get https://\{server\}.formsite.com/api/v2/\{user dir\}/forms/\{form dir\}/webhooks endpoint to fetch webhook configurations, including url, status, settings, and triggers.
+</Accordion>
+
+<Accordion title="Get Form Details">
+This tool retrieves detailed information about a specific form in formsite. it provides comprehensive details including the form's internal description, directory identifier, name, publishing information (embed code and form link), current state (e.g., "open"), and statistics (file size and number of results).
+</Accordion>
+
+<Accordion title="Get Form Items">
+This tool retrieves all items (questions) for a specific form using the get https://\{server\}.formsite.com/api/v2/\{user dir\}/forms/\{form dir\}/items endpoint. it is an independent action that only requires the form directory (obtainable via formsite list all forms) to retrieve the structure and details such as item ids, question types, text, answer choices, required status, and other properties.
+</Accordion>
+
+<Accordion title="Get Form Results">
+This tool retrieves the latest form results from a specified formsite form. it uses the get https://\{server\}.formsite.com/api/v2/results/latest endpoint to fetch results independently, handling required parameters such as form id, limit, page, and sort direction without referring to external resource ids.
+</Accordion>
+

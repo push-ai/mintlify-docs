@@ -1,0 +1,586 @@
+ClickUp unifies tasks, docs, goals, and chat in a single platform, allowing teams to plan, organize, and collaborate across projects with customizable workflows
+
+<Accordion title="Create webhook">
+Set up a webhook to monitor for events.
+
+ we do not have a dedicated ip address for webhooks. we use our domain name and dynamic addressing.
+</Accordion>
+
+<Accordion title="Change tag names from time entries">
+Rename an time entry label.
+</Accordion>
+
+<Accordion title="Delete checklist item">
+Delete a line item from a task checklist.
+</Accordion>
+
+<Accordion title="Add guest to list">
+Share a list with a guest. ***note:** this endpoint is only available to workspaces on our [enterprise plan](https://clickup.com/pricing).*
+</Accordion>
+
+<Accordion title="Delete a time entry">
+Delete a time entry from a workspace.
+</Accordion>
+
+<Accordion title="Get authorized teams workspaces">
+View the workspaces available to the authenticated user.&lt;&lt;DEPRECATED use get_authorized_teams_workspaces&gt;&gt;
+</Accordion>
+
+<Accordion title="Create folder view">
+Add a list, board, calendar, table, timeline, workload, activity, map, chat, or gantt view to a folder.
+</Accordion>
+
+<Accordion title="Add guest to task">
+Share a task with a guest. ***note:** this endpoint is only available to workspaces on our [enterprise plan](https://clickup.com/pricing).*
+</Accordion>
+
+<Accordion title="Create space view">
+Add a list, board, calendar, table, timeline, workload, activity, map, chat, or gantt view to a space.
+</Accordion>
+
+<Accordion title="Get authorized user">
+View the details of the authenticated user's clickup account.&lt;&lt;DEPRECATED use get_authorized_user&gt;&gt;
+</Accordion>
+
+<Accordion title="Delete comment">
+Delete a task comment.
+</Accordion>
+
+<Accordion title="Delete checklist">
+Delete a checklist from a task.
+</Accordion>
+
+<Accordion title="Create workspace everything level view">
+Add a list, board, calendar, table, timeline, workload, activity, map, chat, or gantt view at the everything level of a workspace.
+</Accordion>
+
+<Accordion title="Create task">
+Create a new task.
+</Accordion>
+
+<Accordion title="Delete folder">
+Delete a folder from your workspace.
+</Accordion>
+
+<Accordion title="Delete key result">
+Delete a target from a goal.
+</Accordion>
+
+<Accordion title="Delete list">
+Delete a list from your workspace.
+</Accordion>
+
+<Accordion title="Create goal">
+Add a new goal to a workspace.
+</Accordion>
+
+<Accordion title="Delete goal">
+Remove a goal from your workspace.
+</Accordion>
+
+<Accordion title="Create a time entry">
+Create a time entry. ***note:** a time entry that has a negative duration means that timer is currently running for that user.*
+</Accordion>
+
+<Accordion title="Create chat view comment">
+Add a new comment to a chat view.
+</Accordion>
+
+<Accordion title="Add tags from time entries">
+Add a label to a time entry.
+</Accordion>
+
+<Accordion title="Create task attachment">
+Upload a file to a task as an attachment. ***note:** this request uses multipart/form-data as the content type.*
+</Accordion>
+
+<Accordion title="Delete space">
+Delete a space from your workspace.
+</Accordion>
+
+<Accordion title="Delete space tag">
+Delete a task tag from a space.
+</Accordion>
+
+<Accordion title="Delete dependency">
+Remove the dependency relationship between two or more tasks.
+</Accordion>
+
+<Accordion title="Create task comment">
+Add a new comment to a task.
+</Accordion>
+
+<Accordion title="Delete task link">
+Remove the link between two tasks.
+</Accordion>
+
+<Accordion title="Delete task">
+Delete a task from your workspace.
+</Accordion>
+
+<Accordion title="Add tag to task">
+Add a tag to a task.
+</Accordion>
+
+<Accordion title="Delete team">
+This endpoint removes a user group from a workspace, per clickup documentation. `team id` is the workspace id, and `group id` is the user group id.
+</Accordion>
+
+<Accordion title="Create key result">
+Add a target to a goal.
+</Accordion>
+
+<Accordion title="Add dependency">
+Set a task as waiting on or blocking another task.
+</Accordion>
+
+<Accordion title="Create task from template">
+Create a new task using a task template.
+</Accordion>
+
+<Accordion title="Create checklist">
+Add a new checklist to a task.
+</Accordion>
+
+<Accordion title="Delete time tracked">
+***note:** this is a legacy time tracking endpoint. we recommend using the time tracking api endpoints to manage time entries.*
+</Accordion>
+
+<Accordion title="Delete webhook">
+Delete a webhook to stop monitoring the events and locations of the webhook.
+</Accordion>
+
+<Accordion title="Delete view">
+Deletes a specific view by its id. requires 'view id' as a string parameter in the path. successful deletion returns 200 with an empty json object.
+</Accordion>
+
+<Accordion title="Add task link">
+Link two tasks together.
+</Accordion>
+
+<Accordion title="Edit checklist">
+Rename a task checklist, or reorder a checklist so it appears above or below other checklists on a task.
+</Accordion>
+
+<Accordion title="Edit key result">
+Update a target.
+</Accordion>
+
+<Accordion title="Create checklist item">
+Add a line item to a task checklist.
+</Accordion>
+
+<Accordion title="Add task to list">
+Add a task to an additional list. ***note:** this endpoint requires the [tasks in multiple list clickapp](https://help.clickup.com/hc/en-us/articles/6309958824727-tasks-in-multiple-lists) to be enabled.*
+</Accordion>
+
+<Accordion title="Add guest to folder">
+Share a folder with a guest. ***note:** this endpoint is only available to workspaces on our [enterprise plan](https://clickup.com/pricing).*
+</Accordion>
+
+<Accordion title="Create folder">
+Add a new folder to a space.&lt;&lt;DEPRECATED use create_folder&gt;&gt;
+</Accordion>
+
+<Accordion title="Create task attachment">
+Upload a file to a task as an attachment. ***note:** this request uses multipart/form-data as the content type.*&lt;&lt;DEPRECATED use create_task_attachment&gt;&gt;
+</Accordion>
+
+<Accordion title="Get folder">
+View the lists within a folder.&lt;&lt;DEPRECATED use get_folder&gt;&gt;
+</Accordion>
+
+<Accordion title="Edit checklist item">
+Update an individual line item in a task checklist. you can rename it, set the assignee, mark it as resolved, or nest it under another checklist item.
+</Accordion>
+
+<Accordion title="Create list">
+Add a new list to a folder.
+</Accordion>
+
+<Accordion title="Get access token">
+The text outlines api authentication via personal tokens and oauth flow, stating oauth tokens can't be used in "try it" feature or tested via web browsers.&lt;&lt;DEPRECATED use get_access_token&gt;&gt;
+</Accordion>
+
+<Accordion title="Get authorized user">
+View the details of the authenticated user's clickup account.
+</Accordion>
+
+<Accordion title="Create team">
+The endpoint allows creating teams within workspaces, assigning tasks, and managing ids for both. adding a view-only guest as a paid member may result in extra charges due to automatic seat addition.
+</Accordion>
+
+<Accordion title="Get chat view comments">
+View comments from a chat view. if you do not include the `start` and `start id` parameters, this endpoint will return the most recent 25 comments. use the `start` and `start id` parameters of the oldest comment to retrieve the next 25 comments.
+</Accordion>
+
+<Accordion title="Get accessible custom fields">
+View the custom fields available on tasks in a specific list.
+</Accordion>
+
+<Accordion title="Get authorized teams workspaces">
+View the workspaces available to the authenticated user.
+</Accordion>
+
+<Accordion title="Get folders">
+View the folders in a space.&lt;&lt;DEPRECATED use get_folders&gt;&gt;
+</Accordion>
+
+<Accordion title="Get access token">
+The text outlines api authentication via personal tokens and oauth flow, stating oauth tokens can't be used in "try it" feature or tested via web browsers.
+</Accordion>
+
+<Accordion title="Get all tags from time entries">
+View all the labels that have been applied to time entries in a workspace.
+</Accordion>
+
+<Accordion title="Get bulk tasks time in status">
+View how long two or more tasks have been in each status.
+</Accordion>
+
+<Accordion title="Get custom task types">
+View the custom task types available in a workspace.
+</Accordion>
+
+<Accordion title="Edit user on workspace">
+Update a user's name and role. ***note:** this endpoint is only available to workspaces on our [enterprise plan](https://clickup.com/pricing).*
+</Accordion>
+
+<Accordion title="Create list comment">
+Add a comment to a list.
+</Accordion>
+
+<Accordion title="Get folder">
+View the lists within a folder.
+</Accordion>
+
+<Accordion title="Get folderless lists">
+View the lists in a space that aren't located in a folder.
+</Accordion>
+
+<Accordion title="Edit space tag">
+Update a task tag.
+</Accordion>
+
+<Accordion title="Get custom roles">
+View the custom roles available in a workspace.
+</Accordion>
+
+<Accordion title="Get filtered team tasks">
+View the tasks that meet specific criteria from a workspace. responses are limited to 100 tasks per page. you can only view task information of tasks you can access.
+</Accordion>
+
+<Accordion title="Edit time tracked">
+***note:** this is a legacy time tracking endpoint. we recommend using the time tracking api endpoints to manage time entries.*
+</Accordion>
+
+<Accordion title="Create folderless list">
+Add a new list in a space.
+</Accordion>
+
+<Accordion title="Edit guest on workspace">
+Rename and configure options for a guest. ***note:** this endpoint is only available to workspaces on our [enterprise plan](https://clickup.com/pricing).*
+</Accordion>
+
+<Accordion title="Create space">
+Add a new space to a workspace.
+</Accordion>
+
+<Accordion title="Create list view">
+Add a list, board, calendar, table, timeline, workload, activity, map, chat, or gantt view to a list.
+</Accordion>
+
+<Accordion title="Create space tag">
+Add a new task tag to a space.
+</Accordion>
+
+<Accordion title="Create folder">
+Add a new folder to a space.
+</Accordion>
+
+<Accordion title="Get space tags">
+View the task tags available in a space.
+</Accordion>
+
+<Accordion title="Get task s time in status">
+View how long a task has been in each status. the total time in status clickapp must first be enabled by the workspace owner or an admin.
+</Accordion>
+
+<Accordion title="Get guest">
+View information about a guest. ***note:** this endpoint is only available to workspaces on our [enterprise plan](https://clickup.com/pricing).*
+</Accordion>
+
+<Accordion title="Get folders">
+View the folders in a space.
+</Accordion>
+
+<Accordion title="Get list members">
+View the people who have access to a list.
+</Accordion>
+
+<Accordion title="Get spaces">
+View the spaces avialable in a workspace. you can only get member info in private spaces.
+</Accordion>
+
+<Accordion title="Get folder views">
+View the task and page views available for a folder.
+</Accordion>
+
+<Accordion title="Get list views">
+View the task and page views available for a list.
+
+ views and required views are separate responses.
+</Accordion>
+
+<Accordion title="Get goals">
+View the goals available in a workspace.
+</Accordion>
+
+<Accordion title="Get task templates">
+View the task templates available in a workspace.
+</Accordion>
+
+<Accordion title="Get space">
+View the spaces available in a workspace.
+</Accordion>
+
+<Accordion title="Get task">
+View information about a task. you can only view task information of tasks you can access. tasks with attachments will return an "attachments" response.
+</Accordion>
+
+<Accordion title="Get tasks">
+This api endpoint allows viewing up to 100 tasks per page, limited to tasks within the specified `list id` that have it as their home list. tasks from other home lists aren't included.
+</Accordion>
+
+<Accordion title="Get goal">
+View the details of a goal including its targets.
+</Accordion>
+
+<Accordion title="Get list">
+View information about a list.
+</Accordion>
+
+<Accordion title="Get task members">
+View the people who have access to a task.
+</Accordion>
+
+<Accordion title="Get running time entry">
+View a time entry that's currently tracking time for the authenticated user. ***note:** a time entry that has a negative duration means that timer is currently running for that user.*
+</Accordion>
+
+<Accordion title="Get workspace seats">
+View the used, total, and available member and guest seats for a workspace.
+</Accordion>
+
+<Accordion title="Get view">
+View information about a specific task or page view.
+</Accordion>
+
+<Accordion title="Get view tasks">
+See all visible tasks in a view in clickup.
+</Accordion>
+
+<Accordion title="Get singular time entry">
+View a single time entry. ***note:** a time entry that has a negative duration means that timer is currently running for that user.*
+</Accordion>
+
+<Accordion title="Get tracked time">
+***note:** this is a legacy time tracking endpoint. we recommend using the time tracking api endpoints to manage time entries.*
+</Accordion>
+
+<Accordion title="Get task comments">
+View task comments. if you do not include the `start` and `start id` parameters, this endpoint will return the most recent 25 comments. use the `start` and `start id` parameters of the oldest comment to retrieve the next 25 comments.
+</Accordion>
+
+<Accordion title="Get time entry history">
+View a list of changes made to a time entry.
+</Accordion>
+
+<Accordion title="Remove custom field value">
+Remove the data from a custom field on a task. this does not delete the option from the custom field.
+</Accordion>
+
+<Accordion title="Remove guest from folder">
+Revoke a guest's access to a folder. ***note:** this endpoint is only available to workspaces on our [enterprise plan](https://clickup.com/pricing).*
+</Accordion>
+
+<Accordion title="Invite guest to workspace">
+To invite a guest to your workspace, use the "invite user to workspace" endpoint. then, use specific endpoints to grant access to folders, lists, or tasks. note: available only for enterprise plan.
+</Accordion>
+
+<Accordion title="Get list comments">
+To view comments on a list, omitting `start` and `start id` shows the latest 25 comments. for earlier ones, use the `start` and `start id` of the oldest comment to get the next 25.
+</Accordion>
+
+<Accordion title="Remove user from workspace">
+Deactivate a user from a workspace. ***note:** this endpoint is only available to workspaces on our [enterprise plan](https://clickup.com/pricing).*
+</Accordion>
+
+<Accordion title="Get space">
+View the spaces available in a workspace.&lt;&lt;DEPRECATED use get_space&gt;&gt;
+</Accordion>
+
+<Accordion title="Get space views">
+View the task and page views available for a space.
+</Accordion>
+
+<Accordion title="Get lists">
+View the lists within a folder.
+</Accordion>
+
+<Accordion title="Remove task from list">
+This api endpoint allows for removing a task from an extra list, not its original list, requiring the tasks in multiple list clickapp to be enabled.
+</Accordion>
+
+<Accordion title="Get spaces">
+View the spaces avialable in a workspace. you can only get member info in private spaces.&lt;&lt;DEPRECATED use get_spaces&gt;&gt;
+</Accordion>
+
+<Accordion title="Start a time entry">
+Start a timer for the authenticated user.
+</Accordion>
+
+<Accordion title="Invite user to workspace">
+Invite someone to your workspace as a member through a specific endpoint. note: guest invitations and this feature are exclusive to workspaces on the enterprise plan.
+</Accordion>
+
+<Accordion title="Get task">
+View information about a task. you can only view task information of tasks you can access. tasks with attachments will return an "attachments" response.&lt;&lt;DEPRECATED use get_task&gt;&gt;
+</Accordion>
+
+<Accordion title="Get lists">
+View the lists within a folder.&lt;&lt;DEPRECATED use get_lists&gt;&gt;
+</Accordion>
+
+<Accordion title="Get workspace plan">
+View the current [plan](https://clickup.com/pricing) for the specified workspace.&lt;&lt;DEPRECATED use get_workspace_plan&gt;&gt;
+</Accordion>
+
+<Accordion title="Stop a time entry">
+Stop a timer that's currently running for the authenticated user.
+</Accordion>
+
+<Accordion title="Set custom field value">
+To add data to a task's custom field, obtain the `task id` and the custom field's `field id` (uuid). use the "get accessible custom fields" or "get task" api endpoints to find the `field id`.
+</Accordion>
+
+<Accordion title="Create checklist">
+Add a new checklist to a task.&lt;&lt;DEPRECATED use create_checklist&gt;&gt;
+</Accordion>
+
+<Accordion title="Shared hierarchy">
+View the tasks, lists, and folders that have been shared with the authenticated user.
+</Accordion>
+
+<Accordion title="Get workspace seats">
+View the used, total, and available member and guest seats for a workspace.&lt;&lt;DEPRECATED use get_workspace_seats&gt;&gt;
+</Accordion>
+
+<Accordion title="Get tasks">
+This api endpoint allows viewing up to 100 tasks per page, limited to tasks within the specified `list id` that have it as their home list. tasks from other home lists aren't included.&lt;&lt;DEPRECATED use get_tasks&gt;&gt;
+</Accordion>
+
+<Accordion title="Update folder">
+Rename a folder.
+</Accordion>
+
+<Accordion title="Track time">
+***note:** this is a legacy time tracking endpoint. we recommend using the time tracking api endpoints to manage time entries.*
+</Accordion>
+
+<Accordion title="Update goal">
+Rename a goal, set the due date, replace the description, add or remove owners, and set the goal color.
+</Accordion>
+
+<Accordion title="Update comment">
+Replace the content of a task commment, assign a comment, and mark a comment as resolved.
+</Accordion>
+
+<Accordion title="Update a time entry">
+Update the details of a time entry.
+</Accordion>
+
+<Accordion title="Create team">
+The endpoint allows creating teams within workspaces, assigning tasks, and managing ids for both. adding a view-only guest as a paid member may result in extra charges due to automatic seat addition.&lt;&lt;DEPRECATED use create_team&gt;&gt;
+</Accordion>
+
+<Accordion title="Get time entries within a date range">
+This api endpoint retrieves time entries for the past 30 days for the user or others using the `assignee` parameter, and allows filtering by `space id` or `task id`. negative durations show active timers.
+</Accordion>
+
+<Accordion title="Remove tag from task">
+Remove a tag from a task. this does not delete the tag from the space.
+</Accordion>
+
+<Accordion title="Update task">
+Update a task by including one or more fields in the request body.
+</Accordion>
+
+<Accordion title="Get list members">
+View the people who have access to a list.&lt;&lt;DEPRECATED use get_list_members&gt;&gt;
+</Accordion>
+
+<Accordion title="Get teams">
+This endpoint allows viewing user groups (teams) in a workspace, where `team id` is the workspace id, and `group id` is a user group id in api documentation.
+</Accordion>
+
+<Accordion title="Get space views">
+View the task and page views available for a space.&lt;&lt;DEPRECATED use get_space_views&gt;&gt;
+</Accordion>
+
+<Accordion title="Remove guest from list">
+Revoke a guest's access to a list. ***note:** this endpoint is only available to workspaces on our [enterprise plan](https://clickup.com/pricing).*
+</Accordion>
+
+<Accordion title="Get user">
+View information about a user in a workspace. ***note:** this endpoint is only available to workspaces on our [enterprise plan](https://clickup.com/pricing).*
+</Accordion>
+
+<Accordion title="Get workspace everything level views">
+View the task and page views available at the everything level of a workspace.&lt;&lt;DEPRECATED use get_workspace_everything_level_views&gt;&gt;
+</Accordion>
+
+<Accordion title="Update list">
+Rename a list, update the list info description, set a due date/time, set the list's priority, set an assignee, set or remove the list color.
+</Accordion>
+
+<Accordion title="Remove tags from time entries">
+Remove labels from time entries. this does not remove the label from a workspace.
+</Accordion>
+
+<Accordion title="Update webhook">
+Update a webhook to change the events to be monitored.
+</Accordion>
+
+<Accordion title="Remove guest from task">
+Revoke a guest's access to a task. ***note:** this endpoint is only available to workspaces on our [enterprise plan](https://clickup.com/pricing).*
+</Accordion>
+
+<Accordion title="Get webhooks">
+View the webhooks created via the api for a workspace. this endpoint returns webhooks created by the authenticated user.
+</Accordion>
+
+<Accordion title="Remove guest from workspace">
+Revoke a guest's access to a workspace. ***note:** this endpoint is only available to workspaces on our [enterprise plan](https://clickup.com/pricing).*
+</Accordion>
+
+<Accordion title="Get workspace everything level views">
+View the task and page views available at the everything level of a workspace.
+</Accordion>
+
+<Accordion title="Get workspace plan">
+View the current [plan](https://clickup.com/pricing) for the specified workspace.
+</Accordion>
+
+<Accordion title="Update view">
+Rename a view, update the grouping, sorting, filters, columns, and settings of a view.
+</Accordion>
+
+<Accordion title="Update space">
+Rename, set the space color, and enable clickapps for a space.
+</Accordion>
+
+<Accordion title="Update team">
+The endpoint controls user group assignments in a workspace, requiring 'team id' and 'group id'. adding a view-only guest as a paid member incurs prorated charges for additional seats.
+</Accordion>
+

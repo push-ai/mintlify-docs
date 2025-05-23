@@ -1,0 +1,176 @@
+A messaging platform that allows businesses to communicate with
+    prospective and existing customers within their app, on their website,
+    through social media, or via email.
+
+<Accordion title="Delete a company">
+You can delete a single company.
+</Accordion>
+
+<Accordion title="Add subscription to a contact">
+You can add a specific subscription to a contact. in intercom, we have two different subscription types based on user consent - opt-out and opt-in: 1.attaching a contact to an opt-out subscription type will opt that user out from receiving messages related to that subscription type. 2.attaching a contact to an opt-in subscription type will opt that user in to receiving messages related to that subscription type. this will return a subscription type model for the subscription type that was added to the contact.
+</Accordion>
+
+<Accordion title="Delete a collection">
+You can delete a single collection by making a delete request to `https://api.intercom.io/collections/&lt;id&gt;`.
+</Accordion>
+
+<Accordion title="Add tag to a contact">
+You can tag a specific contact. this will return a tag object for the tag that was added to the contact.
+</Accordion>
+
+<Accordion title="Attach a contact to a company">
+You can attach a company to a single contact.
+</Accordion>
+
+<Accordion title="List all admins">
+You can fetch a list of admins for a given workspace.
+</Accordion>
+
+<Accordion title="List all articles">
+You can fetch a list of all articles by making a get request to `https://api.intercom.io/articles`. &gt; 📘 how are the articles sorted and ordered? &gt; &gt; articles will be returned in descending order on the `updated at` attribute. this means if you need to iterate through results then we'll show the most recently updated articles first.
+</Accordion>
+
+<Accordion title="List all collections">
+You can fetch a list of all collections by making a get request to `https://api.intercom.io/help center/collections`. collections will be returned in descending order on the `updated at` attribute. this means if you need to iterate through results then we'll show the most recently updated collections first.
+</Accordion>
+
+<Accordion title="Delete a contact">
+You can delete a single contact.
+</Accordion>
+
+<Accordion title="List all help centers">
+You can list all help centers by making a get request to `https://api.intercom.io/help center/help centers`.
+</Accordion>
+
+<Accordion title="Detach a contact from a company">
+You can detach a company from a single contact.
+</Accordion>
+
+<Accordion title="List attached contacts">
+You can fetch a list of all contacts that belong to a company.
+</Accordion>
+
+<Accordion title="List attached companies for contact">
+You can fetch a list of companies that are associated to a contact.
+</Accordion>
+
+<Accordion title="Get a contact">
+You can fetch the details of a single contact.
+</Accordion>
+
+<Accordion title="List attached segments for companies">
+You can fetch a list of all segments that belong to a company.
+</Accordion>
+
+<Accordion title="List all companies">
+You can list companies. the company list is sorted by the `last request at` field and by default is ordered descending, most recently requested first. note that the api does not include companies who have no associated users in list responses. when using the companies endpoint and the pages object to iterate through the returned companies, there is a limit of 10,000 companies that can be returned. if you need to list or iterate on more than 10,000 companies, please use the [scroll api](https://developers.intercom.com/reference#iterating-over-all-companies). \{% admonition type="warning" name="pagination" %\} you can use pagination to limit the number of results returned. the default is `20` results per page. see the [pagination section](https://developers.intercom.com/docs/build-an-integration/learn-more/rest-apis/pagination/#pagination-for-list-apis) for more details on how to use the `starting after` param. \{% /admonition %\}
+</Accordion>
+
+<Accordion title="List all notes">
+You can fetch a list of notes that are associated to a contact.
+</Accordion>
+
+<Accordion title="Identify an admin">
+You can view the currently authorised admin along with the embedded app object (a "workspace" in legacy terminology). &gt; 🚧 single sign on &gt; &gt; if you are building a custom "log in with intercom" flow for your site, and you call the `/me` endpoint to identify the logged-in user, you should not accept any sign-ins from users with unverified email addresses as it poses a potential impersonation security risk.
+</Accordion>
+
+<Accordion title="List all activity logs">
+You can get a log of activities by all admins in an app.
+</Accordion>
+
+<Accordion title="Remove tag from a contact">
+You can remove tag from a specific contact. this will return a tag object for the tag that was removed from the contact.
+</Accordion>
+
+<Accordion title="List subscriptions for a contact">
+You can fetch a list of subscription types that are attached to a contact. these can be subscriptions that a user has 'opted-in' to or has 'opted-out' from, depending on the subscription type. this will return a list of subscription type objects that the contact is associated with. the data property will show a combined list of: 1.opt-out subscription types that the user has opted-out from. 2.opt-in subscription types that the user has opted-in to receiving.
+</Accordion>
+
+<Accordion title="List attached segments for contact">
+You can fetch a list of segments that are associated to a contact.
+</Accordion>
+
+<Accordion title="List tags attached to a contact">
+You can fetch a list of all tags that are attached to a specific contact.
+</Accordion>
+
+<Accordion title="Retrieve a collection">
+You can fetch the details of a single collection by making a get request to `https://api.intercom.io/help center/collections/&lt;id&gt;`.
+</Accordion>
+
+<Accordion title="Retrieve a help center">
+You can fetch the details of a single help center by making a get request to `https://api.intercom.io/help center/help center/&lt;id&gt;`.
+</Accordion>
+
+<Accordion title="Merge a lead and a user">
+You can merge a contact with a `role` of `lead` into a contact with a `role` of `user`.
+</Accordion>
+
+<Accordion title="Retrieve an article">
+You can fetch the details of a single article by making a get request to `https://api.intercom.io/articles/&lt;id&gt;`.
+</Accordion>
+
+<Accordion title="Retrieve an admin">
+You can retrieve the details of a single admin.
+</Accordion>
+
+<Accordion title="Retrieve companies">
+You can fetch a single company by passing in `company id` or `name`. `https://api.intercom.io/companies?name=\{name\}` `https://api.intercom.io/companies?company id=\{company id\}` you can fetch all companies and filter by `segment id` or `tag id` as a query parameter. `https://api.intercom.io/companies?tag id=\{tag id\}` `https://api.intercom.io/companies?segment id=\{segment id\}`
+</Accordion>
+
+<Accordion title="Set an admin to away">
+You can set an admin as away for the inbox.
+</Accordion>
+
+<Accordion title="Retrieve a company by id">
+You can fetch a single company.
+</Accordion>
+
+<Accordion title="Scroll over all companies">
+The `list all companies` functionality does not work well for huge datasets, and can result in errors and performance problems when paging deeply. the scroll api provides an efficient mechanism for iterating over all companies in a dataset. - each app can only have 1 scroll open at a time. you'll get an error message if you try to have more than one open per app. you can get the first page of companies by simply sending a get request to the scroll endpoint. for subsequent requests you will need to use the scroll parameter from the response type="danger" name="scroll network timeouts". since scroll is often used on large datasets network errors such as timeouts can be encountered. when this occurs you will see a http 500 error with the following message: "request failed due to an internal network error. please restart the scroll operation." if this happens, you will need to restart your scroll query.
+</Accordion>
+
+<Accordion title="Remove subscription from a contact">
+You can remove a specific subscription from a contact. this will return a subscription type model for the subscription type that was removed from the contact.
+</Accordion>
+
+<Accordion title="Update a contact">
+You can update an existing contact (ie. user or lead).
+</Accordion>
+
+<Accordion title="Update a company">
+You can update a single company using the intercom provisioned `id`. \{% admonition type="attention" name="using `company id`" %\} when updating a company it is not possible to update `company id`. this can only be set once upon creation of the company. \{% /admonition %\}
+</Accordion>
+
+<Accordion title="Search for articles">
+You can search for articles by making a get request to `https://api.intercom.io/articles/search`.
+</Accordion>
+
+<Accordion title="Create a note">
+You can add a note to a single contact.
+</Accordion>
+
+<Accordion title="Update a collection">
+You can update the details of a single collection by making a put request to `https://api.intercom.io/collections/&lt;id&gt;`.
+</Accordion>
+
+<Accordion title="Create or update a company">
+You can create or update a company. companies will be only visible in intercom when there is at least one associated user. companies are looked up via `company id` in a `post` request, if not found via `company id`, the new company will be created, if found, that company will be updated. \{% admonition type="attention" name="using `company id`" %\} you can set a unique `company id` value when creating a company. however, it is not possible to update `company id`. be sure to set a unique value once upon creation of the company. \{% /admonition %\}
+</Accordion>
+
+<Accordion title="Create a collection">
+You can create a new collection by making a post request to `https://api.intercom.io/help center/collections.`
+</Accordion>
+
+<Accordion title="Delete an article">
+You can delete a single article by making a delete request to `https://api.intercom.io/articles/&lt;id&gt;`.
+</Accordion>
+
+<Accordion title="Create an article">
+You can create a new article by making a post request to `https://api.intercom.io/articles`.
+</Accordion>
+
+<Accordion title="Update an article">
+You can update the details of a single article by making a put request to `https://api.intercom.io/articles/&lt;id&gt;`.
+</Accordion>
+

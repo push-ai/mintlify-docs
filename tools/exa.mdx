@@ -1,0 +1,19 @@
+The Exa class extends the base Tool class to interact with the Exa Search service, offering actions like Search, Similarlink, and Answer.
+    These actions enable querying, finding similar links, and generating answers from search results. Currently, no triggers are defined, but they can be added as needed to enhance functionality.
+
+<Accordion title="Get contents action">
+An action to retrieve the text contents and highlights from specific urls or document ids in the exa database. this action allows fetching detailed content from documents, including full text, highlights, and metadata.
+</Accordion>
+
+<Accordion title="Find similar">
+A tool that finds and returns web pages that are similar in meaning to a given url. this tool uses exa's embeddings-based similarity search to find content that is semantically related to the input url.
+</Accordion>
+
+<Accordion title="Exa Search">
+A tool to perform a search with exa's prompt-engineered query and retrieve a list of relevant results. it supports parameters such as query, type, category, number of results, and domain filters. this action provides the core search functionality independently across the internet.
+</Accordion>
+
+<Accordion title="Exa Answer">
+Generate answers from search results using exa's answer endpoint. this action performs a search based on the query and generates either: 1. a direct answer for specific queries 2. a detailed summary with citations for open-ended queries the response includes both the generated answer and the sources used to create it.
+</Accordion>
+

@@ -1,0 +1,690 @@
+Zoom is a video conferencing and online meeting platform featuring breakout rooms, screen sharing, and integrations with various enterprise tools
+
+<Accordion title="Delete a h 323 sip device">
+A h.323/sip device can join or be called into a zoom meeting via a room connector. this api allows for the deletion of such a device from a zoom account. it has an `h323:write:admin` scope and a `light` rate limit.
+</Accordion>
+
+<Accordion title="Create webinar s invite links">
+Generate webinar invitation links requiring a business, education, or api plan with add-on. necessary scopes include `webinar:write` and `webinar:write:admin` with granular scopes for invitation links. rate limit is light.
+</Accordion>
+
+<Accordion title="Create a h 323 sip device">
+H.323/sip devices can join or be called into zoom meetings via room connector. use the api to add devices to your zoom account. rate limit: light.
+</Accordion>
+
+<Accordion title="Create meeting s invite links">
+Create a batch of invitation links for a meeting. **scopes:** `meeting:write:admin`,`meeting:write` **[rate limit label](https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits):** `light`
+</Accordion>
+
+<Accordion title="Delete a meeting survey">
+To delete a zoom meeting survey, the host needs a pro account with the survey feature enabled for scheduled meetings. permissions: `meeting:write`, `meeting:write:admin`. rate limit: `light`.
+</Accordion>
+
+<Accordion title="Delete a tracking field">
+This api allows deletion of zoom tracking fields. requirements: business, education, api plan, or higher. needs admin permissions with `tracking fields:write:admin` scope. rate limit is light.
+</Accordion>
+
+<Accordion title="Delete a user s tsp account">
+Delete a user's tsp account. **scopes:** `tsp:write:admin`,`tsp:write` **[rate limit label](https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits):** `light`
+</Accordion>
+
+<Accordion title="Delete a meeting s archived files">
+Api to delete all meeting's archived files requires meeting/webinar archiving enabled and scopes `recording:write:admin`, `recording:write`. rate limit: light.
+</Accordion>
+
+<Accordion title="Delete a webinar">
+To delete a webinar, you need a pro plan or higher with the webinar add-on. required scopes are `webinar:write` and `webinar:delete:webinar`. rate limit is light.
+</Accordion>
+
+<Accordion title="Delete a webinar poll">
+Guidelines for deleting a webinar's poll feature in zoom, requiring 'webinar:write' and admin permissions, with granular scopes for poll deletion. rate limit label is 'light'.
+</Accordion>
+
+<Accordion title="Create a meeting">
+Enable zoom meeting creation via user-level apps with "me". "start url" for hosts expires in 2 hours, or 90 days for "custcreate" users. renew via api, capped at 100 requests/day. requires "meeting:write" permission, subject to medium rate limit.
+</Accordion>
+
+<Accordion title="Delete sip phone">
+This api deletes a zoom account's sip phone, supported only on cisco and avaya pbx systems. users must enable sip phone integration via zoom sales. scope required: `sip phone:write:admin` with a `light` rate limit.
+</Accordion>
+
+<Accordion title="Delete a live meeting message">
+Delete a message in a zoom live meeting using the api, requires dlp enabled for in-meeting chat. applicable scopes are `meeting:write` and `meeting:write:admin`. rate limit is classified as `medium`.
+</Accordion>
+
+<Accordion title="Delete a webinar survey">
+Use the api to delete zoom webinar surveys if you have a pro plan or higher, the survey feature enabled, and the right scopes. rate limit is light.
+</Accordion>
+
+<Accordion title="Create a meeting poll">
+Meeting hosts can create polls for attendees if using a pro or higher plan, with the polling feature enabled, and for scheduled meetings only. rate limit: light.
+</Accordion>
+
+<Accordion title="Get archived file statistics">
+Zoom offers an archiving solution for accounts to automate the recording and collection of meeting/webinar data for compliance. it requires meeting/webinar archiving enabled and has a medium rate limit.
+</Accordion>
+
+<Accordion title="Delete a webinar registrant">
+Guide to deleting webinar registrants, requiring `webinar:write` or admin permissions and specific granular scopes. rate limit level: light.
+</Accordion>
+
+<Accordion title="Get a meeting">
+The text provides details on api permissions for reading meeting information, categorizing permissions into general and granular scopes, and labels the rate limit as 'light'.
+</Accordion>
+
+<Accordion title="Get a meeting s join token for live streaming">
+To live stream a zoom meeting, obtain a join token for a recording bot using the zoom sdk, which supports regular and raw streaming. requires a pro plan, livestreaming enabled, and specific scopes. rate limit: light.
+</Accordion>
+
+<Accordion title="Get a meeting sip uri with passcode">
+The api retrieves a meeting's sip uri, including meeting id, optional passcode, and participant code, plus subscription status, participant code, and uri validity. scopes and rate limit are specified.
+</Accordion>
+
+<Accordion title="Get a meeting poll">
+Meeting hosts can survey attendees through polls, with details available via a provided link. it requires `meeting:read:admin` and `meeting:read` permissions and has a `light` rate limit.
+</Accordion>
+
+<Accordion title="Delete a webinar s branding name tag">
+This api removes a webinar's session branding name tag. requirements include enabled webinar session branding setting. it needs `webinar:write` or `webinar:write:admin` scopes, with a `light` rate limit.
+</Accordion>
+
+<Accordion title="Get a meeting s archive token for local archiving">
+Get a meeting archive token for sdk apps or bots to access real-time raw media streams. requires a pro plan or higher and activating **archive meetings and webinars** in zoom settings. scope: `meeting token:read:admin:local archiving`. rate limit: light.
+</Accordion>
+
+<Accordion title="Get a meeting registrant">
+Details on a specific user registered for a zoom meeting can be accessed by a host or admin with permissions. requires a meeting plan and the scopes `meeting:read:admin` and `meeting:read`. rate limit label is `light`.
+</Accordion>
+
+<Accordion title="Create a meeting template from an existing meeting">
+Create a meeting template from an existing meeting. **scopes:** `meeting:write:admin`,`meeting:write` **[rate limit label](https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits):** `medium`
+</Accordion>
+
+<Accordion title="Delete zpa device by vendor and mac address">
+To remove a zpa device in the device manager by vendor and mac, use scopes `device:write:admin`, `device:delete:zpa device:admin`, and `device:delete:zpa device:master`. rate limit: medium.
+</Accordion>
+
+<Accordion title="Delete a live webinar message">
+This api lets you delete a specific message in a live webinar by id. required: zoom's dlp for in-meeting chat enabled. scopes needed are `webinar:write` and `webinar:write:admin`, with a `medium` rate limit.
+</Accordion>
+
+<Accordion title="Get a tracking field">
+This api provides details on zoom's scheduling tracking fields. it requires a business, education, api, or higher plan with `tracking fields:read:admin` scope. the rate limit label is `light`.
+</Accordion>
+
+<Accordion title="Get a meeting summary">
+Meeting summary info requires a pro+ host plan, ai companion enabled, excluding e2ee meetings. scopes include meeting summary:read and admin versions. rate limit: light.
+</Accordion>
+
+<Accordion title="Get a meeting s join token for local recording">
+Obtain a join token for a zoom meeting to enable a recording bot, using the sdk, to connect and start local recording. requires enabling local recording in zoom settings. applicable rate limit: light.
+</Accordion>
+
+<Accordion title="Get a webinar poll">
+Access webinar poll details with `webinar:read:admin` or `webinar:read` scopes. for specific poll info, use `webinar:read:poll` or its admin version. it's under `light` rate limit.
+</Accordion>
+
+<Accordion title="Add a meeting registrant">
+This text guides on creating and customizing a user's registration for a zoom meeting, with a max of 4,999 registrants. preconditions include the host being licensed. api scopes and a light rate limit apply.
+</Accordion>
+
+<Accordion title="Get a webinar">
+Access zoom webinar details requires pro or higher plan and webinar add-on. scopes include `webinar:read:admin` and `webinar:read`. granular scopes and a 'light' rate limit also apply.
+</Accordion>
+
+<Accordion title="Delete a webinar s branding virtual backgrounds">
+This api allows the deletion of webinar session branding, specifically virtual backgrounds. requires the webinar session branding setting enabled. accessible with `webinar:write` and `webinar:write:admin` scopes. rate limit is light.
+</Accordion>
+
+<Accordion title="Add a new device">
+Add a new device to a zoom account, requiring `device:write:admin` scope with a `medium` rate limit.
+</Accordion>
+
+<Accordion title="Enable sip phone">
+Zoom's psi allows integration of sip phones with supported pbx systems (cisco, avaya) for softphone functionality within zoom. requires enabling by account owner/admin through sales. scope: `sip phone:write:admin`, rate limit: `light`.
+</Accordion>
+
+<Accordion title="Get a webinar registrant">
+Zoom's webinar feature supports broadcasting to up to 10,000 attendees, requiring registration and a webinar plan. it includes an api for user details and comes with a 'light' rate limit.
+</Accordion>
+
+<Accordion title="Get a webinar survey">
+Zoom's webinar survey feature requires a pro or higher plan and an add-on, enabled in the host's account. it's governed by scopes (`webinar:read:admin`, `webinar:read`) and granular scopes, with a `light` rate limit.
+</Accordion>
+
+<Accordion title="Get a webinar sip uri with passcode">
+To obtain a webinar's sip uri, include its id, any passcode, and participant code. api also displays subscription status, participant code, and uri lifespan. necessary scopes and a light rate limit apply.
+</Accordion>
+
+<Accordion title="Get a user s tsp account">
+This api retrieves details for a user's specific tsp account, with a two-account maximum per user. it requires `tsp:read:admin` or `tsp:read` scopes and has a 'light' rate limit.
+</Accordion>
+
+<Accordion title="Create a recording registrant">
+Zoom offers on-demand cloud recordings of past meetings, accessible to registered users via an api. api scopes required are `recording:write:admin` and `recording:write`, with a 'light' rate limit.
+</Accordion>
+
+<Accordion title="Get a webinar s join token for live streaming">
+Api provides a webinar archive token for live streaming via zoom sdk and supports both live and raw streaming. prerequisites include pro plan with webinar add-on and enabling streaming in settings. scopes and light rate limit apply.
+</Accordion>
+
+<Accordion title="Get a webinar s archive token for local archiving">
+This api provides a webinar's archive token for real-time access to raw audio and video streams, requiring a pro plan, webinar add-on, and enabled archive settings. rate limit: light.
+</Accordion>
+
+<Accordion title="Get billing invoice reports">
+Access department billing invoices using `billing id` from the get billing reports api. requires pro account, department billing, `report:read:admin`, and `report:read:billing invoice:admin` scope. heavy rate limits apply.
+</Accordion>
+
+<Accordion title="Delete a meeting">
+Delete a meeting. **scopes:** `meeting:write:admin`,`meeting:write` **[rate limit label](https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits):** `light`
+</Accordion>
+
+<Accordion title="Get a webinar s join token for local recording">
+Api provides a join token for webinar local recording via a bot using zoom sdk, supporting standard and raw types. requires pro plan, webinar add-on, and enabled setting. scopes: webinar token:read. rate limit: light.
+</Accordion>
+
+<Accordion title="Get account s tsp information">
+Access telephony service provider info at account level requires a pro plan or higher, `tsp:read:admin` scope, and falls under `light` rate limit according to zoom's api.
+</Accordion>
+
+<Accordion title="Get a meeting survey">
+Zoom's post-meeting survey and reporting require a pro license, enabled survey feature, and scheduled meeting setup. it applies to `meeting:read` and `meeting:read:admin` scopes with a `light` rate limit.
+</Accordion>
+
+<Accordion title="Get billing reports">
+To get zoom account department billing reports, require a pro/higher account with department billing enabled and permission scopes `report:read:admin` and `report:read:billing:admin`. contact zoom support for setup. note: heavy rate limits apply.
+</Accordion>
+
+<Accordion title="Delete a webinar s branding wallpaper">
+This api removes a webinar's session branding wallpaper file, requiring the webinar session branding setting and `webinar:write` or `webinar:write:admin` scopes. it has a light rate limit.
+</Accordion>
+
+<Accordion title="Get livestream details">
+Zoom supports livestreaming meetings to a custom platform, requiring a pro plan or higher, pre-configuration of streaming details, and observing rate limits. it provides stream url, stream key, and page url for the stream.
+</Accordion>
+
+<Accordion title="Get live stream details">
+Zoom webinar live stream setup requires pro plan or higher, webinar add-on, and pre-configured streaming details. it supports custom platforms, including stream url, stream key, and page url. rate limit: light.
+</Accordion>
+
+<Accordion title="Add a user s tsp account">
+Add a user's tsp account. **scopes:** `tsp:write:admin`,`tsp:write` **[rate limit label](https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits):** `light`
+</Accordion>
+
+<Accordion title="Get meeting detail reports">
+Obtain a thorough report for a previous meeting. requirements: pro plan or higher, with admin rights to read reports. rate limit is categorized as heavy.
+</Accordion>
+
+<Accordion title="Create a tracking field">
+Use the api to create tracking fields for zoom, allowing analysis of usage by organization fields. prerequisites include a business or higher plan. rate limit is light.
+</Accordion>
+
+<Accordion title="Get active inactive host reports">
+Generate reports for active or inactive hosts within the last 6 months, limited to a month's range. active hosts have hosted meetings; inactive have not. requires pro plan or higher and specific admin permissions. rate limit: heavy.
+</Accordion>
+
+<Accordion title="Get cloud recording usage report">
+Get cloud recording usage report for the last 6 months, up to yesterday, with a max date range of 30 days. requires pro plan or higher, `report:read:admin` scope, and has a `heavy` rate limit.
+</Accordion>
+
+<Accordion title="Get a meeting s archived files">
+To access archived files for a specific meeting, ensure your account has the meeting and webinar archiving feature enabled by zoom support. requires `recording:read` scope. rate limit label: light.
+</Accordion>
+
+<Accordion title="Change device">
+Change device name. **prerequisites:** * device must be enrolled in zmd (zoom device management) **scopes:** `device:write:admin` **[rate limit label](https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits):** `medium`
+</Accordion>
+
+<Accordion title="Delete a meeting recording file">
+To delete a meeting recording, enable "the host can delete cloud recordings" in zoom's recording settings. permissions needed are `recording:write:admin` and `recording:write` with a light rate limit.
+</Accordion>
+
+<Accordion title="Get daily usage report">
+The daily report provides zoom service usage details, like new users, meetings, participants, and minutes per day for a month, requiring a pro plan or higher. it has a 'heavy' rate limit.
+</Accordion>
+
+<Accordion title="Delete device">
+Delete a device from a zoom account. **prerequisites:** * device must be enrolled in zmd (zoom device management) **scopes:** `device:write:admin` **[rate limit label](https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits):** `heavy`
+</Accordion>
+
+<Accordion title="Get device detail">
+Retrieve a device's details. **scopes:** `device:read:admin`,`device:write:admin` **[rate limit label](https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits):** `heavy`
+</Accordion>
+
+<Accordion title="Assign a device to a user or commonarea">
+Assign, move, or remove a device for a user/common area within zoom device management (zdm). requires the device to be enrolled in zdm and appropriate admin scopes. rate limit category is medium.
+</Accordion>
+
+<Accordion title="Delete a meeting registrant">
+Delete a meeting registrant. **scopes:** `meeting:write:admin`,`meeting:write` **[rate limit label](https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits):** `light`
+</Accordion>
+
+<Accordion title="Change device association">
+Api allows changing zoom room device associations, requiring enrollment in zoom device management (zmd) with admin write access. rate limit is medium.
+</Accordion>
+
+<Accordion title="Delete a meeting poll">
+Meeting hosts can survey attendees using polls, but polls must be deleted post-meeting. requirements: pro account, enabled polling, and a scheduled meeting. rate limit: light.
+</Accordion>
+
+<Accordion title="Add panelists">
+Panelists in webinars have access to more features like video sharing and screen sharing compared to attendees. adding panelists requires a pro or higher zoom plan with webinar add-on and specific scopes. rate limit label is medium.
+</Accordion>
+
+<Accordion title="Create a webinar s branding name tag">
+Use the api to create up to 20 name tags for a webinar's session branding. requires enabled webinar session branding setting and `webinar:write`, `webinar:write:admin` scopes. rate limit is medium.
+</Accordion>
+
+<Accordion title="Create a webinar s poll">
+Learn how to create a poll for a webinar, including permissions needed (webinar:write, admin) and specific abilities (poll creation). rate limit category is light.
+</Accordion>
+
+<Accordion title="Delete meeting recordings">
+Summary: to delete all meeting recordings, ensure the user's account has cloud recording enabled. required permissions include `recording:write:admin` and `recording:write` with a `light` rate limit label.
+</Accordion>
+
+<Accordion title="Create a webinar template">
+Use this api to create a webinar template from an existing webinar. **scopes:** `webinar:write:admin`,`webinar:write` **[rate limit label](https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits):** `medium`
+</Accordion>
+
+<Accordion title="Add a webinar registrant">
+Zoom users with a webinar plan can create and manage webinars, broadcasting to up to 10,000 attendees. registration requires a pro plan, specific permissions, and is governed by a "light" rate limit.
+</Accordion>
+
+<Accordion title="Create a webinar">
+To schedule a host's webinar, use 'me' in user-level apps. max 10,000 attendees, 100 daily requests. needs pro plan or higher, webinar add-on, `webinar:write` scopes, and falls under 'light' rate limit.
+</Accordion>
+
+<Accordion title="Get meeting invitation">
+Retrieve the meeting invitation note for a specific meeting. **scopes:** `meeting:read`,`meeting:read:admin` **[rate limit label](https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits):** `light`
+</Accordion>
+
+<Accordion title="Get meeting recordings">
+To download meeting recordings, use `download url`. include oauth token in the header for passcode-protected ones. supports `recording:read` and `phone recording:read:admin` scopes, with a `light` rate limit.
+</Accordion>
+
+<Accordion title="Get meeting recording settings">
+This text outlines the api for retrieving zoom cloud recording settings for meetings, specifying required scopes (`recording:read:admin` and `recording:read`) and indicating a `light` rate limit label.
+</Accordion>
+
+<Accordion title="Get meeting participant reports">
+Use this api to generate past meeting reports with multiple participants, excluding solo participant reports. note: information may be limited without a hipaa baa. requires pro plan, specific admin scopes, and adheres to heavy rate limits.
+</Accordion>
+
+<Accordion title="Get meeting reports">
+Retrieve reports on past zoom meetings and webinars within a six-month period, limited to one month at a time, requiring at least two unique participants. applicable for pro plans or higher, with specific admin scopes. rate limit label: heavy.
+</Accordion>
+
+<Accordion title="Get webinar q a report">
+Summary: get a report of q&as from past webinars, requiring a pro/higher plan with webinar add-on, and specific admin permissions. rate limit category: heavy.
+</Accordion>
+
+<Accordion title="Get webinar detail reports">
+Access past webinar details through a report, requiring a pro or higher plan with webinar add-on. it needs `report:read:admin` and `report:read:webinar:admin` scopes and is subject to a `heavy` rate limit.
+</Accordion>
+
+<Accordion title="Get meeting q a report">
+Summary: access past meeting q&a reports requires a pro plan or higher, with `report:read:admin` and `report:read:meeting qna:admin` scopes. note the `heavy` rate limit label.
+</Accordion>
+
+<Accordion title="Get operation logs report">
+The zoom operations logs report allows auditing of user and admin actions like additions, setting adjustments, and recording deletions within a period. it requires at least a pro plan and specific scopes, with a high rate limit.
+</Accordion>
+
+<Accordion title="Get webinar participant reports">
+Access detailed reports on webinar attendees for up to 6 months. requires pro or higher plan with webinar add-on. necessary scopes include `report:read:admin` and `report:read:list webinar participants:admin`. rate limit label: heavy.
+</Accordion>
+
+<Accordion title="Get meeting poll reports">
+This api allows fetching past meeting poll results. requirements: pro plan or higher, `report:read:admin` and `report:read:list meeting polls:admin` scopes. rate limit is heavy.
+</Accordion>
+
+<Accordion title="Get meeting recording s analytics summary">
+Access zoom meeting recording analytics with a 1-month max duration using an oauth token. use specific api scopes and note the medium rate limit. example: `curl` command with authorization header.
+</Accordion>
+
+<Accordion title="Get meeting survey report">
+To access past meeting survey reports on zoom, a pro or higher plan is needed, with `report:read:admin` and `report:read:meeting survey:admin` permissions. rate limit label is `heavy`.
+</Accordion>
+
+<Accordion title="Get webinar poll reports">
+Access past webinar polls report on zoom with a pro/higher plan and webinar add-on. requires `report:read:admin` and `report:read:list webinar polls:admin` permissions. rate limit: heavy.
+</Accordion>
+
+<Accordion title="List all recordings">
+This text details how to list zoom cloud recordings for a user, notably by using "me" for user-level apps and requiring an oauth token for access. it requires a pro plan, cloud recording enabled, and has a medium rate limit.
+</Accordion>
+
+<Accordion title="List past meetings q a">
+Zoom meetings' q&a feature allows participants to ask and answer questions during a meeting. specific meeting q&as are listed, requiring `meeting:read:admin` and `meeting:read` scopes, with a 'medium' rate limit.
+</Accordion>
+
+<Accordion title="List meeting polls">
+Meeting hosts with pro or higher plans can poll attendees in scheduled meetings, but not in instant meetings. polls are listed with "light" rate limits under `meeting:read:admin` and `meeting:read` scopes.
+</Accordion>
+
+<Accordion title="List past meeting instances">
+Return a list of past meeting instances. **scopes:** `meeting:read:admin`,`meeting:read` **[rate limit label](https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits):** `medium`
+</Accordion>
+
+<Accordion title="List meetings">
+This zoom api lists a user's scheduled meetings using the `me` value for user-level apps, excluding instant meetings and only showing unexpired ones. it requires specific scopes and has a `medium` rate limit.
+</Accordion>
+
+<Accordion title="Get meeting s token">
+Get a zoom meeting closed caption token to use with third-party captioning services by enabling specific settings. it requires meeting read permissions and has a 'light' rate limit.
+</Accordion>
+
+<Accordion title="Perform batch poll creation">
+Meeting hosts can survey attendees using polls after meeting the prerequisites: pro account or higher, polling enabled, and scheduled meetings only. rate limit: light.
+</Accordion>
+
+<Accordion title="Get webinar survey report">
+Access past webinar survey reports with a pro plan or higher and webinar add-on. requires `report:read:admin` and `report:read:webinar survey:admin` scopes. note: heavy rate limit applies.
+</Accordion>
+
+<Accordion title="List registration questions for meeting">
+This text provides details on registering for a meeting via zoom, including the required api scopes (meeting:read, meeting:read:admin) and the rate limit label, which is categorized as "light."
+</Accordion>
+
+<Accordion title="Get meeting recording s analytics details">
+Access zoom meeting recording analytics and download within 1 month using oauth token in the authorization header. requires scopes `recording:read:admin`,`recording:read` with a medium rate limit.
+</Accordion>
+
+<Accordion title="List sip phones">
+Zoom's phone system integration allows organizations to connect the zoom client to cisco or avaya pbx systems for softphone functionality. users must contact sales to enable it. this api lists sip phones on an account. rate limit: medium.
+</Accordion>
+
+<Accordion title="List registration questions for webinar">
+To register for a webinar, users must fill out a form with specific fields and questions. requirements include a pro or higher plan with a webinar add-on and certain access scopes.
+</Accordion>
+
+<Accordion title="List past meeting s poll results">
+Zoom meeting polls enable hosts to survey attendees and list results, but only for pro account holders in scheduled meetings. polling is not available for instant meetings. rate limit: medium.
+</Accordion>
+
+<Accordion title="List user s tsp accounts">
+A user can have a maximum of two tsp accounts. use this api to list all tsp accounts of a user. **scopes:** `tsp:read:admin`,`tsp:read` **[rate limit label](https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits):** `medium`
+</Accordion>
+
+<Accordion title="List webinars">
+The api lists all scheduled webinars for zoom users with a webinar plan, using `me` for user-level apps. it only shows unexpired webinars for hosts broadcasting to up to 10,000 attendees. requires pro plan upwards and specific scopes. rate limit: medium.
+</Accordion>
+
+<Accordion title="List upcoming meetings">
+The api lists a zoom user's upcoming meetings within the next 24 hours, covering both scheduled and invited ones. use `me` for user-level apps. requires `meeting:read` scopes. rate limit: medium.
+</Accordion>
+
+<Accordion title="List tracking fields">
+Use the api to view all tracking fields on zoom for usage analysis. requires business, education, api plan or higher. scope: tracking fields:read:admin. rate limit: medium.
+</Accordion>
+
+<Accordion title="Get past meeting details">
+Get information about a past meeting. **scopes:** `meeting:read:admin`,`meeting:read` **[rate limit label](https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits):** `light`
+</Accordion>
+
+<Accordion title="List past webinar instances">
+The text details api permissions and rate limit for listing past webinar instances, including scopes like `webinar:read:admin` and `webinar:read`, with a `light` rate limit.
+</Accordion>
+
+<Accordion title="List recording registrants">
+This api lists past meeting registrants for on-demand cloud recordings. viewers must register to access. it requires `recording:read:admin` and `recording:read` scopes with a medium rate limit.
+</Accordion>
+
+<Accordion title="List archived files">
+Zoom's archiving solution enables administrators to automatically record and archive meeting data to third-party platforms for compliance, needing the meeting and webinar archiving feature enabled.
+</Accordion>
+
+<Accordion title="List meeting registrants">
+Zoom meetings can require registration by a host or admin. it allows listing of registered users and has `meeting:read:admin` and `meeting:read` scopes with a medium rate limit.
+</Accordion>
+
+<Accordion title="List webinar participants">
+Get a list of past webinar participants with a pro plan or above plus an add-on. requires specific scopes and has a medium rate limit.
+</Accordion>
+
+<Accordion title="List past webinar poll results">
+This api endpoint fetches results for webinar polls, supporting single or multiple-choice questions. requirements include a webinar license and specific scopes with a medium rate limit.
+</Accordion>
+
+<Accordion title="Perform batch registration">
+Summarize: licensed zoom users can register up to 30 attendees at once for scheduled meetings requiring registration. not applicable to instant or recurring meetings. requires `meeting:write` permissions. rate limit label: heavy.
+</Accordion>
+
+<Accordion title="Get past meeting participants">
+Api allows paid users (pro+) to fetch past meeting attendee info, excluding solo participants. requires double encoding for certain uuids, with `meeting:read` scope and others. rate limit is medium.
+</Accordion>
+
+<Accordion title="Set global dial in url for a tsp user">
+An api allows setting the url for a user's global dial-in page in zoom with tsp and third-party audio options. applicable scopes are `tsp:write:admin`, `tsp:write`, and it has a `light` rate limit.
+</Accordion>
+
+<Accordion title="Remove webinar panelists">
+To remove all panelists from a webinar, ensure you have a pro plan or higher with the webinar add-on. required access includes `webinar:write` and `webinar:delete:panelist` scopes, under a `light` rate limit.
+</Accordion>
+
+<Accordion title="Zoom Schedule User Webinar With Registration">
+Schedule a webinar for up to 30 participants requiring registration. must be a licensed user & webinar type 5. use specific api scopes with a 'heavy' rate limit label.
+</Accordion>
+
+<Accordion title="Update a live meeting message">
+Update a live meeting message by id after enabling zoom's dlp for chat. prerequisites: dlp enabled. scopes: `meeting:write`, `meeting:write:admin`. rate limit: medium.
+</Accordion>
+
+<Accordion title="Recover meeting recordings">
+Zoom's api lets pro users with cloud recording enabled recover deleted recordings from trash within 30 days. it applies to specific meetings and has a 'light' rate limit. scopes required: `recording:write:admin`,`recording:write`.
+</Accordion>
+
+<Accordion title="Recover a single recording">
+Zoom's api enables users to restore recordings from the trash within 30 days of deletion. it supports recovery of individual meeting files. requires `recording:write:admin` or `recording:write` scopes. rate limit category is `light`.
+</Accordion>
+
+<Accordion title="Get registration questions">
+Use the api to fetch questions displayed for user registration to view specific meeting on-demand recordings. includes fields for question inclusion. scopes: `recording:read:admin`, `recording:read`. rate limit: light.
+</Accordion>
+
+<Accordion title="Remove a panelist">
+To remove a webinar panelist, first get their `panelistid` via the list panelists api. requirements: pro/higher plan with webinar add-on. scopes needed: webinar:write, write:admin, delete:panelist, delete:panelist:admin. rate limit: light.
+</Accordion>
+
+<Accordion title="List q as of a past webinar">
+The text describes zoom's q&a feature for webinars, allowing attendees to ask questions and panelists to answer, lists prerequisites like a webinar license, scopes for accessing past q&as, and mentions a 'medium' rate limit.
+</Accordion>
+
+<Accordion title="List meeting summaries of an account">
+Generates meeting summaries for pro account holders with ai companion enabled, excluding e2ee meetings. requires scopes `meeting summary:read:admin` and `meeting:read:list summaries:admin`. rate limit: medium.
+</Accordion>
+
+<Accordion title="List a user s pac accounts">
+To list a user's pac accounts on zoom, use the 'me' value for user-level apps. requires pro plan or higher with audio conferencing subscription and pac enabled. scopes: `pac:read:admin`, `pac:read`. rate limit: light.
+</Accordion>
+
+<Accordion title="List meeting templates">
+To access zoom meeting templates for user-level apps, use `me` instead of `userid`. scopes required are `meeting:read` and `meeting:read:admin`, with a medium rate limit.
+</Accordion>
+
+<Accordion title="Update a live stream">
+To update webinar live stream info, you need a pro plan with add-on, pre-configured streaming details, and specific permissions. rate limit is light.
+</Accordion>
+
+<Accordion title="Get webinar s session branding">
+This api lets you customize webinars with wallpapers and virtual backgrounds for participants, requiring a pro plan, webinar add-on, and session branding enabled. rate limit: light.
+</Accordion>
+
+<Accordion title="Update a tsp account">
+Update a user's tsp account. **scopes:** `tsp:write:admin`,`tsp:write` **[rate limit label](https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits):** `light`
+</Accordion>
+
+<Accordion title="Update a webinar s branding name tag">
+Use the api to change a webinar's session branding name tag, requiring the setting enabled and `webinar:write`,`webinar:write:admin` scopes. rate limit is medium.
+</Accordion>
+
+<Accordion title="List webinar registrants">
+Zoom users with a webinar plan can list registrants for webinars, requiring a pro plan or higher and webinar add-on. webinars broadcast to up to 10k attendees. registration is mandatory.
+</Accordion>
+
+<Accordion title="Update live stream status">
+Zoom allows live streaming webinars to custom platforms for users with pro or higher plans and a webinar add-on, after configuring live streaming details. scopes include webinar writing/admin, with light rate limits.
+</Accordion>
+
+<Accordion title="Update livestream status">
+Zoom supports livestreaming meetings to custom platforms with options to update livestream status, requiring a host with a pro license and specific permissions. rate limit label: light.
+</Accordion>
+
+<Accordion title="List panelists">
+Webinar panelists have enhanced capabilities like video, screen share, and annotating, requiring a pro/higher plan with webinar add-on. access controls include `webinar:read:admin` and others, with a medium rate limit.
+</Accordion>
+
+<Accordion title="List webinar templates">
+Zoom users with a pro account or higher can list webinar templates and use them for scheduling future webinars by using `template id` in the api. for user-level apps, use `me` instead of `userid`. requires `webinar:read` or admin equivalents.
+</Accordion>
+
+<Accordion title="Update meeting status">
+Update the status of a meeting. **scopes:** `meeting:write:admin`,`meeting:write` **[rate limit label](https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits):** `light`
+</Accordion>
+
+<Accordion title="Update webinar registration fields">
+Update webinar registration questions/fields for user completion to receive the join link. requires pro/higher plan with webinar add-on, and registration set as required. rate limit: light.
+</Accordion>
+
+<Accordion title="Update a meeting poll">
+Meeting hosts can survey attendees with polls. requires `meeting:write:admin` or `meeting:write` scopes. rate limit is `light`. more info: [zoom polling](https://support.zoom.us/hc/en-us/articles/213756303-polling-for-meetings).
+</Accordion>
+
+<Accordion title="Update registrant s status">
+This api lets you update a registrant's status for accessing an on-demand recording, with either approval or denial. it requires `recording:write:admin` or `recording:write` scopes and has a medium rate limit.
+</Accordion>
+
+<Accordion title="List a webinar s polls">
+The text outlines zoom webinar's api for listing polls, including required scopes (`webinar:read:admin`, `webinar:read`, `webinar:read:list polls`, `webinar:read:list polls:admin`) and mentioning its `light` rate limit label.
+</Accordion>
+
+<Accordion title="Update meeting registrant status">
+Update meeting registrant status to approve, cancel, or deny participation. requires `meeting:write:admin`, `meeting:write` scopes. rate limit: medium.
+</Accordion>
+
+<Accordion title="Update meeting recording settings">
+Updated settings for zoom's cloud recording feature. applicable scopes: recording:write, recording:write:admin. rate limit label: light.
+</Accordion>
+
+<Accordion title="Update webinar registrant status">
+Update webinar registrants' status: approve, deny, or revoke. requires `webinar:write` or admin scopes. features granular scopes for registrant status updates. rate limit: medium.
+</Accordion>
+
+<Accordion title="List devices">
+This api lets you list devices. **scopes:** `device:read:admin`,`device:write:admin` **[rate limit label](https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits):** `heavy`
+</Accordion>
+
+<Accordion title="Get webinar s token">
+Get a closed caption token for zoom webinars to enable third-party closed captioning by visiting the provided link. requires a pro plan, webinar add-on, and specific settings enabled. rate limit: light.
+</Accordion>
+
+<Accordion title="Upgrade zpa os app">
+Upgrade zpa firmware/app via zoom device manager group id. needs `device:write:admin` or more specific permissions. rate limit is classified as `heavy`.
+</Accordion>
+
+<Accordion title="List h 323 sip devices">
+H.323/sip devices can make or receive calls via a room connector to join zoom meetings. this api lists all such devices on a zoom account. scopes: h323:read:admin. rate limit: medium.
+</Accordion>
+
+<Accordion title="Update registration questions">
+This api lets you update registration questions for viewers of on-demand meeting recordings, with fields displayed during registration. it requires `recording:write:admin` and `recording:write` scopes and has a `light` rate limit.
+</Accordion>
+
+<Accordion title="Update sip phone">
+Zoom's psi allows integrating supported pbx systems like cisco and avaya for softphone use. account owners/admins must enable sip phone integration. it also offers an api for sip info updates with a light rate limit.
+</Accordion>
+
+<Accordion title="Upload a webinar s branding wallpaper">
+This api lets you upload one webinar branding wallpaper in jpg/jpeg, gif, or png format, with a 16:9 ratio, ideally 1920x1080 px, not exceeding 15mb. requires "webinar session branding" enabled and has a medium rate limit.
+</Accordion>
+
+<Accordion title="Zoom Update Zoom Meeting Registration Questions">
+Update questions shown to users during meeting registration on zoom. applicable scopes: `meeting:write`, `meeting:write:admin`. rate limit label: `light`.
+</Accordion>
+
+<Accordion title="Upload a webinar s branding virtual background">
+Use the provided api to upload up to 10 virtual backgrounds for webinar sessions, in jpg/jpeg, gif, or png format, not exceeding 15mb. requires webinar session branding setting and `webinar:write` scopes. rate limit is medium.
+</Accordion>
+
+<Accordion title="Update webinar status">
+This api ends an ongoing webinar. requires a valid webinar plan, `webinar:write` and `webinar:update:status` scopes. rate limit is light.
+</Accordion>
+
+<Accordion title="Get zdm group info">
+Retrieve zoom device manager group details for an account, requiring `device:read:admin` or granular `device:read:list groups:admin/master` permissions. rate limit: medium.
+</Accordion>
+
+<Accordion title="Update a meeting">
+To update a meeting via api, ensure `start time` is future-dated; `recurrence` is needed. limit: 100 requests/day, 100 updates/meeting in 24 hrs. requires `meeting:write` and `meeting:write:admin` scopes, with a `light` rate limit.
+</Accordion>
+
+<Accordion title="Update a webinar poll">
+Update webinar polls in zoom with `webinar:write` and `webinar:write:admin` scopes. granular scopes include `webinar:update:poll` and `webinar:update:poll:admin`. rate limit is light.
+</Accordion>
+
+<Accordion title="Update a tracking field">
+This api allows updating tracking fields on zoom, requiring a business, education, api or higher plan, with `tracking fields:write:admin` scope. rate limit: light.
+</Accordion>
+
+<Accordion title="Update a webinar">
+Update your scheduled webinar up to 100 times daily per webinar host's userid. requires a pro plan or higher plus a webinar add-on. scopes include webinar:write and admin updates, with a 'light' rate limit label.
+</Accordion>
+
+<Accordion title="Update a meeting survey">
+To update a zoom meeting survey, the host must be a pro user with the feature enabled for scheduled meetings. required scopes are meeting:write:admin and meeting:write. the rate limit is light.
+</Accordion>
+
+<Accordion title="Get webinar tracking sources">
+Zoom's webinar registration tracking sources feature allows users to analyze where registrants come from, aiding in marketing strategy optimization. it needs a webinar license, registration, and permissions, with a 'medium' rate limit.
+</Accordion>
+
+<Accordion title="Use in meeting controls">
+Zoom meeting controls allow for managing recordings and inviting participants. cloud recording is necessary; local not supported. requires live meeting, host status, and specific permissions with a medium rate limit.
+</Accordion>
+
+<Accordion title="Get zpa version info">
+Get zpa firmware/app version upgrade info. scopes: `device:read:admin`. granular: `device:read:list zpa versions:admin`, `device:read:list zpa versions:master`. rate limit: medium.
+</Accordion>
+
+<Accordion title="Get telephone reports">
+The telephone report api offers data on who joined meetings by phone, their dial-in number, and more, for a given time. it requires a pro plan, specific admin read scopes, and has a heavy rate limit.
+</Accordion>
+
+<Accordion title="Get webinar absentees">
+This text details api permissions for viewing absentees of a webinar, including specific scopes and granular scopes, and notes that the rate limit label for this action is categorized as "heavy."
+</Accordion>
+
+<Accordion title="Get sign in  sign out activity report">
+Get zoom user sign in/out logs with a pro plan or higher. requires `report:read:admin` and `report:read:user activities:admin` scopes. rate limit is heavy.
+</Accordion>
+
+<Accordion title="Update a webinar survey">
+To update a zoom webinar survey, you need a pro plan or higher with a webinar add-on, enable the survey feature, have `webinar:write` and survey update permissions, under a `light` api rate limit.
+</Accordion>
+
+<Accordion title="Update a h 323 sip device">
+H.323/sip devices can use a room connector to join/invite to zoom meetings. use the api to edit device info in your zoom account. scopes: h323:write:admin. rate limit: light.
+</Accordion>
+
+<Accordion title="Get upcoming events report">
+This api lists upcoming meetings/webinars within a month for users with a pro plan or higher. it requires `report:read:admin` and `report:read:upcoming meetings webinars:admin` scopes. rate limit: heavy.
+</Accordion>
+
+<Accordion title="Update a livestream">
+Update livestream details on zoom for meetings to a custom platform. requires a pro license host. applicable scopes are `meeting:write:admin`, `meeting:write`. rate limit is light.
+</Accordion>
+
+<Accordion title="Update an archived file s auto delete status">
+To update an archived file's auto-delete status on zoom, ensure your account has the archiving feature enabled and auto-delete disabled by contacting zoom support. requires `recording:write` scopes. rate limit: light.
+</Accordion>
+
+<Accordion title="Update account s tsp information">
+Summary: update an account's telephony service provider (tsp) settings, ensuring the tsp account option is enabled. requires `tsp:write:admin` scope and adheres to the `light` rate limit.
+</Accordion>
+
+<Accordion title="Set webinar s default branding virtual background">
+Use the api for setting a webinar's default session branding with a virtual background, requiring an enabled webinar session branding setting, webinar:write and webinar:write:admin scopes. rate limit: light.
+</Accordion>
+
